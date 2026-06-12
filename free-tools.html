@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Personal Branding Tools — Knownly</title>
+<meta name="description" content="Explore free Knownly tools to discover what you should be known for, find your niche, improve your LinkedIn headline, audit your online presence and build clearer content pillars.">
+<link rel="canonical" href="https://whatamiknownfor.com/free-tools.html">
+<meta property="og:title" content="Free Personal Branding Tools — Knownly">
+<meta property="og:description" content="Use free Knownly tools to find your direction, improve your profile and build a clearer online presence.">
+<meta property="og:url" content="https://whatamiknownfor.com/free-tools.html">
+<meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Free Personal Branding Tools — Knownly","description":"Free tools to discover what you should be known for, find your niche, improve your LinkedIn headline and build a clearer online presence.","url":"https://whatamiknownfor.com/free-tools.html","publisher":{"@type":"Organization","name":"Knownly","url":"https://whatamiknownfor.com"}}</script>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#08110D;--bg2:#0D1713;--card:#14201A;--card-el:#182620;
+  --text:#F7F2E8;--text2:#B9C3B7;--cta:#8EA896;--cta-h:#7C9885;
+  --gold:#E0A86B;--sage:#A7C0AB;--border:#314238;
+  --gold-glow:rgba(224,168,107,0.22);--sage-glow:rgba(142,168,150,0.16);
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;}
+#progress-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--sage));width:0%;z-index:1000;transition:width 0.1s;}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:68px;background:rgba(8,17,13,0.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(49,66,56,0.5);}
+.logo{display:inline-flex;align-items:center;gap:9px;text-decoration:none;}
+.logo-mark{width:32px;height:32px;flex-shrink:0;}
+.logo-wordmark{font-family:'Sora',sans-serif;font-size:1.28rem;font-weight:700;letter-spacing:-0.03em;color:var(--text);line-height:1;}
+.logo-wordmark .ly{color:var(--gold);}
+nav{display:flex;gap:28px;}
+nav a{font-size:0.875rem;color:var(--text2);text-decoration:none;transition:color 0.2s;}
+nav a:hover{color:var(--text);}
+.header-right{display:flex;gap:12px;align-items:center;}
+.btn-ghost{background:none;border:1px solid var(--border);color:var(--text2);padding:8px 18px;border-radius:8px;font-size:0.85rem;font-family:'Inter',sans-serif;transition:all 0.2s;text-decoration:none;display:inline-block;}
+.btn-ghost:hover{border-color:var(--sage);color:var(--text);}
+.btn-primary{background:var(--cta);color:#08110D;padding:9px 20px;border-radius:8px;font-size:0.85rem;font-weight:600;font-family:'Inter',sans-serif;transition:all 0.25s;display:inline-block;text-decoration:none;}
+.btn-primary:hover{background:var(--cta-h);transform:translateY(-1px);}
+
+/* HERO */
+.page-hero{padding:130px 60px 80px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(224,168,107,0.1);border:1px solid rgba(224,168,107,0.28);padding:6px 14px;border-radius:40px;margin-bottom:24px;font-size:0.78rem;font-weight:500;color:var(--gold);letter-spacing:0.04em;}
+.hero-badge::before{content:'◈';font-size:0.7rem;}
+h1{font-family:'Sora',sans-serif;font-size:clamp(2.2rem,3.8vw,3.2rem);font-weight:800;line-height:1.1;letter-spacing:-0.03em;color:var(--text);margin-bottom:14px;}
+.gold-line{font-family:'Sora',sans-serif;font-size:1rem;font-weight:600;color:var(--gold);margin-bottom:18px;}
+.hero-sub{font-size:0.96rem;color:var(--text2);max-width:520px;line-height:1.75;margin-bottom:32px;font-weight:300;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-hero{background:var(--cta);color:#08110D;padding:14px 28px;border-radius:10px;border:none;cursor:pointer;font-size:0.9rem;font-weight:700;font-family:'Sora',sans-serif;transition:all 0.25s;display:inline-block;text-decoration:none;}
+.btn-hero:hover{background:var(--cta-h);transform:translateY(-2px);box-shadow:0 8px 32px rgba(142,168,150,0.28);}
+.btn-outline{background:none;border:1px solid var(--border);color:var(--text2);padding:13px 22px;border-radius:10px;font-size:0.9rem;font-family:'Inter',sans-serif;transition:all 0.2s;display:inline-block;text-decoration:none;}
+.btn-outline:hover{border-color:var(--sage);color:var(--text);}
+
+/* HERO VISUAL — TOOL STACK */
+.hero-visual{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px;position:relative;overflow:hidden;}
+.hero-visual::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),var(--sage),transparent);}
+.hero-visual::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,var(--gold-glow),transparent);pointer-events:none;}
+.vs-title{font-family:'Sora',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+.vs-stack{display:flex;flex-direction:column;gap:8px;}
+.vs-item{background:var(--card-el);border:1px solid var(--border);border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:12px;transition:all 0.3s;}
+.vs-item:hover{border-color:rgba(142,168,150,0.4);transform:translateX(4px);}
+.vs-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-gold{background:var(--gold);}
+.dot-sage{background:var(--sage);}
+.dot-dim{background:var(--border);}
+.vs-name{font-family:'Sora',sans-serif;font-size:0.82rem;font-weight:600;color:var(--text);}
+.vs-desc{font-size:0.72rem;color:var(--text2);margin-left:auto;}
+
+/* SECTIONS */
+.section{max-width:1200px;margin:0 auto;padding:80px 60px;}
+.section-bg{background:var(--bg2);padding:80px 0;}
+.section-inner{max-width:1200px;margin:0 auto;padding:0 60px;}
+.section-label{font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.section-label::before{content:'';width:24px;height:1px;background:var(--gold);}
+.section-label.center{justify-content:center;}
+h2{font-family:'Sora',sans-serif;font-size:clamp(1.8rem,2.8vw,2.4rem);font-weight:800;line-height:1.2;letter-spacing:-0.025em;color:var(--text);margin-bottom:16px;}
+h2 .gold{color:var(--gold);}
+.sub{font-size:0.96rem;color:var(--text2);line-height:1.75;margin-bottom:40px;}
+
+/* WHY CARDS */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.why-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 20px;position:relative;overflow:hidden;transition:all 0.25s;}
+.why-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(142,168,150,0.25),transparent);}
+.why-card:hover{border-color:rgba(142,168,150,0.35);transform:translateY(-3px);}
+.why-icon{font-size:1.2rem;margin-bottom:10px;}
+.why-title{font-family:'Sora',sans-serif;font-size:0.88rem;font-weight:700;color:var(--text);}
+
+/* TOOLS GRID */
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.tool-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px 24px;transition:all 0.3s;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+.tool-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(224,168,107,0.25),transparent);}
+.tool-card:hover{border-color:rgba(142,168,150,0.4);transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,0.5);}
+.tool-icon{font-size:1.5rem;margin-bottom:14px;}
+.tool-name{font-family:'Sora',sans-serif;font-size:1rem;font-weight:700;color:var(--text);margin-bottom:8px;}
+.tool-benefit{font-size:0.83rem;color:var(--text2);line-height:1.6;margin-bottom:12px;flex:1;}
+.tool-best{font-size:0.72rem;color:var(--sage);font-weight:500;margin-bottom:18px;line-height:1.4;}
+.tool-best span{opacity:0.7;}
+.btn-tool{display:inline-block;background:var(--card-el);border:1px solid var(--border);color:var(--text2);padding:9px 18px;border-radius:8px;font-size:0.8rem;font-family:'Inter',sans-serif;transition:all 0.2s;text-decoration:none;font-weight:500;align-self:flex-start;}
+.btn-tool:hover{background:var(--cta);color:#08110D;border-color:var(--cta);}
+
+/* GOAL CARDS */
+.goal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.goal-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 22px;transition:all 0.25s;}
+.goal-card:hover{border-color:rgba(224,168,107,0.3);transform:translateY(-3px);}
+.goal-title{font-family:'Sora',sans-serif;font-size:0.88rem;font-weight:700;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.goal-links{display:flex;flex-direction:column;gap:6px;}
+.goal-links a{font-size:0.8rem;color:var(--text2);text-decoration:none;padding:4px 0;border-bottom:1px solid rgba(49,66,56,0.5);transition:color 0.2s;display:flex;align-items:center;gap:6px;}
+.goal-links a::before{content:'→';color:var(--sage);font-size:0.7rem;flex-shrink:0;}
+.goal-links a:hover{color:var(--text);}
+
+/* FLOW STEPS */
+.flow-steps{display:flex;flex-direction:column;gap:0;max-width:600px;margin:0 auto;}
+.flow-step{display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--border);}
+.flow-step:last-child{border-bottom:none;}
+.flow-num{width:36px;height:36px;border-radius:50%;background:var(--card-el);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:0.8rem;font-weight:700;color:var(--gold);flex-shrink:0;}
+.flow-text{font-size:0.9rem;color:var(--text2);line-height:1.65;padding-top:8px;}
+.flow-text strong{color:var(--text);display:block;font-weight:600;margin-bottom:2px;}
+
+/* RELATED SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.service-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 20px;text-decoration:none;transition:all 0.25s;display:block;}
+.service-card:hover{border-color:rgba(142,168,150,0.4);transform:translateY(-4px);}
+.sc-icon{font-size:1.2rem;margin-bottom:10px;}
+.sc-title{font-family:'Sora',sans-serif;font-size:0.88rem;font-weight:700;color:var(--text);margin-bottom:6px;}
+.sc-text{font-size:0.78rem;color:var(--text2);line-height:1.5;}
+.sc-arrow{font-size:0.75rem;color:var(--sage);margin-top:10px;}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:12px;max-width:720px;margin:0 auto;}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+.faq-q{font-family:'Sora',sans-serif;font-size:0.9rem;font-weight:700;color:var(--text);padding:20px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.faq-q::after{content:'+';color:var(--gold);font-size:1.1rem;flex-shrink:0;transition:transform 0.25s;}
+.faq-item.open .faq-q::after{transform:rotate(45deg);}
+.faq-a{font-size:0.85rem;color:var(--text2);line-height:1.7;padding:0 22px 20px;display:none;}
+.faq-item.open .faq-a{display:block;}
+
+/* FINAL CTA */
+.cta-box{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:60px 48px;text-align:center;position:relative;overflow:hidden;}
+.cta-box::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,var(--gold-glow),transparent),radial-gradient(ellipse 60% 40% at 50% 100%,var(--sage-glow),transparent);pointer-events:none;}
+.cta-box::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+
+/* FOOTER */
+footer{background:#060E09;border-top:1px solid var(--border);padding:56px 60px 28px;}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+.footer-col h4{font-family:'Sora',sans-serif;font-size:0.82rem;font-weight:700;color:var(--text);margin-bottom:14px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.footer-col ul li a{font-size:0.82rem;color:var(--text2);text-decoration:none;transition:color 0.2s;}
+.footer-col ul li a:hover{color:var(--text);}
+.footer-brand-text{font-size:0.82rem;color:var(--text2);line-height:1.6;margin:10px 0 16px;max-width:220px;}
+.footer-bottom{max-width:1200px;margin:0 auto;padding-top:20px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.footer-bottom p{font-size:0.78rem;color:var(--text2);}
+.footer-bottom a{color:var(--gold);text-decoration:none;}
+
+/* REVEAL */
+.reveal{opacity:1;transform:translateY(0);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.pre-reveal{opacity:0;transform:translateY(28px);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:0.1s;}
+.reveal-delay-2{transition-delay:0.2s;}
+.reveal-delay-3{transition-delay:0.3s;}
+.reveal-delay-4{transition-delay:0.4s;}
+
+@media(max-width:1100px){.tools-grid{grid-template-columns:1fr 1fr;}.goal-grid{grid-template-columns:1fr 1fr;}.services-grid{grid-template-columns:1fr 1fr;}.why-grid{grid-template-columns:1fr 1fr;}.page-hero{grid-template-columns:1fr;}.hero-visual{display:none;}}
+@media(max-width:768px){header{padding:0 20px;}nav{display:none;}.page-hero{padding:120px 24px 60px;}.section{padding-left:24px;padding-right:24px;}.section-inner{padding:0 24px;}.tools-grid{grid-template-columns:1fr;}.goal-grid{grid-template-columns:1fr;}.services-grid{grid-template-columns:1fr 1fr;}.why-grid{grid-template-columns:1fr;}.cta-box{padding:40px 24px;}footer{padding:40px 24px 24px;}.footer-inner{grid-template-columns:1fr 1fr;gap:24px;}}
+@media(prefers-reduced-motion:reduce){.reveal{transition:none;}.vs-item{transition:none;}}
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<header>
+  <a href="/" class="logo">
+    <svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="16" r="14" stroke="rgba(167,192,171,0.25)" stroke-width="1" stroke-dasharray="3 5"/>
+      <circle cx="16" cy="16" r="9.5" stroke="rgba(224,168,107,0.35)" stroke-width="1"/>
+      <circle cx="16" cy="16" r="7" fill="rgba(224,168,107,0.08)"/>
+      <ellipse cx="16" cy="12.8" rx="2.8" ry="3.2" fill="#A7C0AB" opacity="0.9"/>
+      <path d="M11.5 22.5 C11.5 18.8 13.4 17 16 17 C18.6 17 20.5 18.8 20.5 22.5" fill="#A7C0AB" opacity="0.75"/>
+      <circle cx="16" cy="2.5" r="2" fill="#E0A86B" opacity="0.9"/>
+      <circle cx="28.5" cy="19" r="1.4" fill="#A7C0AB" opacity="0.7"/>
+      <circle cx="4.5" cy="21" r="1.2" fill="rgba(167,192,171,0.5)"/>
+      <path d="M12.5 9.2 Q16 7.2 19.5 9.2" stroke="#E0A86B" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.7"/>
+    </svg>
+    <span class="logo-wordmark"><span class="known">Known</span><span class="ly">ly</span></span>
+  </a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/diagnosis.html">Diagnosis</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/early-access.html">Early Access</a>
+    <a href="/about.html">About</a>
+  </nav>
+  <div class="header-right">
+    <a href="/login.html" class="btn-ghost">Login</a>
+    <a href="/diagnosis.html" class="btn-primary">Start Free Diagnosis</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div>
+    <div class="hero-badge">Free Knownly Tools</div>
+    <h1>Free tools to build a clearer online presence.</h1>
+    <p class="gold-line">Start with direction. Then improve your profile, content and positioning.</p>
+    <p class="hero-sub">Knownly's free tools help you understand what you should be known for, what to post, how to improve your profile and how to create a stronger public signal.</p>
+    <div class="hero-ctas">
+      <a href="/diagnosis.html" class="btn-hero">Start Free Knownly Diagnosis</a>
+      <a href="#tools" class="btn-outline">Explore Tools ↓</a>
+    </div>
+  </div>
+  <div class="hero-visual reveal">
+    <div class="vs-title">Knownly Free Tools Stack</div>
+    <div class="vs-stack">
+      <div class="vs-item"><div class="vs-dot dot-gold"></div><div class="vs-name">Direction</div><div class="vs-desc">Archetype · Signal</div></div>
+      <div class="vs-item"><div class="vs-dot dot-sage"></div><div class="vs-name">Profile</div><div class="vs-desc">LinkedIn · Clarity</div></div>
+      <div class="vs-item"><div class="vs-dot dot-gold"></div><div class="vs-name">Content</div><div class="vs-desc">Pillars · Themes</div></div>
+      <div class="vs-item"><div class="vs-dot dot-sage"></div><div class="vs-name">LinkedIn</div><div class="vs-desc">Headline · Review</div></div>
+      <div class="vs-item"><div class="vs-dot dot-dim"></div><div class="vs-name">Niche</div><div class="vs-desc">Focus · Fit</div></div>
+      <div class="vs-item"><div class="vs-dot dot-dim"></div><div class="vs-name">Online Presence</div><div class="vs-desc">Audit · Trust</div></div>
+      <div class="vs-item"><div class="vs-dot dot-gold"></div><div class="vs-name">Founder Branding</div><div class="vs-desc">Authority · Proof</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY SECTION -->
+<div class="section-bg">
+  <div class="section-inner">
+    <div class="reveal" style="margin-bottom:40px;">
+      <div class="section-label">Why Knownly tools</div>
+      <h2>Most people do not need more random advice.<br>They need a <span class="gold">clearer signal.</span></h2>
+      <p class="sub" style="max-width:580px;">Knownly tools are built around clarity, positioning and online presence direction. They are designed to help you understand your strengths, your audience, your profile gaps and your content direction.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="why-icon">◎</div><div class="why-title">Discover your direction</div></div>
+      <div class="why-card reveal reveal-delay-1"><div class="why-icon">🔍</div><div class="why-title">Improve your profile clarity</div></div>
+      <div class="why-card reveal reveal-delay-2"><div class="why-icon">✦</div><div class="why-title">Find your content pillars</div></div>
+      <div class="why-card reveal reveal-delay-3"><div class="why-icon">🌿</div><div class="why-title">Build trust online</div></div>
+      <div class="why-card reveal reveal-delay-4"><div class="why-icon">⟳</div><div class="why-title">Understand your opportunity path</div></div>
+      <div class="why-card reveal"><div class="why-icon">⚡</div><div class="why-title">Avoid generic personal branding advice</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOOLS GRID -->
+<div class="section" id="tools">
+  <div class="reveal" style="margin-bottom:48px;">
+    <div class="section-label">All free tools</div>
+    <h2>Explore Knownly <span class="gold">free tools.</span></h2>
+  </div>
+  <div class="tools-grid">
+    <div class="tool-card reveal">
+      <div class="tool-icon">◎</div>
+      <div class="tool-name">What Should I Be Known For?</div>
+      <div class="tool-benefit">Find the clearest signal people should remember you for.</div>
+      <div class="tool-best"><span>Best for: </span>Anyone feeling unclear about identity, niche or direction.</div>
+      <a href="/what-should-i-be-known-for.html" class="btn-tool">Use Tool →</a>
+    </div>
+    <div class="tool-card reveal reveal-delay-1">
+      <div class="tool-icon">⚡</div>
+      <div class="tool-name">Personal Brand Quiz</div>
+      <div class="tool-benefit">Discover your Knownly archetype and personal brand direction.</div>
+      <div class="tool-best"><span>Best for: </span>Beginners, professionals, creators and career builders.</div>
+      <a href="/personal-brand-quiz.html" class="btn-tool">Use Tool →</a>
+    </div>
+    <div class="tool-card reveal reveal-delay-2">
+      <div class="tool-icon">🎯</div>
+      <div class="tool-name">Find My Niche</div>
+      <div class="tool-benefit">Find a niche that fits your strengths, interests and opportunity goals.</div>
+      <div class="tool-best"><span>Best for: </span>Creators, freelancers, professionals and founders.</div>
+      <a href="/find-my-niche.html" class="btn-tool">Use Tool →</a>
+    </div>
+    <div class="tool-card reveal">
+      <div class="tool-icon">🔗</div>
+      <div class="tool-name">LinkedIn Profile Review</div>
+      <div class="tool-benefit">Understand what your LinkedIn profile needs to communicate more clearly.</div>
+      <div class="tool-best"><span>Best for: </span>Job seekers, freelancers, founders and professionals.</div>
+      <a href="/linkedin-profile-review.html" class="btn-tool">Use Tool →</a>
+    </div>
+    <div class="tool-card reveal reveal-delay-1">
+      <div class="tool-icon">✦</div>
+      <div class="tool-name">Content Pillars Generator</div>
+      <div class="tool-benefit">Find repeatable content themes that support your public identity.</div>
+      <div class="tool-best"><span>Best for: </span>People who do not know what to post.</div>
+      <a href="/content-pillars-generator.html" class="btn-tool">Use Tool →</a>
+    </div>
+    <div class="tool-card reveal reveal-delay-2">
+      <div class="tool-icon">✏️</div>
+      <div class="tool-name">LinkedIn Headline Generator</div>
+      <div class="tool-benefit">Create a clearer LinkedIn headline around your value and direction.</div>
+      <div class="tool-best"><span>Best for: </span>Professionals, job seekers, freelancers and founders.</div>
+      <a href="/linkedin-headline-generator.html" class="btn-tool">Use Tool →</a>
+    </div>
+    <div class="tool-card reveal">
+      <div class="tool-icon">⋯</div>
+      <div class="tool-name">Personal Brand Statement Generator</div>
+      <div class="tool-benefit">Create a simple statement that explains who you are and what you help with.</div>
+      <div class="tool-best"><span>Best for: </span>Anyone building a clearer public signal.</div>
+      <a href="/personal-brand-statement-generator.html" class="btn-tool">Use Tool →</a>
+    </div>
+    <div class="tool-card reveal reveal-delay-1">
+      <div class="tool-icon">🌿</div>
+      <div class="tool-name">Online Presence Audit</div>
+      <div class="tool-benefit">Review your profile clarity, content consistency and trust signals.</div>
+      <div class="tool-best"><span>Best for: </span>Anyone whose online presence feels scattered or outdated.</div>
+      <a href="/online-presence-audit.html" class="btn-tool">Use Tool →</a>
+    </div>
+    <div class="tool-card reveal reveal-delay-2">
+      <div class="tool-icon">📖</div>
+      <div class="tool-name">How to Build Online Presence</div>
+      <div class="tool-benefit">Learn the Knownly framework for building online presence without becoming someone fake.</div>
+      <div class="tool-best"><span>Best for: </span>Beginners and professionals who want a practical starting point.</div>
+      <a href="/how-to-build-online-presence.html" class="btn-tool">Read Guide →</a>
+    </div>
+    <div class="tool-card reveal" style="grid-column:1/-1;max-width:400px;">
+      <div class="tool-icon">💭</div>
+      <div class="tool-name">I Don't Know What to Post</div>
+      <div class="tool-benefit">Turn uncertainty into content direction and simple post themes.</div>
+      <div class="tool-best"><span>Best for: </span>People stuck with content ideas.</div>
+      <a href="/i-dont-know-what-to-post.html" class="btn-tool">Use Tool →</a>
+    </div>
+  </div>
+</div>
+
+<!-- GOAL-BASED -->
+<div class="section-bg">
+  <div class="section-inner">
+    <div class="reveal" style="margin-bottom:48px;text-align:center;">
+      <div class="section-label center">By your goal</div>
+      <h2>Not sure where <span class="gold">to start?</span></h2>
+      <p class="sub" style="max-width:480px;margin:0 auto;">Find the right tool based on what you are trying to do right now.</p>
+    </div>
+    <div class="goal-grid">
+      <div class="goal-card reveal">
+        <div class="goal-title">◎ You want clarity</div>
+        <div class="goal-links">
+          <a href="/what-should-i-be-known-for.html">What Should I Be Known For?</a>
+          <a href="/personal-brand-quiz.html">Personal Brand Quiz</a>
+          <a href="/diagnosis.html">Free Knownly Diagnosis</a>
+        </div>
+      </div>
+      <div class="goal-card reveal reveal-delay-1">
+        <div class="goal-title">🔗 You want better LinkedIn</div>
+        <div class="goal-links">
+          <a href="/linkedin-headline-generator.html">LinkedIn Headline Generator</a>
+          <a href="/linkedin-profile-review.html">LinkedIn Profile Review</a>
+          <a href="/online-presence-audit.html">Online Presence Audit</a>
+        </div>
+      </div>
+      <div class="goal-card reveal reveal-delay-2">
+        <div class="goal-title">✦ You want content ideas</div>
+        <div class="goal-links">
+          <a href="/content-pillars-generator.html">Content Pillars Generator</a>
+          <a href="/i-dont-know-what-to-post.html">I Don't Know What to Post</a>
+          <a href="/find-my-niche.html">Find My Niche</a>
+        </div>
+      </div>
+      <div class="goal-card reveal">
+        <div class="goal-title">💼 You want career opportunities</div>
+        <div class="goal-links">
+          <a href="/personal-branding-for-job-seekers.html">Personal Branding for Job Seekers</a>
+          <a href="/linkedin-profile-review.html">LinkedIn Profile Review</a>
+          <a href="/diagnosis.html">Free Diagnosis</a>
+        </div>
+      </div>
+      <div class="goal-card reveal reveal-delay-1">
+        <div class="goal-title">⟳ You want clients</div>
+        <div class="goal-links">
+          <a href="/personal-branding-for-freelancers.html">Personal Branding for Freelancers</a>
+          <a href="/find-my-niche.html">Find My Niche</a>
+          <a href="/content-pillars-generator.html">Content Pillars Generator</a>
+        </div>
+      </div>
+      <div class="goal-card reveal reveal-delay-2">
+        <div class="goal-title">🌿 You are a founder</div>
+        <div class="goal-links">
+          <a href="/personal-branding-for-founders.html">Personal Branding for Founders</a>
+          <a href="/founder-personal-branding-service.html">Founder Personal Branding Service</a>
+          <a href="/executive-brand-studio.html">Executive Brand Studio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN KNOWNLY FLOW -->
+<div class="section">
+  <div class="reveal" style="text-align:center;margin-bottom:48px;">
+    <div class="section-label center">The main flow</div>
+    <h2>The best free tool is still the <span class="gold">Knownly Diagnosis.</span></h2>
+    <p class="sub" style="max-width:480px;margin:0 auto;">The diagnosis connects all the tools together — giving you direction, profile context and a next step in one report.</p>
+  </div>
+  <div class="flow-steps reveal">
+    <div class="flow-step">
+      <div class="flow-num">01</div>
+      <div class="flow-text"><strong>Answer thoughtful questions</strong>About your stage, goals, strengths, interests, style and current blockers.</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">02</div>
+      <div class="flow-text"><strong>Get your Knownly Direction Report</strong>See your archetype, hidden strengths, current blocker, content direction and next practical step.</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">03</div>
+      <div class="flow-text"><strong>Submit public profile links</strong>Share your LinkedIn, Instagram or other public profile links if you want a deeper analysis.</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">04</div>
+      <div class="flow-text"><strong>Unlock your Profile Report</strong>See how your visibility, positioning and profile gaps appear to others.</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">05</div>
+      <div class="flow-text"><strong>Choose deeper guidance only when ready</strong>Paid plans are optional and available when you want human-led help.</div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:40px;" class="reveal">
+    <a href="/diagnosis.html" class="btn-hero">Start Free Diagnosis</a>
+  </div>
+</div>
+
+<!-- RELATED SERVICES -->
+<div class="section-bg">
+  <div class="section-inner">
+    <div class="reveal" style="margin-bottom:40px;">
+      <div class="section-label">Related services</div>
+      <h2>When you are ready for <span class="gold">deeper support.</span></h2>
+    </div>
+    <div class="services-grid">
+      <a href="/pricing.html" class="service-card reveal">
+        <div class="sc-icon">◈</div>
+        <div class="sc-title">Knownly Plans</div>
+        <div class="sc-text">From free diagnosis to deep profile review, 30-day launchpad and brand builder.</div>
+        <div class="sc-arrow">View Pricing →</div>
+      </a>
+      <a href="/early-access.html" class="service-card reveal reveal-delay-1">
+        <div class="sc-icon">⚡</div>
+        <div class="sc-title">Early Access</div>
+        <div class="sc-text">Selected users may receive free human review of their profile and content direction.</div>
+        <div class="sc-arrow">Apply →</div>
+      </a>
+      <a href="/executive-brand-studio.html" class="service-card reveal reveal-delay-2">
+        <div class="sc-icon">✦</div>
+        <div class="sc-title">Executive Brand Studio</div>
+        <div class="sc-text">Done-for-you online presence for founders and leaders who want trust-building execution.</div>
+        <div class="sc-arrow">Learn More →</div>
+      </a>
+      <a href="/founder-personal-branding-service.html" class="service-card reveal reveal-delay-3">
+        <div class="sc-icon">🌿</div>
+        <div class="sc-title">Founder Branding Service</div>
+        <div class="sc-text">Human-led founder visibility, authority and market presence strategy.</div>
+        <div class="sc-arrow">Learn More →</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="section">
+  <div class="reveal" style="text-align:center;margin-bottom:40px;">
+    <div class="section-label center">FAQ</div>
+    <h2>Common <span class="gold">questions.</span></h2>
+  </div>
+  <div class="faq-list reveal">
+    <div class="faq-item">
+      <div class="faq-q">Are Knownly tools free?</div>
+      <div class="faq-a">Yes. The free tools and free diagnosis are designed to help users start with clarity. Deeper paid plans are optional and available when you want human-led support.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Which tool should I start with?</div>
+      <div class="faq-a">Start with the free Knownly Diagnosis if you are unsure. It connects your strengths, goals, content style and blocker into a clearer direction and feeds into all other tools.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Are these tools only for LinkedIn?</div>
+      <div class="faq-a">No. Knownly helps with online presence across LinkedIn, Instagram, X, YouTube, websites and other public profiles. Some tools focus on LinkedIn specifically, but most are platform-agnostic.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do these tools guarantee followers or clients?</div>
+      <div class="faq-a">No. Knownly helps with clarity, positioning and opportunity readiness. It does not guarantee followers, clients, jobs or income. Results depend on your execution, consistency and context.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can founders use these tools?</div>
+      <div class="faq-a">Yes. Founders can use the tools to clarify their founder-led voice, profile, content direction and trust-building strategy. There are also dedicated founder branding pages and services.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div class="section-bg">
+  <div style="max-width:700px;margin:0 auto;padding:0 60px;">
+    <div class="cta-box reveal">
+      <div class="section-label center" style="position:relative;z-index:1;">Start here</div>
+      <h2 style="position:relative;z-index:1;margin-bottom:14px;">Start with the tool that gives you <span class="gold">direction.</span></h2>
+      <p style="font-size:0.95rem;color:var(--text2);max-width:440px;margin:0 auto 32px;position:relative;z-index:1;line-height:1.75;">Take the free Knownly Diagnosis and discover what you should be known for, what content fits you and how to build a stronger online presence.</p>
+      <a href="/diagnosis.html" class="btn-hero" style="position:relative;z-index:1;">Start Free Diagnosis</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <a href="/" class="logo" style="margin-bottom:0">
+        <svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" stroke="rgba(167,192,171,0.25)" stroke-width="1" stroke-dasharray="3 5"/>
+          <circle cx="16" cy="16" r="9.5" stroke="rgba(224,168,107,0.35)" stroke-width="1"/>
+          <circle cx="16" cy="16" r="7" fill="rgba(224,168,107,0.08)"/>
+          <ellipse cx="16" cy="12.8" rx="2.8" ry="3.2" fill="#A7C0AB" opacity="0.9"/>
+          <path d="M11.5 22.5 C11.5 18.8 13.4 17 16 17 C18.6 17 20.5 18.8 20.5 22.5" fill="#A7C0AB" opacity="0.75"/>
+          <circle cx="16" cy="2.5" r="2" fill="#E0A86B" opacity="0.9"/>
+          <circle cx="28.5" cy="19" r="1.4" fill="#A7C0AB" opacity="0.7"/>
+          <circle cx="4.5" cy="21" r="1.2" fill="rgba(167,192,171,0.5)"/>
+          <path d="M12.5 9.2 Q16 7.2 19.5 9.2" stroke="#E0A86B" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.7"/>
+        </svg>
+        <span class="logo-wordmark"><span class="known">Known</span><span class="ly">ly</span></span>
+      </a>
+      <p class="footer-brand-text">Personal Intelligence for Online Presence. WhatAmIKnownFor.com</p>
+    </div>
+    <div class="footer-col">
+      <h4>Free Tools</h4>
+      <ul>
+        <li><a href="/what-should-i-be-known-for.html">What Am I Known For?</a></li>
+        <li><a href="/personal-brand-quiz.html">Personal Brand Quiz</a></li>
+        <li><a href="/linkedin-headline-generator.html">LinkedIn Headline</a></li>
+        <li><a href="/online-presence-audit.html">Online Presence Audit</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="/diagnosis.html">Diagnosis</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/early-access.html">Early Access</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms of Use</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Knownly. All rights reserved.</p>
+    <p><a href="https://WhatAmIKnownFor.com">WhatAmIKnownFor.com</a></p>
+  </div>
+</footer>
+
+<script>
+const pb=document.getElementById('progress-bar');
+window.addEventListener('scroll',()=>{const s=document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;pb.style.width=(s/h*100)+'%';});
+const reveals=document.querySelectorAll('.reveal');
+reveals.forEach(el=>el.classList.add('pre-reveal'));
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.remove('pre-reveal');e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px 60px 0px'});
+reveals.forEach(el=>obs.observe(el));
+setTimeout(()=>{document.querySelectorAll('.reveal').forEach(el=>{el.classList.remove('pre-reveal');el.classList.add('visible');});},700);
+document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const item=q.parentElement;const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open');});});
+</script>
+</body>
+</html>

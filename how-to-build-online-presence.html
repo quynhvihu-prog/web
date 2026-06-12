@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Build an Online Presence — Knownly Personal Direction Guide</title>
+<meta name="description" content="Learn how to build an online presence with clarity, positioning, content direction and trust. Start with the free Knownly Diagnosis to find your best-fit path.">
+<link rel="canonical" href="https://whatamiknownfor.com/how-to-build-online-presence.html">
+
+<meta property="og:title" content="How to Build an Online Presence — Knownly Personal Direction Guide">
+<meta property="og:description" content="Learn how to build an online presence with clarity, positioning, content direction and trust. Start with the free Knownly Diagnosis to find your best-fit path.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://whatamiknownfor.com/how-to-build-online-presence.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How do I start building an online presence?","acceptedAnswer":{"@type":"Answer","text":"Start by clarifying what you want to be known for, who you want to attract, and what content themes support that direction."}},
+    {"@type":"Question","name":"Do I need to post every day?","acceptedAnswer":{"@type":"Answer","text":"No. Consistency matters, but clarity matters first. A few clear, useful posts can be better than daily random posting."}},
+    {"@type":"Question","name":"Which platform should I start with?","acceptedAnswer":{"@type":"Answer","text":"LinkedIn is usually best for professional visibility, founders, freelancers and career growth. But your best-fit platform depends on your goal, style and audience."}},
+    {"@type":"Question","name":"Can I build online presence without showing my personal life?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can build presence through expertise, insights, examples, proof, writing and useful content without oversharing."}},
+    {"@type":"Question","name":"Does Knownly guarantee growth?","acceptedAnswer":{"@type":"Answer","text":"No. Knownly helps with clarity, positioning and opportunity readiness. It does not guarantee followers, clients, jobs or income."}}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#08110D;
+    --bg2:#0D1713;
+    --card:#14201A;
+    --card-elev:#182620;
+    --text:#F7F2E8;
+    --text2:#B9C3B7;
+    --cta:#8EA896;
+    --cta-hover:#7C9885;
+    --gold:#E0A86B;
+    --border:#314238;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;}
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:700;line-height:1.25;}
+  a{color:inherit;}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  #scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--cta),var(--gold));z-index:1000;transition:width .1s ease-out;}
+
+  header{position:sticky;top:0;z-index:100;background:rgba(8,17,13,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:20px;}
+  .logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:.5px;text-decoration:none;}
+  .logo span{color:var(--gold);}
+  nav.main-nav{display:flex;gap:26px;align-items:center;}
+  nav.main-nav a{color:var(--text2);text-decoration:none;font-size:.95rem;font-weight:500;transition:color .2s;}
+  nav.main-nav a:hover{color:var(--text);}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border-radius:999px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;transition:all .25s ease;white-space:nowrap;}
+  .btn-primary{background:var(--cta);color:#0B1410;}
+  .btn-primary:hover{background:var(--cta-hover);transform:translateY(-1px);}
+  .btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border);}
+  .btn-secondary:hover{border-color:var(--cta);color:var(--cta);}
+  .menu-toggle{display:none;}
+
+  .hero{padding:80px 0 60px;background:radial-gradient(ellipse at top, rgba(142,168,150,0.08), transparent 60%);}
+  .badge{display:inline-block;padding:8px 18px;border-radius:999px;background:var(--card-elev);border:1px solid var(--border);color:var(--gold);font-size:.85rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:24px;}
+  .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center;}
+  .hero h1{font-size:clamp(2rem,4.5vw,3.1rem);margin-bottom:14px;}
+  .gold-line{color:var(--gold);font-weight:700;font-size:1.1rem;margin-bottom:16px;font-family:'Sora',sans-serif;}
+  .hero .sub{color:var(--text2);font-size:clamp(1rem,2vw,1.1rem);margin-bottom:32px;max-width:600px;}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:16px;}
+
+  /* Online Presence Map card */
+  .map-card{background:linear-gradient(160deg,var(--card-elev),var(--card));border:1px solid var(--border);border-radius:22px;padding:30px;box-shadow:0 0 60px rgba(142,168,150,0.08);}
+  .map-card h3{font-size:1rem;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:20px;text-align:center;}
+  .map-list{display:flex;flex-direction:column;gap:12px;}
+  .map-item{display:flex;align-items:center;gap:14px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:14px 16px;font-size:.95rem;font-weight:600;}
+  .map-num{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--card-elev);color:var(--gold);font-family:'Sora',sans-serif;font-weight:700;font-size:.85rem;border:1px solid var(--border);flex-shrink:0;}
+
+  section{padding:70px 0;}
+  .section-bg{background:var(--bg2);}
+  .section-tag{color:var(--gold);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;}
+  .section-heading{font-size:clamp(1.6rem,3.5vw,2.4rem);margin-bottom:18px;max-width:760px;}
+  .section-text{color:var(--text2);max-width:760px;font-size:1.02rem;margin-bottom:36px;}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .cards-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .info-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;transition:transform .3s ease,border-color .3s ease;}
+  .info-card:hover{transform:translateY(-4px);border-color:var(--cta);}
+  .info-card .num{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--card-elev);color:var(--gold);font-weight:700;font-family:'Sora',sans-serif;margin-bottom:16px;border:1px solid var(--border);font-size:.9rem;}
+  .info-card h4{font-size:1.1rem;margin-bottom:10px;}
+  .info-card p{color:var(--text2);font-size:.95rem;}
+
+  .checklist{display:flex;flex-direction:column;gap:0;background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;}
+  .check-item{display:flex;align-items:flex-start;gap:16px;padding:18px 24px;border-bottom:1px solid var(--border);}
+  .check-item:last-child{border-bottom:none;}
+  .check-box{flex-shrink:0;width:22px;height:22px;border-radius:6px;border:1px solid var(--border);background:var(--bg2);margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+  .check-box.checked{background:var(--cta);border-color:var(--cta);}
+  .check-box.checked::after{content:'✓';color:#0B1410;font-weight:800;font-size:.85rem;}
+  .check-text{font-size:.98rem;color:var(--text);}
+
+  .checklist-result{margin-top:24px;background:var(--card-elev);border:1px solid var(--border);border-radius:14px;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+  .checklist-result .score{font-family:'Sora',sans-serif;font-weight:800;color:var(--gold);font-size:1.3rem;}
+
+  .platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .platform-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px;transition:transform .3s ease,border-color .3s;}
+  .platform-card:hover{transform:translateY(-4px);border-color:var(--gold);}
+  .platform-card h4{color:var(--gold);font-size:1.1rem;margin-bottom:10px;}
+  .platform-card p{color:var(--text2);font-size:.92rem;}
+
+  .output-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:36px;}
+  .output-chip{background:var(--card-elev);border:1px solid var(--border);border-radius:14px;padding:18px 20px;font-weight:600;font-size:.95rem;text-align:center;}
+
+  .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .related-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;text-decoration:none;color:var(--text);transition:transform .3s ease,border-color .3s;display:block;}
+  .related-card:hover{transform:translateY(-4px);border-color:var(--cta);}
+  .related-card .tag{font-size:.75rem;color:var(--gold);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:8px;display:block;}
+  .related-card h4{font-size:1.02rem;}
+
+  .faq-item{border:1px solid var(--border);border-radius:14px;margin-bottom:14px;background:var(--card);overflow:hidden;}
+  .faq-question{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-family:'Sora',sans-serif;font-size:1rem;user-select:none;}
+  .faq-icon{font-size:1.3rem;color:var(--gold);transition:transform .3s;}
+  .faq-item.open .faq-icon{transform:rotate(45deg);}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;padding:0 24px;color:var(--text2);font-size:.95rem;}
+  .faq-item.open .faq-answer{max-height:300px;padding:0 24px 22px;}
+
+  .final-cta{text-align:center;background:linear-gradient(160deg,var(--card-elev),var(--card));border:1px solid var(--border);border-radius:24px;padding:60px 30px;box-shadow:0 0 60px rgba(142,168,150,0.06);}
+  .final-cta h2{font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:14px;}
+  .final-cta p{color:var(--text2);max-width:600px;margin:0 auto 30px;}
+
+  footer{background:var(--bg2);border-top:1px solid var(--border);padding:50px 0 30px;}
+  .footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-bottom:30px;}
+  .footer-brand .logo{margin-bottom:8px;}
+  .footer-brand p{color:var(--text2);font-size:.9rem;}
+  .footer-links{display:flex;gap:14px;flex-wrap:wrap;}
+  .footer-links a{color:var(--text2);text-decoration:none;font-size:.9rem;transition:color .2s;}
+  .footer-links a:hover{color:var(--cta);}
+  .footer-bottom{border-top:1px solid var(--border);padding-top:20px;color:var(--text2);font-size:.82rem;text-align:center;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;}
+    .reveal{opacity:1;transform:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .cards-grid, .cards-2, .platform-grid, .output-grid, .related-grid{grid-template-columns:1fr 1fr;}
+    nav.main-nav{display:none;}
+  }
+  @media (max-width:560px){
+    .cards-grid, .cards-2, .platform-grid, .output-grid, .related-grid{grid-template-columns:1fr;}
+    section{padding:50px 0;}
+    .hero{padding:50px 0 40px;}
+    .checklist-result{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<header>
+  <div class="container nav-wrap">
+    <a href="/" class="logo">Known<span>ly</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/diagnosis.html">Diagnosis</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/early-access.html">Early Access</a>
+      <a href="/about.html">About</a>
+      <a href="/login.html">Login</a>
+    </nav>
+    <a href="/diagnosis.html" class="btn btn-primary">Start Free Diagnosis</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">Online Presence Guide</div>
+      <h1>How to build an online presence without becoming someone you are not.</h1>
+      <div class="gold-line">Start with clarity before content.</div>
+      <p class="sub">Most people try to build an online presence by posting more. Knownly starts differently: first understand what you should be known for, who should remember you, and what signal your profile and content should repeat.</p>
+      <div class="hero-ctas">
+        <a href="/diagnosis.html" class="btn btn-primary">Start Free Knownly Diagnosis</a>
+        <a href="#framework" class="btn btn-secondary">See the Framework</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="map-card">
+        <h3>Online Presence Map</h3>
+        <div class="map-list">
+          <div class="map-item"><span class="map-num">1</span> Identity</div>
+          <div class="map-item"><span class="map-num">2</span> Strengths</div>
+          <div class="map-item"><span class="map-num">3</span> Audience</div>
+          <div class="map-item"><span class="map-num">4</span> Platform</div>
+          <div class="map-item"><span class="map-num">5</span> Content Pillars</div>
+          <div class="map-item"><span class="map-num">6</span> Trust Signals</div>
+          <div class="map-item"><span class="map-num">7</span> Opportunity Path</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1 -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">Why It Feels Hard</div>
+    <h2 class="section-heading">Posting more is not the same as becoming known.</h2>
+    <p class="section-text">A strong online presence is not just frequency. It is the combination of clarity, repeated signal, profile proof, useful content and trust. Without these, more posting often just means more noise.</p>
+    <div class="cards-grid">
+      <div class="info-card"><div class="num">1</div><h4>No clear signal</h4><p>People scroll past because they cannot tell what you stand for or what you know.</p></div>
+      <div class="info-card"><div class="num">2</div><h4>Too many topics</h4><p>Switching between unrelated themes makes it hard for anyone to remember you for one thing.</p></div>
+      <div class="info-card"><div class="num">3</div><h4>Weak profile positioning</h4><p>Your headline and bio do not explain your value clearly enough in a few seconds.</p></div>
+      <div class="info-card"><div class="num">4</div><h4>Inconsistent content</h4><p>Sporadic posting with no pattern makes it hard to build recognition over time.</p></div>
+      <div class="info-card"><div class="num">5</div><h4>No proof or trust signals</h4><p>Opinions without examples, results or experience feel less credible to your audience.</p></div>
+      <div class="info-card"><div class="num">6</div><h4>No clear audience</h4><p>Without knowing who you want to attract, it is hard to choose what to say or how to say it.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">What It Actually Means</div>
+    <h2 class="section-heading">Online presence means people can understand, remember and trust you.</h2>
+    <p class="section-text">Your online presence is the public version of your value. It should help people quickly understand who you are, what you understand, what you can help with, why they should trust you, and what to remember you for.</p>
+    <div class="cards-2">
+      <div class="info-card"><h4>Understand</h4><p>A visitor should be able to grasp what you do and what you know within a few seconds of viewing your profile.</p></div>
+      <div class="info-card"><h4>Remember</h4><p>A clear, repeated signal makes it more likely that people recall you when relevant opportunities come up.</p></div>
+      <div class="info-card"><h4>Trust</h4><p>Consistency, proof and useful content help build the kind of trust that supports real conversations.</p></div>
+      <div class="info-card"><h4>Act</h4><p>A clear next step — whether that is a message, a follow, or a visit to your site — gives your presence direction.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: FRAMEWORK -->
+<section class="section-bg" id="framework">
+  <div class="container reveal">
+    <div class="section-tag">The Knownly Framework</div>
+    <h2 class="section-heading">Build your online presence in 6 layers.</h2>
+    <p class="section-text">Each layer builds on the one before it. Skipping ahead to content without the earlier layers is one of the most common reasons online presence efforts feel scattered.</p>
+    <div class="cards-grid">
+      <div class="info-card"><div class="num">1</div><h4>Direction</h4><p>What should you be known for?</p></div>
+      <div class="info-card"><div class="num">2</div><h4>Positioning</h4><p>Who should understand your value?</p></div>
+      <div class="info-card"><div class="num">3</div><h4>Profile</h4><p>Does your profile clearly explain your signal?</p></div>
+      <div class="info-card"><div class="num">4</div><h4>Content Pillars</h4><p>What themes will you repeat?</p></div>
+      <div class="info-card"><div class="num">5</div><h4>Proof</h4><p>What experience, work or insight makes you credible?</p></div>
+      <div class="info-card"><div class="num">6</div><h4>Opportunity Path</h4><p>What should your visibility lead toward?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: CHECKLIST -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">Mini Self-Check</div>
+    <h2 class="section-heading">Before posting more, check these 10 things.</h2>
+    <p class="section-text">Tap each item that is currently true for you. This is a quick self-check, not a diagnosis — but it can help you see where the gaps are.</p>
+    <div class="checklist" id="checklist">
+      <div class="check-item"><div class="check-box" data-checked="false"></div><div class="check-text">Does your bio/headline clearly say what you do or understand?</div></div>
+      <div class="check-item"><div class="check-box" data-checked="false"></div><div class="check-text">Can someone remember one main thing about you?</div></div>
+      <div class="check-item"><div class="check-box" data-checked="false"></div><div class="check-text">Do your recent posts support the same direction?</div></div>
+      <div class="check-item"><div class="check-box" data-checked="false"></div><div class="check-text">Do you have 3 clear content pillars?</div></div>
+      <div class="check-item"><div class="check-box" data-checked="false"></div><div class="check-text">Do you show proof, not only opinions?</div></div>
+      <div class="check-item"><div class="check-box" data-checked="false"></div><div class="check-text">Do you know who you want to attract?</div></div>
+      <div class="check-item"><div class="check-box" data-checked="false"></div><div class="check-text">Is your profile updated and consistent?</div></div>
+      <div class="check-item"><div class="check-box" data-checked="false"></div><div class="check-text">Do you have one clear next step or CTA?</div></div>
+      <div class="check-item"><div class="check-box" data-checked="false"></div><div class="check-text">Do you avoid copying creators who do not fit your style?</div></div>
+      <div class="check-item"><div class="check-box" data-checked="false"></div><div class="check-text">Do you know what kind of opportunities you want?</div></div>
+    </div>
+    <div class="checklist-result">
+      <div><span class="score" id="check-score">0 / 10</span> <span style="color:var(--text2);font-size:.9rem;"> checked</span></div>
+      <div style="color:var(--text2);font-size:.92rem;max-width:420px;" id="check-message">If you are unsure about most of these, start with the Knownly Diagnosis.</div>
+    </div>
+    <div style="margin-top:28px;">
+      <a href="/diagnosis.html" class="btn btn-primary">Find My Online Presence Direction</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: PLATFORMS -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">Platform Fit</div>
+    <h2 class="section-heading">Best platform by goal.</h2>
+    <p class="section-text">There is no single "best" platform — the right one depends on your goal, your natural style and the audience you want to reach.</p>
+    <div class="platform-grid">
+      <div class="platform-card"><h4>LinkedIn</h4><p>Best for career growth, professional credibility, founder trust, B2B clients and expert positioning.</p></div>
+      <div class="platform-card"><h4>Instagram</h4><p>Best for visual storytelling, creator identity, lifestyle-led credibility, community and coaching.</p></div>
+      <div class="platform-card"><h4>X / Twitter</h4><p>Best for sharp opinions, industry commentary, startup/building-in-public, creator networks and fast idea testing.</p></div>
+      <div class="platform-card"><h4>YouTube</h4><p>Best for deeper trust, teaching, long-form authority, personal connection and expertise building.</p></div>
+      <div class="platform-card"><h4>Website / Portfolio</h4><p>Best for proof, owned presence, credibility, offers, case studies and long-term trust.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: MISTAKES -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">Common Mistakes</div>
+    <h2 class="section-heading">Patterns that quietly slow people down.</h2>
+    <div class="cards-grid">
+      <div class="info-card"><h4>Posting random motivation</h4><p>Generic motivational content rarely builds a clear signal about what you actually know or do.</p></div>
+      <div class="info-card"><h4>Copying loud creators</h4><p>A style that does not match your personality is hard to sustain and can feel inauthentic.</p></div>
+      <div class="info-card"><h4>Talking about everything</h4><p>Covering too many unrelated topics makes it harder for people to know what to remember you for.</p></div>
+      <div class="info-card"><h4>Chasing virality before positioning</h4><p>Attention without a clear direction behind it is difficult to convert into trust or opportunity.</p></div>
+      <div class="info-card"><h4>Ignoring profile clarity</h4><p>Even great content can underperform if your profile does not explain who you are.</p></div>
+      <div class="info-card"><h4>Selling before building trust</h4><p>Offers tend to land better once people already understand and trust your direction.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: HOW KNOWNLY HELPS -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">How Knownly Helps</div>
+    <h2 class="section-heading">Knownly helps you build online presence from the inside out.</h2>
+    <p class="section-text">Knownly first diagnoses your stage, strengths, topics, blocker, natural style, desired outcome and public profile direction. Then it gives you a personal report showing your archetype, content direction, best-fit platform and next practical step.</p>
+    <div class="output-grid">
+      <div class="output-chip">Knownly Archetype</div>
+      <div class="output-chip">What you should be known for</div>
+      <div class="output-chip">Content pillars</div>
+      <div class="output-chip">Profile gap</div>
+      <div class="output-chip">Opportunity path</div>
+      <div class="output-chip">7-day action plan</div>
+    </div>
+    <a href="/diagnosis.html" class="btn btn-primary">Start Free Diagnosis</a>
+  </div>
+</section>
+
+<!-- RELATED PAGES -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">Continue Exploring</div>
+    <h2 class="section-heading">Related Knownly tools and guides.</h2>
+    <div class="related-grid">
+      <a href="/what-should-i-be-known-for.html" class="related-card"><span class="tag">Direction</span><h4>What Should I Be Known For?</h4></a>
+      <a href="/personal-brand-quiz.html" class="related-card"><span class="tag">Quiz</span><h4>Personal Brand Quiz</h4></a>
+      <a href="/find-my-niche.html" class="related-card"><span class="tag">Niche</span><h4>Find My Niche</h4></a>
+      <a href="/linkedin-profile-review.html" class="related-card"><span class="tag">Profile</span><h4>LinkedIn Profile Review</h4></a>
+      <a href="/content-pillars-generator.html" class="related-card"><span class="tag">Content</span><h4>Content Pillars Generator</h4></a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">FAQ</div>
+    <h2 class="section-heading">Frequently asked questions.</h2>
+    <div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>How do I start building an online presence?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Start by clarifying what you want to be known for, who you want to attract, and what content themes support that direction.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Do I need to post every day?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>No. Consistency matters, but clarity matters first. A few clear, useful posts can be better than daily random posting.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Which platform should I start with?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>LinkedIn is usually best for professional visibility, founders, freelancers and career growth. But your best-fit platform depends on your goal, style and audience.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Can I build online presence without showing my personal life?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Yes. You can build presence through expertise, insights, examples, proof, writing and useful content without oversharing.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Does Knownly guarantee growth?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>No. Knownly helps with clarity, positioning and opportunity readiness. It does not guarantee followers, clients, jobs or income.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section>
+  <div class="container reveal">
+    <div class="final-cta">
+      <h2>Your online presence starts with direction, not more posting.</h2>
+      <p>Take the free Knownly Diagnosis to find your archetype, content direction, best-fit platform and a practical next step.</p>
+      <a href="/diagnosis.html" class="btn btn-primary">Start Free Knownly Diagnosis</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">Known<span style="color:var(--gold)">ly</span></div>
+        <p>WhatAmIKnownFor.com<br>Personal Intelligence for Online Presence</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/diagnosis.html">Diagnosis</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/early-access.html">Early Access</a>
+        <a href="/about.html">About</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Knownly. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Scroll progress
+  var progress = document.getElementById('scroll-progress');
+  function updateProgress(){
+    var h = document.documentElement;
+    var scrollTop = h.scrollTop || document.body.scrollTop;
+    var height = h.scrollHeight - h.clientHeight;
+    var pct = height > 0 ? (scrollTop / height) * 100 : 0;
+    progress.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress, {passive:true});
+  updateProgress();
+
+  // Reveal on scroll
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if(prefersReduced){
+    reveals.forEach(function(el){ el.classList.add('visible'); });
+  } else {
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12});
+    reveals.forEach(function(el){ observer.observe(el); });
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(function(q){
+    function toggle(){
+      var item = q.parentElement;
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(o){
+        o.classList.remove('open');
+        o.querySelector('.faq-question').setAttribute('aria-expanded','false');
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        q.setAttribute('aria-expanded','true');
+      }
+    }
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+
+  // Checklist
+  var boxes = document.querySelectorAll('.check-box');
+  var scoreEl = document.getElementById('check-score');
+  var msgEl = document.getElementById('check-message');
+  function updateScore(){
+    var checked = document.querySelectorAll('.check-box.checked').length;
+    scoreEl.textContent = checked + ' / ' + boxes.length;
+    if(checked <= 4){
+      msgEl.textContent = 'A lot of gaps here — the Knownly Diagnosis can help you find a clear starting direction.';
+    } else if(checked <= 7){
+      msgEl.textContent = 'You have a foundation, but a clearer direction could sharpen your signal further.';
+    } else {
+      msgEl.textContent = 'Solid foundation. Knownly can help you refine your direction and content pillars further.';
+    }
+  }
+  boxes.forEach(function(box){
+    box.addEventListener('click', function(){
+      var checked = box.classList.toggle('checked');
+      box.dataset.checked = checked ? 'true' : 'false';
+      updateScore();
+    });
+  });
+  updateScore();
+})();
+</script>
+
+</body>
+</html>

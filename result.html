@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Knownly Direction Report — Discover What You Should Be Known For</title>
+<meta name="description" content="View your Knownly direction report with your archetype, hidden strengths, blocker, content direction, opportunity path and next practical step.">
+<link rel="canonical" href="https://whatamiknownfor.com/result.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08110D;--bg2:#0D1713;--card:#14201A;--card-elev:#182620;
+  --text:#F7F2E8;--text2:#B9C3B7;--cta:#8EA896;--cta-hover:#7C9885;
+  --gold:#E0A86B;--border:#314238;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:700;line-height:1.25;}
+a{color:inherit;}
+
+.container{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+/* Scroll progress */
+#scroll-progress{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--cta),var(--gold));z-index:1000;transition:width .1s ease-out;}
+
+/* Header */
+header{position:sticky;top:0;z-index:100;background:rgba(8,17,13,0.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:16px;}
+.logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.35rem;letter-spacing:.3px;text-decoration:none;color:var(--text);}
+.logo span{color:var(--gold);}
+nav.main-nav{display:flex;gap:6px;align-items:center;}
+nav.main-nav a{color:var(--text2);text-decoration:none;font-size:.9rem;font-weight:500;padding:5px 10px;border-radius:6px;transition:color .2s,background .2s;}
+nav.main-nav a:hover{color:var(--text);background:rgba(255,255,255,.04);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 22px;border-radius:8px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-weight:600;font-size:.9rem;text-decoration:none;transition:all .22s ease;white-space:nowrap;}
+.btn:active{transform:scale(.97);}
+.btn-primary{background:var(--cta);color:#0B1410;}
+.btn-primary:hover{background:var(--cta-hover);}
+.btn-secondary{background:transparent;color:var(--text2);border:1.5px solid var(--border);}
+.btn-secondary:hover{border-color:var(--cta);color:var(--text);}
+.btn-ghost{background:var(--card-elev);color:var(--text2);border:1px solid var(--border);font-size:.85rem;padding:9px 16px;border-radius:6px;}
+.btn-ghost:hover{color:var(--text);border-color:var(--cta);}
+@media(max-width:700px){nav.main-nav a:not(.nav-keep){display:none;}}
+
+/* Hero */
+.hero{padding:72px 0 56px;background:radial-gradient(ellipse at top, rgba(142,168,150,0.07), transparent 60%);}
+.badge{display:inline-block;padding:6px 16px;border-radius:20px;background:rgba(224,168,107,.1);border:1px solid rgba(224,168,107,.22);color:var(--gold);font-size:.8rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:22px;}
+.hero h1{font-size:clamp(1.8rem,4.5vw,3rem);max-width:860px;margin-bottom:18px;}
+.hero h1 .accent{color:var(--gold);}
+.hero .sub{color:var(--text2);font-size:clamp(.95rem,2vw,1.1rem);max-width:700px;margin-bottom:32px;line-height:1.75;}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:44px;}
+
+.summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.summary-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;transition:transform .3s ease,border-color .3s ease;}
+.summary-card:hover{transform:translateY(-3px);border-color:rgba(142,168,150,.3);}
+.summary-card .label{font-size:.75rem;color:var(--text2);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;font-weight:600;}
+.summary-card .value{font-family:'Sora',sans-serif;font-weight:700;font-size:1.05rem;color:var(--text);}
+
+/* Sections */
+section{padding:68px 0;}
+.section-bg{background:var(--bg2);}
+.section-tag{color:var(--gold);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;}
+.section-heading{font-size:clamp(1.5rem,3.5vw,2.3rem);margin-bottom:16px;max-width:760px;}
+.section-text{color:var(--text2);max-width:760px;font-size:1rem;margin-bottom:32px;line-height:1.75;}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* Snapshot */
+.snapshot-card{background:linear-gradient(160deg,var(--card-elev),var(--card));border:1px solid var(--border);border-radius:22px;padding:36px;box-shadow:0 0 60px rgba(142,168,150,0.05);}
+.snapshot-archetype{font-family:'Sora',sans-serif;font-weight:800;font-size:clamp(1.3rem,3vw,2rem);color:var(--gold);margin-bottom:8px;}
+.snapshot-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:26px;}
+.snapshot-item .label{font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+.snapshot-item .val{font-size:1rem;color:var(--text);line-height:1.6;}
+
+/* Proof highlight — new */
+.proof-card{background:var(--card-elev);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:14px;padding:22px 24px;margin-top:20px;}
+.proof-card .proof-label{font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--gold);font-weight:700;margin-bottom:8px;}
+.proof-card .proof-text{font-size:.97rem;color:var(--text2);line-height:1.7;font-style:italic;}
+
+/* Perceived — new */
+.perceived-card{background:var(--card-elev);border:1px solid var(--border);border-left:3px solid var(--cta);border-radius:14px;padding:22px 24px;margin-top:14px;}
+.perceived-card .perceived-label{font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--cta);font-weight:700;margin-bottom:8px;}
+.perceived-card .perceived-text{font-size:.97rem;color:var(--text2);line-height:1.7;font-style:italic;}
+
+/* Info cards */
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.info-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px;transition:transform .3s ease,border-color .3s ease;}
+.info-card:hover{transform:translateY(-3px);border-color:var(--cta);}
+.info-card .tag{display:inline-block;font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--cta);font-weight:700;margin-bottom:10px;}
+.info-card h4{font-size:1.05rem;margin-bottom:8px;}
+.info-card p{color:var(--text2);font-size:.92rem;line-height:1.6;}
+
+/* Highlight box */
+.highlight-box{background:var(--card-elev);border:1px solid var(--border);border-radius:20px;padding:38px;text-align:center;box-shadow:0 0 50px rgba(224,168,107,0.05);}
+.highlight-box .lead{color:var(--text2);margin-bottom:12px;font-size:.97rem;}
+.highlight-box .statement{font-family:'Sora',sans-serif;font-weight:800;font-size:clamp(1.2rem,3.5vw,2rem);color:var(--gold);max-width:800px;margin:0 auto;}
+.highlight-note{color:var(--text2);margin-top:22px;font-size:.9rem;max-width:680px;margin-left:auto;margin-right:auto;}
+
+/* Pillars */
+.pillar-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px;}
+.pillar-num{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--card-elev);color:var(--gold);font-weight:700;font-family:'Sora',sans-serif;margin-bottom:14px;border:1px solid var(--border);font-size:.9rem;}
+.pillar-card h4{margin-bottom:8px;font-size:1.05rem;}
+.pillar-card .why{color:var(--text2);font-size:.9rem;margin-bottom:12px;line-height:1.6;}
+.pillar-card .example{background:var(--bg2);border-left:3px solid var(--gold);border-radius:8px;padding:13px 15px;font-size:.88rem;color:var(--text);font-style:italic;}
+
+/* Style section */
+.style-box{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:start;}
+.style-main{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;}
+.style-main h3{color:var(--gold);margin-bottom:12px;font-size:1.2rem;}
+.style-main p{color:var(--text2);line-height:1.7;}
+.avoid-box{background:var(--card-elev);border:1px solid var(--border);border-radius:16px;padding:26px;}
+.avoid-box h4{margin-bottom:12px;font-size:1rem;}
+.avoid-box ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.avoid-box li{color:var(--text2);font-size:.9rem;padding-left:22px;position:relative;line-height:1.55;}
+.avoid-box li::before{content:"—";position:absolute;left:0;color:var(--gold);}
+
+/* Avoid style highlight — new */
+.avoid-style-card{background:rgba(224,168,107,.05);border:1px solid rgba(224,168,107,.2);border-radius:12px;padding:16px 18px;margin-top:16px;}
+.avoid-style-card .asc-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.8px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+.avoid-style-card .asc-text{font-size:.9rem;color:var(--text2);line-height:1.65;font-style:italic;}
+
+/* Timeline */
+.timeline{display:flex;flex-direction:column;}
+.timeline-item{display:grid;grid-template-columns:80px 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--border);}
+.timeline-item:last-child{border-bottom:none;}
+.timeline-day{font-family:'Sora',sans-serif;font-weight:800;color:var(--gold);font-size:.95rem;}
+.timeline-day span{display:block;font-size:.65rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:3px;}
+.timeline-text{color:var(--text);font-size:.95rem;line-height:1.6;}
+
+/* Opportunity */
+.opp-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:16px;}
+.opp-box p{color:var(--text2);line-height:1.75;}
+.disclaimer{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px 20px;font-size:.85rem;color:var(--text2);line-height:1.6;}
+.disclaimer strong{color:var(--text);}
+
+/* Share card */
+.share-card{background:linear-gradient(160deg,var(--card-elev),var(--card));border:1px solid var(--border);border-radius:20px;padding:34px;box-shadow:0 0 50px rgba(142,168,150,0.05);}
+.share-card .share-row{display:grid;grid-template-columns:180px 1fr;gap:12px;padding:13px 0;border-bottom:1px solid var(--border);}
+.share-card .share-row:last-child{border-bottom:none;}
+.share-row .key{color:var(--gold);font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.5px;}
+.share-row .val{color:var(--text);font-size:.95rem;line-height:1.5;}
+.share-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;}
+
+/* Form */
+.form-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:36px;box-shadow:0 0 50px rgba(142,168,150,0.04);}
+.trust-note{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:13px 17px;font-size:.85rem;color:var(--text2);margin-bottom:26px;line-height:1.6;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.form-group{display:flex;flex-direction:column;gap:7px;}
+.form-group.full{grid-column:1/-1;}
+.form-group label{font-size:.82rem;color:var(--text2);font-weight:600;}
+.form-group label .req{color:var(--gold);}
+.form-group input,.form-group textarea{background:var(--bg2);border:1.5px solid var(--border);border-radius:8px;padding:12px 15px;color:var(--text);font-family:'Inter',sans-serif;font-size:.92rem;outline:none;transition:border-color .2s;}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--cta);}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(185,195,183,.4);}
+.form-group textarea{resize:vertical;min-height:85px;line-height:1.6;}
+.consent-row{display:flex;align-items:flex-start;gap:11px;margin-top:22px;padding:15px 17px;background:var(--bg2);border-radius:10px;border:1px solid var(--border);}
+.consent-row input{margin-top:3px;width:17px;height:17px;flex-shrink:0;accent-color:var(--cta);}
+.consent-row label{font-size:.85rem;color:var(--text2);line-height:1.55;}
+.form-error{color:#E08E6B;font-size:.83rem;margin-top:12px;display:none;}
+.form-submit{margin-top:24px;}
+
+/* Pricing */
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.price-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;transition:transform .3s ease,border-color .3s;}
+.price-card:hover{transform:translateY(-3px);border-color:var(--gold);}
+.price-card .price{font-family:'Sora',sans-serif;font-weight:800;font-size:1.3rem;color:var(--gold);margin-bottom:5px;}
+.price-card h4{font-size:.95rem;margin-bottom:8px;}
+.price-card p{color:var(--text2);font-size:.83rem;line-height:1.55;}
+
+/* FAQ */
+.faq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:12px;background:var(--card);overflow:hidden;}
+.faq-question{padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-family:'Sora',sans-serif;font-size:.97rem;user-select:none;}
+.faq-icon{font-size:1.2rem;color:var(--gold);transition:transform .3s;flex-shrink:0;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;padding:0 22px;color:var(--text2);font-size:.92rem;line-height:1.7;}
+.faq-item.open .faq-answer{max-height:320px;padding:0 22px 20px;}
+
+/* Final CTA */
+.final-cta{text-align:center;background:linear-gradient(160deg,var(--card-elev),var(--card));border:1px solid var(--border);border-radius:22px;padding:56px 28px;box-shadow:0 0 60px rgba(142,168,150,0.05);}
+.final-cta h2{font-size:clamp(1.5rem,4vw,2.3rem);margin-bottom:14px;}
+.final-cta p{color:var(--text2);max-width:580px;margin:0 auto 28px;line-height:1.75;}
+
+/* Footer */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:46px 0 28px;}
+.footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;margin-bottom:28px;}
+.footer-brand .logo{display:block;margin-bottom:8px;font-size:1.2rem;}
+.footer-brand p{color:var(--text2);font-size:.88rem;line-height:1.6;}
+.footer-links{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start;}
+.footer-links a{color:var(--text2);text-decoration:none;font-size:.88rem;transition:color .2s;}
+.footer-links a:hover{color:var(--cta);}
+.footer-bottom{border-top:1px solid var(--border);padding-top:18px;color:var(--text2);font-size:.78rem;text-align:center;opacity:.6;}
+
+/* Empty state */
+.empty-state{min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 24px;}
+.empty-state-inner{max-width:500px;}
+.empty-state .glow{width:88px;height:88px;border-radius:50%;margin:0 auto 26px;background:radial-gradient(circle,rgba(224,168,107,0.2),transparent 70%);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.9rem;}
+.empty-state h1{font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:16px;}
+.empty-state p{color:var(--text2);margin-bottom:28px;font-size:1rem;line-height:1.7;}
+
+/* Toast */
+#toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--card-elev);border:1px solid var(--cta);color:var(--text);padding:13px 24px;border-radius:999px;font-size:.88rem;font-weight:600;box-shadow:0 10px 40px rgba(0,0,0,.4);transition:transform .35s ease;z-index:999;}
+#toast.show{transform:translateX(-50%) translateY(0);}
+
+/* Responsive */
+@media(max-width:900px){
+  .summary-grid{grid-template-columns:repeat(2,1fr);}
+  .cards-3{grid-template-columns:1fr;}
+  .snapshot-grid{grid-template-columns:1fr;}
+  .style-box{grid-template-columns:1fr;}
+  .pricing-grid{grid-template-columns:repeat(2,1fr);}
+  .form-grid{grid-template-columns:1fr;}
+}
+@media(max-width:560px){
+  .summary-grid{grid-template-columns:1fr;}
+  .pricing-grid{grid-template-columns:1fr;}
+  .timeline-item{grid-template-columns:65px 1fr;}
+  .share-card .share-row{grid-template-columns:1fr;}
+  section{padding:48px 0;}
+  .hero{padding:48px 0 36px;}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important;}
+  .reveal{opacity:1;transform:none;}
+  html{scroll-behavior:auto;}
+}
+</style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<header>
+  <div class="container nav-wrap">
+    <a href="/" class="logo">Known<span>ly</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/diagnosis.html">Diagnosis</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/early-access.html">Early Access</a>
+      <a href="/about.html">About</a>
+    </nav>
+    <button class="btn btn-ghost" id="start-again-btn" type="button">Start Again</button>
+  </div>
+</header>
+
+<main id="main-content"></main>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">Known<span style="color:var(--gold)">ly</span></a>
+        <p>WhatAmIKnownFor.com<br>Personal Intelligence for Online Presence</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/diagnosis.html">Diagnosis</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/early-access.html">Early Access</a>
+        <a href="/about.html">About</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Knownly. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+
+  /* ── Helpers ── */
+  function esc(str){
+    if(str===null||str===undefined) return '';
+    return String(str).replace(/[&<>"']/g,function(c){
+      return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  function lc(v){return(v||'').toString().toLowerCase();}
+  function arr(v){
+    if(Array.isArray(v)) return v;
+    if(typeof v==='string'&&v.length) return [v];
+    return[];
+  }
+  function includesAny(haystack,needles){
+    var h=lc(Array.isArray(haystack)?haystack.join(' '):haystack);
+    return needles.some(function(n){return h.indexOf(n)!==-1;});
+  }
+  function pick(obj,path,fallback){
+    try{
+      var parts=path.split('.');var cur=obj;
+      for(var i=0;i<parts.length;i++){
+        if(cur===null||cur===undefined) return fallback;
+        cur=cur[parts[i]];
+      }
+      return(cur===undefined||cur===null||cur==='') ? fallback : cur;
+    }catch(e){return fallback;}
+  }
+  function truncate(str,max){
+    if(!str) return '';
+    str=String(str);
+    return str.length>max ? str.substring(0,max)+'…' : str;
+  }
+
+  /* ── Load data ── */
+  var raw=null;
+  try{
+    var stored=localStorage.getItem('knownlyDiagnosisData');
+    if(stored) raw=JSON.parse(stored);
+  }catch(e){raw=null;}
+
+  var mainEl=document.getElementById('main-content');
+
+  if(!raw){renderEmptyState();return;}
+
+  var data=buildReportData(raw);
+  renderReport(data);
+  initInteractions(data);
+  initScrollEffects();
+
+  /* ── Empty State ── */
+  function renderEmptyState(){
+    mainEl.innerHTML=
+      '<div class="empty-state">'+
+        '<div class="empty-state-inner">'+
+          '<div class="glow">✦</div>'+
+          '<h1>Your Knownly report is not ready yet.</h1>'+
+          '<p>Take the free Knownly Diagnosis first so we can prepare your personal direction report.</p>'+
+          '<a href="/diagnosis.html" class="btn btn-primary">Start Free Diagnosis →</a>'+
+        '</div>'+
+      '</div>';
+  }
+
+  /* ── Build Report Data ── */
+  function buildReportData(d){
+    var name            = pick(d,'lead.name','');
+    var mainGoal        = d.mainGoal || pick(d,'lead.goal','') || '';
+    var currentStage    = d.currentStage || '';
+    var naturalStrengths= arr(d.naturalStrengths);
+    var topics          = arr(d.topics);
+    var otherTopic      = d.otherTopic || '';
+    var perceivedFor    = d.perceivedFor || '';   // NEW step 5
+    var proofExperience = d.proofExperience || ''; // NEW step 6
+    var naturalStyle    = d.naturalStyle || '';
+    var contentComfort  = arr(d.contentComfort);
+    var avoidStyle      = d.avoidStyle || '';      // NEW step 9
+    var currentBlocker  = d.currentBlocker || '';
+    var onlinePresence  = d.onlinePresence || '';
+    var desiredOutcome  = d.desiredOutcome || '';
+    var platforms       = arr(d.platforms);
+    var timeAvailable   = d.timeAvailable || '';
+
+    var archetypeHint       = d.archetypeHint || '';
+    var contentStyleHint    = d.contentStyleHint || '';
+    var opportunityPathHint = d.opportunityPathHint || '';
+    var primaryPlatformHint = d.primaryPlatformHint || (platforms[0]||'');
+
+    var allTopics  = topics.slice();
+    if(otherTopic) allTopics.push(otherTopic);
+    var topTopic   = allTopics[0] || 'your area of expertise';
+    var topStrength= naturalStrengths[0] || 'your natural strengths';
+
+    /* ── Archetype ── enriched with perceivedFor & proofExperience */
+    var pf=lc(perceivedFor);
+    var pr=lc(proofExperience);
+    var archetype=archetypeHint;
+    if(!archetype){
+      if(includesAny(naturalStrengths,['explaining things clearly','teaching or guiding'])||includesAny(pf,['explain','simplif','teach'])||naturalStyle.includes('teaching step-by-step'))
+        archetype='Trusted Educator';
+      else if(includesAny(naturalStrengths,['solving practical problems'])||includesAny(pf,['problem','fix','solution','solve'])||naturalStyle.includes('simple and practical'))
+        archetype='Practical Authority Builder';
+      else if(includesAny(naturalStrengths,['spotting opportunities'])||includesAny(pf,['opportunit','strateg','growth']))
+        archetype='Strategic Opportunity Spotter';
+      else if(includesAny(naturalStrengths,['researching deeply'])||naturalStyle.includes('thoughtful writing'))
+        archetype='Silent Expert';
+      else if(includesAny(currentStage,['founder'])||includesAny(pr,['built','founded','started','launched','co-found']))
+        archetype='Founder-Led Voice';
+      else if(includesAny(naturalStrengths,['storytelling or communication'])||includesAny(pf,['story','communicat','narrat']))
+        archetype='Creative Story Educator';
+      else
+        archetype='Visibility Builder';
+    }
+
+    var archetypeDescriptions={
+      'Trusted Educator':'You are likely at your best when you simplify ideas for others. People already come to you for clarity and explanations. Your online presence should be built around clear teaching, practical guidance and ideas made easy.',
+      'Practical Authority Builder':'You are likely at your best when you solve real problems and make things easier to act on. Your online presence should be built around useful frameworks, honest examples and practical advice people can actually use.',
+      'Strategic Opportunity Spotter':'You are likely at your best when you notice patterns, gaps and possibilities before others do. Your online presence should be built around insight, trend observations, opportunity identification and thoughtful analysis.',
+      'Silent Expert':'You may have more depth than visibility right now. Your online presence should be built around quiet authority, research-backed ideas, thoughtful posts and clearly demonstrated expertise.',
+      'Founder-Led Voice':'Your strongest direction is to connect your personal credibility with your business, market and point of view. Your online presence should build trust around your thinking, product journey and leadership perspective.',
+      'Creative Story Educator':'You are likely at your best when you connect ideas through stories, examples and emotion. Your online presence should combine personal experience with useful lessons people remember long after reading.',
+      'Visibility Builder':'Your strongest next step is to make your value easier to understand. Your online presence should focus on clarity, consistency and a sharper public identity before chasing growth.'
+    };
+    var archetypeDescription=archetypeDescriptions[archetype]||archetypeDescriptions['Visibility Builder'];
+
+    /* ── Direction statement ── */
+    var goalLc=lc(mainGoal);
+    var directionStatement='a clearer public identity that makes your strengths easier to understand and remember';
+    if(includesAny(goalLc,['job','career']))
+      directionStatement='clear professional credibility, practical expertise and career trust';
+    else if(includesAny(goalLc,['client','freelance']))
+      directionStatement='a trusted expert identity that helps potential clients understand your value before any pitch';
+    else if(includesAny(goalLc,['founder','business']))
+      directionStatement='founder-led authority, market trust and a clear point of view';
+    else if(includesAny(goalLc,['creator','audience']))
+      directionStatement='clear content themes, audience trust and a recognizable voice online';
+    else if(includesAny(goalLc,['authority','thought leadership']))
+      directionStatement='deep expertise, useful insights and consistent public authority';
+    else if(includesAny(goalLc,['monetiz','income']))
+      directionStatement='a monetizable direction built around your strengths, content fit and trust signals';
+
+    /* ── Visibility stage ── */
+    var presLc=lc(onlinePresence);
+    var visibilityStage='Ready for clearer positioning';
+    if(includesAny(presLc,['barely post','starting from zero'])) visibilityStage='Invisible but buildable';
+    else if(includesAny(presLc,['not clear','profiles'])) visibilityStage='Present but unclear';
+    else if(includesAny(presLc,['post sometimes'])) visibilityStage='Inconsistent but promising';
+    else if(includesAny(presLc,['post regularly'])) visibilityStage='Visible but unfocused';
+    else if(includesAny(presLc,['some audience'])) visibilityStage='Credible but needs sharper positioning';
+    else if(includesAny(presLc,['offline value'])) visibilityStage='Offline value, online gap';
+
+    /* ── Best next move ── */
+    var blockerLc=lc(currentBlocker);
+    var bestNextMove='Make your online identity easier to understand before chasing growth.';
+    if(includesAny(blockerLc,['do not know what to post','don\'t know what to post']))
+      bestNextMove='Start with 3 repeatable content pillars instead of trying to post random ideas.';
+    else if(includesAny(blockerLc,['known for']))
+      bestNextMove='Define one clear public direction before increasing your posting frequency.';
+    else if(includesAny(blockerLc,['profile']))
+      bestNextMove='Fix your headline, bio and profile promise before creating more content.';
+    else if(includesAny(blockerLc,['too many interests']))
+      bestNextMove='Choose one primary theme and two support themes for the next 30 days.';
+    else if(includesAny(blockerLc,['judge']))
+      bestNextMove='Start with low-pressure educational or observation-based posts.';
+    else if(includesAny(blockerLc,['inconsistent']))
+      bestNextMove='Use a simple weekly content rhythm you can repeat.';
+    else if(includesAny(blockerLc,['opportunities']))
+      bestNextMove='Connect your content themes to a clear audience and opportunity path.';
+    else if(includesAny(blockerLc,['time']))
+      bestNextMove='Use short, practical posts and a low-friction weekly system.';
+    else if(includesAny(blockerLc,['audience']))
+      bestNextMove='Define who you are speaking to before deciding what to say.';
+    else if(includesAny(blockerLc,['offer','monetization']))
+      bestNextMove='Build trust and clarity first — a clear offer becomes easier to create after your signal is consistent.';
+
+    /* ── Known-for statement ── */
+    var topicLc=lc(allTopics.join(' '));
+    var knownForStatement='making your expertise easier to understand, trust and remember';
+    if(archetype==='Trusted Educator'&&topicLc.indexOf('ai')!==-1)
+      knownForStatement='making AI and technology easier to understand and apply in real situations';
+    else if(archetype==='Practical Authority Builder'&&topicLc.indexOf('business')!==-1)
+      knownForStatement='turning business challenges into practical systems and clear action steps';
+    else if(archetype==='Strategic Opportunity Spotter'&&topicLc.indexOf('marketing')!==-1)
+      knownForStatement='spotting growth opportunities in marketing and explaining what others are missing';
+    else if(archetype==='Silent Expert'&&topicLc.indexOf('career')!==-1)
+      knownForStatement='sharing thoughtful expertise that helps professionals make sharper career decisions';
+    else if(archetype==='Founder-Led Voice')
+      knownForStatement='building trust around your market understanding, product and founder perspective';
+    else if(archetype==='Creative Story Educator')
+      knownForStatement='turning experience, stories and ideas into useful lessons people remember';
+    else if(archetype==='Trusted Educator')
+      knownForStatement='making '+topTopic.toLowerCase()+' easier to understand and apply';
+    else if(archetype==='Practical Authority Builder')
+      knownForStatement='turning '+topTopic.toLowerCase()+' problems into practical systems and action steps';
+    else if(archetype==='Strategic Opportunity Spotter')
+      knownForStatement='spotting opportunities in '+topTopic.toLowerCase()+' and explaining what others are missing';
+    else if(archetype==='Silent Expert')
+      knownForStatement='sharing thoughtful expertise in '+topTopic.toLowerCase()+' that helps people make better decisions';
+
+    /* ── Content pillars ── */
+    var pillars=[];
+    if(includesAny(goalLc,['job','career'])){
+      pillars=[
+        {name:'Career lessons and professional insights',why:'This builds on your goal of strengthening career credibility and shows how you think, not just what you know.'},
+        {name:'Skill proof and project breakdowns',why:'This turns your existing experience into visible evidence of your capability.'},
+        {name:'Industry observations and learning notes',why:'This positions you as someone actively growing and paying attention to your field.'}
+      ];
+    } else if(includesAny(goalLc,['client','freelance'])){
+      pillars=[
+        {name:'Client problems and practical solutions',why:'This shows the exact problems you understand and how you solve them, which builds buyer confidence.'},
+        {name:'Proof of thinking and case examples',why:'This gives potential clients evidence of how you approach real situations.'},
+        {name:'Educational posts that build trust before any pitch',why:'This positions you as generous with knowledge, which lowers the barrier to reaching out.'}
+      ];
+    } else if(includesAny(goalLc,['founder','business'])){
+      pillars=[
+        {name:'Founder lessons and market observations',why:'This connects your personal voice to your business and shows your point of view on the market.'},
+        {name:'Product, customer and business insights',why:'This builds trust around how you think about your product and customers.'},
+        {name:'Trust-building stories and proof',why:'This humanizes your brand and gives people a reason to follow your journey.'}
+      ];
+    } else if(includesAny(goalLc,['creator','coach','educator'])){
+      pillars=[
+        {name:'Teaching content around your core topic',why:'This is the foundation of your authority and the easiest way for people to learn what you know.'},
+        {name:'Personal stories with useful lessons',why:'This makes your teaching memorable by connecting it to real experience.'},
+        {name:'Audience questions and practical answers',why:'This keeps your content relevant to what your audience actually wants to know.'}
+      ];
+    } else if(includesAny(goalLc,['authority','thought leadership'])){
+      pillars=[
+        {name:'Point-of-view posts that show how you think',why:'This is the clearest way to show your unique perspective and build a recognizable voice.'},
+        {name:'Frameworks and industry breakdowns',why:'This gives your audience tools they can use, which builds credibility quickly.'},
+        {name:'Research-backed insights and observations',why:'This reinforces your depth of knowledge and separates you from surface-level commentary.'}
+      ];
+    } else {
+      pillars=[
+        {name:'Practical lessons from your experience',why:'This is the most natural place to start because it draws directly from what you already know.'},
+        {name:'Simple breakdowns around '+topTopic.toLowerCase(),why:'This builds your authority in your chosen area while staying easy to follow.'},
+        {name:'Proof, examples and observations from your journey',why:'This makes your content feel real and helps people connect with your direction.'}
+      ];
+    }
+    var pillarExamples=[
+      '3 mistakes people make when trying to build an online presence before clarifying their positioning.',
+      'A simple breakdown of '+topTopic.toLowerCase()+' that most people overcomplicate.',
+      'What I learned this month working on '+topTopic.toLowerCase()+' — and what I would do differently.'
+    ];
+    pillars.forEach(function(p,i){p.example=pillarExamples[i]||pillarExamples[0];});
+
+    /* ── Content style ── */
+    var styleHint=contentStyleHint||naturalStyle||'';
+    var styleLc=lc(styleHint);
+    var styleExplanation='Simple practical posts are the best starting point because they are easy to repeat and help people understand your value quickly.';
+    var resolvedStyleHint=styleHint||'Simple practical posts';
+    if(includesAny(styleLc,['written','thought leadership'])){
+      styleExplanation='You should start with written posts because they let you think clearly, build authority and create without heavy production.';
+      resolvedStyleHint='Written thought leadership';
+    } else if(includesAny(styleLc,['short video'])){
+      styleExplanation='Short videos can help you build trust faster, especially if your goal is audience growth, coaching or founder visibility.';
+      resolvedStyleHint='Short video insights';
+    } else if(includesAny(styleLc,['visual','carousel'])){
+      styleExplanation='Carousels and visual posts can help you simplify ideas and make your expertise easier to consume across feeds.';
+      resolvedStyleHint='Visual educational content';
+    } else if(includesAny(styleLc,['case study','case-study'])){
+      styleExplanation='Case studies can help you build proof, especially if you want clients, business trust or professional credibility.';
+      resolvedStyleHint='Case-study based content';
+    } else if(includesAny(styleLc,['story'])){
+      styleExplanation='Your content works well when you connect personal experiences to useful lessons that your audience can learn from.';
+      resolvedStyleHint='Story-led content';
+    }
+
+    /* ── Avoid style notes ── derived from new field + standard list */
+    var avoidItems=[
+      'Do not copy loud creators if that style does not fit your personality.',
+      'Do not post random motivation without a clear signal behind it.',
+      'Do not talk about too many unrelated topics in the beginning.',
+      'Do not chase viral content before your positioning is clear.'
+    ];
+
+    /* ── 7-day plan ── */
+    var platLc=lc(primaryPlatformHint);
+    var day1,day2;
+    if(platLc.indexOf('linkedin')!==-1){
+      day1='Rewrite your LinkedIn headline around your Knownly direction: '+archetype+'.';
+      day2='Write a short LinkedIn About section that explains who you help, what you know and why people should remember you.';
+    } else if(platLc.indexOf('instagram')!==-1){
+      day1='Rewrite your Instagram bio around your Knownly direction.';
+      day2='Update your pinned posts and highlights to reflect what you want to be known for.';
+    } else if(platLc.indexOf('x')!==-1||platLc.indexOf('twitter')!==-1){
+      day1='Rewrite your X bio around your Knownly direction.';
+      day2='Set a pinned post that introduces your main content theme clearly.';
+    } else if(platLc.indexOf('youtube')!==-1){
+      day1='Rewrite your YouTube channel description around your Knownly direction.';
+      day2='Outline the 3 content themes you want your channel to be known for.';
+    } else {
+      day1='Rewrite your primary profile headline around your Knownly direction.';
+      day2='Write a short bio that explains who you help, what you understand and why people should remember you.';
+    }
+    var sevenDayPlan=[
+      day1,
+      day2,
+      'Create one post explaining your current direction and what you are building or learning right now.',
+      'Create one practical post from your first content pillar: "'+pillars[0].name+'".',
+      'Create one observation or story post connected to your second pillar: "'+pillars[1].name+'".',
+      'Review your profile and remove unclear, outdated or off-direction signals.',
+      'Publish a simple reflection post and ask your audience one useful, specific question.'
+    ];
+
+    /* ── Opportunity path ── */
+    var oppHint=opportunityPathHint||'';
+    var oppLc=lc(oppHint||desiredOutcome);
+    var opportunityText='The first opportunity is clarity. People need to understand what to remember you for before they can trust you with bigger opportunities.';
+    var resolvedOppHint=oppHint||'A clearer opportunity path';
+    if(includesAny(oppLc,['career'])){
+      opportunityText='Your online presence can help people understand your professional value before interviews, referrals or networking conversations happen.';
+      resolvedOppHint=oppHint||'Career opportunities';
+    } else if(includesAny(oppLc,['client'])){
+      opportunityText='Your content should show the problems you understand, the solutions you can explain and the trust signals that make clients comfortable reaching out.';
+      resolvedOppHint=oppHint||'Client opportunities';
+    } else if(includesAny(oppLc,['founder'])){
+      opportunityText='Your presence should build trust around your market understanding, product vision and founder point of view — not just your company page.';
+      resolvedOppHint=oppHint||'Founder credibility';
+    } else if(includesAny(oppLc,['authority'])){
+      opportunityText='Your content should help people associate you with useful insight, sharp judgment and genuine expertise over time.';
+      resolvedOppHint=oppHint||'Authority building';
+    } else if(includesAny(oppLc,['creator'])){
+      opportunityText='Your content should make your themes easy to follow and your voice easier to remember across every post.';
+      resolvedOppHint=oppHint||'Creator growth';
+    } else if(includesAny(oppLc,['knowledge'])){
+      opportunityText='Your first step is not selling immediately. Your first step is proving clarity, trust and repeatable expertise that makes people want more.';
+      resolvedOppHint=oppHint||'Knowledge monetization';
+    } else if(includesAny(oppLc,['monetiz'])){
+      opportunityText='Your path should begin with clarity and trust, then move toward offers, services, consulting, content products or community.';
+      resolvedOppHint=oppHint||'Monetizable direction';
+    } else if(includesAny(oppLc,['trust','reputation'])){
+      opportunityText='Trust is built through consistent, honest and useful presence. Every post should add one more reason for someone to believe in your value.';
+      resolvedOppHint=oppHint||'Trust and reputation';
+    }
+
+    return {
+      name: name,
+      archetype: archetype,
+      archetypeDescription: archetypeDescription,
+      directionStatement: directionStatement,
+      visibilityStage: visibilityStage,
+      currentBlocker: currentBlocker||'No specific blocker selected — but clarity is still your biggest lever.',
+      bestNextMove: bestNextMove,
+      knownForStatement: knownForStatement,
+      pillars: pillars,
+      naturalStrengths: naturalStrengths,
+      topStrength: topStrength,
+      topics: allTopics,
+      topTopic: topTopic,
+      mainGoal: mainGoal||'building a clearer presence online',
+      currentStage: currentStage,
+      perceivedFor: perceivedFor,
+      proofExperience: proofExperience,
+      avoidStyle: avoidStyle,
+      avoidItems: avoidItems,
+      contentStyleHint: resolvedStyleHint,
+      styleExplanation: styleExplanation,
+      sevenDayPlan: sevenDayPlan,
+      primaryPlatformHint: primaryPlatformHint||'a platform you feel most comfortable on',
+      timeAvailable: timeAvailable,
+      opportunityPathHint: resolvedOppHint,
+      opportunityText: opportunityText
+    };
+  }
+
+  /* ── Render ── */
+  function renderReport(d){
+    var html='';
+
+    /* HERO */
+    var greeting=d.name
+      ? esc(d.name)+', your strongest direction is becoming a <span class="accent">'+esc(d.archetype)+'</span>.'
+      : 'Your strongest direction is becoming a <span class="accent">'+esc(d.archetype)+'</span>.';
+
+    html+='<section class="hero">'+
+      '<div class="container">'+
+        '<div class="badge">Your Knownly Direction Report</div>'+
+        '<h1>'+greeting+'</h1>'+
+        '<p class="sub">Based on your strengths, proof, goals, interests and current blocker, Knownly suggests that your online presence should be built around <strong style="color:var(--text)">'+esc(d.directionStatement)+'</strong>.</p>'+
+        '<div class="hero-ctas">'+
+          '<a href="#profile-report" class="btn btn-primary">Unlock Free Profile Report</a>'+
+          '<button class="btn btn-secondary" type="button" id="copy-summary-hero">Copy My Summary</button>'+
+        '</div>'+
+        '<div class="summary-grid">'+
+          summaryCard('Knownly Archetype',d.archetype)+
+          summaryCard('Best-Fit Platform',d.primaryPlatformHint)+
+          summaryCard('Content Style',d.contentStyleHint)+
+          summaryCard('Opportunity Path',d.opportunityPathHint)+
+        '</div>'+
+      '</div>'+
+    '</section>';
+
+    /* SECTION 01 — Snapshot */
+    html+='<section class="section-bg">'+
+      '<div class="container reveal">'+
+        '<div class="section-tag">Section 01</div>'+
+        '<h2 class="section-heading">Your Knownly Snapshot</h2>'+
+        '<div class="snapshot-card">'+
+          '<div class="snapshot-archetype">'+esc(d.archetype)+'</div>'+
+          '<p style="color:var(--text2)">'+esc(d.archetypeDescription)+'</p>'+
+          '<div class="snapshot-grid">'+
+            snapshotItem('Direction Statement','Build around '+esc(d.directionStatement)+'.')+
+            snapshotItem('Visibility Stage',d.visibilityStage)+
+            snapshotItem('Current Blocker',d.currentBlocker)+
+            snapshotItem('Best Next Move',d.bestNextMove)+
+          '</div>'+
+        '</div>'+
+      '</div>'+
+    '</section>';
+
+    /* SECTION 02 — What people already see in you (NEW) */
+    var perceivedBlock='';
+    if(d.perceivedFor){
+      perceivedBlock='<div class="perceived-card">'+
+        '<div class="perceived-label">What people already come to you for</div>'+
+        '<div class="perceived-text">'+esc(truncate(d.perceivedFor,320))+'</div>'+
+      '</div>';
+    }
+    var proofBlock='';
+    if(d.proofExperience){
+      proofBlock='<div class="proof-card">'+
+        '<div class="proof-label">Your proof and experience</div>'+
+        '<div class="proof-text">'+esc(truncate(d.proofExperience,320))+'</div>'+
+      '</div>';
+    }
+    html+='<section>'+
+      '<div class="container reveal">'+
+        '<div class="section-tag">Section 02</div>'+
+        '<h2 class="section-heading">Why this direction fits you</h2>'+
+        '<p class="section-text">Because you selected <strong style="color:var(--text)">'+(d.naturalStrengths.length?esc(d.naturalStrengths.join(', ')):'your natural strengths')+'</strong>, showed interest in <strong style="color:var(--text)">'+(d.topics.length?esc(d.topics.join(', ')):'your chosen areas')+'</strong>, and your goal is <strong style="color:var(--text)">'+esc(d.mainGoal)+'</strong> — your strongest direction is to build around <strong style="color:var(--gold)">'+esc(d.directionStatement)+'</strong>.</p>'+
+        '<div class="cards-3">'+
+          infoCard('Your Strength Signal',d.topStrength,'This is what people may already value you for, even if you have never named it clearly.')+
+          infoCard('Your Interest Signal',d.topTopic,'This is where your attention and future authority can grow with the least friction.')+
+          infoCard('Your Blocker Signal',d.currentBlocker,'This shows the gap between your real ability and your current visibility online.')+
+        '</div>'+
+        perceivedBlock+
+        proofBlock+
+      '</div>'+
+    '</section>';
+
+    /* SECTION 03 — Known for */
+    html+='<section class="section-bg">'+
+      '<div class="container reveal">'+
+        '<div class="section-tag">Section 03</div>'+
+        '<h2 class="section-heading">What you should be known for</h2>'+
+        '<div class="highlight-box">'+
+          '<p class="lead">You should build your online presence around:</p>'+
+          '<div class="statement">"'+esc(d.knownForStatement)+'"</div>'+
+          '<p class="highlight-note">This does not mean you can never talk about anything else. It means this should become your clearest public signal for the next 30–90 days. Consistency builds trust faster than variety.</p>'+
+        '</div>'+
+      '</div>'+
+    '</section>';
+
+    /* SECTION 04 — Content pillars */
+    var pillarCards='';
+    d.pillars.forEach(function(p,i){
+      pillarCards+='<div class="pillar-card">'+
+        '<div class="pillar-num">'+(i+1)+'</div>'+
+        '<h4>'+esc(p.name)+'</h4>'+
+        '<p class="why">'+esc(p.why)+'</p>'+
+        '<div class="example">"'+esc(p.example)+'"</div>'+
+      '</div>';
+    });
+    html+='<section>'+
+      '<div class="container reveal">'+
+        '<div class="section-tag">Section 04</div>'+
+        '<h2 class="section-heading">What you should create</h2>'+
+        '<p class="section-text">Your best-fit content direction — built from your topics, strengths, proof and desired outcome. These three pillars should anchor your online presence.</p>'+
+        '<div class="cards-3">'+pillarCards+'</div>'+
+      '</div>'+
+    '</section>';
+
+    /* SECTION 05 — Content style + avoid style (NEW field used) */
+    var avoidListHtml='';
+    d.avoidItems.forEach(function(a){avoidListHtml+='<li>'+esc(a)+'</li>';});
+    var avoidStyleBlock='';
+    if(d.avoidStyle){
+      avoidStyleBlock='<div class="avoid-style-card">'+
+        '<div class="asc-label">You also said you want to avoid</div>'+
+        '<div class="asc-text">'+esc(truncate(d.avoidStyle,240))+'</div>'+
+      '</div>';
+    }
+    html+='<section class="section-bg">'+
+      '<div class="container reveal">'+
+        '<div class="section-tag">Section 05</div>'+
+        '<h2 class="section-heading">How you should create</h2>'+
+        '<div class="style-box">'+
+          '<div class="style-main">'+
+            '<h3>'+esc(d.contentStyleHint)+'</h3>'+
+            '<p>'+esc(d.styleExplanation)+'</p>'+
+            avoidStyleBlock+
+          '</div>'+
+          '<div class="avoid-box">'+
+            '<h4>What to avoid</h4>'+
+            '<ul>'+avoidListHtml+'</ul>'+
+          '</div>'+
+        '</div>'+
+      '</div>'+
+    '</section>';
+
+    /* SECTION 06 — 7-day plan */
+    var timelineHtml='';
+    d.sevenDayPlan.forEach(function(text,i){
+      timelineHtml+='<div class="timeline-item">'+
+        '<div class="timeline-day"><span>Day</span>'+(i+1)+'</div>'+
+        '<div class="timeline-text">'+esc(text)+'</div>'+
+      '</div>';
+    });
+    html+='<section>'+
+      '<div class="container reveal">'+
+        '<div class="section-tag">Section 06</div>'+
+        '<h2 class="section-heading">Your next 7 days</h2>'+
+        '<p class="section-text">A simple, practical action roadmap built from your diagnosis. Calibrated for '+(d.timeAvailable?esc(d.timeAvailable)+' per week':' your available time')+'.</p>'+
+        '<div class="timeline">'+timelineHtml+'</div>'+
+      '</div>'+
+    '</section>';
+
+    /* SECTION 07 — Opportunity path */
+    html+='<section class="section-bg">'+
+      '<div class="container reveal">'+
+        '<div class="section-tag">Section 07</div>'+
+        '<h2 class="section-heading">How this can lead to opportunities</h2>'+
+        '<div class="opp-box">'+
+          '<p>'+esc(d.opportunityText)+'</p>'+
+        '</div>'+
+        '<div class="disclaimer"><strong>A note on expectations:</strong> Knownly does not guarantee followers, clients, jobs or income. It helps you build clarity, positioning and opportunity readiness — which is where all opportunities begin.</div>'+
+      '</div>'+
+    '</section>';
+
+    /* SECTION 08 — Shareable summary */
+    html+='<section>'+
+      '<div class="container reveal">'+
+        '<div class="section-tag">Section 08</div>'+
+        '<h2 class="section-heading">Your shareable Knownly summary</h2>'+
+        '<div class="share-card">'+
+          shareRow('My Knownly Archetype',d.archetype)+
+          shareRow('I should be known for',d.knownForStatement)+
+          shareRow('Content direction',d.contentStyleHint+' around '+d.topTopic)+
+          shareRow('Opportunity path',d.opportunityPathHint)+
+          shareRow('Best next move',d.bestNextMove)+
+          '<div class="share-actions">'+
+            '<button class="btn btn-primary" type="button" id="copy-summary-2">Copy Summary</button>'+
+            '<button class="btn btn-secondary" type="button" id="share-linkedin">Share on LinkedIn</button>'+
+          '</div>'+
+        '</div>'+
+      '</div>'+
+    '</section>';
+
+    /* SECTION 09 — Profile report form */
+    html+='<section class="section-bg" id="profile-report">'+
+      '<div class="container reveal">'+
+        '<div class="section-tag">Section 09</div>'+
+        '<h2 class="section-heading">Want a deeper free profile report?</h2>'+
+        '<p class="section-text">Your direction report is based on what you shared about yourself. For a deeper free report, share your public profile links so Knownly can review your online presence, positioning and visibility gaps.</p>'+
+        '<div class="form-card">'+
+          '<div class="trust-note">Knownly only reviews the public links you choose to share. Do not submit private accounts or passwords.</div>'+
+          '<form id="profile-form" novalidate>'+
+            '<div class="form-grid">'+
+              formInput('full-name','Full Name','text',true)+
+              formInput('email','Email','email',true)+
+              formInput('linkedin','LinkedIn URL','url',false)+
+              formInput('instagram','Instagram URL','url',false)+
+              formInput('twitter','X / Twitter URL','url',false)+
+              formInput('youtube','YouTube URL','url',false)+
+              formInput('website','Website or Portfolio URL','url',false)+
+              formInput('other','Other Public Profile URL','url',false)+
+            '</div>'+
+            '<div class="form-grid" style="margin-top:18px;">'+
+              '<div class="form-group full">'+
+                '<label for="profile-goal">What do you want your profile to help you with?</label>'+
+                '<textarea id="profile-goal" name="profile-goal" placeholder="e.g. Helping me get noticed for better career opportunities in product management…"></textarea>'+
+              '</div>'+
+            '</div>'+
+            '<div class="consent-row">'+
+              '<input type="checkbox" id="consent" name="consent">'+
+              '<label for="consent">I confirm these are public links I choose to share. I understand Knownly does not guarantee followers, clients, jobs or income.</label>'+
+            '</div>'+
+            '<div class="form-error" id="form-error">Please add your full name, email, at least one public profile link, and confirm consent to continue.</div>'+
+            '<div class="form-submit"><button type="submit" class="btn btn-primary">Generate Free Profile Report →</button></div>'+
+          '</form>'+
+        '</div>'+
+      '</div>'+
+    '</section>';
+
+    /* SECTION 10 — Pricing */
+    html+='<section>'+
+      '<div class="container reveal">'+
+        '<div class="section-tag">Section 10</div>'+
+        '<h2 class="section-heading">Go deeper when you are ready.</h2>'+
+        '<p class="section-text">Your free Knownly report gives you direction. Paid plans help turn that direction into profile improvement, content execution, coaching and human-led brand building.</p>'+
+        '<div class="pricing-grid">'+
+          priceCard('₹999','Deep Profile Review','Profile review + positioning gap analysis + 7-day content and action plan.')+
+          priceCard('₹4,999','30-Day Launchpad','30-day personalised content calendar + AI training + 1:1 guidance call.')+
+          priceCard('₹9,999+','Brand Builder','Human-led profile improvement + weekly strategy calls + personal brand direction.')+
+          priceCard('₹25,000+/mo','Executive Brand Studio','Done-for-you online presence strategy for founders, leaders and companies.')+
+        '</div>'+
+        '<div style="margin-top:28px;"><a href="/pricing.html" class="btn btn-secondary">View All Pricing →</a></div>'+
+      '</div>'+
+    '</section>';
+
+    /* SECTION 11 — FAQ */
+    var faqs=[
+      ['Is this my final personal brand?','No. This is your starting direction based on your current answers. Your archetype and direction can evolve as your skills, proof and goals develop. Come back and retake the diagnosis any time.'],
+      ['Why does Knownly suggest a specific archetype?','Knownly maps your stage, strengths, what people already come to you for, your proof and experience, content style, desired outcome and current blocker to identify the clearest signal you can build online right now.'],
+      ['Why did you ask what people come to me for?','Most people already have a perceived strength that others see — but have never named clearly. What people come to you for is often your most credible starting point for an online presence.'],
+      ['Can I talk about more than one topic?','Yes. But in the beginning, your online presence should have one primary signal and a few supporting themes. Too many unrelated topics make it harder for people to remember what you stand for.'],
+      ['Does this guarantee clients, jobs, followers or income?','No. Knownly does not guarantee followers, jobs, clients, income or viral growth. It helps you build clarity, positioning, trust and opportunity readiness — which is where all real opportunities begin.'],
+      ['Why share public profile links?','Your diagnosis tells us how you see yourself. Your public profile links help us understand how you currently appear online. The deeper profile report compares both and identifies your positioning gaps.']
+    ];
+    var faqHtml='';
+    faqs.forEach(function(f,i){
+      faqHtml+='<div class="faq-item">'+
+        '<div class="faq-question" data-index="'+i+'" role="button" tabindex="0" aria-expanded="false">'+
+          '<span>'+esc(f[0])+'</span><span class="faq-icon">+</span>'+
+        '</div>'+
+        '<div class="faq-answer"><p>'+esc(f[1])+'</p></div>'+
+      '</div>';
+    });
+    html+='<section class="section-bg">'+
+      '<div class="container reveal">'+
+        '<div class="section-tag">Section 11</div>'+
+        '<h2 class="section-heading">Frequently asked questions</h2>'+
+        '<div>'+faqHtml+'</div>'+
+      '</div>'+
+    '</section>';
+
+    /* FINAL CTA */
+    html+='<section>'+
+      '<div class="container reveal">'+
+        '<div class="final-cta">'+
+          '<h2>Your direction is clearer now. Your profile can be clearer next.</h2>'+
+          '<p>Share your public profile links and get a deeper free report on your online presence, positioning and visibility gaps.</p>'+
+          '<div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">'+
+            '<a href="#profile-report" class="btn btn-primary">Unlock Free Profile Report</a>'+
+            '<a href="/pricing.html" class="btn btn-secondary">View Paid Plans</a>'+
+          '</div>'+
+        '</div>'+
+      '</div>'+
+    '</section>';
+
+    mainEl.innerHTML=html;
+  }
+
+  /* ── Builder helpers ── */
+  function summaryCard(label,value){
+    return '<div class="summary-card"><div class="label">'+esc(label)+'</div><div class="value">'+esc(value)+'</div></div>';
+  }
+  function snapshotItem(label,value){
+    return '<div class="snapshot-item"><div class="label">'+esc(label)+'</div><div class="val">'+esc(value)+'</div></div>';
+  }
+  function infoCard(tag,title,text){
+    return '<div class="info-card"><div class="tag">'+esc(tag)+'</div><h4>'+esc(title)+'</h4><p>'+esc(text)+'</p></div>';
+  }
+  function shareRow(key,val){
+    return '<div class="share-row"><div class="key">'+esc(key)+'</div><div class="val">'+esc(val)+'</div></div>';
+  }
+  function priceCard(price,title,text){
+    return '<div class="price-card"><div class="price">'+esc(price)+'</div><h4>'+esc(title)+'</h4><p>'+esc(text)+'</p></div>';
+  }
+  function formInput(id,label,type,required){
+    return '<div class="form-group">'+
+      '<label for="'+id+'">'+esc(label)+(required?' <span class="req">*</span>':'')+' </label>'+
+      '<input type="'+type+'" id="'+id+'" name="'+id+'"'+(type==='url'?' placeholder="https://..."':'')+'>'+
+    '</div>';
+  }
+
+  /* ── Interactions ── */
+  function initInteractions(d){
+
+    document.getElementById('start-again-btn').addEventListener('click',function(){
+      try{localStorage.removeItem('knownlyDiagnosisData');}catch(e){}
+      window.location.href='/diagnosis.html';
+    });
+
+    function buildSummaryText(){
+      var lines=[];
+      lines.push('My Knownly Archetype: '+d.archetype);
+      lines.push('');
+      lines.push('I should be known for: '+d.knownForStatement+'.');
+      lines.push('');
+      lines.push('My content direction: '+d.contentStyleHint+' around '+d.topTopic+'.');
+      lines.push('');
+      lines.push('My opportunity path: '+d.opportunityPathHint+'.');
+      lines.push('');
+      lines.push('My best next move: '+d.bestNextMove);
+      lines.push('');
+      lines.push('— via Knownly (WhatAmIKnownFor.com)');
+      return lines.join('\n');
+    }
+
+    function copyText(text){
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){showToast('Summary copied to clipboard.');}).catch(function(){fallbackCopy(text);});
+      } else {fallbackCopy(text);}
+    }
+    function fallbackCopy(text){
+      var ta=document.createElement('textarea');
+      ta.value=text;ta.style.position='fixed';ta.style.left='-9999px';
+      document.body.appendChild(ta);ta.focus();ta.select();
+      try{document.execCommand('copy');showToast('Summary copied to clipboard.');}
+      catch(e){showToast('Could not copy. Please copy manually.');}
+      document.body.removeChild(ta);
+    }
+
+    var c1=document.getElementById('copy-summary-hero');
+    if(c1) c1.addEventListener('click',function(){copyText(buildSummaryText());});
+    var c2=document.getElementById('copy-summary-2');
+    if(c2) c2.addEventListener('click',function(){copyText(buildSummaryText());});
+
+    var shareLi=document.getElementById('share-linkedin');
+    if(shareLi) shareLi.addEventListener('click',function(){
+      var url=encodeURIComponent(window.location.href);
+      var text=encodeURIComponent('Just got my Knownly Direction Report.\n\nMy archetype: '+d.archetype+'.\n\nI should be known for: '+d.knownForStatement+'.\n\nDiscover yours at WhatAmIKnownFor.com');
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url='+url,'_blank','noopener,noreferrer');
+    });
+
+    /* FAQ */
+    document.querySelectorAll('.faq-question').forEach(function(q){
+      function toggle(){
+        var item=q.parentElement;
+        var isOpen=item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(function(o){
+          o.classList.remove('open');
+          o.querySelector('.faq-question').setAttribute('aria-expanded','false');
+        });
+        if(!isOpen){item.classList.add('open');q.setAttribute('aria-expanded','true');}
+      }
+      q.addEventListener('click',toggle);
+      q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
+    });
+
+    /* Profile form */
+    var form=document.getElementById('profile-form');
+    var errorEl=document.getElementById('form-error');
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var fullName=document.getElementById('full-name').value.trim();
+      var email=document.getElementById('email').value.trim();
+      var linkedin=document.getElementById('linkedin').value.trim();
+      var instagram=document.getElementById('instagram').value.trim();
+      var twitter=document.getElementById('twitter').value.trim();
+      var youtube=document.getElementById('youtube').value.trim();
+      var website=document.getElementById('website').value.trim();
+      var other=document.getElementById('other').value.trim();
+      var profileGoal=document.getElementById('profile-goal').value.trim();
+      var consent=document.getElementById('consent').checked;
+      var hasUrl=linkedin||instagram||twitter||youtube||website||other;
+      var emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      if(!fullName||!emailOk||!hasUrl||!consent){
+        errorEl.style.display='block';
+        return;
+      }
+      errorEl.style.display='none';
+
+      var payload={
+        fullName:fullName,email:email,
+        linkedinUrl:linkedin,instagramUrl:instagram,
+        twitterUrl:twitter,youtubeUrl:youtube,
+        websiteUrl:website,otherUrl:other,
+        profileGoal:profileGoal,
+        diagnosisArchetype: d.archetype,
+        diagnosisOpportunityPath: d.opportunityPathHint,
+        consent:true,source:'result',
+        submittedAt:new Date().toISOString()
+      };
+      try{localStorage.setItem('knownlyProfileAnalysisData',JSON.stringify(payload));}catch(err){}
+      window.location.href='/profile-report.html';
+    });
+  }
+
+  /* ── Scroll effects ── */
+  function initScrollEffects(){
+    var progress=document.getElementById('scroll-progress');
+    function update(){
+      var h=document.documentElement;
+      var st=h.scrollTop||document.body.scrollTop;
+      var ht=h.scrollHeight-h.clientHeight;
+      progress.style.width=(ht>0?(st/ht*100):0)+'%';
+    }
+    window.addEventListener('scroll',update,{passive:true});
+    update();
+
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});
+      return;
+    }
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){entry.target.classList.add('visible');obs.unobserve(entry.target);}
+      });
+    },{threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+  }
+
+  /* ── Toast ── */
+  function showToast(msg){
+    var toast=document.getElementById('toast');
+    toast.textContent=msg;toast.classList.add('show');
+    clearTimeout(window._toastTimeout);
+    window._toastTimeout=setTimeout(function(){toast.classList.remove('show');},2600);
+  }
+
+})();
+</script>
+</body>
+</html>

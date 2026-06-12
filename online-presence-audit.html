@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Online Presence Audit — Review Your Profile Clarity and Visibility</title>
+<meta name="description" content="Audit your online presence with Knownly. Review your profile clarity, content direction, trust signals and opportunity readiness." />
+<link rel="canonical" href="https://whatamiknownfor.com/online-presence-audit.html" />
+<meta property="og:title" content="Online Presence Audit — Knownly" />
+<meta property="og:description" content="Find the gap between who you are and how you appear online." />
+<meta property="og:url" content="https://whatamiknownfor.com/online-presence-audit.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Online Presence Audit — Knownly" />
+<meta name="twitter:description" content="Find the gap between who you are and how you appear online." />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Online Presence Audit — Knownly",
+  "description": "Audit your online presence with Knownly. Review your profile clarity, content direction, trust signals and opportunity readiness.",
+  "url": "https://whatamiknownfor.com/online-presence-audit.html",
+  "publisher": { "@type": "Organization", "name": "Knownly", "url": "https://whatamiknownfor.com" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#08110D;--bg2:#0D1713;--card:#14201A;--card-el:#182620;
+  --text:#F7F2E8;--text2:#B9C3B7;--cta:#8EA896;--cta-h:#7C9885;
+  --gold:#E0A86B;--border:#314238;--radius:14px;--radius-sm:8px;
+  --trans:0.22s ease;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* SCROLL PROGRESS */
+#scroll-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--cta),var(--gold));width:0%;z-index:9999;transition:width .1s linear}
+
+/* HEADER */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(8,17,13,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.header-inner{max-width:1160px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.logo{font-family:'Sora',sans-serif;font-size:18px;font-weight:700;color:var(--text);text-decoration:none;letter-spacing:-.3px}
+.logo span{color:var(--gold)}
+nav{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+nav a{font-size:13px;color:var(--text2);text-decoration:none;padding:5px 10px;border-radius:6px;transition:color var(--trans),background var(--trans)}
+nav a:hover{color:var(--text);background:rgba(255,255,255,.04)}
+nav a.nav-cta{background:var(--cta);color:#0A150F;font-weight:600;padding:6px 14px}
+nav a.nav-cta:hover{background:var(--cta-h)}
+@media(max-width:680px){nav a:not(.nav-cta):not(.nav-keep){display:none}}
+
+/* HERO */
+.hero{max-width:1160px;margin:0 auto;padding:72px 24px 56px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:820px){.hero{grid-template-columns:1fr;padding:48px 24px 40px}}
+.badge{display:inline-flex;align-items:center;gap:7px;background:rgba(224,168,107,.1);border:1px solid rgba(224,168,107,.22);color:var(--gold);font-size:12px;font-weight:500;letter-spacing:.4px;padding:5px 13px;border-radius:20px;margin-bottom:20px}
+.badge::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;opacity:.8}
+.hero h1{font-family:'Sora',sans-serif;font-size:clamp(26px,4vw,44px);font-weight:700;line-height:1.13;letter-spacing:-.5px;margin-bottom:10px}
+.gold-line{font-family:'Sora',sans-serif;font-size:clamp(14px,2vw,18px);color:var(--gold);font-weight:500;margin-bottom:16px;line-height:1.4}
+.hero p{font-size:15px;color:var(--text2);line-height:1.75;margin-bottom:28px}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--radius-sm);text-decoration:none;transition:background var(--trans),border-color var(--trans),transform var(--trans);cursor:pointer;border:none}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--cta);color:#0A150F}
+.btn-primary:hover{background:var(--cta-h)}
+.btn-secondary{background:transparent;color:var(--text2);border:1.5px solid var(--border)}
+.btn-secondary:hover{border-color:var(--cta);color:var(--text)}
+
+/* SCORECARD */
+.scorecard{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;position:relative;overflow:hidden}
+.scorecard::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(142,168,150,.1),transparent 70%);pointer-events:none}
+.sc-title{font-size:11px;font-weight:600;letter-spacing:.7px;text-transform:uppercase;color:var(--text2);opacity:.6;margin-bottom:18px}
+.sc-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.sc-label{font-size:13px;color:var(--text2);width:150px;flex-shrink:0}
+.sc-bar-wrap{flex:1;height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden}
+.sc-bar{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--cta),var(--gold))}
+.sc-val{font-size:12px;color:var(--text2);width:32px;text-align:right;flex-shrink:0}
+.sc-total{margin-top:18px;padding-top:16px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.sc-total-label{font-size:12px;color:var(--text2)}
+.sc-total-val{font-family:'Sora',sans-serif;font-size:20px;font-weight:700;color:var(--gold)}
+
+/* SECTIONS */
+.section{max-width:1160px;margin:0 auto;padding:72px 24px}
+.section-label{font-size:10.5px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--text2);opacity:.6;margin-bottom:12px}
+.section h2{font-family:'Sora',sans-serif;font-size:clamp(22px,3vw,34px);font-weight:700;line-height:1.2;letter-spacing:-.3px;margin-bottom:14px}
+.section-intro{font-size:15px;color:var(--text2);line-height:1.75;max-width:640px;margin-bottom:36px}
+.divider{border:none;border-top:1px solid var(--border);max-width:1160px;margin:0 auto}
+
+/* CARDS */
+.cards-grid{display:grid;gap:16px}
+.cards-2{grid-template-columns:repeat(2,1fr)}
+.cards-3{grid-template-columns:repeat(3,1fr)}
+.cards-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.cards-4{grid-template-columns:repeat(2,1fr)}.cards-3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.cards-2,.cards-3,.cards-4{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;transition:border-color var(--trans),transform var(--trans)}
+.card:hover{border-color:rgba(142,168,150,.4);transform:translateY(-2px)}
+.card-icon{font-size:20px;margin-bottom:10px}
+.card h3{font-family:'Sora',sans-serif;font-size:15px;font-weight:600;margin-bottom:6px}
+.card p{font-size:13.5px;color:var(--text2);line-height:1.6}
+
+/* INTERACTIVE CHECKLIST */
+.audit-checklist{display:grid;gap:10px;max-width:760px}
+.audit-item{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:15px 18px;display:flex;align-items:flex-start;gap:14px;cursor:pointer;transition:border-color var(--trans),background var(--trans);user-select:none}
+.audit-item:hover{border-color:rgba(142,168,150,.3)}
+.audit-item.checked{border-color:var(--cta);background:rgba(142,168,150,.06)}
+.audit-item.checked .audit-box{background:var(--cta);border-color:var(--cta)}
+.audit-item.checked .audit-box::after{opacity:1}
+.audit-box{width:20px;height:20px;border:1.5px solid var(--border);border-radius:5px;flex-shrink:0;position:relative;transition:background var(--trans),border-color var(--trans);margin-top:1px}
+.audit-box::after{content:'✓';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#0A150F;opacity:0;transition:opacity var(--trans)}
+.audit-text{font-size:14px;color:var(--text2);line-height:1.5;flex:1}
+.audit-item.checked .audit-text{color:var(--text)}
+.audit-score-row{display:flex;align-items:center;gap:16px;margin-top:20px;padding:16px 18px;background:var(--card-el);border:1px solid var(--border);border-radius:var(--radius-sm);max-width:760px}
+.audit-score-label{font-size:13px;color:var(--text2)}
+.audit-score-val{font-family:'Sora',sans-serif;font-size:22px;font-weight:700;color:var(--gold);margin-left:auto}
+.audit-cta-wrap{margin-top:22px}
+
+/* GAP CARDS */
+.gap-card{background:var(--card);border:1px solid var(--border);border-left:3px solid rgba(224,168,107,.4);border-radius:var(--radius);padding:16px 20px;font-size:14px;color:var(--text2);line-height:1.55}
+.gap-card strong{display:block;color:var(--text);font-size:14px;font-weight:600;margin-bottom:4px}
+
+/* FLOW */
+.flow-wrap{display:flex;gap:0;flex-wrap:wrap;max-width:900px;margin-top:8px}
+.flow-step{flex:1;min-width:160px;position:relative;padding:22px 18px 22px 24px}
+.flow-step::after{content:'→';position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:var(--border);font-size:18px;z-index:1}
+.flow-step:last-child::after{display:none}
+.flow-num{font-family:'Sora',sans-serif;font-size:28px;font-weight:700;color:rgba(224,168,107,.15);line-height:1;margin-bottom:8px}
+.flow-title{font-family:'Sora',sans-serif;font-size:14px;font-weight:600;color:var(--gold);margin-bottom:6px}
+.flow-desc{font-size:13px;color:var(--text2);line-height:1.55}
+.flow-card-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+@media(max-width:700px){.flow-step{min-width:100%;border-bottom:1px solid var(--border)}.flow-step::after{display:none}}
+
+/* REVEAL CARDS */
+.reveal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:600px){.reveal-grid{grid-template-columns:1fr}}
+.reveal-pill{background:var(--card-el);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text2)}
+.reveal-pill::before{content:'→';color:var(--gold);font-weight:600;flex-shrink:0}
+
+/* PAID PREVIEW */
+.paid-card{background:var(--card-el);border:1.5px solid var(--border);border-radius:var(--radius);padding:32px;max-width:640px;position:relative;overflow:hidden}
+.paid-card::before{content:'';position:absolute;bottom:-50px;right:-50px;width:180px;height:180px;background:radial-gradient(circle,rgba(224,168,107,.08),transparent 70%);pointer-events:none}
+.paid-price{font-family:'Sora',sans-serif;font-size:32px;font-weight:700;color:var(--gold);margin-bottom:6px}
+.paid-name{font-family:'Sora',sans-serif;font-size:17px;font-weight:600;margin-bottom:12px}
+.paid-desc{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:20px}
+.paid-includes{display:grid;gap:8px;margin-bottom:24px}
+.paid-include{font-size:13.5px;color:var(--text2);display:flex;align-items:flex-start;gap:9px}
+.paid-include::before{content:'✓';color:var(--cta);font-weight:700;flex-shrink:0;margin-top:2px}
+
+/* WHO GRID */
+.who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:800px){.who-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.who-grid{grid-template-columns:1fr}}
+.who-pill{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;text-align:center;font-size:13.5px;color:var(--text2);transition:border-color var(--trans),color var(--trans)}
+.who-pill:hover{border-color:var(--cta);color:var(--text)}
+.who-pill-icon{font-size:20px;margin-bottom:6px}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-family:'Sora',sans-serif;font-size:15.5px;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none}
+.faq-q::after{content:'+';color:var(--gold);font-size:20px;font-weight:300;flex-shrink:0;transition:transform var(--trans)}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{font-size:14px;color:var(--text2);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease}
+.faq-item.open .faq-a{max-height:300px;padding-top:12px}
+
+/* RELATED */
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:700px){.related-grid{grid-template-columns:1fr}}
+.related-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;text-decoration:none;display:block;transition:border-color var(--trans),transform var(--trans)}
+.related-card:hover{border-color:var(--cta);transform:translateY(-2px)}
+.related-card span{display:block;font-size:11px;color:var(--gold);letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px}
+.related-card h4{font-family:'Sora',sans-serif;font-size:14px;font-weight:600;color:var(--text);line-height:1.4}
+
+/* CTA SECTION */
+.cta-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:72px 24px;text-align:center}
+.cta-section h2{font-family:'Sora',sans-serif;font-size:clamp(22px,3vw,36px);font-weight:700;margin-bottom:14px;letter-spacing:-.3px}
+.cta-section p{font-size:15px;color:var(--text2);max-width:560px;margin:0 auto 28px;line-height:1.75}
+
+/* FOOTER */
+.site-footer{background:var(--bg2);border-top:1px solid var(--border);padding:36px 24px;text-align:center}
+.footer-inner{max-width:1160px;margin:0 auto}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin-bottom:16px}
+.footer-links a{font-size:13px;color:var(--text2);text-decoration:none;transition:color var(--trans)}
+.footer-links a:hover{color:var(--text)}
+.footer-copy{font-size:12px;color:var(--text2);opacity:.5}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}#scroll-bar{display:none}}
+
+:focus-visible{outline:2px solid var(--cta);outline-offset:2px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<div id="scroll-bar" role="progressbar" aria-label="Page scroll progress"></div>
+
+<!-- HEADER -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="/" class="logo">Known<span>ly</span></a>
+    <nav aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/diagnosis.html">Diagnosis</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/early-access.html">Early Access</a>
+      <a href="/about.html">About</a>
+      <a href="/login.html">Login</a>
+      <a href="/diagnosis.html" class="nav-cta">Start Free →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-label="Hero">
+  <div class="reveal">
+    <div class="badge">Online Presence Audit</div>
+    <h1>Is your online presence making your value clear?</h1>
+    <p class="gold-line">Find the gap between who you are and how you appear online.</p>
+    <p>Your online presence should make it easier for people to understand, remember and trust you. If your profiles feel unclear, scattered or outdated, Knownly helps you diagnose what to improve.</p>
+    <div class="btn-row">
+      <a href="/diagnosis.html" class="btn btn-primary">Start Free Knownly Diagnosis →</a>
+      <a href="/profile-report.html" class="btn btn-secondary">Get Profile Report</a>
+    </div>
+  </div>
+  <div class="reveal">
+    <div class="scorecard">
+      <div class="sc-title">Presence Audit Scorecard — Sample</div>
+      <div class="sc-row">
+        <span class="sc-label">Profile clarity</span>
+        <div class="sc-bar-wrap"><div class="sc-bar" style="width:55%"></div></div>
+        <span class="sc-val">55%</span>
+      </div>
+      <div class="sc-row">
+        <span class="sc-label">Content consistency</span>
+        <div class="sc-bar-wrap"><div class="sc-bar" style="width:40%"></div></div>
+        <span class="sc-val">40%</span>
+      </div>
+      <div class="sc-row">
+        <span class="sc-label">Trust signals</span>
+        <div class="sc-bar-wrap"><div class="sc-bar" style="width:70%"></div></div>
+        <span class="sc-val">70%</span>
+      </div>
+      <div class="sc-row">
+        <span class="sc-label">Proof visibility</span>
+        <div class="sc-bar-wrap"><div class="sc-bar" style="width:50%"></div></div>
+        <span class="sc-val">50%</span>
+      </div>
+      <div class="sc-row">
+        <span class="sc-label">Opportunity readiness</span>
+        <div class="sc-bar-wrap"><div class="sc-bar" style="width:60%"></div></div>
+        <span class="sc-val">60%</span>
+      </div>
+      <div class="sc-total">
+        <span class="sc-total-label">Overall Presence Clarity</span>
+        <span class="sc-total-val">68 / 100</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- SECTION 1: WHAT AN AUDIT CHECKS -->
+<section class="section reveal" aria-label="What an online presence audit checks">
+  <div class="section-label">What We Review</div>
+  <h2>A good audit looks beyond your profile photo.</h2>
+  <p class="section-intro">Knownly looks at whether your public presence makes your value clear, whether your content supports one direction, and whether your profile has enough trust signals for the opportunities you want.</p>
+  <div class="cards-grid cards-4">
+    <div class="card">
+      <div class="card-icon">🪟</div>
+      <h3>Profile clarity</h3>
+      <p>Does your profile communicate who you are and what you help with in a single glance?</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">✍️</div>
+      <h3>Headline and bio strength</h3>
+      <p>Is your headline specific? Does your bio explain your value and direction clearly?</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📅</div>
+      <h3>Content consistency</h3>
+      <p>Does your recent content support one clear direction or spread across unrelated topics?</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🛡️</div>
+      <h3>Trust signals</h3>
+      <p>Can people see evidence that you are credible, experienced or worth reaching out to?</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔎</div>
+      <h3>Proof visibility</h3>
+      <p>Is your work, experience or impact visible — or buried where no one can find it?</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎯</div>
+      <h3>Audience clarity</h3>
+      <p>Is it obvious who your content, profile and presence is for?</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📡</div>
+      <h3>Platform fit</h3>
+      <p>Are you building on the platform that suits your content style and opportunity goal?</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🚪</div>
+      <h3>Opportunity readiness</h3>
+      <p>Does your profile make it easy for the right people to take the next step with you?</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- SECTION 2: INTERACTIVE CHECKLIST -->
+<section class="section reveal" aria-label="Online presence audit checklist">
+  <div class="section-label">Mini Audit</div>
+  <h2>Check your current presence in 10 questions.</h2>
+  <p class="section-intro">Tick each item that is true for your current online presence. The more you tick, the clearer your current signal. Use this as a starting point, not a final score.</p>
+  <div class="audit-checklist" id="audit-list" role="group" aria-label="Audit checklist">
+    <div class="audit-item" role="checkbox" aria-checked="false" tabindex="0">
+      <div class="audit-box"></div>
+      <div class="audit-text">Someone can understand my value within 5 seconds of visiting my profile.</div>
+    </div>
+    <div class="audit-item" role="checkbox" aria-checked="false" tabindex="0">
+      <div class="audit-box"></div>
+      <div class="audit-text">My headline or bio is specific — not generic or vague.</div>
+    </div>
+    <div class="audit-item" role="checkbox" aria-checked="false" tabindex="0">
+      <div class="audit-box"></div>
+      <div class="audit-text">My recent posts support one clear direction or theme.</div>
+    </div>
+    <div class="audit-item" role="checkbox" aria-checked="false" tabindex="0">
+      <div class="audit-box"></div>
+      <div class="audit-text">My proof — work, experience or results — is visible on my profile.</div>
+    </div>
+    <div class="audit-item" role="checkbox" aria-checked="false" tabindex="0">
+      <div class="audit-box"></div>
+      <div class="audit-text">I have pinned, featured or highlighted content on my profile.</div>
+    </div>
+    <div class="audit-item" role="checkbox" aria-checked="false" tabindex="0">
+      <div class="audit-box"></div>
+      <div class="audit-text">My profile photo and banner are suitable for my current goal.</div>
+    </div>
+    <div class="audit-item" role="checkbox" aria-checked="false" tabindex="0">
+      <div class="audit-box"></div>
+      <div class="audit-text">My profile has one clear next step for someone who wants to connect or work with me.</div>
+    </div>
+    <div class="audit-item" role="checkbox" aria-checked="false" tabindex="0">
+      <div class="audit-box"></div>
+      <div class="audit-text">My links, platforms and handles are consistent with each other.</div>
+    </div>
+    <div class="audit-item" role="checkbox" aria-checked="false" tabindex="0">
+      <div class="audit-box"></div>
+      <div class="audit-text">I show expertise through examples and proof — not only claims or titles.</div>
+    </div>
+    <div class="audit-item" role="checkbox" aria-checked="false" tabindex="0">
+      <div class="audit-box"></div>
+      <div class="audit-text">My profile builds human trust — personality, voice and real perspective are present.</div>
+    </div>
+  </div>
+  <div class="audit-score-row" id="audit-score-row" aria-live="polite">
+    <span class="audit-score-label" id="audit-score-label">Tick any items that are true for you.</span>
+    <span class="audit-score-val" id="audit-score-val">0 / 10</span>
+  </div>
+  <div class="audit-cta-wrap">
+    <p style="font-size:13.5px;color:var(--text2);margin-bottom:14px;font-style:italic">Turn this audit into a full Knownly direction report with personalized recommendations.</p>
+    <a href="/diagnosis.html" class="btn btn-primary">Turn This Audit Into a Knownly Report →</a>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- SECTION 3: COMMON GAPS -->
+<section class="section reveal" aria-label="Common online presence gaps">
+  <div class="section-label">Common Gaps</div>
+  <h2>What most people get wrong about their online presence.</h2>
+  <p class="section-intro">These are the most common gaps Knownly sees between who someone is and how they appear online. Most are fixable once you understand the root cause.</p>
+  <div class="cards-grid cards-2" style="gap:12px">
+    <div class="gap-card"><strong>Strong offline value, weak online signal</strong>You have real experience and ability, but your profile does not reflect it clearly to someone who has never met you.</div>
+    <div class="gap-card"><strong>Posting without positioning</strong>You create content regularly, but there is no consistent direction that connects your posts to one professional signal.</div>
+    <div class="gap-card"><strong>Strong skills, weak visible proof</strong>Your skills are real, but there is little public evidence of your work, outcomes or expertise for others to see.</div>
+    <div class="gap-card"><strong>Too many unrelated topics</strong>Your profile and content cover too many areas, making it hard for anyone to understand what you should be remembered for.</div>
+    <div class="gap-card"><strong>No clear profile call to action</strong>Someone lands on your profile and does not know what to do next — there is no clear step, link or invitation.</div>
+    <div class="gap-card"><strong>Profile says one thing, content says another</strong>Your headline describes one direction while your posts move in a completely different direction — confusing anyone who visits.</div>
+    <div class="gap-card"><strong>No audience clarity</strong>Your profile is written as if it is for everyone, which means it resonates clearly with no one in particular.</div>
+    <div class="gap-card"><strong>No trust-building content</strong>Your presence is professional but distant — there is nothing that helps people feel confident in reaching out to you.</div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- SECTION 4: KNOWNLY AUDIT FLOW -->
+<section class="section reveal" aria-label="Knownly audit flow">
+  <div class="section-label">Knownly Flow</div>
+  <h2>Knownly turns your audit into a direction.</h2>
+  <p class="section-intro">The Knownly audit is not just a checklist. It becomes a structured direction report that tells you what to fix, where to focus and what your next step should be.</p>
+  <div class="flow-card-wrap">
+    <div class="flow-wrap">
+      <div class="flow-step">
+        <div class="flow-num">01</div>
+        <div class="flow-title">Free Diagnosis</div>
+        <div class="flow-desc">10-question process that maps your stage, strengths, goals and content style into a structured data profile.</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">02</div>
+        <div class="flow-title">Direction Report</div>
+        <div class="flow-desc">Your archetype, what you should be known for, content direction and opportunity path — generated from your answers.</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">03</div>
+        <div class="flow-title">Public Profile Links</div>
+        <div class="flow-desc">You choose what to share. Your LinkedIn URL, website or other links help Knownly review your public presence.</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">04</div>
+        <div class="flow-title">Profile Report</div>
+        <div class="flow-desc">A free profile clarity report that identifies gaps, scores your visibility and gives you platform-specific improvements.</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">05</div>
+        <div class="flow-title">Deep Review</div>
+        <div class="flow-desc">For users who want a more detailed human-guided profile review and a personalized 7-day improvement plan.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- SECTION 5: WHAT PROFILE REPORT REVEALS -->
+<section class="section reveal" aria-label="What your Knownly Profile Report reveals">
+  <div class="section-label">Profile Report</div>
+  <h2>What your Knownly Profile Report can reveal.</h2>
+  <p class="section-intro">The free profile report builds on your diagnosis answers and gives you a clearer picture of your positioning gaps and opportunity readiness.</p>
+  <div class="reveal-grid">
+    <div class="reveal-pill">Direction from your diagnosis answers</div>
+    <div class="reveal-pill">Profile clarity score with explanation</div>
+    <div class="reveal-pill">Visibility readiness assessment</div>
+    <div class="reveal-pill">Positioning gaps and missed signals</div>
+    <div class="reveal-pill">Platform-specific recommendations</div>
+    <div class="reveal-pill">7-day improvement plan</div>
+    <div class="reveal-pill">Paid next-step guidance where relevant</div>
+  </div>
+  <div style="margin-top:28px">
+    <a href="/diagnosis.html" class="btn btn-primary">Start Free Knownly Diagnosis →</a>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- SECTION 6: PAID REVIEW -->
+<section class="section reveal" aria-label="Deep profile review">
+  <div class="section-label">Paid Option</div>
+  <h2>Need a deeper human-guided review?</h2>
+  <p class="section-intro">The free profile report gives you direction. The Deep Profile Review is for users who want sharper human-guided feedback on profile clarity, positioning gaps and a 7-day action plan.</p>
+  <div class="paid-card">
+    <div class="paid-price">₹999</div>
+    <div class="paid-name">Deep Profile Review</div>
+    <div class="paid-desc">A human-reviewed, personalized breakdown of your online presence with specific improvements and a practical action plan.</div>
+    <div class="paid-includes">
+      <div class="paid-include">Profile clarity review with honest assessment</div>
+      <div class="paid-include">Headline and bio improvement suggestions</div>
+      <div class="paid-include">Positioning gap identification</div>
+      <div class="paid-include">7-day actionable improvement plan</div>
+      <div class="paid-include">7 personalized content ideas for your direction</div>
+      <div class="paid-include">Best-fit profile improvement checklist</div>
+    </div>
+    <a href="/pricing.html" class="btn btn-primary">View Pricing →</a>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- SECTION 7: WHO SHOULD AUDIT -->
+<section class="section reveal" aria-label="Who should audit their online presence">
+  <div class="section-label">Who This Is For</div>
+  <h2>Who should audit their online presence?</h2>
+  <p class="section-intro">An online presence audit is useful at any stage — especially before you try to grow, post more or change your direction.</p>
+  <div class="who-grid">
+    <div class="who-pill"><div class="who-pill-icon">🎓</div>Job seekers</div>
+    <div class="who-pill"><div class="who-pill-icon">💼</div>Working professionals</div>
+    <div class="who-pill"><div class="who-pill-icon">🧑‍💻</div>Freelancers</div>
+    <div class="who-pill"><div class="who-pill-icon">🤝</div>Consultants</div>
+    <div class="who-pill"><div class="who-pill-icon">🚀</div>Founders</div>
+    <div class="who-pill"><div class="who-pill-icon">🎙️</div>Creators</div>
+    <div class="who-pill"><div class="who-pill-icon">🧭</div>Coaches</div>
+    <div class="who-pill"><div class="who-pill-icon">🏢</div>Executives</div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- RELATED PAGES -->
+<section class="section reveal" aria-label="Related pages">
+  <div class="section-label">Explore More</div>
+  <h2>Related Knownly tools and services.</h2>
+  <div class="related-grid">
+    <a href="/linkedin-profile-review.html" class="related-card"><span>Profile</span><h4>LinkedIn Profile Review</h4></a>
+    <a href="/linkedin-headline-generator.html" class="related-card"><span>Headline</span><h4>LinkedIn Headline Generator</h4></a>
+    <a href="/personal-brand-statement-generator.html" class="related-card"><span>Brand</span><h4>Personal Brand Statement Generator</h4></a>
+    <a href="/founder-personal-branding-service.html" class="related-card"><span>Service</span><h4>Founder Personal Branding Service</h4></a>
+    <a href="/pricing.html" class="related-card"><span>Plans</span><h4>Knownly Pricing</h4></a>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- FAQ -->
+<section class="section reveal" aria-label="Frequently asked questions">
+  <div class="section-label">FAQ</div>
+  <h2>Common questions about online presence audits.</h2>
+  <div style="max-width:720px;margin-top:32px">
+    <div class="faq-item">
+      <div class="faq-q" tabindex="0" role="button" aria-expanded="false">What is an online presence audit?</div>
+      <div class="faq-a">It is a review of how clearly your profiles, content, proof and public signals explain who you are and what people should remember you for. A good audit looks at clarity, consistency, trust and opportunity readiness — not just follower counts.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" tabindex="0" role="button" aria-expanded="false">Is this only for LinkedIn?</div>
+      <div class="faq-a">No. Your online presence can include LinkedIn, Instagram, X, YouTube, a personal website, portfolio or other public profiles. Knownly looks at the platforms most relevant to your goal and stage.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" tabindex="0" role="button" aria-expanded="false">Do I need a large audience for an audit?</div>
+      <div class="faq-a">No. In fact, an audit is especially useful before trying to grow, because it helps you fix clarity and positioning first. Growing on top of an unclear profile often leads to slower or weaker results.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" tabindex="0" role="button" aria-expanded="false">Does Knownly review private accounts?</div>
+      <div class="faq-a">No. Knownly only works with the information and public links you choose to share. Do not submit passwords or private account access. All analysis is based on what you provide in your diagnosis and profile report.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" tabindex="0" role="button" aria-expanded="false">Does an audit guarantee more clients or jobs?</div>
+      <div class="faq-a">No. An audit can improve your clarity, positioning and opportunity readiness, but Knownly does not guarantee jobs, clients, followers or income. What it gives you is a clearer direction and a more effective starting point.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section reveal" aria-label="Final call to action">
+  <h2>Your online presence should make your value easier to understand.</h2>
+  <p>Start with the free Knownly Diagnosis and unlock a clearer direction for your profile, content and opportunity path.</p>
+  <a href="/diagnosis.html" class="btn btn-primary">Start Free Diagnosis →</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/diagnosis.html">Diagnosis</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/early-access.html">Early Access</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <p class="footer-copy">Knownly · Personal Intelligence for Online Presence · WhatAmIKnownFor.com</p>
+  </div>
+</footer>
+
+<script>
+// Scroll progress
+const scrollBar = document.getElementById('scroll-bar');
+window.addEventListener('scroll', () => {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  if (max > 0) scrollBar.style.width = (window.scrollY / max * 100) + '%';
+}, { passive: true });
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
+}, { threshold: 0.08 });
+reveals.forEach(r => ro.observe(r));
+
+// Interactive audit checklist
+const auditItems = document.querySelectorAll('.audit-item');
+const scoreVal   = document.getElementById('audit-score-val');
+const scoreLabel = document.getElementById('audit-score-label');
+
+function updateScore() {
+  const checked = document.querySelectorAll('.audit-item.checked').length;
+  scoreVal.textContent = checked + ' / 10';
+  if (checked === 0) {
+    scoreLabel.textContent = 'Tick any items that are true for you.';
+  } else if (checked <= 3) {
+    scoreLabel.textContent = 'There are meaningful gaps to address in your current presence.';
+  } else if (checked <= 6) {
+    scoreLabel.textContent = 'Your presence has a foundation — but key clarity gaps remain.';
+  } else if (checked <= 8) {
+    scoreLabel.textContent = 'You have a solid presence. A few targeted improvements could sharpen your signal.';
+  } else {
+    scoreLabel.textContent = 'Strong presence. Knownly can help you turn clarity into clearer opportunities.';
+  }
+}
+
+auditItems.forEach(item => {
+  function toggle() {
+    const isChecked = item.classList.toggle('checked');
+    item.setAttribute('aria-checked', isChecked.toString());
+    updateScore();
+  }
+  item.addEventListener('click', toggle);
+  item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  function toggle() {
+    const item = q.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    document.querySelectorAll('.faq-q').forEach(i => i.setAttribute('aria-expanded','false'));
+    if (!isOpen) { item.classList.add('open'); q.setAttribute('aria-expanded','true'); }
+  }
+  q.addEventListener('click', toggle);
+  q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+});
+</script>
+</body>
+</html>

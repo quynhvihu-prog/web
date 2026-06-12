@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Don’t Know What to Post — Find Your Content Direction with Knownly</title>
+<meta name="description" content="Not sure what to post online? Knownly helps you find your content pillars, natural style and personal brand direction with a free diagnosis.">
+<link rel="canonical" href="https://whatamiknownfor.com/i-dont-know-what-to-post.html">
+
+<meta property="og:title" content="I Don’t Know What to Post — Find Your Content Direction with Knownly">
+<meta property="og:description" content="Not sure what to post online? Knownly helps you find your content pillars, natural style and personal brand direction with a free diagnosis.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://whatamiknownfor.com/i-dont-know-what-to-post.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What should I post on LinkedIn if I don't know what to post?","acceptedAnswer":{"@type":"Answer","text":"Start with lessons from your work, breakdowns of problems you understand, and observations from things you are currently learning or building."}},
+    {"@type":"Question","name":"What if I am just starting out and have no audience yet?","acceptedAnswer":{"@type":"Answer","text":"Beginners can post about what they are learning, questions they are exploring, and small wins or lessons. You do not need an existing audience to start posting with direction."}},
+    {"@type":"Question","name":"Can I post if I don't feel like an expert yet?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can share what you are learning, document your process, or explain things from the perspective of someone slightly ahead of where your audience is."}},
+    {"@type":"Question","name":"How many content pillars should I have?","acceptedAnswer":{"@type":"Answer","text":"Most people benefit from one primary theme and two supporting themes. This keeps your presence focused while still allowing some variety."}},
+    {"@type":"Question","name":"Will Knownly guarantee my content goes viral?","acceptedAnswer":{"@type":"Answer","text":"No. Knownly does not guarantee virality, followers, clients or income. It helps you find a clearer content direction so your effort is more focused."}}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#08110D;
+    --bg2:#0D1713;
+    --card:#14201A;
+    --card-elev:#182620;
+    --text:#F7F2E8;
+    --text2:#B9C3B7;
+    --cta:#8EA896;
+    --cta-hover:#7C9885;
+    --gold:#E0A86B;
+    --border:#314238;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;}
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:700;line-height:1.25;}
+  a{color:inherit;}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  #scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--cta),var(--gold));z-index:1000;transition:width .1s ease-out;}
+
+  header{position:sticky;top:0;z-index:100;background:rgba(8,17,13,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:20px;}
+  .logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:.5px;text-decoration:none;}
+  .logo span{color:var(--gold);}
+  nav.main-nav{display:flex;gap:26px;align-items:center;}
+  nav.main-nav a{color:var(--text2);text-decoration:none;font-size:.95rem;font-weight:500;transition:color .2s;}
+  nav.main-nav a:hover{color:var(--text);}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border-radius:999px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;transition:all .25s ease;white-space:nowrap;}
+  .btn-primary{background:var(--cta);color:#0B1410;}
+  .btn-primary:hover{background:var(--cta-hover);transform:translateY(-1px);}
+  .btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border);}
+  .btn-secondary:hover{border-color:var(--cta);color:var(--cta);}
+
+  .hero{padding:80px 0 60px;background:radial-gradient(ellipse at top, rgba(142,168,150,0.08), transparent 60%);}
+  .badge{display:inline-block;padding:8px 18px;border-radius:999px;background:var(--card-elev);border:1px solid var(--border);color:var(--gold);font-size:.85rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:24px;}
+  .hero h1{font-size:clamp(2rem,4.5vw,3.1rem);max-width:850px;margin-bottom:14px;}
+  .gold-line{color:var(--gold);font-weight:700;font-size:1.1rem;margin-bottom:16px;font-family:'Sora',sans-serif;}
+  .hero .sub{color:var(--text2);font-size:clamp(1rem,2vw,1.1rem);margin-bottom:32px;max-width:680px;}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:16px;}
+
+  section{padding:70px 0;}
+  .section-bg{background:var(--bg2);}
+  .section-tag{color:var(--gold);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;}
+  .section-heading{font-size:clamp(1.6rem,3.5vw,2.4rem);margin-bottom:18px;max-width:760px;}
+  .section-text{color:var(--text2);max-width:760px;font-size:1.02rem;margin-bottom:36px;}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .cards-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .info-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;transition:transform .3s ease,border-color .3s ease;}
+  .info-card:hover{transform:translateY(-4px);border-color:var(--cta);}
+  .info-card .num{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--card-elev);color:var(--gold);font-weight:700;font-family:'Sora',sans-serif;margin-bottom:16px;border:1px solid var(--border);font-size:.9rem;}
+  .info-card h4{font-size:1.1rem;margin-bottom:10px;}
+  .info-card p{color:var(--text2);font-size:.95rem;}
+
+  /* Pillar builder */
+  .builder-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:34px;}
+  .builder-row{margin-bottom:22px;}
+  .builder-row:last-child{margin-bottom:0;}
+  .builder-row label{display:block;font-size:.92rem;color:var(--text2);margin-bottom:8px;font-weight:500;}
+  .builder-row .prompt{font-size:1rem;color:var(--text);margin-bottom:8px;}
+  .builder-row .prompt .blank{color:var(--gold);font-weight:700;}
+  .builder-row input{
+    width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:10px;
+    padding:13px 16px;color:var(--text);font-family:'Inter',sans-serif;font-size:.95rem;outline:none;transition:border-color .2s;
+  }
+  .builder-row input:focus{border-color:var(--cta);}
+  .builder-result{
+    margin-top:28px;background:var(--card-elev);border:1px solid var(--border);border-radius:14px;
+    padding:22px 24px;font-size:.98rem;color:var(--text);line-height:1.8;
+  }
+  .builder-result .pillar-tag{
+    display:inline-block;background:var(--bg2);border:1px solid var(--border);border-radius:999px;
+    padding:6px 14px;font-size:.82rem;color:var(--gold);font-weight:600;margin:4px 6px 0 0;
+  }
+  .builder-note{color:var(--text2);font-size:.9rem;margin-top:18px;}
+
+  /* Post type templates */
+  .template-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .template-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px;}
+  .template-card h4{color:var(--gold);font-size:1.05rem;margin-bottom:10px;}
+  .template-card .template-format{
+    background:var(--bg2);border-left:3px solid var(--gold);border-radius:8px;
+    padding:14px 16px;font-size:.9rem;color:var(--text);font-style:italic;margin-top:10px;
+  }
+  .template-card p{color:var(--text2);font-size:.92rem;}
+
+  .related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .related-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;text-decoration:none;color:var(--text);transition:transform .3s ease,border-color .3s;display:block;}
+  .related-card:hover{transform:translateY(-4px);border-color:var(--cta);}
+  .related-card .tag{font-size:.75rem;color:var(--gold);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:8px;display:block;}
+  .related-card h4{font-size:1.02rem;}
+
+  .faq-item{border:1px solid var(--border);border-radius:14px;margin-bottom:14px;background:var(--card);overflow:hidden;}
+  .faq-question{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-family:'Sora',sans-serif;font-size:1rem;user-select:none;}
+  .faq-icon{font-size:1.3rem;color:var(--gold);transition:transform .3s;}
+  .faq-item.open .faq-icon{transform:rotate(45deg);}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;padding:0 24px;color:var(--text2);font-size:.95rem;}
+  .faq-item.open .faq-answer{max-height:300px;padding:0 24px 22px;}
+
+  .final-cta{text-align:center;background:linear-gradient(160deg,var(--card-elev),var(--card));border:1px solid var(--border);border-radius:24px;padding:60px 30px;box-shadow:0 0 60px rgba(142,168,150,0.06);}
+  .final-cta h2{font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:14px;}
+  .final-cta p{color:var(--text2);max-width:600px;margin:0 auto 30px;}
+
+  footer{background:var(--bg2);border-top:1px solid var(--border);padding:50px 0 30px;}
+  .footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-bottom:30px;}
+  .footer-brand .logo{margin-bottom:8px;}
+  .footer-brand p{color:var(--text2);font-size:.9rem;}
+  .footer-links{display:flex;gap:14px;flex-wrap:wrap;}
+  .footer-links a{color:var(--text2);text-decoration:none;font-size:.9rem;transition:color .2s;}
+  .footer-links a:hover{color:var(--cta);}
+  .footer-bottom{border-top:1px solid var(--border);padding-top:20px;color:var(--text2);font-size:.82rem;text-align:center;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;}
+    .reveal{opacity:1;transform:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  @media (max-width:900px){
+    .cards-grid, .cards-2, .template-grid{grid-template-columns:1fr 1fr;}
+    .related-grid{grid-template-columns:1fr 1fr;}
+    nav.main-nav{display:none;}
+  }
+  @media (max-width:560px){
+    .cards-grid, .cards-2, .template-grid, .related-grid{grid-template-columns:1fr;}
+    section{padding:50px 0;}
+    .hero{padding:50px 0 40px;}
+    .builder-card{padding:24px;}
+  }
+</style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<header>
+  <div class="container nav-wrap">
+    <a href="/" class="logo">Known<span>ly</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/diagnosis.html">Diagnosis</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/early-access.html">Early Access</a>
+      <a href="/about.html">About</a>
+      <a href="/login.html">Login</a>
+    </nav>
+    <a href="/diagnosis.html" class="btn btn-primary">Start Free Diagnosis</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="badge">Content Direction Tool</div>
+    <h1>“I don’t know what to post” usually means your direction is unclear.</h1>
+    <div class="gold-line">Fix the signal before chasing ideas.</div>
+    <p class="sub">You do not need random content ideas. You need content themes that fit your strengths, goals, experience and the kind of opportunities you want to attract.</p>
+    <div class="hero-ctas">
+      <a href="/diagnosis.html" class="btn btn-primary">Find My Content Direction</a>
+      <a href="#builder" class="btn btn-secondary">Try the Mini Builder</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1: WHY IT FEELS HARD -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">Why It Feels Hard</div>
+    <h2 class="section-heading">Content ideas feel hard for predictable reasons.</h2>
+    <p class="section-text">If you sit down to post and feel stuck, it is rarely because you have nothing to say. It is more often because of one of these patterns.</p>
+    <div class="cards-grid">
+      <div class="info-card"><div class="num">1</div><h4>No clear niche</h4><p>Without a defined direction, every idea feels equally valid — and equally hard to commit to.</p></div>
+      <div class="info-card"><div class="num">2</div><h4>Too many interests</h4><p>Having many things to say can make it harder, not easier, to choose what to post.</p></div>
+      <div class="info-card"><div class="num">3</div><h4>Fear of judgment</h4><p>Worrying about how a post will be perceived can stop it from being written at all.</p></div>
+      <div class="info-card"><div class="num">4</div><h4>No content pillars</h4><p>Without repeatable themes, every post starts from zero, which is exhausting.</p></div>
+      <div class="info-card"><div class="num">5</div><h4>No proof bank</h4><p>Without a record of your experiences, lessons and work, it is harder to draw on real material.</p></div>
+      <div class="info-card"><div class="num">6</div><h4>Copying others</h4><p>Trying to sound like someone else can make your own ideas feel less worth sharing.</p></div>
+      <div class="info-card"><div class="num">7</div><h4>No audience clarity</h4><p>Not knowing who you are writing for makes it difficult to choose tone, depth or topic.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: FRAMEWORK -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">The Knownly Framework</div>
+    <h2 class="section-heading">The Knownly content direction framework.</h2>
+    <p class="section-text">Your content direction comes from the intersection of what you know, what you have lived through, and what you want next — not from trends.</p>
+    <div class="cards-grid">
+      <div class="info-card"><h4>What you know</h4><p>The knowledge, skills or expertise you can draw on without extra research.</p></div>
+      <div class="info-card"><h4>What you have experienced</h4><p>The situations, projects or challenges you have personally been through.</p></div>
+      <div class="info-card"><h4>What people ask you for</h4><p>The questions or advice people already come to you for, online or offline.</p></div>
+      <div class="info-card"><h4>What you are learning</h4><p>The topics you are currently exploring, which can make great "in progress" content.</p></div>
+      <div class="info-card"><h4>What audience you want to attract</h4><p>The kind of people you want reading your content and remembering you.</p></div>
+      <div class="info-card"><h4>What opportunity you want</h4><p>The direction — career, clients, audience or authority — your content should support.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: MINI PILLAR BUILDER -->
+<section class="section-bg" id="builder">
+  <div class="container reveal">
+    <div class="section-tag">Mini Tool</div>
+    <h2 class="section-heading">Mini content pillar builder.</h2>
+    <p class="section-text">Fill in these prompts. Your answers will form the start of your first content pillars.</p>
+    <div class="builder-card">
+      <div class="builder-row">
+        <div class="prompt">I help / want to help <span class="blank">______</span> understand <span class="blank">______</span>.</div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <input type="text" id="b1a" placeholder="who (e.g. early-stage founders)" style="flex:1;min-width:160px;">
+          <input type="text" id="b1b" placeholder="what (e.g. product positioning)" style="flex:1;min-width:160px;">
+        </div>
+      </div>
+      <div class="builder-row">
+        <label for="b2">People usually ask me about ______.</label>
+        <input type="text" id="b2" placeholder="e.g. how to price freelance work">
+      </div>
+      <div class="builder-row">
+        <label for="b3">I have experience with ______.</label>
+        <input type="text" id="b3" placeholder="e.g. launching products on a small budget">
+      </div>
+      <div class="builder-row">
+        <label for="b4">I can explain ______ in a simple way.</label>
+        <input type="text" id="b4" placeholder="e.g. financial basics for creators">
+      </div>
+      <div class="builder-row">
+        <label for="b5">I want to attract ______.</label>
+        <input type="text" id="b5" placeholder="e.g. clients looking for brand strategy help">
+      </div>
+      <div class="builder-result" id="builder-result">
+        Fill in the prompts above to see a starting point for your content pillars.
+      </div>
+      <p class="builder-note">These answers become your first content pillars. The Knownly Diagnosis builds on this with your strengths, goals and blockers to give you a complete content direction and 7-day action plan.</p>
+      <div style="margin-top:20px;">
+        <a href="/diagnosis.html" class="btn btn-primary">Get My Full Content Direction</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: POST TYPES -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">Where to Start</div>
+    <h2 class="section-heading">5 types of posts you can start with.</h2>
+    <p class="section-text">You do not need a complex content calendar to begin. These five formats can be reused across almost any topic.</p>
+    <div class="template-grid">
+      <div class="template-card">
+        <h4>Lesson post</h4>
+        <p>Share something you learned, and why it matters.</p>
+        <div class="template-format">"Here's something I learned about [topic] this week, and why it changed how I think about [related idea]."</div>
+      </div>
+      <div class="template-card">
+        <h4>Mistake post</h4>
+        <p>Share a mistake you made or commonly see, and what to do instead.</p>
+        <div class="template-format">"A mistake I made (or often see) with [topic] — and what I'd do differently next time."</div>
+      </div>
+      <div class="template-card">
+        <h4>Breakdown post</h4>
+        <p>Take something complex and explain it simply, step by step.</p>
+        <div class="template-format">"Here's a simple breakdown of [topic] in [number] steps."</div>
+      </div>
+      <div class="template-card">
+        <h4>Story post</h4>
+        <p>Share a real situation and the lesson it taught you.</p>
+        <div class="template-format">"A few months ago, I [situation]. Here's what it taught me about [topic]."</div>
+      </div>
+      <div class="template-card">
+        <h4>Opinion post</h4>
+        <p>Share a perspective on something happening in your field.</p>
+        <div class="template-format">"Here's my take on [trend or topic] — and why I see it differently."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: WHAT TO AVOID -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">What to Avoid</div>
+    <h2 class="section-heading">Patterns that make posting harder, not easier.</h2>
+    <div class="cards-grid">
+      <div class="info-card"><h4>Posting only quotes</h4><p>Quotes from others rarely show what you specifically know or believe.</p></div>
+      <div class="info-card"><h4>Copying trends blindly</h4><p>Trends that do not fit your direction can dilute your signal even if they get attention.</p></div>
+      <div class="info-card"><h4>Talking about everything</h4><p>Without a few consistent themes, your audience may struggle to know what to expect from you.</p></div>
+      <div class="info-card"><h4>Posting without profile clarity</h4><p>Great posts can underperform if your profile does not explain who you are.</p></div>
+      <div class="info-card"><h4>Overthinking every post</h4><p>Waiting for the "perfect" post often means not posting at all.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: KNOWNLY CTA -->
+<section>
+  <div class="container reveal">
+    <div class="final-cta">
+      <h2>Take the diagnosis to get 3 content pillars and a 7-day action plan.</h2>
+      <p>Knownly uses your strengths, goals, interests and blockers to generate a personal direction report — including content pillars built specifically around you.</p>
+      <a href="/diagnosis.html" class="btn btn-primary">Start Free Knownly Diagnosis</a>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED PAGES -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">Continue Exploring</div>
+    <h2 class="section-heading">Related Knownly tools and guides.</h2>
+    <div class="related-grid">
+      <a href="/content-pillars-generator.html" class="related-card"><span class="tag">Content</span><h4>Content Pillars Generator</h4></a>
+      <a href="/linkedin-headline-generator.html" class="related-card"><span class="tag">Profile</span><h4>LinkedIn Headline Generator</h4></a>
+      <a href="/find-my-niche.html" class="related-card"><span class="tag">Niche</span><h4>Find My Niche</h4></a>
+      <a href="/how-to-build-online-presence.html" class="related-card"><span class="tag">Guide</span><h4>How to Build Online Presence</h4></a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">FAQ</div>
+    <h2 class="section-heading">Frequently asked questions.</h2>
+    <div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>What should I post on LinkedIn if I don't know what to post?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Start with lessons from your work, breakdowns of problems you understand, and observations from things you are currently learning or building.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>What if I am just starting out and have no audience yet?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Beginners can post about what they are learning, questions they are exploring, and small wins or lessons. You do not need an existing audience to start posting with direction.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Can I post if I don't feel like an expert yet?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Yes. You can share what you are learning, document your process, or explain things from the perspective of someone slightly ahead of where your audience is.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>How many content pillars should I have?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Most people benefit from one primary theme and two supporting themes. This keeps your presence focused while still allowing some variety.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Will Knownly guarantee my content goes viral?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>No. Knownly does not guarantee virality, followers, clients or income. It helps you find a clearer content direction so your effort is more focused.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">Known<span style="color:var(--gold)">ly</span></div>
+        <p>WhatAmIKnownFor.com<br>Personal Intelligence for Online Presence</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/diagnosis.html">Diagnosis</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/early-access.html">Early Access</a>
+        <a href="/about.html">About</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Knownly. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Scroll progress
+  var progress = document.getElementById('scroll-progress');
+  function updateProgress(){
+    var h = document.documentElement;
+    var scrollTop = h.scrollTop || document.body.scrollTop;
+    var height = h.scrollHeight - h.clientHeight;
+    var pct = height > 0 ? (scrollTop / height) * 100 : 0;
+    progress.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress, {passive:true});
+  updateProgress();
+
+  // Reveal on scroll
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if(prefersReduced){
+    reveals.forEach(function(el){ el.classList.add('visible'); });
+  } else {
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12});
+    reveals.forEach(function(el){ observer.observe(el); });
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(function(q){
+    function toggle(){
+      var item = q.parentElement;
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(o){
+        o.classList.remove('open');
+        o.querySelector('.faq-question').setAttribute('aria-expanded','false');
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        q.setAttribute('aria-expanded','true');
+      }
+    }
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+
+  // Mini pillar builder
+  function esc(str){
+    return String(str).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  var inputs = ['b1a','b1b','b2','b3','b4','b5'].map(function(id){ return document.getElementById(id); });
+  var resultEl = document.getElementById('builder-result');
+
+  function updateBuilder(){
+    var who = inputs[0].value.trim();
+    var what = inputs[1].value.trim();
+    var asks = inputs[2].value.trim();
+    var experience = inputs[3].value.trim();
+    var explain = inputs[4].value.trim();
+    var attract = inputs[5].value.trim();
+
+    var anyFilled = who || what || asks || experience || explain || attract;
+    if(!anyFilled){
+      resultEl.innerHTML = 'Fill in the prompts above to see a starting point for your content pillars.';
+      return;
+    }
+
+    var lines = [];
+    if(who || what){
+      lines.push('Your core focus could center on helping <strong>' + esc(who || 'your audience') + '</strong> understand <strong>' + esc(what || 'your area of expertise') + '</strong>.');
+    }
+    var pillars = [];
+    if(asks) pillars.push(asks);
+    if(experience) pillars.push(experience);
+    if(explain) pillars.push(explain);
+
+    if(pillars.length){
+      var chips = pillars.map(function(p){ return '<span class="pillar-tag">' + esc(p) + '</span>'; }).join('');
+      lines.push('Possible content pillars based on your answers: ' + chips);
+    }
+    if(attract){
+      lines.push('Keeping <strong>' + esc(attract) + '</strong> in mind can help you choose tone, examples and depth for your posts.');
+    }
+
+    resultEl.innerHTML = lines.join('<br><br>');
+  }
+
+  inputs.forEach(function(input){
+    input.addEventListener('input', updateBuilder);
+  });
+})();
+</script>
+
+</body>
+</html>

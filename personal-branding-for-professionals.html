@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Branding for Professionals — Build Career Visibility with Knownly</title>
+<meta name="description" content="Learn how working professionals can build a clearer online presence, improve LinkedIn positioning, show expertise and become easier to remember for career opportunities.">
+<link rel="canonical" href="https://whatamiknownfor.com/personal-branding-for-professionals.html">
+
+<meta property="og:title" content="Personal Branding for Professionals — Knownly">
+<meta property="og:description" content="Build a clearer professional signal around your expertise, proof, content direction and career opportunity path.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://whatamiknownfor.com/personal-branding-for-professionals.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Do professionals need personal branding?","acceptedAnswer":{"@type":"Answer","text":"A clear professional brand helps people understand your expertise, proof and career direction. It supports trust, networking and opportunity readiness."}},
+    {"@type":"Question","name":"Is personal branding only for creators?","acceptedAnswer":{"@type":"Answer","text":"No. Professionals can build personal brands through expertise, useful insights, proof, projects and clear profile positioning."}},
+    {"@type":"Question","name":"What should professionals post on LinkedIn?","acceptedAnswer":{"@type":"Answer","text":"Professionals can post work lessons, industry observations, skill explanations, project reflections, frameworks and practical insights."}},
+    {"@type":"Question","name":"Can Knownly help me get a promotion or job?","acceptedAnswer":{"@type":"Answer","text":"Knownly helps with clarity, positioning and opportunity readiness. It does not guarantee promotions, jobs or income."}},
+    {"@type":"Question","name":"What platform should professionals start with?","acceptedAnswer":{"@type":"Answer","text":"LinkedIn is usually the best starting point for professional visibility, career trust and industry networking."}}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#08110D;
+    --bg2:#0D1713;
+    --card:#14201A;
+    --card-elev:#182620;
+    --text:#F7F2E8;
+    --text2:#B9C3B7;
+    --cta:#8EA896;
+    --cta-hover:#7C9885;
+    --gold:#E0A86B;
+    --border:#314238;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;}
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:700;line-height:1.25;}
+  a{color:inherit;}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  #scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--cta),var(--gold));z-index:1000;transition:width .1s ease-out;}
+
+  header{position:sticky;top:0;z-index:100;background:rgba(8,17,13,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:20px;}
+  .logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:.5px;text-decoration:none;}
+  .logo span{color:var(--gold);}
+  nav.main-nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap;}
+  nav.main-nav a{color:var(--text2);text-decoration:none;font-size:.92rem;font-weight:500;transition:color .2s;}
+  nav.main-nav a:hover{color:var(--text);}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border-radius:999px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;transition:all .25s ease;white-space:nowrap;}
+  .btn-primary{background:var(--cta);color:#0B1410;}
+  .btn-primary:hover{background:var(--cta-hover);transform:translateY(-1px);}
+  .btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border);}
+  .btn-secondary:hover{border-color:var(--cta);color:var(--cta);}
+
+  .hero{padding:80px 0 60px;background:radial-gradient(ellipse at top, rgba(142,168,150,0.08), transparent 60%);}
+  .badge{display:inline-block;padding:8px 18px;border-radius:999px;background:var(--card-elev);border:1px solid var(--border);color:var(--gold);font-size:.85rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:24px;}
+  .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center;}
+  .hero h1{font-size:clamp(2rem,4.5vw,3.1rem);margin-bottom:14px;}
+  .gold-line{color:var(--gold);font-weight:700;font-size:1.1rem;margin-bottom:16px;font-family:'Sora',sans-serif;}
+  .hero .sub{color:var(--text2);font-size:clamp(1rem,2vw,1.1rem);margin-bottom:32px;max-width:600px;}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:16px;}
+
+  .map-card{background:linear-gradient(160deg,var(--card-elev),var(--card));border:1px solid var(--border);border-radius:22px;padding:30px;box-shadow:0 0 60px rgba(142,168,150,0.08);}
+  .map-card h3{font-size:1rem;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:20px;text-align:center;}
+  .map-list{display:flex;flex-direction:column;gap:12px;}
+  .map-item{display:flex;align-items:center;gap:14px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:14px 16px;font-size:.95rem;font-weight:600;}
+  .map-num{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--card-elev);color:var(--gold);font-family:'Sora',sans-serif;font-weight:700;font-size:.85rem;border:1px solid var(--border);flex-shrink:0;}
+
+  section{padding:70px 0;}
+  .section-bg{background:var(--bg2);}
+  .section-tag{color:var(--gold);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;}
+  .section-heading{font-size:clamp(1.6rem,3.5vw,2.4rem);margin-bottom:18px;max-width:760px;}
+  .section-text{color:var(--text2);max-width:760px;font-size:1.02rem;margin-bottom:36px;}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .cards-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .info-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px;transition:transform .3s ease,border-color .3s ease;}
+  .info-card:hover{transform:translateY(-4px);border-color:var(--cta);}
+  .info-card h4{font-size:1.05rem;margin-bottom:8px;}
+  .info-card p{color:var(--text2);font-size:.92rem;}
+  .info-card .example{background:var(--bg2);border-left:3px solid var(--gold);border-radius:8px;padding:14px 16px;font-size:.9rem;color:var(--text);font-style:italic;margin-top:14px;}
+
+  /* Framework layers */
+  .layer-list{display:flex;flex-direction:column;gap:14px;}
+  .layer-item{display:grid;grid-template-columns:60px 1fr;gap:20px;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;}
+  .layer-num{display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:var(--card-elev);color:var(--gold);font-family:'Sora',sans-serif;font-weight:800;border:1px solid var(--border);font-size:1.1rem;}
+  .layer-item h4{font-size:1.05rem;margin-bottom:6px;}
+  .layer-item .question{color:var(--gold);font-size:.85rem;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:6px;}
+  .layer-item p{color:var(--text2);font-size:.92rem;}
+
+  /* Checklist */
+  .checklist{display:flex;flex-direction:column;gap:0;background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;}
+  .check-item{display:flex;align-items:flex-start;gap:16px;padding:18px 24px;border-bottom:1px solid var(--border);}
+  .check-item:last-child{border-bottom:none;}
+  .check-box{flex-shrink:0;width:22px;height:22px;border-radius:6px;border:1px solid var(--border);background:var(--bg2);margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+  .check-box.checked{background:var(--cta);border-color:var(--cta);}
+  .check-box.checked::after{content:'✓';color:#0B1410;font-weight:800;font-size:.85rem;}
+  .check-text{font-size:.98rem;color:var(--text);}
+  .checklist-result{margin-top:24px;background:var(--card-elev);border:1px solid var(--border);border-radius:14px;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+  .checklist-result .score{font-family:'Sora',sans-serif;font-weight:800;color:var(--gold);font-size:1.3rem;}
+
+  /* Output chips */
+  .output-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:36px;}
+  .output-chip{background:var(--card-elev);border:1px solid var(--border);border-radius:14px;padding:18px 20px;font-weight:600;font-size:.92rem;text-align:center;}
+
+  .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .related-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;text-decoration:none;color:var(--text);transition:transform .3s ease,border-color .3s;display:block;}
+  .related-card:hover{transform:translateY(-4px);border-color:var(--cta);}
+  .related-card .tag{font-size:.75rem;color:var(--gold);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:8px;display:block;}
+  .related-card h4{font-size:1.02rem;}
+
+  .faq-item{border:1px solid var(--border);border-radius:14px;margin-bottom:14px;background:var(--card);overflow:hidden;}
+  .faq-question{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-family:'Sora',sans-serif;font-size:1rem;user-select:none;}
+  .faq-icon{font-size:1.3rem;color:var(--gold);transition:transform .3s;}
+  .faq-item.open .faq-icon{transform:rotate(45deg);}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;padding:0 24px;color:var(--text2);font-size:.95rem;}
+  .faq-item.open .faq-answer{max-height:300px;padding:0 24px 22px;}
+
+  .final-cta{text-align:center;background:linear-gradient(160deg,var(--card-elev),var(--card));border:1px solid var(--border);border-radius:24px;padding:60px 30px;box-shadow:0 0 60px rgba(142,168,150,0.06);}
+  .final-cta h2{font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:14px;}
+  .final-cta p{color:var(--text2);max-width:600px;margin:0 auto 30px;}
+
+  footer{background:var(--bg2);border-top:1px solid var(--border);padding:50px 0 30px;}
+  .footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-bottom:30px;}
+  .footer-brand .logo{margin-bottom:8px;}
+  .footer-brand p{color:var(--text2);font-size:.9rem;}
+  .footer-links{display:flex;gap:14px;flex-wrap:wrap;max-width:600px;}
+  .footer-links a{color:var(--text2);text-decoration:none;font-size:.9rem;transition:color .2s;}
+  .footer-links a:hover{color:var(--cta);}
+  .footer-bottom{border-top:1px solid var(--border);padding-top:20px;color:var(--text2);font-size:.82rem;text-align:center;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;}
+    .reveal{opacity:1;transform:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .cards-grid, .related-grid{grid-template-columns:1fr 1fr;}
+    .cards-4, .output-grid{grid-template-columns:1fr 1fr;}
+    nav.main-nav{display:none;}
+  }
+  @media (max-width:560px){
+    .cards-grid, .cards-4, .output-grid, .related-grid{grid-template-columns:1fr;}
+    section{padding:50px 0;}
+    .hero{padding:50px 0 40px;}
+    .layer-item{grid-template-columns:46px 1fr;}
+    .checklist-result{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<header>
+  <div class="container nav-wrap">
+    <a href="/" class="logo">Known<span>ly</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/diagnosis.html">Diagnosis</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/early-access.html">Early Access</a>
+      <a href="/free-tools.html">Free Tools</a>
+      <a href="/resources.html">Resources</a>
+      <a href="/about.html">About</a>
+      <a href="/login.html">Login</a>
+    </nav>
+    <a href="/diagnosis.html" class="btn btn-primary">Start Free Diagnosis</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">For Professionals</div>
+      <h1>Build a professional brand that makes your value easier to understand.</h1>
+      <div class="gold-line">You do not need to become an influencer. You need a clearer signal.</div>
+      <p class="sub">Professionals often have skills, experience and judgment, but their online presence does not clearly show what they should be remembered for. Knownly helps you clarify your direction, profile and content path.</p>
+      <div class="hero-ctas">
+        <a href="/diagnosis.html" class="btn btn-primary">Start Free Knownly Diagnosis</a>
+        <a href="/linkedin-profile-review.html" class="btn btn-secondary">Review My LinkedIn Direction</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="map-card">
+        <h3>Professional Visibility Map</h3>
+        <div class="map-list">
+          <div class="map-item"><span class="map-num">1</span> Expertise</div>
+          <div class="map-item"><span class="map-num">2</span> Experience</div>
+          <div class="map-item"><span class="map-num">3</span> Profile Clarity</div>
+          <div class="map-item"><span class="map-num">4</span> Content Themes</div>
+          <div class="map-item"><span class="map-num">5</span> Proof</div>
+          <div class="map-item"><span class="map-num">6</span> Opportunity Path</div>
+          <div class="map-item"><span class="map-num">7</span> LinkedIn Signal</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1: WHY -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">Why It Matters</div>
+    <h2 class="section-heading">Why professionals need personal branding.</h2>
+    <div class="cards-grid">
+      <div class="info-card"><h4>Become easier to remember</h4><p>A clear signal helps people recall you when relevant opportunities come up.</p></div>
+      <div class="info-card"><h4>Show expertise beyond job title</h4><p>Your title alone rarely communicates what you actually know or can do.</p></div>
+      <div class="info-card"><h4>Build trust before opportunities</h4><p>People often research someone before a referral, interview or introduction.</p></div>
+      <div class="info-card"><h4>Support networking and referrals</h4><p>A clear profile makes it easier for others to introduce or recommend you.</p></div>
+      <div class="info-card"><h4>Improve LinkedIn clarity</h4><p>Most professionals are already on LinkedIn — clarity makes that presence work harder.</p></div>
+      <div class="info-card"><h4>Build long-term career visibility</h4><p>Visibility built over time can support opportunities long before you're actively looking.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: COMMON MISTAKES -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">Common Mistakes</div>
+    <h2 class="section-heading">Common professional branding mistakes.</h2>
+    <div class="cards-4">
+      <div class="info-card"><h4>Profile only lists job title</h4></div>
+      <div class="info-card"><h4>No clear area of expertise</h4></div>
+      <div class="info-card"><h4>No visible proof</h4></div>
+      <div class="info-card"><h4>No content direction</h4></div>
+      <div class="info-card"><h4>No clear audience</h4></div>
+      <div class="info-card"><h4>Too many unrelated topics</h4></div>
+      <div class="info-card"><h4>No point of view</h4></div>
+      <div class="info-card"><h4>Waiting until job search begins</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: FRAMEWORK -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">The Knownly Framework</div>
+    <h2 class="section-heading">The Knownly professional branding framework.</h2>
+    <div class="layer-list">
+      <div class="layer-item"><div class="layer-num">1</div><div><h4>Expertise Signal</h4><div class="question">What should people associate with your knowledge?</div><p>The specific area where your knowledge and judgment stand out.</p></div></div>
+      <div class="layer-item"><div class="layer-num">2</div><div><h4>Proof Signal</h4><div class="question">What experience, projects or results make you credible?</div><p>Concrete evidence of your work that backs up your expertise.</p></div></div>
+      <div class="layer-item"><div class="layer-num">3</div><div><h4>Audience Signal</h4><div class="question">Who should understand your value?</div><p>The people — colleagues, peers, recruiters or clients — your presence should speak to.</p></div></div>
+      <div class="layer-item"><div class="layer-num">4</div><div><h4>Content Signal</h4><div class="question">What themes can you repeat naturally?</div><p>The recurring topics that reflect your expertise without feeling forced.</p></div></div>
+      <div class="layer-item"><div class="layer-num">5</div><div><h4>Opportunity Signal</h4><div class="question">What should visibility lead toward?</div><p>The kind of opportunities — career growth, projects, networking — your presence should support.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: CHECKLIST -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">Mini Self-Check</div>
+    <h2 class="section-heading">LinkedIn checklist for professionals.</h2>
+    <p class="section-text">Tap each item that is currently true for your LinkedIn profile.</p>
+    <div class="checklist" id="checklist">
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Does your headline explain more than your job title?</div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Does your About section tell a clear direction?</div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Is your experience easy to understand?</div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Is proof visible?</div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Do your posts support your expertise?</div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Can people remember one thing about you?</div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Do you show useful thinking?</div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Is your profile updated?</div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Is your CTA/contact path clear?</div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Does your profile support the opportunities you want?</div></div>
+    </div>
+    <div class="checklist-result">
+      <div><span class="score" id="check-score">0 / 10</span> <span style="color:var(--text2);font-size:.9rem;"> checked</span></div>
+      <div style="color:var(--text2);font-size:.92rem;max-width:420px;" id="check-message">If you are unsure about most of these, start with the Knownly Diagnosis.</div>
+    </div>
+    <div style="margin-top:28px;">
+      <a href="/diagnosis.html" class="btn btn-primary">Get My Professional Direction</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: CONTENT IDEAS -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">Content Ideas</div>
+    <h2 class="section-heading">Content ideas for professionals.</h2>
+    <div class="cards-grid">
+      <div class="info-card">
+        <h4>Lessons from work</h4>
+        <p>Share something learned from a recent project or task.</p>
+        <div class="example">"A lesson I took away from a recent project on [topic]."</div>
+      </div>
+      <div class="info-card">
+        <h4>Industry observations</h4>
+        <p>Share a trend or shift you've noticed in your field.</p>
+        <div class="example">"A change I'm noticing in [industry] and what it might mean."</div>
+      </div>
+      <div class="info-card">
+        <h4>Practical frameworks</h4>
+        <p>Share a simple structure or approach you use regularly.</p>
+        <div class="example">"A simple framework I use when approaching [task]."</div>
+      </div>
+      <div class="info-card">
+        <h4>Skill explanations</h4>
+        <p>Break down a skill or concept in your area of expertise.</p>
+        <div class="example">"Here's how I think about [skill] in simple terms."</div>
+      </div>
+      <div class="info-card">
+        <h4>Mistakes and lessons</h4>
+        <p>Share something that didn't go as planned, and what it taught you.</p>
+        <div class="example">"A mistake I made early in my career with [topic] — and what I'd do differently."</div>
+      </div>
+      <div class="info-card">
+        <h4>Project reflections</h4>
+        <p>Reflect on a project's outcome and what made it work or not.</p>
+        <div class="example">"What worked (and didn't) on a recent [type of project]."</div>
+      </div>
+      <div class="info-card">
+        <h4>Useful resources</h4>
+        <p>Share a tool, resource or method that has helped you.</p>
+        <div class="example">"A resource that's helped me with [task] — and how I use it."</div>
+      </div>
+      <div class="info-card">
+        <h4>Opinion backed by experience</h4>
+        <p>Share your perspective on a debate or trend in your field.</p>
+        <div class="example">"My take on [industry debate] based on what I've seen in practice."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: WHAT TO AVOID -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">What to Avoid</div>
+    <h2 class="section-heading">What to avoid.</h2>
+    <div class="cards-4">
+      <div class="info-card"><h4>Posting only motivational quotes</h4></div>
+      <div class="info-card"><h4>Hiding behind company title</h4></div>
+      <div class="info-card"><h4>Copying creators outside your context</h4></div>
+      <div class="info-card"><h4>Waiting for perfection</h4></div>
+      <div class="info-card"><h4>Posting about everything</h4></div>
+      <div class="info-card"><h4>Making claims without proof</h4></div>
+      <div class="info-card"><h4>Ignoring your profile</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: HOW KNOWNLY HELPS -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">How Knownly Helps</div>
+    <h2 class="section-heading">How Knownly helps professionals.</h2>
+    <p class="section-text">Knownly turns your diagnosis answers into a personal report with practical, specific outputs.</p>
+    <div class="output-grid">
+      <div class="output-chip">Knownly Archetype</div>
+      <div class="output-chip">What you should be known for</div>
+      <div class="output-chip">Best-fit platform</div>
+      <div class="output-chip">Content pillars</div>
+      <div class="output-chip">Profile gap</div>
+      <div class="output-chip">Opportunity path</div>
+      <div class="output-chip">7-day action plan</div>
+    </div>
+    <a href="/diagnosis.html" class="btn btn-primary">Start Free Diagnosis</a>
+  </div>
+</section>
+
+<!-- RELATED PAGES -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">Continue Exploring</div>
+    <h2 class="section-heading">Related Knownly tools and guides.</h2>
+    <div class="related-grid">
+      <a href="/linkedin-profile-review.html" class="related-card"><span class="tag">Profile</span><h4>LinkedIn Profile Review</h4></a>
+      <a href="/linkedin-headline-generator.html" class="related-card"><span class="tag">Tool</span><h4>LinkedIn Headline Generator</h4></a>
+      <a href="/online-presence-audit.html" class="related-card"><span class="tag">Audit</span><h4>Online Presence Audit</h4></a>
+      <a href="/content-pillars-generator.html" class="related-card"><span class="tag">Content</span><h4>Content Pillars Generator</h4></a>
+      <a href="/personal-branding-for-job-seekers.html" class="related-card"><span class="tag">Guide</span><h4>Personal Branding for Job Seekers</h4></a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">FAQ</div>
+    <h2 class="section-heading">Frequently asked questions.</h2>
+    <div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Do professionals need personal branding?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>A clear professional brand helps people understand your expertise, proof and career direction. It supports trust, networking and opportunity readiness.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Is personal branding only for creators?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>No. Professionals can build personal brands through expertise, useful insights, proof, projects and clear profile positioning.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>What should professionals post on LinkedIn?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Professionals can post work lessons, industry observations, skill explanations, project reflections, frameworks and practical insights.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Can Knownly help me get a promotion or job?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Knownly helps with clarity, positioning and opportunity readiness. It does not guarantee promotions, jobs or income.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>What platform should professionals start with?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>LinkedIn is usually the best starting point for professional visibility, career trust and industry networking.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section>
+  <div class="container reveal">
+    <div class="final-cta">
+      <h2>Make your expertise easier to recognize.</h2>
+      <p>Take the free Knownly Diagnosis and discover what your professional online presence should communicate.</p>
+      <a href="/diagnosis.html" class="btn btn-primary">Start Free Diagnosis</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">Known<span style="color:var(--gold)">ly</span></div>
+        <p>WhatAmIKnownFor.com<br>Personal Intelligence for Online Presence</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/diagnosis.html">Diagnosis</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/early-access.html">Early Access</a>
+        <a href="/free-tools.html">Free Tools</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/about.html">About</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/sitemap.html">Sitemap</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Knownly. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Scroll progress
+  var progress = document.getElementById('scroll-progress');
+  function updateProgress(){
+    var h = document.documentElement;
+    var scrollTop = h.scrollTop || document.body.scrollTop;
+    var height = h.scrollHeight - h.clientHeight;
+    var pct = height > 0 ? (scrollTop / height) * 100 : 0;
+    progress.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress, {passive:true});
+  updateProgress();
+
+  // Reveal on scroll
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if(prefersReduced){
+    reveals.forEach(function(el){ el.classList.add('visible'); });
+  } else {
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12});
+    reveals.forEach(function(el){ observer.observe(el); });
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(function(q){
+    function toggle(){
+      var item = q.parentElement;
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(o){
+        o.classList.remove('open');
+        o.querySelector('.faq-question').setAttribute('aria-expanded','false');
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        q.setAttribute('aria-expanded','true');
+      }
+    }
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+
+  // Checklist
+  var boxes = document.querySelectorAll('.check-box');
+  var scoreEl = document.getElementById('check-score');
+  var msgEl = document.getElementById('check-message');
+  function updateScore(){
+    var checked = document.querySelectorAll('.check-box.checked').length;
+    scoreEl.textContent = checked + ' / ' + boxes.length;
+    if(checked <= 4){
+      msgEl.textContent = 'A clearer direction from the Knownly Diagnosis can help you decide what to fix first.';
+    } else if(checked <= 7){
+      msgEl.textContent = 'You have a foundation — Knownly can help sharpen your professional positioning further.';
+    } else {
+      msgEl.textContent = 'Strong foundation. Knownly can help refine your content pillars and opportunity path.';
+    }
+  }
+  boxes.forEach(function(box){
+    box.addEventListener('click', function(){
+      box.classList.toggle('checked');
+      updateScore();
+    });
+  });
+  updateScore();
+})();
+</script>
+
+</body>
+</html>

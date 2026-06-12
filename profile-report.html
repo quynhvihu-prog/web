@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Knownly Profile Report — Your Online Presence Review</title>
+<meta name="description" content="Your Knownly Profile Report compares your diagnosis direction with your public profile links to reveal positioning gaps, visibility signals and next steps." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #08110D;
+  --bg2: #0D1713;
+  --card: #14201A;
+  --card-elevated: #182620;
+  --text-primary: #F7F2E8;
+  --text-secondary: #B9C3B7;
+  --cta: #8EA896;
+  --cta-hover: #7C9885;
+  --gold: #E0A86B;
+  --border: #314238;
+  --border-focus: #8EA896;
+  --error: #E07070;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --transition: 0.22s ease;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── SCROLL PROGRESS ── */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--cta), var(--gold));
+  z-index: 200;
+  transition: width 0.1s linear;
+}
+
+/* ── HEADER ── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8,17,13,0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  gap: 16px;
+}
+.logo {
+  font-family: 'Sora', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.3px;
+}
+.logo span { color: var(--gold); }
+.nav {
+  display: none;
+  gap: 6px;
+}
+@media(min-width: 768px) { .nav { display: flex; } }
+.nav a {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: color var(--transition), background var(--transition);
+}
+.nav a:hover { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+.header-cta {
+  font-size: 13px;
+  font-weight: 500;
+  color: #0A150F;
+  background: var(--cta);
+  padding: 7px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background var(--transition);
+  white-space: nowrap;
+}
+.header-cta:hover { background: var(--cta-hover); }
+
+/* ── HERO ── */
+.hero {
+  text-align: center;
+  padding: 56px 24px 40px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(224,168,107,0.1);
+  border: 1px solid rgba(224,168,107,0.25);
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  padding: 5px 13px;
+  border-radius: 20px;
+  margin-bottom: 22px;
+}
+.badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  opacity: 0.8;
+}
+.hero h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(24px, 4vw, 38px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+.hero p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin: 0 auto 14px;
+  line-height: 1.7;
+}
+.trust-note {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  opacity: 0.65;
+  font-style: italic;
+}
+
+/* ── LAYOUT ── */
+.page-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+/* ── SECTIONS ── */
+.section {
+  margin-bottom: 56px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.section.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media(prefers-reduced-motion: reduce) {
+  .section { opacity: 1; transform: none; transition: none; }
+}
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  opacity: 0.65;
+  margin-bottom: 8px;
+}
+.section-title {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(18px, 2.5vw, 22px);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  letter-spacing: -0.2px;
+  line-height: 1.3;
+}
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin-bottom: 28px;
+}
+
+/* ── CARDS GRID ── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+}
+.cards-grid.two-col { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.cards-grid.three-col { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.card-elevated {
+  background: var(--card-elevated);
+}
+.card-icon {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.card-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+.card-value {
+  font-family: 'Sora', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+.card-value.gold { color: var(--gold); }
+.card-value.cta { color: var(--cta); }
+.card-body {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-top: 6px;
+}
+
+/* ── SCORE CARD ── */
+.score-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.score-circle {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+.score-circle svg {
+  width: 100px;
+  height: 100px;
+  transform: rotate(-90deg);
+}
+.score-circle .track {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 6;
+}
+.score-circle .fill {
+  fill: none;
+  stroke: url(#scoreGrad);
+  stroke-width: 6;
+  stroke-linecap: round;
+  transition: stroke-dasharray 1.2s cubic-bezier(.4,0,.2,1);
+}
+.score-number {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Sora', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.score-meta { flex: 1; min-width: 180px; }
+.score-meta h3 {
+  font-family: 'Sora', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+.score-meta p {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+.score-breakdown {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.score-bar-item { display: flex; align-items: center; gap: 10px; }
+.score-bar-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  width: 140px;
+  flex-shrink: 0;
+}
+.score-bar-track {
+  flex: 1;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.score-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cta), var(--gold));
+  border-radius: 2px;
+  transition: width 1s ease;
+  width: 0;
+}
+
+/* ── INSIGHT CARD ── */
+.insight-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+}
+.insight-card p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+.insight-card p strong { color: var(--text-primary); }
+
+/* ── CHECKLIST ── */
+.checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+.checklist-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.checklist-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.checklist-icon {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: rgba(142,168,150,0.1);
+  border: 1px solid rgba(142,168,150,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.checklist-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.checklist-item {
+  margin-bottom: 8px;
+}
+.checklist-item-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  opacity: 0.6;
+  margin-bottom: 3px;
+}
+.checklist-item-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* ── PLATFORM SECTION ── */
+.platform-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.platform-card-header {
+  padding: 16px 20px;
+  background: var(--card-elevated);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.platform-icon {
+  font-size: 18px;
+}
+.platform-name {
+  font-family: 'Sora', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.platform-url {
+  font-size: 12px;
+  color: var(--text-secondary);
+  opacity: 0.6;
+  margin-left: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+.platform-recs {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.platform-rec {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.platform-rec-num {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: rgba(142,168,150,0.12);
+  border: 1px solid rgba(142,168,150,0.25);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cta);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.platform-rec-text {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* ── 7-DAY PLAN ── */
+.plan-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.plan-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+}
+.plan-day {
+  font-family: 'Sora', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold);
+  min-width: 42px;
+  padding-top: 2px;
+}
+.plan-task {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.plan-task strong { color: var(--text-primary); font-weight: 500; }
+
+/* ── PRICING PREVIEW ── */
+.pricing-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.pricing-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color var(--transition);
+}
+.pricing-card:hover { border-color: var(--cta); }
+.pricing-price {
+  font-family: 'Sora', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.pricing-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.pricing-desc {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 11px 22px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: background var(--transition), opacity var(--transition), transform var(--transition);
+}
+.btn:active { transform: scale(0.97); }
+.btn-primary {
+  background: var(--cta);
+  color: #0A150F;
+  font-weight: 600;
+}
+.btn-primary:hover { background: var(--cta-hover); }
+.btn-outline {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1.5px solid var(--border);
+}
+.btn-outline:hover { border-color: var(--cta); color: var(--text-primary); }
+.btn-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ── FORM ── */
+.form-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media(max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group.full { grid-column: 1 / -1; }
+.form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+.form-label .req { color: var(--gold); margin-left: 2px; }
+.form-label .opt { font-size: 11px; opacity: 0.6; font-weight: 400; margin-left: 4px; }
+.form-input, .form-select, .form-textarea {
+  background: var(--card-elevated);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color var(--transition);
+  width: 100%;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--border-focus); }
+.form-input::placeholder, .form-textarea::placeholder { color: rgba(185,195,183,0.4); }
+.form-select { cursor: pointer; }
+.form-select option { background: var(--card); }
+.form-textarea { resize: vertical; min-height: 90px; line-height: 1.55; }
+.form-input.error-field { border-color: var(--error); }
+.error-msg {
+  font-size: 12px;
+  color: var(--error);
+  min-height: 16px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.error-msg.show { opacity: 1; }
+.form-submit-wrap {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.form-privacy {
+  font-size: 12px;
+  color: var(--text-secondary);
+  opacity: 0.55;
+}
+
+/* ── EMPTY STATE ── */
+.empty-state {
+  text-align: center;
+  padding: 80px 24px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+.empty-state h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+.empty-state p {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* ── FOOTER ── */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 24px;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media(min-width: 768px) {
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+.footer-brand {
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.footer-brand span { color: var(--gold); }
+.footer-tagline {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  opacity: 0.6;
+  margin-top: 4px;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+.footer-links a {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.footer-links a:hover { color: var(--text-primary); }
+.footer-copy {
+  font-size: 12px;
+  color: var(--text-secondary);
+  opacity: 0.45;
+  margin-top: 6px;
+}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress" role="progressbar" aria-label="Page scroll progress"></div>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="/" class="logo">Known<span>ly</span></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/diagnosis.html">Diagnosis</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/early-access.html">Early Access</a>
+      <a href="/about.html">About</a>
+      <a href="/login.html">Login</a>
+    </nav>
+    <a href="/early-access.html" class="header-cta">Early Access</a>
+  </div>
+</header>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero" aria-label="Profile report hero" id="reportHero">
+  <div class="badge">Your Knownly Profile Report</div>
+  <h1 id="heroHeadline">Here is how your online presence can become clearer.</h1>
+  <p>This report compares your Knownly direction with the public profile links you chose to share, so you can understand your positioning gaps, visibility signals and next profile improvement steps.</p>
+  <p class="trust-note">Knownly only reviews public links you choose to share. No private accounts. No passwords. No fake guarantees.</p>
+</section>
+
+<!-- CONTENT -->
+<div class="page-content" id="reportContent">
+
+  <!-- SECTION 1: Snapshot -->
+  <section class="section" aria-labelledby="snapshot-title">
+    <p class="section-label">01 — Profile Overview</p>
+    <h2 class="section-title" id="snapshot-title">Profile Snapshot</h2>
+    <hr class="section-divider" />
+
+    <div class="cards-grid" id="snapshotCards" style="margin-bottom:24px"></div>
+
+    <!-- Score -->
+    <div class="score-card" id="scoreCard">
+      <div class="score-circle" aria-label="Profile clarity score">
+        <svg viewBox="0 0 100 100">
+          <defs>
+            <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:var(--cta)" />
+              <stop offset="100%" style="stop-color:var(--gold)" />
+            </linearGradient>
+          </defs>
+          <circle class="track" cx="50" cy="50" r="42" />
+          <circle class="fill" id="scoreArc" cx="50" cy="50" r="42" stroke-dasharray="0 264" />
+        </svg>
+        <div class="score-number" id="scoreNumber">—</div>
+      </div>
+      <div class="score-meta">
+        <h3>Profile Clarity Score</h3>
+        <p id="scoreDesc">Your score is calculated from your diagnosis answers and the profile signals you submitted.</p>
+        <div class="score-breakdown" id="scoreBreakdown"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Needs -->
+  <section class="section" aria-labelledby="needs-title">
+    <p class="section-label">02 — Core Insight</p>
+    <h2 class="section-title" id="needs-title">What your current online presence needs</h2>
+    <hr class="section-divider" />
+    <div class="insight-card" id="insightCard">
+      <p id="insightText">Loading your personalised insight…</p>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Checklist -->
+  <section class="section" aria-labelledby="checklist-title">
+    <p class="section-label">03 — Improvement Areas</p>
+    <h2 class="section-title" id="checklist-title">Profile Improvement Checklist</h2>
+    <hr class="section-divider" />
+    <div class="checklist-grid" id="checklistGrid"></div>
+  </section>
+
+  <!-- SECTION 4: Platform Recs -->
+  <section class="section" id="platformSection" aria-labelledby="platform-title">
+    <p class="section-label">04 — Platform Direction</p>
+    <h2 class="section-title" id="platform-title">Platform-specific recommendations</h2>
+    <hr class="section-divider" />
+    <div id="platformCards"></div>
+  </section>
+
+  <!-- SECTION 5: 7-Day Plan -->
+  <section class="section" aria-labelledby="plan-title">
+    <p class="section-label">05 — Action Plan</p>
+    <h2 class="section-title" id="plan-title">Your 7-day profile improvement plan</h2>
+    <hr class="section-divider" />
+    <div class="plan-grid" id="planGrid"></div>
+  </section>
+
+  <!-- SECTION 6: Pricing Preview -->
+  <section class="section" aria-labelledby="pricing-title">
+    <p class="section-label">06 — Go Deeper</p>
+    <h2 class="section-title" id="pricing-title">Human-guided next steps</h2>
+    <hr class="section-divider" />
+    <div class="pricing-preview">
+      <div class="pricing-card">
+        <div class="pricing-price">₹999</div>
+        <div class="pricing-name">Deep Profile Review</div>
+        <div class="pricing-desc">Human review of your top profile with written recommendations.</div>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-price">₹4,999</div>
+        <div class="pricing-name">30-Day Launchpad</div>
+        <div class="pricing-desc">Strategy, profile rewrite, 30-day content plan, weekly check-ins.</div>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-price">₹9,999+</div>
+        <div class="pricing-name">Brand Builder</div>
+        <div class="pricing-desc">Full positioning, content system and authority-building roadmap.</div>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-price">₹25,000+/mo</div>
+        <div class="pricing-name">Executive Brand Studio</div>
+        <div class="pricing-desc">Done-for-you presence management for founders and leaders.</div>
+      </div>
+    </div>
+    <div class="btn-group">
+      <a href="/pricing.html" class="btn btn-primary">View Pricing →</a>
+      <a href="/early-access.html" class="btn btn-outline">Join Early Access</a>
+    </div>
+  </section>
+
+  <!-- SECTION 7: Interest Form -->
+  <section class="section" aria-labelledby="form-title">
+    <p class="section-label">07 — Get Human Guidance</p>
+    <h2 class="section-title" id="form-title">Want human guidance on your profile?</h2>
+    <hr class="section-divider" />
+    <div class="form-card">
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label" for="pr-name">Name <span class="req">*</span></label>
+          <input type="text" id="pr-name" class="form-input" placeholder="Your name" autocomplete="name" />
+          <div class="error-msg" id="pr-name-err">Please enter your name.</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="pr-email">Email <span class="req">*</span></label>
+          <input type="email" id="pr-email" class="form-input" placeholder="you@example.com" autocomplete="email" />
+          <div class="error-msg" id="pr-email-err">Please enter a valid email.</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="pr-whatsapp">WhatsApp <span class="opt">(optional)</span></label>
+          <input type="tel" id="pr-whatsapp" class="form-input" placeholder="+91 98765 43210" autocomplete="tel" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="pr-stage">Current stage <span class="req">*</span></label>
+          <select id="pr-stage" class="form-select">
+            <option value="">Select your stage</option>
+            <option>Student or career starter</option>
+            <option>Job seeker</option>
+            <option>Working professional</option>
+            <option>Freelancer or consultant</option>
+            <option>Founder or business owner</option>
+            <option>Creator, coach or educator</option>
+            <option>Restarting or changing direction</option>
+          </select>
+          <div class="error-msg" id="pr-stage-err">Please select your stage.</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="pr-plan">Which plan interests you? <span class="req">*</span></label>
+          <select id="pr-plan" class="form-select">
+            <option value="">Select a plan</option>
+            <option>₹999 Deep Profile Review</option>
+            <option>₹4,999 30-Day Launchpad</option>
+            <option>₹9,999+ Brand Builder</option>
+            <option>₹25,000+/month Executive Brand Studio</option>
+            <option>Just exploring</option>
+          </select>
+          <div class="error-msg" id="pr-plan-err">Please select a plan.</div>
+        </div>
+        <div class="form-group full">
+          <label class="form-label" for="pr-challenge">Main challenge <span class="req">*</span></label>
+          <textarea id="pr-challenge" class="form-textarea" placeholder="What is your biggest challenge with your online presence right now?"></textarea>
+          <div class="error-msg" id="pr-challenge-err">Please describe your main challenge.</div>
+        </div>
+      </div>
+      <div class="form-submit-wrap">
+        <button type="button" class="btn btn-primary" id="prSubmitBtn">Submit Request →</button>
+        <span class="form-privacy">Your information is saved locally and used only to respond to your request.</span>
+      </div>
+    </div>
+  </section>
+
+</div><!-- end reportContent -->
+
+<!-- EMPTY STATE (hidden by default) -->
+<div id="emptyState" style="display:none">
+  <div class="empty-state">
+    <div class="empty-icon">📋</div>
+    <h2>Your profile report is not ready yet.</h2>
+    <p>Take the Knownly Diagnosis first and submit your public profile links to unlock your deeper profile report.</p>
+    <a href="/diagnosis.html" class="btn btn-primary">Start Free Diagnosis →</a>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Known<span>ly</span></div>
+      <div class="footer-tagline">Personal Intelligence for Online Presence</div>
+      <div class="footer-copy">© 2025 Knownly · WhatAmIKnownFor.com</div>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/diagnosis.html">Diagnosis</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/early-access.html">Early Access</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  // ── SCROLL PROGRESS ──────────────────────────────────────────
+  const bar = document.getElementById('scrollProgress');
+  window.addEventListener('scroll', () => {
+    const max = document.body.scrollHeight - window.innerHeight;
+    bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+  }, { passive: true });
+
+  // ── REVEAL ON SCROLL ─────────────────────────────────────────
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); observer.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.section').forEach(s => observer.observe(s));
+
+  // ── LOAD DATA ────────────────────────────────────────────────
+  let diag = null, profile = null;
+  try { diag = JSON.parse(localStorage.getItem('knownlyDiagnosisData') || 'null'); } catch(e) {}
+  try { profile = JSON.parse(localStorage.getItem('knownlyProfileAnalysisData') || 'null'); } catch(e) {}
+
+  if (!diag) {
+    document.getElementById('reportContent').style.display = 'none';
+    document.getElementById('reportHero').style.display = 'none';
+    document.getElementById('emptyState').style.display = 'block';
+    return;
+  }
+
+  // Personalise hero
+  const name = (diag.lead && diag.lead.name) ? diag.lead.name.split(' ')[0] : '';
+  if (name) document.getElementById('heroHeadline').textContent = name + ', here is how your online presence can become clearer.';
+
+  // ── PROFILE LINKS ────────────────────────────────────────────
+  const links = (profile && profile.profileLinks) ? profile.profileLinks : {};
+  const linkCount = Object.values(links).filter(Boolean).length;
+
+  // ── SECTION 1: Snapshot cards ────────────────────────────────
+  const visibilityReadiness = (() => {
+    const op = diag.onlinePresence || '';
+    if (op.includes('audience') || op.includes('credibility') || linkCount >= 4) return 'Strong';
+    if (op.includes('regularly') || linkCount >= 3) return 'Improving';
+    if (op.includes('sometimes') || linkCount >= 1) return 'Building';
+    return 'Low';
+  })();
+
+  const snapshotData = [
+    { icon: '🧭', label: 'Direction', value: diag.archetypeHint || 'Visibility Builder', cls: 'gold' },
+    { icon: '📡', label: 'Primary Platform', value: diag.primaryPlatformHint || 'LinkedIn', cls: '' },
+    { icon: '📶', label: 'Visibility Readiness', value: visibilityReadiness, cls: visibilityReadiness === 'Strong' ? 'gold' : 'cta' },
+    { icon: '🎯', label: 'Opportunity Path', value: diag.opportunityPathHint || 'Online presence clarity', cls: '' },
+    { icon: '✍️', label: 'Content Style', value: diag.contentStyleHint || 'Practical content', cls: '' },
+  ];
+  const snapshotEl = document.getElementById('snapshotCards');
+  snapshotData.forEach(d => {
+    snapshotEl.innerHTML += `<div class="card"><div class="card-icon">${d.icon}</div><div class="card-label">${d.label}</div><div class="card-value ${d.cls}">${d.value}</div></div>`;
+  });
+
+  // ── SCORE ────────────────────────────────────────────────────
+  const score = (() => {
+    let s = 45;
+    s += linkCount * 6;
+    const op = diag.onlinePresence || '';
+    if (op.includes('audience')) s += 12;
+    else if (op.includes('regularly')) s += 8;
+    else if (op.includes('sometimes')) s += 4;
+    const blocker = diag.currentBlocker || '';
+    if (blocker.includes('time')) s += 2;
+    else if (!blocker) s += 4;
+    const stage = diag.currentStage || '';
+    if (stage.includes('Founder') || stage.includes('Creator')) s += 5;
+    if (diag.mainGoal) s += 3;
+    return Math.min(88, Math.max(45, Math.round(s)));
+  })();
+
+  setTimeout(() => {
+    const circ = 2 * Math.PI * 42;
+    const pct = score / 100;
+    document.getElementById('scoreArc').setAttribute('stroke-dasharray', `${pct * circ} ${circ}`);
+    document.getElementById('scoreNumber').textContent = score;
+    document.querySelectorAll('.score-bar-fill').forEach(b => {
+      b.style.width = b.dataset.pct + '%';
+    });
+  }, 400);
+
+  const breakdownData = [
+    { label: 'Profile links submitted', pct: Math.min(100, linkCount * 20) },
+    { label: 'Diagnosis completeness', pct: 85 },
+    { label: 'Online presence signals', pct: visibilityReadiness === 'Strong' ? 90 : visibilityReadiness === 'Improving' ? 65 : 40 },
+    { label: 'Goal clarity', pct: diag.mainGoal ? 80 : 30 },
+  ];
+  const bd = document.getElementById('scoreBreakdown');
+  breakdownData.forEach(d => {
+    bd.innerHTML += `<div class="score-bar-item"><span class="score-bar-label">${d.label}</span><div class="score-bar-track"><div class="score-bar-fill" data-pct="${d.pct}" style="width:0%"></div></div></div>`;
+  });
+
+  const scoreDescs = {
+    45: 'Your profile is in early clarity mode. Focus on one clear signal first.',
+    55: 'Some signals are present. Positioning and proof need to be sharper.',
+    65: 'Decent foundation. The content pillars and bio need tightening.',
+    75: 'Good clarity level. The next layer is consistent proof and authority signals.',
+    85: 'Strong profile signals. Focus now on depth and opportunity conversion.',
+  };
+  const scoreBand = Math.floor(score / 10) * 10;
+  document.getElementById('scoreDesc').textContent = scoreDescs[Math.min(85, Math.max(45, scoreBand))] || 'Your score reflects your profile data and diagnosis answers.';
+
+  // ── SECTION 2: Insight ───────────────────────────────────────
+  const blocker = diag.currentBlocker || '';
+  let insight = 'Your online presence is at a key transition point. The most important move is not to post more — it is to get clearer on what you stand for before you amplify it.';
+  if (blocker.includes('not clear') || blocker.includes('show my value')) {
+    insight = '<strong>Your profile needs sharper positioning first.</strong> Before content, the profile itself must communicate clearly. A visitor should understand who you are and why they should care within five seconds of landing on your page.';
+  } else if (blocker.includes('what to post')) {
+    insight = '<strong>Your profile and content pillars should work together.</strong> Not knowing what to post usually means the positioning is not yet clear. Start by fixing the profile headline and bio first — the content ideas will follow from that.';
+  } else if (blocker.includes('too many interests')) {
+    insight = '<strong>Your profile needs one primary signal and two supporting themes.</strong> Multiple interests are a strength — but online, one clear front door with two supporting rooms is more effective than many doors with no clear entrance.';
+  } else if (blocker.includes('inconsistent')) {
+    insight = '<strong>Your profile needs a simple repeatable content system.</strong> Inconsistency rarely comes from laziness. It comes from not having a system that requires minimal decision-making. Three content pillars with one post format each will help significantly.';
+  } else if (blocker.includes('starting from zero') || (diag.onlinePresence || '').includes('zero')) {
+    insight = '<strong>Your first goal is not popularity. Your first goal is clarity.</strong> Starting from zero is an advantage — there is nothing to undo. The move is to define your signal clearly before your first ten posts, not after.';
+  }
+  document.getElementById('insightText').innerHTML = insight;
+
+  // ── SECTION 3: Checklist ─────────────────────────────────────
+  const checklist = [
+    { icon: '✏️', title: 'Headline / Bio', issue: 'Most bios describe job titles, not value.', improve: 'Rewrite it as: what you do + who you help + what result they can expect.', example: '"I help early-stage founders communicate their product clearly — so they can close faster."' },
+    { icon: '📄', title: 'About / Description', issue: 'About sections are often too long or generic.', improve: 'Open with your clearest positioning statement. Add one proof point in line two.', example: 'Start with a direct sentence about your direction, then anchor it with a result.' },
+    { icon: '🏆', title: 'Featured Proof', issue: 'Most profiles have no pinned proof of capability.', improve: 'Feature one result, project or output that immediately signals your level.', example: 'A case study, a metric, a project outcome, or a testimonial from a credible source.' },
+    { icon: '🗂️', title: 'Content Themes', issue: 'Content appears scattered without a clear throughline.', improve: 'Choose three content pillars. Every post should belong to one of them.', example: `Based on your direction (${diag.archetypeHint || 'Visibility Builder'}), your pillars could be: expertise, proof, and perspective.` },
+    { icon: '🔒', title: 'Trust Signals', issue: 'Profile lacks signals that build confidence quickly.', improve: 'Add credentials, collaboration references, or outcome evidence where possible.', example: 'Even a "worked with X" or "helped Y achieve Z" line adds significant trust context.' },
+    { icon: '📣', title: 'Call-to-Action', issue: 'Most profiles have no clear next step for the visitor.', improve: 'Add one clear CTA: what you want the visitor to do, where to go, and why.', example: '"Open to consulting opportunities. DM me or visit [link]."' },
+  ];
+  const cg = document.getElementById('checklistGrid');
+  checklist.forEach(c => {
+    cg.innerHTML += `<div class="checklist-card">
+      <div class="checklist-card-header"><div class="checklist-icon">${c.icon}</div><div class="checklist-title">${c.title}</div></div>
+      <div class="checklist-item"><div class="checklist-item-label">Current Issue</div><div class="checklist-item-text">${c.issue}</div></div>
+      <div class="checklist-item"><div class="checklist-item-label">What to Improve</div><div class="checklist-item-text">${c.improve}</div></div>
+      <div class="checklist-item"><div class="checklist-item-label">Example Direction</div><div class="checklist-item-text">${c.example}</div></div>
+    </div>`;
+  });
+
+  // ── SECTION 4: Platform recs ─────────────────────────────────
+  const platformRecs = {
+    linkedin: {
+      icon: '💼', name: 'LinkedIn',
+      recs: ['Clarify your headline — it should show your direction, not just your job title.', 'Rewrite your About section with a clear positioning statement and one proof point.', 'Add Featured content: a pinned post, article or external proof that signals your level.', 'Build three content pillars — expertise, proof, and perspective — and post from each weekly.', 'Request or display recommendations that specifically reference what you are known for.'],
+    },
+    instagram: {
+      icon: '📷', name: 'Instagram',
+      recs: ['Rewrite your bio with a clear signal: who you help or what you share, and a CTA.', 'Structure your Highlights around your content pillars, not random moments.', 'Pin your three most important posts — one proof, one positioning, one value post.', 'Align your visual style to one consistent palette and posting format.', 'Make your CTA obvious: one link in bio that points to your most important destination.'],
+    },
+    twitter: {
+      icon: '𝕏', name: 'X / Twitter',
+      recs: ['Your bio should signal your main topic in 10 words or fewer.', 'Pin a thread or post that showcases your clearest thinking or most useful insight.', 'Choose two to three thread themes and alternate between them consistently.', 'Build opinions, not just shares — original perspective is what creates reputation here.'],
+    },
+    youtube: {
+      icon: '▶️', name: 'YouTube',
+      recs: ['Define your channel promise: what exactly does a subscriber get from following you?', 'Group your content into two to three clear categories visible from your channel page.', 'Align video titles and thumbnails to a consistent visual and copy system.', 'Pin one video as your channel authority signal — your best proof of value.'],
+    },
+    website: {
+      icon: '🌐', name: 'Personal Website',
+      recs: ['Your positioning must be clear above the fold — no scrolling required to understand who you are.', 'Add proof: a featured project, client result, or case study on the homepage.', 'Clarify your service or offer: what do you offer, who is it for, and how to start.', 'Include a clear contact CTA on every page.'],
+    },
+  };
+
+  const pc = document.getElementById('platformCards');
+  let anyPlatform = false;
+
+  const renderPlatform = (key, urlVal) => {
+    const p = platformRecs[key];
+    if (!p) return;
+    anyPlatform = true;
+    pc.innerHTML += `<div class="platform-card">
+      <div class="platform-card-header">
+        <span class="platform-icon">${p.icon}</span>
+        <span class="platform-name">${p.name}</span>
+        ${urlVal ? `<span class="platform-url">${urlVal}</span>` : ''}
+      </div>
+      <div class="platform-recs">
+        ${p.recs.map((r,i) => `<div class="platform-rec"><div class="platform-rec-num">${i+1}</div><div class="platform-rec-text">${r}</div></div>`).join('')}
+      </div>
+    </div>`;
+  };
+
+  if (links.linkedin) renderPlatform('linkedin', links.linkedin);
+  if (links.instagram) renderPlatform('instagram', links.instagram);
+  if (links.twitter || links.x) renderPlatform('twitter', links.twitter || links.x);
+  if (links.youtube) renderPlatform('youtube', links.youtube);
+  if (links.website) renderPlatform('website', links.website);
+
+  // Fall back to primary platform hint
+  if (!anyPlatform) {
+    const pph = (diag.primaryPlatformHint || 'LinkedIn').toLowerCase();
+    if (pph.includes('linkedin')) renderPlatform('linkedin', '');
+    else if (pph.includes('instagram')) renderPlatform('instagram', '');
+    else if (pph.includes('youtube')) renderPlatform('youtube', '');
+    else if (pph.includes('twitter') || pph.includes('x')) renderPlatform('twitter', '');
+    else renderPlatform('linkedin', '');
+  }
+
+  // ── SECTION 5: 7-Day Plan ────────────────────────────────────
+  const plan = [
+    { day: 'Day 1', task: '<strong>Rewrite your primary headline or bio.</strong> Use the formula: what you do + who you help + what outcome they get.' },
+    { day: 'Day 2', task: '<strong>Add one clear proof point.</strong> A result, project, metric or reference that signals your level immediately.' },
+    { day: 'Day 3', task: '<strong>Choose three content pillars.</strong> Every post you create should belong to one of these three themes.' },
+    { day: 'Day 4', task: '<strong>Write and publish one introduction post.</strong> Tell your story in a direct, clear and human way.' },
+    { day: 'Day 5', task: '<strong>Publish one practical insight post.</strong> Teach one thing you know that others in your space often miss.' },
+    { day: 'Day 6', task: '<strong>Remove or clarify confusing signals.</strong> Clean up any content or profile elements that do not fit your current direction.' },
+    { day: 'Day 7', task: '<strong>Share your Knownly direction.</strong> Ask your audience what they come to you for — the answers will sharpen your positioning further.' },
+  ];
+  const pg = document.getElementById('planGrid');
+  plan.forEach(p => {
+    pg.innerHTML += `<div class="plan-row"><div class="plan-day">${p.day}</div><div class="plan-task">${p.task}</div></div>`;
+  });
+
+  // ── SECTION 7: Form ──────────────────────────────────────────
+  document.getElementById('prSubmitBtn').addEventListener('click', () => {
+    let ok = true;
+    const clearErrs = () => document.querySelectorAll('.error-msg').forEach(e => e.classList.remove('show'));
+    const showErr = id => { document.getElementById(id).classList.add('show'); ok = false; };
+    const clearField = id => document.getElementById(id).classList.remove('error-field');
+    clearErrs();
+
+    const name = document.getElementById('pr-name').value.trim();
+    const email = document.getElementById('pr-email').value.trim();
+    const stage = document.getElementById('pr-stage').value;
+    const plan = document.getElementById('pr-plan').value;
+    const challenge = document.getElementById('pr-challenge').value.trim();
+
+    if (!name) { showErr('pr-name-err'); document.getElementById('pr-name').classList.add('error-field'); } else clearField('pr-name');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showErr('pr-email-err'); document.getElementById('pr-email').classList.add('error-field'); } else clearField('pr-email');
+    if (!stage) showErr('pr-stage-err');
+    if (!plan) showErr('pr-plan-err');
+    if (!challenge) { showErr('pr-challenge-err'); document.getElementById('pr-challenge').classList.add('error-field'); } else clearField('pr-challenge');
+
+    if (!ok) return;
+
+    try {
+      localStorage.setItem('knownlyProfileReportLead', JSON.stringify({
+        name, email,
+        whatsapp: document.getElementById('pr-whatsapp').value.trim(),
+        stage, plan, challenge,
+        source: 'profile-report',
+        submittedAt: new Date().toISOString(),
+      }));
+    } catch(e) {}
+    window.location.href = '/thank-you.html';
+  });
+
+})();
+</script>
+</body>
+</html>

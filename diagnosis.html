@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Knownly Diagnosis — Discover What You Should Be Known For</title>
+<meta name="description" content="Take the free Knownly Diagnosis to discover your personal direction, hidden strengths, content style, online presence path and next practical step." />
+<link rel="canonical" href="https://whatamiknownfor.com/diagnosis.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #08110D;
+    --bg2: #0D1713;
+    --card: #14201A;
+    --card-elevated: #182620;
+    --text-primary: #F7F2E8;
+    --text-secondary: #B9C3B7;
+    --cta: #8EA896;
+    --cta-hover: #7C9885;
+    --gold: #E0A86B;
+    --border: #314238;
+    --border-focus: #8EA896;
+    --error: #E07070;
+    --radius: 14px;
+    --radius-sm: 8px;
+    --transition: 0.22s ease;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── HEADER ─────────────────────────────────────────────── */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(8, 17, 13, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    gap: 16px;
+  }
+  .logo {
+    font-family: 'Sora', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: -0.3px;
+  }
+  .logo span { color: var(--gold); }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .header-meta {
+    font-size: 12px;
+    color: var(--text-secondary);
+    display: none;
+  }
+  @media(min-width: 640px) { .header-meta { display: block; } }
+  .back-home {
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    transition: color var(--transition), border-color var(--transition);
+  }
+  .back-home:hover { color: var(--text-primary); border-color: var(--cta); }
+
+  /* ─── HERO ───────────────────────────────────────────────── */
+  .hero {
+    text-align: center;
+    padding: 56px 24px 40px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(224, 168, 107, 0.1);
+    border: 1px solid rgba(224, 168, 107, 0.25);
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    padding: 5px 13px;
+    border-radius: 20px;
+    margin-bottom: 22px;
+  }
+  .badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0.8;
+  }
+  .hero h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+  }
+  .hero p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    max-width: 540px;
+    margin: 0 auto 18px;
+    line-height: 1.7;
+  }
+  .trust-note {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    opacity: 0.7;
+    font-style: italic;
+  }
+
+  /* ─── MAIN LAYOUT ────────────────────────────────────────── */
+  .main-layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  @media(min-width: 900px) {
+    .main-layout {
+      grid-template-columns: 1fr 300px;
+      align-items: start;
+    }
+  }
+
+  /* ─── QUESTIONNAIRE CARD ─────────────────────────────────── */
+  .q-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .q-progress-bar-wrap {
+    height: 3px;
+    background: rgba(255,255,255,0.05);
+    width: 100%;
+  }
+  .q-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--cta), var(--gold));
+    border-radius: 0 3px 3px 0;
+    transition: width 0.5s cubic-bezier(.4,0,.2,1);
+  }
+  .q-header {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .q-step-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+  .q-step-label strong { color: var(--gold); }
+  .q-pct {
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  /* ─── STEP PANEL ─────────────────────────────────────────── */
+  .steps-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  .step {
+    display: none;
+    padding: 28px 28px 24px;
+    animation: stepIn 0.3s ease forwards;
+  }
+  .step.active { display: block; }
+  @keyframes stepIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @media(prefers-reduced-motion: reduce) {
+    .step { animation: none; }
+    .q-progress-bar { transition: none; }
+  }
+
+  .step-q {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(17px, 2.5vw, 21px);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 7px;
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+  }
+  .step-helper {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    margin-bottom: 22px;
+    line-height: 1.6;
+  }
+
+  /* ─── OPTIONS ────────────────────────────────────────────── */
+  .options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 9px;
+    margin-bottom: 6px;
+  }
+  .options-grid.two-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media(max-width: 520px) {
+    .options-grid.two-col { grid-template-columns: 1fr; }
+  }
+
+  .option-btn {
+    background: var(--card-elevated);
+    border: 1.5px solid var(--border);
+    color: var(--text-primary);
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    text-align: left;
+    transition: border-color var(--transition), background var(--transition), color var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.4;
+  }
+  .option-btn:hover:not(.selected) {
+    border-color: var(--cta);
+    background: rgba(142, 168, 150, 0.06);
+  }
+  .option-btn.selected {
+    border-color: var(--cta);
+    background: rgba(142, 168, 150, 0.12);
+    color: var(--text-primary);
+  }
+  .option-btn.selected .opt-dot { background: var(--cta); }
+  .opt-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    flex-shrink: 0;
+    transition: background var(--transition);
+  }
+  .opt-text { flex: 1; }
+
+  .multi-count {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+    min-height: 18px;
+  }
+  .multi-count span { color: var(--gold); }
+
+  .max-msg {
+    font-size: 12.5px;
+    color: var(--gold);
+    margin-top: 8px;
+    min-height: 18px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .max-msg.show { opacity: 1; }
+
+  .error-msg {
+    font-size: 12.5px;
+    color: var(--error);
+    margin-top: 6px;
+    min-height: 18px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .error-msg.show { opacity: 1; }
+
+  /* ─── OTHER INPUT ────────────────────────────────────────── */
+  .other-input-wrap {
+    margin-top: 12px;
+  }
+  .other-input-wrap label {
+    display: block;
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+  }
+  .other-input {
+    width: 100%;
+    background: var(--card-elevated);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color var(--transition);
+  }
+  .other-input:focus { border-color: var(--border-focus); }
+  .other-input::placeholder { color: rgba(185,195,183,0.4); }
+
+  /* ─── STEP 9 EXTRAS ──────────────────────────────────────── */
+  .sub-section {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+  .sub-section-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  /* ─── STEP 10 FIELDS ─────────────────────────────────────── */
+  .form-group {
+    margin-bottom: 16px;
+  }
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 7px;
+    font-weight: 500;
+  }
+  .form-group label .req { color: var(--gold); margin-left: 2px; }
+  .form-group label .opt { font-size: 11px; color: var(--text-secondary); opacity: 0.6; font-weight: 400; margin-left: 4px; }
+  .form-input {
+    width: 100%;
+    background: var(--card-elevated);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 11px 14px;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color var(--transition);
+  }
+  .form-input:focus { border-color: var(--border-focus); }
+  .form-input::placeholder { color: rgba(185,195,183,0.4); }
+  .form-input.error-field { border-color: var(--error); }
+
+  .consent-wrap {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    cursor: pointer;
+  }
+  .consent-wrap input[type="checkbox"] {
+    width: 17px; height: 17px;
+    accent-color: var(--cta);
+    flex-shrink: 0;
+    margin-top: 2px;
+    cursor: pointer;
+  }
+  .consent-wrap span {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .privacy-note {
+    font-size: 11.5px;
+    color: var(--text-secondary);
+    opacity: 0.6;
+    text-align: center;
+    margin-top: 14px;
+  }
+
+  /* ─── NAV BUTTONS ────────────────────────────────────────── */
+  .q-footer {
+    padding: 20px 28px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    padding: 11px 22px;
+    transition: background var(--transition), opacity var(--transition), transform var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-back {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1.5px solid var(--border);
+  }
+  .btn-back:hover { border-color: var(--cta); color: var(--text-primary); }
+  .btn-back:disabled { opacity: 0.3; cursor: not-allowed; }
+  .btn-next {
+    background: var(--cta);
+    color: #0A150F;
+    font-weight: 600;
+    margin-left: auto;
+  }
+  .btn-next:hover { background: var(--cta-hover); }
+  .btn-submit {
+    background: linear-gradient(135deg, var(--cta) 0%, var(--cta-hover) 100%);
+    color: #0A150F;
+    font-weight: 600;
+    font-size: 14.5px;
+    padding: 13px 26px;
+    margin-left: auto;
+  }
+  .btn-submit:hover { background: var(--cta-hover); }
+
+  /* ─── SIDE PANEL ─────────────────────────────────────────── */
+  .side-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    position: sticky;
+    top: 80px;
+  }
+  @media(max-width: 899px) { .side-panel { display: none; } }
+  .side-panel-title {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    opacity: 0.7;
+    margin-bottom: 14px;
+  }
+  .side-panel-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: rgba(224,168,107,0.08);
+    border: 1px solid rgba(224,168,107,0.18);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+    font-size: 17px;
+  }
+  .side-panel-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    transition: opacity 0.25s;
+  }
+  .side-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 20px 0;
+  }
+  .side-note {
+    font-size: 12px;
+    color: var(--text-secondary);
+    opacity: 0.55;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* ─── FOOTER ─────────────────────────────────────────────── */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    opacity: 0.7;
+  }
+  .site-footer a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin: 0 8px;
+  }
+  .site-footer a:hover { color: var(--text-primary); }
+
+  /* ─── FOCUS VISIBLE ──────────────────────────────────────── */
+  :focus-visible {
+    outline: 2px solid var(--cta);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="/" class="logo">Known<span>ly</span></a>
+    <div class="header-right">
+      <span class="header-meta">Free diagnosis · Takes 2–4 minutes</span>
+      <a href="/" class="back-home">← Back to Home</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-label="Introduction">
+  <div class="badge">Free Knownly Diagnosis</div>
+  <h1>Let's discover what you should be known for.</h1>
+  <p>Answer a few thoughtful questions about your strengths, interests, goals, content style and current blockers. Knownly will use your answers to create your personal direction report.</p>
+  <p class="trust-note">There are no right or wrong answers. Choose what feels most true right now.</p>
+</section>
+
+<!-- MAIN -->
+<main class="main-layout" role="main">
+
+  <!-- QUESTIONNAIRE CARD -->
+  <div class="q-card" aria-label="Diagnosis questionnaire">
+    <div class="q-progress-bar-wrap" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10" aria-label="Questionnaire progress">
+      <div class="q-progress-bar" id="progressBar" style="width:9%"></div>
+    </div>
+    <div class="q-header">
+      <span class="q-step-label">Step <strong id="stepNum">1</strong> of 11</span>
+      <span class="q-pct" id="stepPct">10% complete</span>
+    </div>
+
+    <div class="steps-wrapper">
+
+      <!-- STEP 1 -->
+      <div class="step active" data-step="1">
+        <h2 class="step-q">Where are you right now?</h2>
+        <p class="step-helper">Choose the stage that best describes your current situation.</p>
+        <div class="options-grid" id="s1-options">
+          <button type="button" class="option-btn" data-value="Student or career starter"><span class="opt-dot"></span><span class="opt-text">Student or career starter</span></button>
+          <button type="button" class="option-btn" data-value="Job seeker"><span class="opt-dot"></span><span class="opt-text">Job seeker</span></button>
+          <button type="button" class="option-btn" data-value="Working professional"><span class="opt-dot"></span><span class="opt-text">Working professional</span></button>
+          <button type="button" class="option-btn" data-value="Freelancer or consultant"><span class="opt-dot"></span><span class="opt-text">Freelancer or consultant</span></button>
+          <button type="button" class="option-btn" data-value="Founder or business owner"><span class="opt-dot"></span><span class="opt-text">Founder or business owner</span></button>
+          <button type="button" class="option-btn" data-value="Creator, coach or educator"><span class="opt-dot"></span><span class="opt-text">Creator, coach or educator</span></button>
+          <button type="button" class="option-btn" data-value="Restarting or changing direction"><span class="opt-dot"></span><span class="opt-text">Restarting or changing direction</span></button>
+          <button type="button" class="option-btn" data-value="Exploring my next identity"><span class="opt-dot"></span><span class="opt-text">Exploring my next identity</span></button>
+        </div>
+        <div class="error-msg" id="s1-err">Please select an option to continue.</div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="step" data-step="2">
+        <h2 class="step-q">What do you want Knownly to help you with most?</h2>
+        <p class="step-helper">This helps us understand the direction your report should focus on.</p>
+        <div class="options-grid" id="s2-options">
+          <button type="button" class="option-btn" data-value="Understand what I should be known for"><span class="opt-dot"></span><span class="opt-text">Understand what I should be known for</span></button>
+          <button type="button" class="option-btn" data-value="Build a stronger LinkedIn or online profile"><span class="opt-dot"></span><span class="opt-text">Build a stronger LinkedIn or online profile</span></button>
+          <button type="button" class="option-btn" data-value="Know what content I should create"><span class="opt-dot"></span><span class="opt-text">Know what content I should create</span></button>
+          <button type="button" class="option-btn" data-value="Get better career opportunities"><span class="opt-dot"></span><span class="opt-text">Get better career opportunities</span></button>
+          <button type="button" class="option-btn" data-value="Get clients or business leads"><span class="opt-dot"></span><span class="opt-text">Get clients or business leads</span></button>
+          <button type="button" class="option-btn" data-value="Build authority in my field"><span class="opt-dot"></span><span class="opt-text">Build authority in my field</span></button>
+          <button type="button" class="option-btn" data-value="Start creating online with clarity"><span class="opt-dot"></span><span class="opt-text">Start creating online with clarity</span></button>
+          <button type="button" class="option-btn" data-value="Turn my knowledge into income opportunities"><span class="opt-dot"></span><span class="opt-text">Turn my knowledge into income opportunities</span></button>
+        </div>
+        <div class="error-msg" id="s2-err">Please select an option to continue.</div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="step" data-step="3">
+        <h2 class="step-q">What do people naturally appreciate you for?</h2>
+        <p class="step-helper">Pick up to 3 strengths that feel true.</p>
+        <div class="multi-count" id="s3-count"><span>0</span> of 3 selected</div>
+        <div class="options-grid two-col" id="s3-options">
+          <button type="button" class="option-btn" data-value="Explaining things clearly"><span class="opt-dot"></span><span class="opt-text">Explaining things clearly</span></button>
+          <button type="button" class="option-btn" data-value="Solving practical problems"><span class="opt-dot"></span><span class="opt-text">Solving practical problems</span></button>
+          <button type="button" class="option-btn" data-value="Spotting opportunities"><span class="opt-dot"></span><span class="opt-text">Spotting opportunities</span></button>
+          <button type="button" class="option-btn" data-value="Making things look or feel better"><span class="opt-dot"></span><span class="opt-text">Making things look or feel better</span></button>
+          <button type="button" class="option-btn" data-value="Understanding people"><span class="opt-dot"></span><span class="opt-text">Understanding people</span></button>
+          <button type="button" class="option-btn" data-value="Leading or organizing things"><span class="opt-dot"></span><span class="opt-text">Leading or organizing things</span></button>
+          <button type="button" class="option-btn" data-value="Creating ideas"><span class="opt-dot"></span><span class="opt-text">Creating ideas</span></button>
+          <button type="button" class="option-btn" data-value="Researching deeply"><span class="opt-dot"></span><span class="opt-text">Researching deeply</span></button>
+          <button type="button" class="option-btn" data-value="Teaching or guiding others"><span class="opt-dot"></span><span class="opt-text">Teaching or guiding others</span></button>
+          <button type="button" class="option-btn" data-value="Taking action and executing"><span class="opt-dot"></span><span class="opt-text">Taking action and executing</span></button>
+          <button type="button" class="option-btn" data-value="Storytelling or communication"><span class="opt-dot"></span><span class="opt-text">Storytelling or communication</span></button>
+          <button type="button" class="option-btn" data-value="Building trust with people"><span class="opt-dot"></span><span class="opt-text">Building trust with people</span></button>
+        </div>
+        <div class="max-msg" id="s3-max">You can select up to 3.</div>
+        <div class="error-msg" id="s3-err">Please select at least one option.</div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="step" data-step="4">
+        <h2 class="step-q">Which topics or areas do you feel pulled toward?</h2>
+        <p class="step-helper">Pick up to 4 areas you would enjoy building your online presence around.</p>
+        <div class="multi-count" id="s4-count"><span>0</span> of 4 selected</div>
+        <div class="options-grid two-col" id="s4-options">
+          <button type="button" class="option-btn" data-value="Business and entrepreneurship"><span class="opt-dot"></span><span class="opt-text">Business and entrepreneurship</span></button>
+          <button type="button" class="option-btn" data-value="Marketing and growth"><span class="opt-dot"></span><span class="opt-text">Marketing and growth</span></button>
+          <button type="button" class="option-btn" data-value="AI and technology"><span class="opt-dot"></span><span class="opt-text">AI and technology</span></button>
+          <button type="button" class="option-btn" data-value="Career and professional growth"><span class="opt-dot"></span><span class="opt-text">Career and professional growth</span></button>
+          <button type="button" class="option-btn" data-value="Personal development"><span class="opt-dot"></span><span class="opt-text">Personal development</span></button>
+          <button type="button" class="option-btn" data-value="Finance or investing"><span class="opt-dot"></span><span class="opt-text">Finance or investing</span></button>
+          <button type="button" class="option-btn" data-value="Education and teaching"><span class="opt-dot"></span><span class="opt-text">Education and teaching</span></button>
+          <button type="button" class="option-btn" data-value="Health, fitness or wellness"><span class="opt-dot"></span><span class="opt-text">Health, fitness or wellness</span></button>
+          <button type="button" class="option-btn" data-value="Design, creativity or storytelling"><span class="opt-dot"></span><span class="opt-text">Design, creativity or storytelling</span></button>
+          <button type="button" class="option-btn" data-value="Leadership and management"><span class="opt-dot"></span><span class="opt-text">Leadership and management</span></button>
+          <button type="button" class="option-btn" data-value="Sales and client acquisition"><span class="opt-dot"></span><span class="opt-text">Sales and client acquisition</span></button>
+          <button type="button" class="option-btn" data-value="Industry-specific expertise"><span class="opt-dot"></span><span class="opt-text">Industry-specific expertise</span></button>
+          <button type="button" class="option-btn" data-value="Social impact or community"><span class="opt-dot"></span><span class="opt-text">Social impact or community</span></button>
+          <button type="button" class="option-btn" data-value="Lifestyle, travel or culture"><span class="opt-dot"></span><span class="opt-text">Lifestyle, travel or culture</span></button>
+          <button type="button" class="option-btn" data-value="I am not sure yet"><span class="opt-dot"></span><span class="opt-text">I am not sure yet</span></button>
+        </div>
+        <div class="max-msg" id="s4-max">You can select up to 4.</div>
+        <div class="other-input-wrap">
+          <label for="s4-other">Other topic (optional)</label>
+          <input type="text" id="s4-other" class="other-input" placeholder="e.g. Sustainable living, Sports analytics…" />
+        </div>
+        <div class="error-msg" id="s4-err">Please select at least one option.</div>
+      </div>
+
+      <!-- STEP 5 – What people come to you for -->
+      <div class="step" data-step="5">
+        <h2 class="step-q">When people ask for your help, what do they usually ask you about?</h2>
+        <p class="step-helper">Write honestly. This often reveals your real-world perceived strength — even if you have never named it.</p>
+        <div class="form-group" style="margin-top:4px">
+          <textarea id="s5-perceived" class="form-input" rows="4" placeholder="e.g. They ask me how to grow their business. They ask me for career advice. They ask me to simplify tech…" style="resize:vertical;line-height:1.6"></textarea>
+          <div class="error-msg" id="s5-perceived-err">Please share what people usually come to you for.</div>
+        </div>
+        <p class="step-helper" style="margin-top:12px;font-style:italic;opacity:0.7">No one will judge your answer. There is no wrong response here.</p>
+      </div>
+
+      <!-- STEP 6 – Proof / experience -->
+      <div class="step" data-step="6">
+        <h2 class="step-q">What have you done that proves your ability?</h2>
+        <p class="step-helper">Mention 1–3 experiences, achievements, projects, results or responsibilities that show your capability. This helps Knownly give you specific advice — not generic advice.</p>
+        <div class="form-group" style="margin-top:4px">
+          <textarea id="s6-proof" class="form-input" rows="4" placeholder="e.g. Built a team of 12 at my last company. Helped 3 clients grow from 0 to ₹10L revenue. Managed a ₹50L procurement budget…" style="resize:vertical;line-height:1.6"></textarea>
+          <div class="error-msg" id="s6-proof-err">Please share at least one experience or achievement.</div>
+        </div>
+        <p class="step-helper" style="margin-top:12px;font-style:italic;opacity:0.7">Someone who has built a business and someone who is just interested in business should not get the same result.</p>
+      </div>
+
+      <!-- STEP 7 (was 5) – natural style -->
+      <div class="step" data-step="7">
+        <h2 class="step-q">How do you naturally express yourself?</h2>
+        <p class="step-helper">Your content direction should fit your natural style, not force you into a fake online personality.</p>
+        <div class="options-grid" id="s5-options">
+          <button type="button" class="option-btn" data-value="I explain things in a simple and practical way"><span class="opt-dot"></span><span class="opt-text">I explain things in a simple and practical way</span></button>
+          <button type="button" class="option-btn" data-value="I think deeply and like thoughtful writing"><span class="opt-dot"></span><span class="opt-text">I think deeply and like thoughtful writing</span></button>
+          <button type="button" class="option-btn" data-value="I like sharing stories and experiences"><span class="opt-dot"></span><span class="opt-text">I like sharing stories and experiences</span></button>
+          <button type="button" class="option-btn" data-value="I am good at breaking down systems or frameworks"><span class="opt-dot"></span><span class="opt-text">I am good at breaking down systems or frameworks</span></button>
+          <button type="button" class="option-btn" data-value="I like teaching step-by-step"><span class="opt-dot"></span><span class="opt-text">I like teaching step-by-step</span></button>
+          <button type="button" class="option-btn" data-value="I prefer short, direct and useful posts"><span class="opt-dot"></span><span class="opt-text">I prefer short, direct and useful posts</span></button>
+          <button type="button" class="option-btn" data-value="I am comfortable speaking on video"><span class="opt-dot"></span><span class="opt-text">I am comfortable speaking on video</span></button>
+          <button type="button" class="option-btn" data-value="I am better behind the scenes but want to become visible"><span class="opt-dot"></span><span class="opt-text">I am better behind the scenes but want to become visible</span></button>
+        </div>
+        <div class="error-msg" id="s5-err">Please select an option to continue.</div>
+      </div>
+
+      <!-- STEP 8 (was 6) – content comfort -->
+      <div class="step" data-step="8">
+        <h2 class="step-q">What type of content feels most comfortable for you?</h2>
+        <p class="step-helper">Knownly will use this to suggest a content path you can actually follow.</p>
+        <div class="multi-count" id="s6-count"><span>0</span> of 3 selected</div>
+        <div class="options-grid two-col" id="s6-options">
+          <button type="button" class="option-btn" data-value="Written posts"><span class="opt-dot"></span><span class="opt-text">Written posts</span></button>
+          <button type="button" class="option-btn" data-value="LinkedIn-style professional posts"><span class="opt-dot"></span><span class="opt-text">LinkedIn-style professional posts</span></button>
+          <button type="button" class="option-btn" data-value="Short videos"><span class="opt-dot"></span><span class="opt-text">Short videos</span></button>
+          <button type="button" class="option-btn" data-value="Carousels or visual posts"><span class="opt-dot"></span><span class="opt-text">Carousels or visual posts</span></button>
+          <button type="button" class="option-btn" data-value="Threads or long-form breakdowns"><span class="opt-dot"></span><span class="opt-text">Threads or long-form breakdowns</span></button>
+          <button type="button" class="option-btn" data-value="Case studies or examples"><span class="opt-dot"></span><span class="opt-text">Case studies or examples</span></button>
+          <button type="button" class="option-btn" data-value="Educational tips"><span class="opt-dot"></span><span class="opt-text">Educational tips</span></button>
+          <button type="button" class="option-btn" data-value="Personal stories"><span class="opt-dot"></span><span class="opt-text">Personal stories</span></button>
+          <button type="button" class="option-btn" data-value="I am not comfortable creating yet"><span class="opt-dot"></span><span class="opt-text">I am not comfortable creating yet</span></button>
+        </div>
+        <div class="max-msg" id="s6-max">You can select up to 3.</div>
+        <div class="error-msg" id="s6-err">Please select at least one option.</div>
+      </div>
+
+      <!-- STEP 9 – What they do not want to become -->
+      <div class="step" data-step="9">
+        <h2 class="step-q">What kind of online presence do you want to avoid?</h2>
+        <p class="step-helper">This helps Knownly respect your boundaries and feel human. Knowing what you do not want is just as valuable as knowing what you do.</p>
+        <div class="form-group" style="margin-top:4px">
+          <textarea id="s9-avoid" class="form-input" rows="4" placeholder="e.g. I do not want to look fake. I do not want to dance or make reels. I do not want to sound like a guru. I do not want to post motivational quotes…" style="resize:vertical;line-height:1.6"></textarea>
+          <div class="error-msg" id="s9-avoid-err">Please share what you want to avoid.</div>
+        </div>
+        <p class="step-helper" style="margin-top:12px;font-style:italic;opacity:0.7">Skip this if you are not sure yet. It is optional but makes your result more personal.</p>
+      </div>
+
+      <!-- STEP 10 – Situation, outcome, platforms, time -->
+      <div class="step" data-step="10">
+        <h2 class="step-q">What is blocking your online presence the most?</h2>
+        <p class="step-helper">Most people are not blocked by lack of talent. They are blocked by unclear positioning, confidence or execution.</p>
+        <div class="options-grid" id="s7-options">
+          <button type="button" class="option-btn" data-value="I do not know what to post"><span class="opt-dot"></span><span class="opt-text">I do not know what to post</span></button>
+          <button type="button" class="option-btn" data-value="I do not know what I should be known for"><span class="opt-dot"></span><span class="opt-text">I do not know what I should be known for</span></button>
+          <button type="button" class="option-btn" data-value="My profile does not clearly show my value"><span class="opt-dot"></span><span class="opt-text">My profile does not clearly show my value</span></button>
+          <button type="button" class="option-btn" data-value="I feel I have too many interests"><span class="opt-dot"></span><span class="opt-text">I feel I have too many interests</span></button>
+          <button type="button" class="option-btn" data-value="I worry people will judge me"><span class="opt-dot"></span><span class="opt-text">I worry people will judge me</span></button>
+          <button type="button" class="option-btn" data-value="I am inconsistent"><span class="opt-dot"></span><span class="opt-text">I am inconsistent</span></button>
+          <button type="button" class="option-btn" data-value="I do not know how to turn content into opportunities"><span class="opt-dot"></span><span class="opt-text">I do not know how to turn content into opportunities</span></button>
+          <button type="button" class="option-btn" data-value="I do not have time"><span class="opt-dot"></span><span class="opt-text">I do not have time</span></button>
+          <button type="button" class="option-btn" data-value="I am not sure who my audience is"><span class="opt-dot"></span><span class="opt-text">I am not sure who my audience is</span></button>
+          <button type="button" class="option-btn" data-value="I have no clear offer or monetization path"><span class="opt-dot"></span><span class="opt-text">I have no clear offer or monetization path</span></button>
+        </div>
+        <div class="error-msg" id="s7-err">Please select an option to continue.</div>
+
+        <div class="sub-section">
+          <p class="sub-section-label">How would you describe your current online presence?</p>
+          <div class="options-grid" id="s8-options">
+          <button type="button" class="option-btn" data-value="I barely post or show up online"><span class="opt-dot"></span><span class="opt-text">I barely post or show up online</span></button>
+          <button type="button" class="option-btn" data-value="I have profiles, but they are not clear"><span class="opt-dot"></span><span class="opt-text">I have profiles, but they are not clear</span></button>
+          <button type="button" class="option-btn" data-value="I post sometimes, but without a strategy"><span class="opt-dot"></span><span class="opt-text">I post sometimes, but without a strategy</span></button>
+          <button type="button" class="option-btn" data-value="I post regularly, but my positioning is unclear"><span class="opt-dot"></span><span class="opt-text">I post regularly, but my positioning is unclear</span></button>
+          <button type="button" class="option-btn" data-value="I already have some audience or credibility"><span class="opt-dot"></span><span class="opt-text">I already have some audience or credibility</span></button>
+          <button type="button" class="option-btn" data-value="I have strong offline value, but weak online visibility"><span class="opt-dot"></span><span class="opt-text">I have strong offline value, but weak online visibility</span></button>
+          <button type="button" class="option-btn" data-value="I am starting from zero"><span class="opt-dot"></span><span class="opt-text">I am starting from zero</span></button>
+        </div>
+        <div class="error-msg" id="s8-err">Please select an option above.</div>
+        </div>
+
+        <div class="sub-section">
+          <p class="sub-section-label">What outcome do you want from building online?</p>
+          <p style="font-size:13px;color:var(--text-secondary);margin-bottom:14px;line-height:1.6">Different people need different paths. A job seeker, freelancer, founder and creator should not build the same way.</p>
+        <div class="options-grid" id="s9-options">
+          <button type="button" class="option-btn" data-value="Better job or career opportunities"><span class="opt-dot"></span><span class="opt-text">Better job or career opportunities</span></button>
+          <button type="button" class="option-btn" data-value="More clients or freelance work"><span class="opt-dot"></span><span class="opt-text">More clients or freelance work</span></button>
+          <button type="button" class="option-btn" data-value="Founder or business credibility"><span class="opt-dot"></span><span class="opt-text">Founder or business credibility</span></button>
+          <button type="button" class="option-btn" data-value="Authority and thought leadership"><span class="opt-dot"></span><span class="opt-text">Authority and thought leadership</span></button>
+          <button type="button" class="option-btn" data-value="Creator growth or audience building"><span class="opt-dot"></span><span class="opt-text">Creator growth or audience building</span></button>
+          <button type="button" class="option-btn" data-value="Coaching, consulting or course opportunities"><span class="opt-dot"></span><span class="opt-text">Coaching, consulting or course opportunities</span></button>
+          <button type="button" class="option-btn" data-value="Stronger trust and reputation"><span class="opt-dot"></span><span class="opt-text">Stronger trust and reputation</span></button>
+          <button type="button" class="option-btn" data-value="Clearer public identity"><span class="opt-dot"></span><span class="opt-text">Clearer public identity</span></button>
+          <button type="button" class="option-btn" data-value="Monetizable direction, but I am not sure how yet"><span class="opt-dot"></span><span class="opt-text">Monetizable direction, but I am not sure how yet</span></button>
+        </div>
+        <div class="error-msg" id="s9-err">Please select an option to continue.</div>
+
+        <div class="sub-section">
+          <p class="sub-section-label">Which platforms are you most interested in?</p>
+          <div class="multi-count" id="s9p-count"><span>0</span> of 3 selected</div>
+          <div class="options-grid two-col" id="s9p-options">
+            <button type="button" class="option-btn" data-value="LinkedIn"><span class="opt-dot"></span><span class="opt-text">LinkedIn</span></button>
+            <button type="button" class="option-btn" data-value="Instagram"><span class="opt-dot"></span><span class="opt-text">Instagram</span></button>
+            <button type="button" class="option-btn" data-value="X / Twitter"><span class="opt-dot"></span><span class="opt-text">X / Twitter</span></button>
+            <button type="button" class="option-btn" data-value="YouTube"><span class="opt-dot"></span><span class="opt-text">YouTube</span></button>
+            <button type="button" class="option-btn" data-value="Personal website"><span class="opt-dot"></span><span class="opt-text">Personal website</span></button>
+            <button type="button" class="option-btn" data-value="Newsletter"><span class="opt-dot"></span><span class="opt-text">Newsletter</span></button>
+            <button type="button" class="option-btn" data-value="I am not sure"><span class="opt-dot"></span><span class="opt-text">I am not sure</span></button>
+          </div>
+          <div class="max-msg" id="s9p-max">You can select up to 3.</div>
+        </div>
+
+        <div class="sub-section">
+          <p class="sub-section-label">How much time can you invest per week?</p>
+          <div class="options-grid two-col" id="s9t-options">
+            <button type="button" class="option-btn" data-value="Less than 2 hours"><span class="opt-dot"></span><span class="opt-text">Less than 2 hours</span></button>
+            <button type="button" class="option-btn" data-value="2–4 hours"><span class="opt-dot"></span><span class="opt-text">2–4 hours</span></button>
+            <button type="button" class="option-btn" data-value="5–7 hours"><span class="opt-dot"></span><span class="opt-text">5–7 hours</span></button>
+            <button type="button" class="option-btn" data-value="8+ hours"><span class="opt-dot"></span><span class="opt-text">8+ hours</span></button>
+            <button type="button" class="option-btn" data-value="Not sure yet"><span class="opt-dot"></span><span class="opt-text">Not sure yet</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 11 -->
+      <div class="step" data-step="11">
+        <h2 class="step-q">Where should we send your Knownly result?</h2>
+        <p class="step-helper">Your report will be generated instantly on the next page. Your email helps you save your result and get optional guidance later.</p>
+
+        <div class="form-group">
+          <label for="lead-name">Your name <span class="req">*</span></label>
+          <input type="text" id="lead-name" class="form-input" placeholder="First name or full name" autocomplete="name" />
+          <div class="error-msg" id="lead-name-err">Please enter your name.</div>
+        </div>
+        <div class="form-group">
+          <label for="lead-email">Email address <span class="req">*</span></label>
+          <input type="email" id="lead-email" class="form-input" placeholder="you@example.com" autocomplete="email" />
+          <div class="error-msg" id="lead-email-err">Please enter a valid email address.</div>
+        </div>
+        <div class="form-group">
+          <label for="lead-whatsapp">WhatsApp number <span class="opt">(optional)</span></label>
+          <input type="tel" id="lead-whatsapp" class="form-input" placeholder="+91 98765 43210" autocomplete="tel" />
+        </div>
+        <div class="form-group">
+          <label for="lead-goal">What would you like your online presence to help you with? <span class="req">*</span></label>
+          <input type="text" id="lead-goal" class="form-input" placeholder="e.g. Get more consulting clients in the marketing space" />
+          <div class="error-msg" id="lead-goal-err">Please share your goal in one line.</div>
+        </div>
+
+        <label class="consent-wrap">
+          <input type="checkbox" id="consent-check" />
+          <span>I agree to receive my Knownly result and optional guidance related to my online presence. I understand Knownly does not guarantee followers, clients, jobs or income.</span>
+        </label>
+        <div class="error-msg" id="consent-err">Please accept the terms to continue.</div>
+
+        <p class="privacy-note">Your answers are used to create your report. Knownly only uses what you choose to share.</p>
+      </div>
+
+    </div><!-- end steps-wrapper -->
+
+    <div class="q-footer">
+      <button type="button" class="btn btn-back" id="btnBack" disabled aria-label="Go back">
+        ← Back
+      </button>
+      <button type="button" class="btn btn-next" id="btnNext" aria-label="Continue to next step">
+        Continue →
+      </button>
+      <button type="button" class="btn btn-submit" id="btnSubmit" style="display:none" aria-label="Generate my Knownly report">
+        Generate My Knownly Report →
+      </button>
+    </div>
+  </div>
+
+  <!-- SIDE PANEL -->
+  <aside class="side-panel" aria-label="Step insight">
+    <p class="side-panel-title">What this helps us understand</p>
+    <div class="side-panel-icon" id="sideIcon">🧭</div>
+    <p class="side-panel-text" id="sideText">Your stage helps Knownly avoid giving everyone the same advice.</p>
+    <hr class="side-divider" />
+    <p class="side-note">Knownly will never force you to become someone you are not.</p>
+  </aside>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <span>Knownly · Personal Intelligence for Online Presence</span>
+  <br style="margin:4px 0" />
+  <a href="/">Home</a>
+  <a href="/privacy.html">Privacy</a>
+  <a href="/terms.html">Terms</a>
+  <a href="/contact.html">Contact</a>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  const TOTAL_STEPS = 11;
+  let currentStep = 1;
+
+  // Answers store
+  const answers = {
+    currentStage: '',
+    mainGoal: '',
+    naturalStrengths: [],
+    topics: [],
+    otherTopic: '',
+    perceivedFor: '',
+    proofExperience: '',
+    naturalStyle: '',
+    contentComfort: [],
+    avoidStyle: '',
+    currentBlocker: '',
+    onlinePresence: '',
+    desiredOutcome: '',
+    platforms: [],
+    timeAvailable: '',
+    monetizationInterest: '',
+    lead: { name: '', email: '', whatsapp: '', goal: '' },
+    submittedAt: ''
+  };
+
+  // Side panel content
+  const sidePanelData = [
+    { icon: '🧭', text: 'Your stage helps Knownly avoid giving everyone the same advice.' },
+    { icon: '🎯', text: 'Your goal shapes whether your report focuses on career, clients, authority, content or income opportunities.' },
+    { icon: '💎', text: 'Your strengths reveal what people may already value you for.' },
+    { icon: '🗺️', text: 'Your topics help map where your attention and future authority may sit.' },
+    { icon: '🤝', text: 'What people already come to you for is often your strongest signal. Most people overlook it.' },
+    { icon: '🏆', text: 'Real proof separates your report from everyone else\'s. It makes the advice specific, not generic.' },
+    { icon: '✍️', text: 'Your natural style helps Knownly suggest content you can sustain.' },
+    { icon: '📝', text: 'Your comfort zone helps create a practical content direction.' },
+    { icon: '🚫', text: 'Knowing what you do not want to become is just as important as knowing what you want to build.' },
+    { icon: '🚀', text: 'Your desired outcome, platforms and time availability shape your opportunity path.' },
+    { icon: '✨', text: 'Your result will be prepared from the full pattern of your answers.' }
+  ];
+
+  // DOM refs
+  const progressBar = document.getElementById('progressBar');
+  const stepNumEl   = document.getElementById('stepNum');
+  const stepPctEl   = document.getElementById('stepPct');
+  const btnBack     = document.getElementById('btnBack');
+  const btnNext     = document.getElementById('btnNext');
+  const btnSubmit   = document.getElementById('btnSubmit');
+  const sideIcon    = document.getElementById('sideIcon');
+  const sideText    = document.getElementById('sideText');
+
+  function updateProgress() {
+    const pct = Math.round((currentStep / TOTAL_STEPS) * 100);
+    progressBar.style.width = pct + '%';
+    progressBar.parentElement.setAttribute('aria-valuenow', pct);
+    stepNumEl.textContent = currentStep;
+    stepPctEl.textContent = pct + '% complete';
+  }
+
+  function updateSidePanel() {
+    const d = sidePanelData[currentStep - 1];
+    sideIcon.textContent = d.icon;
+    sideText.textContent = d.text;
+  }
+
+  function showStep(n) {
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    const el = document.querySelector(`.step[data-step="${n}"]`);
+    if (el) el.classList.add('active');
+
+    btnBack.disabled = (n === 1);
+
+    if (n === TOTAL_STEPS) {
+      btnNext.style.display = 'none';
+      btnSubmit.style.display = 'flex';
+    } else {
+      btnNext.style.display = 'flex';
+      btnSubmit.style.display = 'none';
+    }
+
+    updateProgress();
+    updateSidePanel();
+    clearErrors();
+  }
+
+  function clearErrors() {
+    document.querySelectorAll('.error-msg').forEach(e => e.classList.remove('show'));
+    document.querySelectorAll('.max-msg').forEach(e => e.classList.remove('show'));
+    document.querySelectorAll('.form-input').forEach(i => i.classList.remove('error-field'));
+  }
+
+  function showError(id) {
+    const el = document.getElementById(id);
+    if (el) el.classList.add('show');
+  }
+
+  // ── SINGLE SELECT ──────────────────────────────────────────
+  function initSingle(containerId, onSelect) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    container.querySelectorAll('.option-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        container.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        if (onSelect) onSelect(btn.dataset.value);
+      });
+    });
+  }
+
+  function getSingleValue(containerId) {
+    const container = document.getElementById(containerId);
+    const sel = container && container.querySelector('.option-btn.selected');
+    return sel ? sel.dataset.value : '';
+  }
+
+  // ── MULTI SELECT ───────────────────────────────────────────
+  function initMulti(containerId, max, countId, maxMsgId) {
+    const container = document.getElementById(containerId);
+    const countEl   = document.getElementById(countId);
+    const maxEl     = document.getElementById(maxMsgId);
+    if (!container) return;
+    container.querySelectorAll('.option-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const selected = container.querySelectorAll('.option-btn.selected');
+        if (btn.classList.contains('selected')) {
+          btn.classList.remove('selected');
+        } else {
+          if (selected.length >= max) {
+            if (maxEl) { maxEl.classList.add('show'); setTimeout(() => maxEl.classList.remove('show'), 2500); }
+            return;
+          }
+          btn.classList.add('selected');
+        }
+        const nowSelected = container.querySelectorAll('.option-btn.selected').length;
+        if (countEl) {
+          countEl.innerHTML = `<span>${nowSelected}</span> of ${max} selected`;
+        }
+      });
+    });
+  }
+
+  function getMultiValues(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return [];
+    return Array.from(container.querySelectorAll('.option-btn.selected')).map(b => b.dataset.value);
+  }
+
+  // Init all interactions
+  initSingle('s1-options');
+  initSingle('s2-options');
+  initMulti('s3-options', 3, 's3-count', 's3-max');
+  initMulti('s4-options', 4, 's4-count', 's4-max');
+  // Steps 5 and 6 are textarea inputs — no init needed
+  initSingle('s7-options');  // natural style (step 7)
+  initMulti('s6-options', 3, 's6-count', 's6-max');  // content comfort (step 8)
+  // Step 9 is a textarea — no init needed
+  // Step 10 reuses s7/s8/s9 option containers
+  initSingle('s8-options');
+  initSingle('s9-options');
+  initMulti('s9p-options', 3, 's9p-count', 's9p-max');
+  initSingle('s9t-options');
+
+  // ── VALIDATION ─────────────────────────────────────────────
+  function validateStep(n) {
+    clearErrors();
+    if (n === 1) {
+      const v = getSingleValue('s1-options');
+      if (!v) { showError('s1-err'); return false; }
+      answers.currentStage = v;
+    }
+    if (n === 2) {
+      const v = getSingleValue('s2-options');
+      if (!v) { showError('s2-err'); return false; }
+      answers.mainGoal = v;
+    }
+    if (n === 3) {
+      const v = getMultiValues('s3-options');
+      if (!v.length) { showError('s3-err'); return false; }
+      answers.naturalStrengths = v;
+    }
+    if (n === 4) {
+      const v = getMultiValues('s4-options');
+      if (!v.length) { showError('s4-err'); return false; }
+      answers.topics = v;
+      answers.otherTopic = document.getElementById('s4-other').value.trim();
+    }
+    if (n === 5) {
+      const v = document.getElementById('s5-perceived').value.trim();
+      if (!v) { showError('s5-perceived-err'); return false; }
+      answers.perceivedFor = v;
+    }
+    if (n === 6) {
+      const v = document.getElementById('s6-proof').value.trim();
+      if (!v) { showError('s6-proof-err'); return false; }
+      answers.proofExperience = v;
+    }
+    if (n === 7) {
+      const v = getSingleValue('s7-options');
+      if (!v) { showError('s5-err'); return false; }
+      answers.naturalStyle = v;
+    }
+    if (n === 8) {
+      const v = getMultiValues('s6-options');
+      if (!v.length) { showError('s6-err'); return false; }
+      answers.contentComfort = v;
+    }
+    if (n === 9) {
+      // Avoid style is optional – just save whatever was typed
+      answers.avoidStyle = document.getElementById('s9-avoid').value.trim();
+    }
+    if (n === 10) {
+      const blocker = getSingleValue('s7-options');
+      if (!blocker) { showError('s7-err'); return false; }
+      answers.currentBlocker = blocker;
+      const presence = getSingleValue('s8-options');
+      if (!presence) { showError('s8-err'); return false; }
+      answers.onlinePresence = presence;
+      const outcome = getSingleValue('s9-options');
+      if (!outcome) { showError('s9-err'); return false; }
+      answers.desiredOutcome = outcome;
+      answers.platforms = getMultiValues('s9p-options');
+      answers.timeAvailable = getSingleValue('s9t-options');
+    }
+    return true;
+  }
+
+  function validateStep11() {
+    clearErrors();
+    let ok = true;
+    const name  = document.getElementById('lead-name').value.trim();
+    const email = document.getElementById('lead-email').value.trim();
+    const goal  = document.getElementById('lead-goal').value.trim();
+    const con   = document.getElementById('consent-check').checked;
+
+    if (!name)  { showError('lead-name-err');  document.getElementById('lead-name').classList.add('error-field');  ok = false; }
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!emailOk) { showError('lead-email-err'); document.getElementById('lead-email').classList.add('error-field'); ok = false; }
+    if (!goal)  { showError('lead-goal-err');  document.getElementById('lead-goal').classList.add('error-field');  ok = false; }
+    if (!con)   { showError('consent-err'); ok = false; }
+
+    if (ok) {
+      answers.lead.name     = name;
+      answers.lead.email    = email;
+      answers.lead.whatsapp = document.getElementById('lead-whatsapp').value.trim();
+      answers.lead.goal     = goal;
+    }
+    return ok;
+  }
+
+  // ── ARCHETYPE LOGIC ────────────────────────────────────────
+  function computeHints() {
+    const s = answers.naturalStrengths;
+    const ns = answers.naturalStyle;
+    const cc = answers.contentComfort;
+    const do_ = answers.desiredOutcome;
+    const pl = answers.platforms;
+    const mg = answers.mainGoal;
+    const cs = answers.currentStage;
+    const pf = answers.perceivedFor.toLowerCase();
+    const pr = answers.proofExperience.toLowerCase();
+
+    // archetypeHint — now enriched with perceivedFor and proofExperience signals
+    let archetype = 'Visibility Builder';
+    if (s.includes('Explaining things clearly') || ns.includes('teaching step-by-step') || pf.includes('explain') || pf.includes('simplif')) archetype = 'Trusted Educator';
+    else if (s.includes('Solving practical problems') || ns.includes('simple and practical way') || pf.includes('problem') || pf.includes('fix')) archetype = 'Practical Authority Builder';
+    else if (s.includes('Spotting opportunities') || pf.includes('opportunit') || pf.includes('strateg')) archetype = 'Strategic Opportunity Spotter';
+    else if (s.includes('Researching deeply') || ns.includes('thoughtful writing')) archetype = 'Silent Expert';
+    else if (cs.includes('Founder') || pr.includes('built') || pr.includes('founded') || pr.includes('started')) archetype = 'Founder-Led Voice';
+    else if (s.includes('Storytelling or communication') || pf.includes('story') || pf.includes('communicat')) archetype = 'Creative Story Educator';
+    answers.archetypeHint = archetype;
+
+    // contentStyleHint
+    let csh = 'Simple practical posts';
+    if (cc.includes('Written posts') || cc.includes('LinkedIn-style professional posts')) csh = 'Written thought leadership';
+    else if (cc.includes('Short videos')) csh = 'Short video insights';
+    else if (cc.includes('Carousels or visual posts')) csh = 'Visual educational content';
+    else if (cc.includes('Case studies or examples')) csh = 'Case-study based content';
+    else if (cc.includes('Educational tips')) csh = 'Practical educational content';
+    else if (cc.includes('Personal stories')) csh = 'Story-led content';
+    answers.contentStyleHint = csh;
+
+    // opportunityPathHint
+    let oph = 'Online presence clarity';
+    if (do_.toLowerCase().includes('job') || do_.toLowerCase().includes('career')) oph = 'Career opportunities';
+    else if (do_.toLowerCase().includes('client') || do_.toLowerCase().includes('freelance')) oph = 'Client opportunities';
+    else if (do_.toLowerCase().includes('founder') || do_.toLowerCase().includes('business')) oph = 'Founder credibility';
+    else if (do_.toLowerCase().includes('authority') || do_.toLowerCase().includes('thought leadership')) oph = 'Authority building';
+    else if (do_.toLowerCase().includes('creator') || do_.toLowerCase().includes('audience')) oph = 'Creator growth';
+    else if (do_.toLowerCase().includes('coaching') || do_.toLowerCase().includes('consulting') || do_.toLowerCase().includes('course')) oph = 'Knowledge monetization';
+    else if (do_.toLowerCase().includes('trust') || do_.toLowerCase().includes('reputation')) oph = 'Trust and reputation';
+    else if (do_.toLowerCase().includes('monetizable')) oph = 'Monetizable direction';
+    answers.opportunityPathHint = oph;
+
+    // primaryPlatformHint
+    let pph = 'LinkedIn';
+    if (pl.includes('LinkedIn') || mg.toLowerCase().includes('linkedin') || mg.toLowerCase().includes('career') || mg.toLowerCase().includes('client') || cs.toLowerCase().includes('founder')) pph = 'LinkedIn';
+    else if (pl.includes('Instagram') && (cc.includes('Personal stories') || cc.includes('Carousels or visual posts') || do_.toLowerCase().includes('creator'))) pph = 'Instagram';
+    else if (pl.includes('YouTube') && cc.includes('Short videos')) pph = 'YouTube';
+    else if (pl.includes('X / Twitter') && cc.includes('Threads or long-form breakdowns')) pph = 'X / Twitter';
+    answers.primaryPlatformHint = pph;
+  }
+
+  // ── NAVIGATION ─────────────────────────────────────────────
+  btnNext.addEventListener('click', () => {
+    if (!validateStep(currentStep)) return;
+    if (currentStep < TOTAL_STEPS) {
+      currentStep++;
+      showStep(currentStep);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+
+  btnBack.addEventListener('click', () => {
+    if (currentStep > 1) {
+      currentStep--;
+      showStep(currentStep);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+
+  btnSubmit.addEventListener('click', () => {
+    if (!validateStep11()) return;
+    answers.submittedAt = new Date().toISOString();
+    computeHints();
+    try {
+      localStorage.setItem('knownlyDiagnosisData', JSON.stringify(answers));
+    } catch (e) {
+      console.warn('localStorage unavailable', e);
+    }
+    window.location.href = '/result.html';
+  });
+
+  // Keyboard: Enter on option buttons
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && document.activeElement.classList.contains('option-btn')) {
+      document.activeElement.click();
+    }
+  });
+
+  // Init
+  showStep(1);
+})();
+</script>
+</body>
+</html>

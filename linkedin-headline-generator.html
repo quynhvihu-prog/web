@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LinkedIn Headline Generator — Build a Clearer Professional Signal</title>
+<meta name="description" content="Create a clearer LinkedIn headline that explains who you are, what you help with and what you should be known for. Start with the free Knownly Diagnosis." />
+<link rel="canonical" href="https://whatamiknownfor.com/linkedin-headline-generator.html" />
+<meta property="og:title" content="LinkedIn Headline Generator — Knownly" />
+<meta property="og:description" content="Build a LinkedIn headline that makes your value easier to understand, remember and trust." />
+<meta property="og:url" content="https://whatamiknownfor.com/linkedin-headline-generator.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="LinkedIn Headline Generator — Knownly" />
+<meta name="twitter:description" content="Build a LinkedIn headline that makes your value easier to understand, remember and trust." />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "LinkedIn Headline Generator — Knownly",
+  "description": "Create a clearer LinkedIn headline that explains who you are, what you help with and what you should be known for.",
+  "url": "https://whatamiknownfor.com/linkedin-headline-generator.html",
+  "publisher": { "@type": "Organization", "name": "Knownly", "url": "https://whatamiknownfor.com" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#08110D;--bg2:#0D1713;--card:#14201A;--card-el:#182620;
+  --text:#F7F2E8;--text2:#B9C3B7;--cta:#8EA896;--cta-h:#7C9885;
+  --gold:#E0A86B;--border:#314238;--radius:14px;--radius-sm:8px;
+  --trans:0.22s ease;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* SCROLL PROGRESS */
+#scroll-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--cta),var(--gold));width:0%;z-index:9999;transition:width .1s linear}
+
+/* HEADER */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(8,17,13,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.header-inner{max-width:1160px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.logo{font-family:'Sora',sans-serif;font-size:18px;font-weight:700;color:var(--text);text-decoration:none;letter-spacing:-.3px}
+.logo span{color:var(--gold)}
+nav{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+nav a{font-size:13px;color:var(--text2);text-decoration:none;padding:5px 10px;border-radius:6px;transition:color var(--trans),background var(--trans)}
+nav a:hover{color:var(--text);background:rgba(255,255,255,.04)}
+nav a.nav-cta{background:var(--cta);color:#0A150F;font-weight:600;padding:6px 14px}
+nav a.nav-cta:hover{background:var(--cta-h)}
+@media(max-width:680px){nav a:not(.nav-cta):not(.nav-logo-link){display:none}}
+
+/* HERO */
+.hero{max-width:1160px;margin:0 auto;padding:72px 24px 56px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding:48px 24px 40px}}
+.badge{display:inline-flex;align-items:center;gap:7px;background:rgba(224,168,107,.1);border:1px solid rgba(224,168,107,.22);color:var(--gold);font-size:12px;font-weight:500;letter-spacing:.4px;padding:5px 13px;border-radius:20px;margin-bottom:20px}
+.badge::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;opacity:.8}
+.hero h1{font-family:'Sora',sans-serif;font-size:clamp(26px,4vw,44px);font-weight:700;line-height:1.13;letter-spacing:-.5px;margin-bottom:10px}
+.gold-line{font-family:'Sora',sans-serif;font-size:clamp(14px,2vw,18px);color:var(--gold);font-weight:500;margin-bottom:16px;line-height:1.4}
+.hero p{font-size:15px;color:var(--text2);line-height:1.75;margin-bottom:28px}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:7px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--radius-sm);text-decoration:none;transition:background var(--trans),border-color var(--trans),transform var(--trans);cursor:pointer;border:none}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--cta);color:#0A150F}
+.btn-primary:hover{background:var(--cta-h)}
+.btn-secondary{background:transparent;color:var(--text2);border:1.5px solid var(--border)}
+.btn-secondary:hover{border-color:var(--cta);color:var(--text)}
+
+/* HEADLINE CARD */
+.headline-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;position:relative;overflow:hidden}
+.headline-card::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:radial-gradient(circle,rgba(142,168,150,.12),transparent 70%);pointer-events:none}
+.hc-label{font-size:10px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--text2);opacity:.6;margin-bottom:8px}
+.hc-current{background:var(--card-el);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;font-size:13.5px;color:var(--text2);margin-bottom:16px;line-height:1.5}
+.hc-arrow{text-align:center;color:var(--gold);font-size:18px;margin-bottom:12px}
+.hc-improved{background:rgba(142,168,150,.08);border:1.5px solid var(--cta);border-radius:var(--radius-sm);padding:12px 14px;font-size:14px;color:var(--text);line-height:1.5;margin-bottom:16px}
+.hc-score{display:flex;align-items:center;gap:10px}
+.score-bar-wrap{flex:1;height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden}
+.score-bar{height:100%;width:82%;background:linear-gradient(90deg,var(--cta),var(--gold));border-radius:3px}
+.score-label{font-size:12px;color:var(--gold);font-weight:600;white-space:nowrap}
+
+/* SECTIONS */
+.section{max-width:1160px;margin:0 auto;padding:72px 24px}
+.section-sm{padding:48px 24px}
+.section-label{font-size:10.5px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--text2);opacity:.6;margin-bottom:12px}
+.section h2{font-family:'Sora',sans-serif;font-size:clamp(22px,3vw,34px);font-weight:700;line-height:1.2;letter-spacing:-.3px;margin-bottom:14px}
+.section>p,.section-intro{font-size:15px;color:var(--text2);line-height:1.75;max-width:640px;margin-bottom:36px}
+
+/* DIVIDER */
+.divider{border:none;border-top:1px solid var(--border);max-width:1160px;margin:0 auto}
+
+/* CARD GRIDS */
+.cards-grid{display:grid;gap:16px}
+.cards-2{grid-template-columns:repeat(2,1fr)}
+.cards-3{grid-template-columns:repeat(3,1fr)}
+.cards-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.cards-4{grid-template-columns:repeat(2,1fr)}.cards-3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.cards-2,.cards-3,.cards-4{grid-template-columns:1fr}}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;transition:border-color var(--trans),transform var(--trans)}
+.card:hover{border-color:rgba(142,168,150,.4);transform:translateY(-2px)}
+.card-icon{font-size:20px;margin-bottom:10px}
+.card h3{font-family:'Sora',sans-serif;font-size:15px;font-weight:600;margin-bottom:6px;color:var(--text)}
+.card p{font-size:13.5px;color:var(--text2);line-height:1.6}
+.card-num{font-family:'Sora',sans-serif;font-size:28px;font-weight:700;color:rgba(142,168,150,.18);margin-bottom:8px}
+
+/* MISTAKE CARDS */
+.mistake-card{background:var(--card);border:1px solid var(--border);border-left:3px solid rgba(224,112,112,.35);border-radius:var(--radius);padding:14px 18px;font-size:14px;color:var(--text2)}
+
+/* FRAMEWORK */
+.framework-card{background:var(--card-el);border:1px solid var(--border);border-radius:var(--radius);padding:22px;position:relative;overflow:hidden}
+.framework-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cta),transparent)}
+.fc-num{font-family:'Sora',sans-serif;font-size:36px;font-weight:700;color:rgba(224,168,107,.12);line-height:1;margin-bottom:8px}
+.fc-q{font-size:12px;color:var(--text2);opacity:.7;margin-bottom:4px}
+.fc-title{font-family:'Sora',sans-serif;font-size:16px;font-weight:600;color:var(--gold);margin-bottom:10px}
+.fc-examples{font-size:13px;color:var(--text2);line-height:1.65}
+
+/* FORMULA */
+.formula-box{background:var(--card-el);border:1.5px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-top:28px;text-align:center}
+.formula-label{font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--text2);opacity:.6;margin-bottom:10px}
+.formula-text{font-family:'Sora',sans-serif;font-size:clamp(13px,2vw,15px);color:var(--cta);font-weight:500;line-height:1.6}
+.formula-text em{color:var(--gold);font-style:normal;font-weight:600}
+
+/* GENERATOR */
+.generator-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;max-width:720px}
+.gen-fields{display:grid;gap:14px;margin-bottom:20px}
+.gen-label{display:block;font-size:12.5px;color:var(--text2);font-weight:500;margin-bottom:6px}
+.gen-input{width:100%;background:var(--card-el);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:11px 14px;color:var(--text);font-family:'Inter',sans-serif;font-size:14px;outline:none;transition:border-color var(--trans)}
+.gen-input:focus{border-color:var(--cta)}
+.gen-input::placeholder{color:rgba(185,195,183,.4)}
+.gen-btn{background:var(--cta);color:#0A150F;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;padding:12px 24px;border:none;border-radius:var(--radius-sm);cursor:pointer;transition:background var(--trans),transform var(--trans)}
+.gen-btn:hover{background:var(--cta-h)}
+.gen-btn:active{transform:scale(.97)}
+
+.drafts-wrap{margin-top:24px;display:none}
+.draft-card{background:var(--card-el);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 18px;margin-bottom:10px}
+.draft-label{font-size:10.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:600}
+.draft-text{font-size:14px;color:var(--text);line-height:1.55}
+.gen-note{font-size:12.5px;color:var(--text2);opacity:.75;margin-top:14px;font-style:italic;margin-bottom:18px}
+
+/* BEFORE/AFTER */
+.ba-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:14px}
+.ba-bad{background:rgba(224,112,112,.06);border:1px solid rgba(224,112,112,.2);border-radius:var(--radius-sm);padding:12px 14px}
+.ba-good{background:rgba(142,168,150,.07);border:1px solid rgba(142,168,150,.25);border-radius:var(--radius-sm);padding:12px 14px}
+.ba-tag{font-size:10.5px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:5px}
+.ba-tag.bad{color:rgba(224,112,112,.8)}
+.ba-tag.good{color:var(--cta)}
+.ba-text{font-size:13.5px;color:var(--text);line-height:1.5}
+
+/* CHECKLIST */
+.checklist{display:grid;gap:10px}
+.check-item{display:flex;align-items:flex-start;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;font-size:14px;color:var(--text2);line-height:1.5}
+.check-item::before{content:'✓';color:var(--cta);font-weight:700;font-size:13px;flex-shrink:0;margin-top:1px}
+
+/* OUTPUTS */
+.output-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:700px){.output-grid{grid-template-columns:1fr}}
+.output-pill{background:var(--card-el);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;font-size:13.5px;color:var(--text2);display:flex;align-items:center;gap:10px}
+.output-pill::before{content:'→';color:var(--gold);font-weight:600;flex-shrink:0}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-family:'Sora',sans-serif;font-size:15.5px;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none}
+.faq-q::after{content:'+';color:var(--gold);font-size:20px;font-weight:300;flex-shrink:0;transition:transform var(--trans)}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{font-size:14px;color:var(--text2);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease}
+.faq-item.open .faq-a{max-height:300px;padding-top:12px}
+
+/* CTA SECTION */
+.cta-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:72px 24px;text-align:center}
+.cta-section h2{font-family:'Sora',sans-serif;font-size:clamp(22px,3vw,36px);font-weight:700;margin-bottom:14px;letter-spacing:-.3px}
+.cta-section p{font-size:15px;color:var(--text2);max-width:560px;margin:0 auto 28px;line-height:1.75}
+
+/* RELATED */
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:700px){.related-grid{grid-template-columns:1fr}}
+.related-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;text-decoration:none;display:block;transition:border-color var(--trans),transform var(--trans)}
+.related-card:hover{border-color:var(--cta);transform:translateY(-2px)}
+.related-card span{display:block;font-size:11px;color:var(--gold);letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px}
+.related-card h4{font-family:'Sora',sans-serif;font-size:14px;font-weight:600;color:var(--text);line-height:1.4}
+
+/* FOOTER */
+.site-footer{background:var(--bg2);border-top:1px solid var(--border);padding:36px 24px;text-align:center}
+.footer-inner{max-width:1160px;margin:0 auto}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin-bottom:16px}
+.footer-links a{font-size:13px;color:var(--text2);text-decoration:none;transition:color var(--trans)}
+.footer-links a:hover{color:var(--text)}
+.footer-copy{font-size:12px;color:var(--text2);opacity:.5}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}#scroll-bar{display:none}}
+
+/* FOCUS */
+:focus-visible{outline:2px solid var(--cta);outline-offset:2px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<div id="scroll-bar" role="progressbar" aria-label="Page scroll progress"></div>
+
+<!-- HEADER -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="/" class="logo">Known<span>ly</span></a>
+    <nav aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/diagnosis.html">Diagnosis</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/early-access.html">Early Access</a>
+      <a href="/about.html">About</a>
+      <a href="/login.html">Login</a>
+      <a href="/diagnosis.html" class="nav-cta">Start Free →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-label="Hero">
+  <div class="reveal">
+    <div class="badge">LinkedIn Headline Tool</div>
+    <h1>Create a LinkedIn headline that makes your value easier to understand.</h1>
+    <p class="gold-line">Your headline should create a clear professional signal.</p>
+    <p>Most LinkedIn headlines either sound too generic or too crowded. Knownly helps you think beyond job title and create a headline around your role, strength, audience, proof and direction.</p>
+    <div class="btn-row">
+      <a href="/diagnosis.html" class="btn btn-primary">Start Free Knownly Diagnosis →</a>
+      <a href="#headline-framework" class="btn btn-secondary">See headline framework</a>
+    </div>
+  </div>
+  <div class="reveal">
+    <div class="headline-card">
+      <div class="hc-label">Current headline</div>
+      <div class="hc-current">Marketing | Growth | AI | Business | Strategy</div>
+      <div class="hc-arrow">↓</div>
+      <div class="hc-label">Clearer direction</div>
+      <div class="hc-improved">Growth marketer helping SaaS founders turn positioning, content and funnels into clearer demand.</div>
+      <div class="hc-score">
+        <span style="font-size:12px;color:var(--text2)">Clarity Signal</span>
+        <div class="score-bar-wrap"><div class="score-bar"></div></div>
+        <span class="score-label">82 / 100</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- SECTION 1: WHY IT MATTERS -->
+<section class="section reveal" aria-label="Why your headline matters">
+  <div class="section-label">Visibility</div>
+  <h2>Your headline is not just a title. It is your public signal.</h2>
+  <p class="section-intro">Your headline appears in search results, comments, connection requests, posts and profile visits. If it is unclear, people may not know what to remember you for.</p>
+  <div class="cards-grid cards-4">
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>Explains your value quickly</h3>
+      <p>A clear headline communicates your direction in seconds, even before someone clicks your profile.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔍</div>
+      <h3>Supports search visibility</h3>
+      <p>LinkedIn surfaces profiles in search. The right words in your headline can help the right people find you.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🪟</div>
+      <h3>Shapes first impressions</h3>
+      <p>In comments and connection requests, your headline is often the only context people see about you.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔗</div>
+      <h3>Connects profile and content</h3>
+      <p>A strong headline creates alignment between what you post and what your profile says about you.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- SECTION 2: COMMON MISTAKES -->
+<section class="section reveal" aria-label="Common headline mistakes">
+  <div class="section-label">Common Mistakes</div>
+  <h2>What makes a LinkedIn headline unclear.</h2>
+  <p class="section-intro">Most people do not have a weak LinkedIn presence because they lack ability. They have one because their headline sends a vague signal.</p>
+  <div class="cards-grid cards-3">
+    <div class="mistake-card">Only writing your job title without context or direction</div>
+    <div class="mistake-card">Adding too many unrelated keywords separated by pipes</div>
+    <div class="mistake-card">Sounding identical to everyone in your industry</div>
+    <div class="mistake-card">Using vague words like passionate, driven or enthusiastic</div>
+    <div class="mistake-card">Saying too much without a clear audience in mind</div>
+    <div class="mistake-card">Claiming authority without any visible proof or signal</div>
+    <div class="mistake-card">Copying creators who are in a completely different career category</div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- SECTION 3: FRAMEWORK -->
+<section class="section reveal" id="headline-framework" aria-label="LinkedIn headline framework">
+  <div class="section-label">Knownly Framework</div>
+  <h2>A strong headline has 4 parts.</h2>
+  <p class="section-intro">Most effective LinkedIn headlines share a common structure. Knownly breaks it into four clear elements you can work through one at a time.</p>
+  <div class="cards-grid cards-4">
+    <div class="framework-card">
+      <div class="fc-num">01</div>
+      <div class="fc-title">Identity</div>
+      <div class="fc-q">Who are you professionally?</div>
+      <p class="fc-examples">Founder, marketer, product designer, student, consultant, coach, engineer, sales professional.</p>
+    </div>
+    <div class="framework-card">
+      <div class="fc-num">02</div>
+      <div class="fc-title">Audience or context</div>
+      <div class="fc-q">Who should understand your value?</div>
+      <p class="fc-examples">Startups, recruiters, SaaS founders, small businesses, students, creators, teams, clients.</p>
+    </div>
+    <div class="framework-card">
+      <div class="fc-num">03</div>
+      <div class="fc-title">Value direction</div>
+      <div class="fc-q">What do you help with or want to be known for?</div>
+      <p class="fc-examples">Growth, positioning, content systems, operations, AI adoption, leadership, education, sales, design.</p>
+    </div>
+    <div class="framework-card">
+      <div class="fc-num">04</div>
+      <div class="fc-title">Proof or angle</div>
+      <div class="fc-q">What makes your signal believable?</div>
+      <p class="fc-examples">Built X, helped Y, years of experience, niche expertise, case studies, practical lessons.</p>
+    </div>
+  </div>
+  <div class="formula-box">
+    <div class="formula-label">The Knownly Headline Formula</div>
+    <div class="formula-text">
+      <em>[Role / Identity]</em> helping <em>[Audience]</em> with <em>[Outcome / Problem]</em> through <em>[Strength / Method / Proof]</em>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- SECTION 4: GENERATOR -->
+<section class="section reveal" aria-label="Headline generator tool">
+  <div class="section-label">Mini Generator</div>
+  <h2>Build your first headline draft.</h2>
+  <p class="section-intro">Enter your details below. Knownly will generate three starting-point headline drafts based on your inputs.</p>
+  <div class="generator-wrap">
+    <div class="gen-fields">
+      <div>
+        <label class="gen-label" for="g-role">Your role or identity</label>
+        <input type="text" id="g-role" class="gen-input" placeholder="Founder, marketer, designer, student, consultant…" />
+      </div>
+      <div>
+        <label class="gen-label" for="g-audience">Who do you want to attract?</label>
+        <input type="text" id="g-audience" class="gen-input" placeholder="Recruiters, founders, clients, startups, creators…" />
+      </div>
+      <div>
+        <label class="gen-label" for="g-direction">What do you help with or want to be known for?</label>
+        <input type="text" id="g-direction" class="gen-input" placeholder="Growth, AI, leadership, design, career, sales…" />
+      </div>
+      <div>
+        <label class="gen-label" for="g-proof">Your proof or angle</label>
+        <input type="text" id="g-proof" class="gen-input" placeholder="Built a SaaS product, 5 years experience, practical frameworks…" />
+      </div>
+    </div>
+    <button class="gen-btn" id="gen-btn" type="button">Generate Headline Drafts</button>
+    <div class="drafts-wrap" id="drafts-wrap" aria-live="polite">
+      <div class="draft-card">
+        <div class="draft-label">Draft 1 — Role-first</div>
+        <div class="draft-text" id="d1"></div>
+      </div>
+      <div class="draft-card">
+        <div class="draft-label">Draft 2 — Direction-first</div>
+        <div class="draft-text" id="d2"></div>
+      </div>
+      <div class="draft-card">
+        <div class="draft-label">Draft 3 — Audience-first</div>
+        <div class="draft-text" id="d3"></div>
+      </div>
+      <p class="gen-note">These drafts are a starting point. For a more personal headline, take the Knownly Diagnosis.</p>
+      <a href="/diagnosis.html" class="btn btn-primary">Get My Personal Direction First →</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- SECTION 5: BAD vs BETTER -->
+<section class="section reveal" aria-label="Headline examples">
+  <div class="section-label">Before & After</div>
+  <h2>Bad vs better LinkedIn headline examples.</h2>
+  <p class="section-intro">Here is what a shift in clarity can look like across different professional situations.</p>
+  <div class="cards-grid cards-2">
+    <div class="ba-card">
+      <div class="ba-bad"><div class="ba-tag bad">Before</div><div class="ba-text">Marketing Professional | Growth | Strategy | AI | Sales</div></div>
+      <div class="ba-good"><div class="ba-tag good">Clearer direction</div><div class="ba-text">Growth marketer helping SaaS founders turn positioning and content into clearer demand.</div></div>
+    </div>
+    <div class="ba-card">
+      <div class="ba-bad"><div class="ba-tag bad">Before</div><div class="ba-text">Student | Learner | Dreamer</div></div>
+      <div class="ba-good"><div class="ba-tag good">Clearer direction</div><div class="ba-text">Computer science student building practical AI projects and sharing beginner-friendly lessons.</div></div>
+    </div>
+    <div class="ba-card">
+      <div class="ba-bad"><div class="ba-tag bad">Before</div><div class="ba-text">Founder & CEO</div></div>
+      <div class="ba-good"><div class="ba-tag good">Clearer direction</div><div class="ba-text">Founder building sales software for distributors and sharing lessons on field sales, SaaS and SME growth.</div></div>
+    </div>
+    <div class="ba-card">
+      <div class="ba-bad"><div class="ba-tag bad">Before</div><div class="ba-text">Freelancer</div></div>
+      <div class="ba-good"><div class="ba-tag good">Clearer direction</div><div class="ba-text">Freelance designer helping early-stage brands create clearer websites, landing pages and visual identity.</div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- SECTION 6: CHECKLIST -->
+<section class="section reveal" aria-label="Headline checklist">
+  <div class="section-label">Checklist</div>
+  <h2>Before you publish your headline, check this.</h2>
+  <p class="section-intro">Run your headline through these seven questions before making it live on your profile.</p>
+  <div class="checklist">
+    <div class="check-item">Can a stranger understand your value in 5 seconds?</div>
+    <div class="check-item">Is there one clear direction — not five scattered ideas?</div>
+    <div class="check-item">Does it include an audience or professional context?</div>
+    <div class="check-item">Does it avoid too many buzzwords and filler words?</div>
+    <div class="check-item">Does it match both your profile and your content direction?</div>
+    <div class="check-item">Does it feel believable — not a claim without any signal?</div>
+    <div class="check-item">Does it support the specific opportunities you want to attract?</div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- SECTION 7: HOW KNOWNLY HELPS -->
+<section class="section reveal" aria-label="How Knownly helps">
+  <div class="section-label">Knownly Direction</div>
+  <h2>Your headline becomes stronger when your direction is clear.</h2>
+  <p class="section-intro">Knownly uses your strengths, stage, goals, content style, blocker and desired opportunity path to help you understand what you should be known for. Then your LinkedIn headline becomes easier to write.</p>
+  <div class="output-grid" style="margin-bottom:32px">
+    <div class="output-pill">Knownly Archetype</div>
+    <div class="output-pill">What you should be known for</div>
+    <div class="output-pill">Best-fit content direction</div>
+    <div class="output-pill">Profile improvement suggestions</div>
+    <div class="output-pill">Opportunity path</div>
+    <div class="output-pill">7-day action plan</div>
+  </div>
+  <a href="/diagnosis.html" class="btn btn-primary">Start Free Knownly Diagnosis →</a>
+</section>
+
+<hr class="divider" />
+
+<!-- RELATED PAGES -->
+<section class="section reveal" aria-label="Related pages">
+  <div class="section-label">Explore More</div>
+  <h2>Related Knownly tools and guides.</h2>
+  <div class="related-grid">
+    <a href="/online-presence-audit.html" class="related-card"><span>Audit</span><h4>Online Presence Audit</h4></a>
+    <a href="/personal-brand-quiz.html" class="related-card"><span>Quiz</span><h4>Personal Brand Quiz</h4></a>
+    <a href="/linkedin-profile-review.html" class="related-card"><span>Profile</span><h4>LinkedIn Profile Review</h4></a>
+    <a href="/content-pillars-generator.html" class="related-card"><span>Content</span><h4>Content Pillars Generator</h4></a>
+    <a href="/what-should-i-be-known-for.html" class="related-card"><span>Direction</span><h4>What Should I Be Known For?</h4></a>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- FAQ -->
+<section class="section reveal" aria-label="Frequently asked questions">
+  <div class="section-label">FAQ</div>
+  <h2>Common questions about LinkedIn headlines.</h2>
+  <div style="max-width:720px;margin-top:32px">
+    <div class="faq-item">
+      <div class="faq-q" tabindex="0" role="button" aria-expanded="false">What should I write in my LinkedIn headline?</div>
+      <div class="faq-a">Write a clear signal of who you are, who you help, what you understand and what value people should remember you for. Your headline should be a professional signal, not a list of job titles or buzzwords.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" tabindex="0" role="button" aria-expanded="false">Should I include my job title?</div>
+      <div class="faq-a">Yes, if it helps clarity. But your headline should not stop at job title. Add your direction, audience or value so people understand what to remember you for beyond a generic role description.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" tabindex="0" role="button" aria-expanded="false">How long should a LinkedIn headline be?</div>
+      <div class="faq-a">Keep it clear and readable. A strong headline usually works better when it is specific rather than crowded with too many keywords. LinkedIn allows around 220 characters, but clarity matters more than length.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" tabindex="0" role="button" aria-expanded="false">Can Knownly write my headline for me?</div>
+      <div class="faq-a">Knownly can help you find your direction and suggest headline ideas through the mini tool above and the Diagnosis report. Deeper profile review and paid plans can help refine it further with personalized guidance.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" tabindex="0" role="button" aria-expanded="false">Does a better headline guarantee more profile views?</div>
+      <div class="faq-a">No. A clearer headline can improve understanding and positioning, but Knownly does not guarantee views, followers, jobs or clients. What it can do is make your professional signal clearer to the right people.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section reveal" aria-label="Final call to action">
+  <h2>Your headline should not be a random list of keywords.</h2>
+  <p>Start with your Knownly Diagnosis and discover the clearest professional signal you can build around.</p>
+  <a href="/diagnosis.html" class="btn btn-primary">Start Free Diagnosis →</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/diagnosis.html">Diagnosis</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/early-access.html">Early Access</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <p class="footer-copy">Knownly · Personal Intelligence for Online Presence · WhatAmIKnownFor.com</p>
+  </div>
+</footer>
+
+<script>
+// Scroll progress
+const scrollBar = document.getElementById('scroll-bar');
+window.addEventListener('scroll', () => {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  scrollBar.style.width = (window.scrollY / max * 100) + '%';
+}, { passive: true });
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
+}, { threshold: 0.1 });
+reveals.forEach(r => ro.observe(r));
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  function toggle() {
+    const item = q.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    document.querySelectorAll('.faq-q').forEach(i => i.setAttribute('aria-expanded','false'));
+    if (!isOpen) { item.classList.add('open'); q.setAttribute('aria-expanded','true'); }
+  }
+  q.addEventListener('click', toggle);
+  q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+});
+
+// Headline generator
+document.getElementById('gen-btn').addEventListener('click', () => {
+  const role      = document.getElementById('g-role').value.trim() || 'Professional';
+  const audience  = document.getElementById('g-audience').value.trim() || 'the right people';
+  const direction = document.getElementById('g-direction').value.trim() || 'their goals';
+  const proof     = document.getElementById('g-proof').value.trim() || 'practical experience';
+
+  document.getElementById('d1').textContent = `${role} helping ${audience} with ${direction} through ${proof}`;
+  document.getElementById('d2').textContent = `${role} focused on ${direction} for ${audience} | ${proof}`;
+  document.getElementById('d3').textContent = `Helping ${audience} understand and act on ${direction} | ${role} · ${proof}`;
+
+  const wrap = document.getElementById('drafts-wrap');
+  wrap.style.display = 'block';
+  wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+});
+</script>
+</body>
+</html>

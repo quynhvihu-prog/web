@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About Knownly — Personal Intelligence for Online Presence</title>
+<meta name="description" content="Knownly helps people find their clearest public signal and build an online presence around it. Learn about our mission and what we believe." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #08110D; --bg2: #0D1713; --card: #14201A; --card-elevated: #182620;
+  --text-primary: #F7F2E8; --text-secondary: #B9C3B7;
+  --cta: #8EA896; --cta-hover: #7C9885; --gold: #E0A86B;
+  --border: #314238; --radius: 14px; --radius-sm: 8px; --transition: 0.22s ease;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.6; min-height: 100vh; -webkit-font-smoothing: antialiased; }
+.scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg, var(--cta), var(--gold)); z-index: 200; }
+.site-header { position: sticky; top: 0; z-index: 100; background: rgba(8,17,13,0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+.header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px; }
+.logo { font-family: 'Sora', sans-serif; font-size: 18px; font-weight: 700; color: var(--text-primary); text-decoration: none; letter-spacing: -0.3px; }
+.logo span { color: var(--gold); }
+.nav { display: none; gap: 6px; }
+@media(min-width: 768px) { .nav { display: flex; } }
+.nav a { font-size: 13px; color: var(--text-secondary); text-decoration: none; padding: 6px 12px; border-radius: 20px; transition: color var(--transition), background var(--transition); }
+.nav a:hover, .nav a.active { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+.header-cta { font-size: 13px; font-weight: 500; color: #0A150F; background: var(--cta); padding: 7px 16px; border-radius: 20px; text-decoration: none; transition: background var(--transition); white-space: nowrap; }
+.header-cta:hover { background: var(--cta-hover); }
+
+.hero { text-align: center; padding: 60px 24px 48px; max-width: 680px; margin: 0 auto; }
+.badge { display: inline-flex; align-items: center; gap: 7px; background: rgba(224,168,107,0.1); border: 1px solid rgba(224,168,107,0.25); color: var(--gold); font-size: 12px; font-weight: 500; letter-spacing: 0.4px; padding: 5px 13px; border-radius: 20px; margin-bottom: 22px; }
+.badge::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; opacity: 0.8; }
+.hero h1 { font-family: 'Sora', sans-serif; font-size: clamp(26px, 4vw, 42px); font-weight: 700; line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 16px; }
+.hero-gold { color: var(--gold); display: block; font-family: 'Sora', sans-serif; font-size: clamp(15px, 2vw, 19px); font-weight: 500; margin-bottom: 16px; font-style: italic; }
+.hero p { font-size: 15px; color: var(--text-secondary); max-width: 540px; margin: 0 auto; line-height: 1.75; }
+
+.page-content { max-width: 860px; margin: 0 auto; padding: 0 24px 80px; }
+.section { margin-bottom: 60px; opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.section.revealed { opacity: 1; transform: translateY(0); }
+@media(prefers-reduced-motion: reduce) { .section { opacity: 1; transform: none; transition: none; } }
+.section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-secondary); opacity: 0.65; margin-bottom: 8px; }
+.section-title { font-family: 'Sora', sans-serif; font-size: clamp(18px, 2.5vw, 23px); font-weight: 600; color: var(--text-primary); margin-bottom: 20px; letter-spacing: -0.2px; line-height: 1.3; }
+.section-divider { border: none; border-top: 1px solid var(--border); margin-bottom: 28px; }
+
+.prose { font-size: 15px; color: var(--text-secondary); line-height: 1.85; }
+.prose p + p { margin-top: 16px; }
+.prose strong { color: var(--text-primary); font-weight: 500; }
+
+.belief-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+.belief-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+.belief-num { font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 600; color: var(--gold); opacity: 0.7; margin-bottom: 10px; letter-spacing: 0.5px; }
+.belief-text { font-size: 14.5px; color: var(--text-primary); font-weight: 500; line-height: 1.5; }
+.belief-sub { font-size: 13px; color: var(--text-secondary); margin-top: 6px; line-height: 1.6; }
+
+.helps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.helps-card { background: var(--card-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 18px 20px; display: flex; align-items: flex-start; gap: 12px; }
+.helps-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+.helps-label { font-size: 14px; font-weight: 500; color: var(--text-primary); }
+.helps-desc { font-size: 12.5px; color: var(--text-secondary); margin-top: 4px; line-height: 1.5; }
+
+.disclaimer-card { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--border); border-radius: var(--radius); padding: 24px 26px; }
+.disclaimer-card h3 { font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 10px; }
+.disclaimer-card ul { padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.disclaimer-card li { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; display: flex; gap: 10px; align-items: flex-start; }
+.disclaimer-card li::before { content: '—'; color: var(--border); flex-shrink: 0; margin-top: 1px; }
+
+.cta-section { text-align: center; padding: 48px 24px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); }
+.cta-section h2 { font-family: 'Sora', sans-serif; font-size: clamp(20px, 3vw, 28px); font-weight: 700; color: var(--text-primary); margin-bottom: 10px; letter-spacing: -0.3px; }
+.cta-section p { font-size: 14.5px; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.7; max-width: 440px; margin-left: auto; margin-right: auto; }
+.btn-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 7px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; padding: 11px 22px; border-radius: var(--radius-sm); text-decoration: none; cursor: pointer; border: none; transition: background var(--transition), transform var(--transition); }
+.btn:active { transform: scale(0.97); }
+.btn-primary { background: var(--cta); color: #0A150F; font-weight: 600; }
+.btn-primary:hover { background: var(--cta-hover); }
+.btn-outline { background: transparent; color: var(--text-secondary); border: 1.5px solid var(--border); }
+.btn-outline:hover { border-color: var(--cta); color: var(--text-primary); }
+
+.site-footer { border-top: 1px solid var(--border); padding: 32px 24px; }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+@media(min-width: 768px) { .footer-inner { flex-direction: row; justify-content: space-between; align-items: flex-start; } }
+.footer-brand { font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 700; color: var(--text-primary); }
+.footer-brand span { color: var(--gold); }
+.footer-tagline { font-size: 12.5px; color: var(--text-secondary); opacity: 0.6; margin-top: 4px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.footer-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color var(--transition); }
+.footer-links a:hover { color: var(--text-primary); }
+.footer-copy { font-size: 12px; color: var(--text-secondary); opacity: 0.45; margin-top: 6px; }
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="/" class="logo">Known<span>ly</span></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/diagnosis.html">Diagnosis</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/early-access.html">Early Access</a>
+      <a href="/about.html" class="active">About</a>
+      <a href="/login.html">Login</a>
+    </nav>
+    <a href="/early-access.html" class="header-cta">Early Access</a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" aria-label="About hero">
+  <div class="badge">About Knownly</div>
+  <h1>Most people are not invisible because they lack talent.</h1>
+  <span class="hero-gold">They are invisible because people do not know what to remember them for.</span>
+  <p>Knownly exists to help people find their clearest public signal and build an online presence around it.</p>
+</section>
+
+<div class="page-content">
+
+  <!-- Why Knownly exists -->
+  <section class="section" aria-labelledby="why-title">
+    <p class="section-label">Origin</p>
+    <h2 class="section-title" id="why-title">Why Knownly exists</h2>
+    <hr class="section-divider" />
+    <div class="prose">
+      <p>Most people have genuine skills, interesting experiences, hard-won knowledge and real capability. But their online presence — if it exists at all — often looks scattered, generic or disconnected from who they actually are.</p>
+      <p>A LinkedIn profile that sounds like a job description. An Instagram that mixes personal life with professional intent. A Twitter bio so vague it could belong to anyone. A personal website with no clear signal of why someone should care.</p>
+      <p><strong>The problem is almost never a lack of substance.</strong> It is the absence of a clear, consistent public signal — something that tells the world what to know you for.</p>
+      <p>Knownly was built to solve that problem. Not by giving everyone the same advice. Not by pushing people into trends or formats that do not fit them. But by helping each person understand what they already have, where their natural direction lies, and what a clearer online presence would actually look like for them specifically.</p>
+      <p>We start with a free diagnosis that covers your stage, your strengths, your goals, your style and your blockers. From there, we generate a direction report — and for those who want to go further, we offer human-guided paths to bring it to life.</p>
+    </div>
+  </section>
+
+  <!-- What Knownly believes -->
+  <section class="section" aria-labelledby="beliefs-title">
+    <p class="section-label">Our principles</p>
+    <h2 class="section-title" id="beliefs-title">What Knownly believes</h2>
+    <hr class="section-divider" />
+    <div class="belief-grid">
+      <div class="belief-card">
+        <div class="belief-num">01</div>
+        <div class="belief-text">Everyone does not need to become an influencer.</div>
+        <div class="belief-sub">Online presence should serve your actual goals — not platform metrics or vanity numbers.</div>
+      </div>
+      <div class="belief-card">
+        <div class="belief-num">02</div>
+        <div class="belief-text">Your online presence should fit your natural style.</div>
+        <div class="belief-sub">Forcing yourself into formats you hate is not sustainable. The right content direction is one you can actually maintain.</div>
+      </div>
+      <div class="belief-card">
+        <div class="belief-num">03</div>
+        <div class="belief-text">Clarity comes before content.</div>
+        <div class="belief-sub">Posting more before you know what you stand for just amplifies confusion. Get clear on the signal first.</div>
+      </div>
+      <div class="belief-card">
+        <div class="belief-num">04</div>
+        <div class="belief-text">Trust comes before monetization.</div>
+        <div class="belief-sub">People work with, hire and recommend those they trust. Trust is built through consistent, credible positioning — not through volume.</div>
+      </div>
+      <div class="belief-card">
+        <div class="belief-num">05</div>
+        <div class="belief-text">AI should support human direction, not replace it.</div>
+        <div class="belief-sub">Knownly uses intelligent systems to help generate context and direction — but the final judgment, voice and choices belong to you.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Knownly helps with -->
+  <section class="section" aria-labelledby="helps-title">
+    <p class="section-label">What we do</p>
+    <h2 class="section-title" id="helps-title">What Knownly helps with</h2>
+    <hr class="section-divider" />
+    <div class="helps-grid">
+      <div class="helps-card"><div class="helps-icon">🧭</div><div><div class="helps-label">Direction</div><div class="helps-desc">Finding what you should genuinely be known for based on your actual strengths and context.</div></div></div>
+      <div class="helps-card"><div class="helps-icon">📐</div><div><div class="helps-label">Positioning</div><div class="helps-desc">Defining how to present yourself so the right people immediately understand your value.</div></div></div>
+      <div class="helps-card"><div class="helps-icon">🔍</div><div><div class="helps-label">Profile clarity</div><div class="helps-desc">Identifying what is unclear, inconsistent or missing from your current online presence.</div></div></div>
+      <div class="helps-card"><div class="helps-icon">🗂️</div><div><div class="helps-label">Content themes</div><div class="helps-desc">Choosing content pillars that fit your direction, your audience and your natural style.</div></div></div>
+      <div class="helps-card"><div class="helps-icon">🚀</div><div><div class="helps-label">Opportunity path</div><div class="helps-desc">Understanding how your online presence connects to your career, client or business goals.</div></div></div>
+      <div class="helps-card"><div class="helps-icon">🤝</div><div><div class="helps-label">Human-guided execution</div><div class="helps-desc">For those who want support bringing their direction to life, not just another report to ignore.</div></div></div>
+    </div>
+  </section>
+
+  <!-- What Knownly does not promise -->
+  <section class="section" aria-labelledby="nopromise-title">
+    <p class="section-label">Honest limits</p>
+    <h2 class="section-title" id="nopromise-title">What Knownly does not promise</h2>
+    <hr class="section-divider" />
+    <div class="disclaimer-card">
+      <h3>We will not tell you what you want to hear if it is not true.</h3>
+      <ul>
+        <li>Knownly does not guarantee followers, subscribers or audience growth.</li>
+        <li>Knownly does not guarantee job offers, clients, consulting leads or income.</li>
+        <li>Knownly does not guarantee viral content, overnight recognition or rapid results.</li>
+        <li>Knownly provides direction, context and guidance — what you do with it determines the outcome.</li>
+        <li>Results depend on your effort, your consistency, your context and many factors outside any platform's control.</li>
+        <li>We believe honest positioning serves you better in the long run than inflated promises.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section">
+    <div class="cta-section">
+      <h2>Start with the free diagnosis.</h2>
+      <p>Discover what you should be known for, your natural content direction, your opportunity path and your clearest next step — at no cost.</p>
+      <div class="btn-group">
+        <a href="/diagnosis.html" class="btn btn-primary">Start Free Diagnosis →</a>
+        <a href="/early-access.html" class="btn btn-outline">Apply for Early Access</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Known<span>ly</span></div>
+      <div class="footer-tagline">Personal Intelligence for Online Presence</div>
+      <div class="footer-copy">© 2025 Knownly · WhatAmIKnownFor.com</div>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a><a href="/diagnosis.html">Diagnosis</a><a href="/pricing.html">Pricing</a>
+      <a href="/early-access.html">Early Access</a><a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  const bar = document.getElementById('scrollProgress');
+  window.addEventListener('scroll', () => {
+    const max = document.body.scrollHeight - window.innerHeight;
+    bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+  }, { passive: true });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.section').forEach(s => obs.observe(s));
+})();
+</script>
+</body>
+</html>

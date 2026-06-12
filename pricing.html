@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knownly Pricing — Start Free, Go Deeper When You Are Ready</title>
+<meta name="description" content="Start with the free Knownly report, then upgrade to profile review, 30-day content launchpad, human-led brand building or executive brand studio when you are ready.">
+<link rel="canonical" href="https://whatamiknownfor.com/pricing.html">
+<meta property="og:title" content="Knownly Pricing — Start Free, Go Deeper When You Are Ready">
+<meta property="og:description" content="Start with the free Knownly report, then upgrade to profile review, 30-day content launchpad, human-led brand building or executive brand studio when you are ready.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://whatamiknownfor.com/pricing.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#08110D;--bg2:#0D1713;--card:#14201A;--card2:#182620;
+  --text:#F7F2E8;--text2:#B9C3B7;
+  --cta:#8EA896;--cta-h:#7C9885;
+  --gold:#E0A86B;--gold-l:rgba(224,168,107,.12);
+  --sage:#8EA896;--border:#314238;--border2:rgba(49,66,56,.5);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* PROGRESS */
+#progress{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--gold),var(--sage));z-index:9999;transition:width .1s linear;pointer-events:none}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:800;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 56px;background:rgba(8,17,13,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border2)}
+.logo{font-family:'Sora',sans-serif;font-size:1.15rem;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-.02em}
+.logo span{color:var(--gold)}
+nav{display:flex;gap:24px;align-items:center}
+nav a{font-size:.82rem;color:var(--text2);text-decoration:none;font-weight:500;transition:color .2s}
+nav a:hover,nav a.active{color:var(--text)}
+.header-right{display:flex;align-items:center;gap:14px}
+.btn-login{font-size:.82rem;color:var(--text2);text-decoration:none;font-weight:500;transition:color .2s}
+.btn-login:hover{color:var(--text)}
+.btn-nav{background:var(--cta);color:#08110D;padding:8px 18px;border-radius:8px;font-size:.82rem;font-weight:700;font-family:'Sora',sans-serif;text-decoration:none;transition:background .2s;white-space:nowrap;display:inline-block}
+.btn-nav:hover{background:var(--cta-h)}
+
+/* UTILITIES */
+.section-label{display:flex;align-items:center;gap:8px;font-size:.68rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.section-label::before{content:'';width:18px;height:1px;background:var(--gold);opacity:.5}
+.section-label.center{justify-content:center}
+.section-label.center::before{display:none}
+h1,h2,h3{font-family:'Sora',sans-serif}
+h1{font-size:clamp(2rem,4.2vw,3.1rem);font-weight:800;line-height:1.1;letter-spacing:-.03em}
+h2{font-size:clamp(1.45rem,3vw,2.1rem);font-weight:700;line-height:1.22;letter-spacing:-.025em}
+h3{font-size:.96rem;font-weight:700;line-height:1.3}
+.gold{color:var(--gold)}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0 56px}
+.btn-primary{background:var(--cta);color:#08110D;padding:14px 28px;border-radius:10px;font-size:.92rem;font-weight:700;font-family:'Sora',sans-serif;text-decoration:none;display:inline-block;transition:background .2s,transform .2s,box-shadow .2s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--cta-h);transform:translateY(-2px);box-shadow:0 8px 28px rgba(142,168,150,.22)}
+.btn-outline{background:none;border:1px solid var(--border);color:var(--text2);padding:13px 22px;border-radius:10px;font-size:.88rem;font-family:'Inter',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:border-color .2s,color .2s;cursor:pointer}
+.btn-outline:hover{border-color:var(--sage);color:var(--text)}
+
+/* REVEAL */
+.reveal{opacity:1;transform:translateY(0);transition:opacity .65s ease,transform .65s ease}
+.reveal.pre{opacity:0;transform:translateY(24px)}
+
+/* ========= HERO ========= */
+.hero{padding:128px 56px 80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1260px;margin:0 auto;align-items:center}
+.hero-content{}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:var(--gold-l);border:1px solid rgba(224,168,107,.22);padding:5px 14px;border-radius:30px;margin-bottom:26px}
+.hero h1{margin-bottom:16px}
+.hero-gold-line{font-family:'Sora',sans-serif;font-size:1.02rem;font-weight:600;color:var(--gold);margin-bottom:20px;letter-spacing:-.01em}
+.hero-sub{font-size:.93rem;color:var(--text2);line-height:1.78;max-width:520px;margin-bottom:32px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.hero-note{font-size:.76rem;color:var(--text2);opacity:.55}
+
+/* HERO VISUAL */
+.hero-visual{position:relative;display:flex;flex-direction:column;gap:10px}
+.hv-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 20px;display:flex;align-items:center;gap:14px;position:relative;overflow:hidden;transition:transform .3s,border-color .3s}
+.hv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(49,66,56,.8),transparent)}
+.hv-card:nth-child(1){background:rgba(20,32,26,.7);border-color:rgba(142,168,150,.3)}
+.hv-card:nth-child(1)::before{background:linear-gradient(90deg,transparent,rgba(142,168,150,.4),transparent)}
+.hv-card:nth-child(3){background:var(--card2);border-color:rgba(224,168,107,.3)}
+.hv-card:nth-child(3)::before{background:linear-gradient(90deg,transparent,rgba(224,168,107,.35),transparent)}
+.hv-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.hv-icon.sage{background:rgba(142,168,150,.12);border:1px solid rgba(142,168,150,.2)}
+.hv-icon.gold{background:rgba(224,168,107,.1);border:1px solid rgba(224,168,107,.2)}
+.hv-icon.purple{background:rgba(160,130,200,.1);border:1px solid rgba(160,130,200,.18)}
+.hv-body{flex:1}
+.hv-name{font-family:'Sora',sans-serif;font-size:.8rem;font-weight:700;color:var(--text);margin-bottom:2px}
+.hv-desc{font-size:.7rem;color:var(--text2)}
+.hv-price{font-family:'Sora',sans-serif;font-size:.8rem;font-weight:800;color:var(--gold)}
+.hv-price.sage{color:var(--sage)}
+.hv-popular-tag{font-size:.58rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:var(--gold-l);border:1px solid rgba(224,168,107,.2);padding:2px 7px;border-radius:12px;margin-left:6px;vertical-align:middle}
+.hv-glow{position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:radial-gradient(ellipse,rgba(224,168,107,.06) 0%,transparent 70%);pointer-events:none}
+
+/* ========= PHILOSOPHY ========= */
+.philosophy{padding:90px 0;background:var(--bg2)}
+.philosophy-inner{max-width:1200px;margin:0 auto;padding:0 56px}
+.phil-header{max-width:660px;margin-bottom:52px}
+.phil-header h2{margin-bottom:14px}
+.phil-header p{font-size:.9rem;color:var(--text2);line-height:1.78}
+.phil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.phil-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:30px 26px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s}
+.phil-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(224,168,107,.15),transparent)}
+.phil-card:hover{transform:translateY(-4px);border-color:rgba(224,168,107,.22)}
+.phil-num{font-family:'Sora',sans-serif;font-size:1.9rem;font-weight:800;color:rgba(224,168,107,.13);margin-bottom:14px;line-height:1}
+.phil-card h3{margin-bottom:8px}
+.phil-card p{font-size:.82rem;color:var(--text2);line-height:1.68}
+
+/* ========= PLANS ========= */
+.plans{padding:100px 0}
+.plans-inner{max-width:1340px;margin:0 auto;padding:0 40px}
+.plans-header{text-align:center;margin-bottom:56px}
+.plans-header h2{margin-bottom:10px}
+.plans-header p{font-size:.88rem;color:var(--text2)}
+.plans-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.plan-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px 20px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+.plan-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(49,66,56,.8),transparent)}
+.plan-card:hover{transform:translateY(-5px);box-shadow:0 20px 52px rgba(0,0,0,.4)}
+.plan-card.free{border-color:rgba(142,168,150,.28)}
+.plan-card.free::before{background:linear-gradient(90deg,transparent,rgba(142,168,150,.35),transparent)}
+.plan-card.popular{border-color:rgba(224,168,107,.38);background:var(--card2);box-shadow:0 0 0 1px rgba(224,168,107,.08),0 12px 40px rgba(0,0,0,.3)}
+.plan-card.popular::before{background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.plan-card.popular:hover{border-color:rgba(224,168,107,.6);box-shadow:0 0 0 1px rgba(224,168,107,.15),0 24px 60px rgba(0,0,0,.45)}
+.plan-card.executive{border-color:rgba(185,195,183,.18)}
+.plan-badge{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:20px;display:inline-block;margin-bottom:16px;align-self:flex-start}
+.b-free{color:var(--sage);background:rgba(142,168,150,.1);border:1px solid rgba(142,168,150,.2)}
+.b-starter{color:var(--text2);background:rgba(185,195,183,.07);border:1px solid rgba(185,195,183,.16)}
+.b-popular{color:var(--gold);background:var(--gold-l);border:1px solid rgba(224,168,107,.25)}
+.b-premium{color:#b8a0d8;background:rgba(184,160,216,.07);border:1px solid rgba(184,160,216,.16)}
+.b-exec{color:var(--text2);background:rgba(185,195,183,.05);border:1px solid rgba(185,195,183,.13)}
+.plan-name{font-family:'Sora',sans-serif;font-size:.85rem;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.35}
+.plan-price{font-family:'Sora',sans-serif;font-size:1.65rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:3px}
+.plan-price sup{font-size:.9rem;font-weight:600;vertical-align:super}
+.plan-price-sub{font-size:.68rem;color:var(--text2);margin-bottom:14px}
+.plan-desc{font-size:.77rem;color:var(--text2);line-height:1.62;margin-bottom:15px;padding-bottom:15px;border-bottom:1px solid var(--border2)}
+.plan-label{font-size:.62rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--text2);opacity:.6;margin-bottom:10px}
+.plan-list{list-style:none;display:flex;flex-direction:column;gap:7px;flex:1}
+.plan-list li{font-size:.74rem;color:var(--text2);padding-left:15px;position:relative;line-height:1.45}
+.plan-list li::before{content:'→';position:absolute;left:0;color:var(--sage);font-size:.66rem;top:1px}
+.plan-card.popular .plan-list li::before{color:var(--gold)}
+.plan-cta-btn{display:block;text-align:center;margin-top:20px;padding:11px 12px;border-radius:10px;font-size:.78rem;font-weight:700;font-family:'Sora',sans-serif;text-decoration:none;transition:background .2s,border-color .2s,color .2s,transform .15s;cursor:pointer;border:none;width:100%}
+.cta-free{background:var(--cta);color:#08110D}
+.cta-free:hover{background:var(--cta-h);transform:translateY(-1px)}
+.cta-paid{background:var(--card2);border:1px solid var(--border);color:var(--text)}
+.cta-paid:hover{background:rgba(49,66,56,.6);color:var(--text);transform:translateY(-1px)}
+.plan-card.popular .cta-paid{background:var(--cta);border-color:var(--cta);color:#08110D}
+.plan-card.popular .cta-paid:hover{background:var(--cta-h);border-color:var(--cta-h)}
+.plan-best{font-size:.68rem;color:var(--text2);opacity:.5;margin-top:11px;line-height:1.45;padding-top:10px;border-top:1px solid var(--border2)}
+.plan-best strong{opacity:.85;font-weight:600}
+.plans-note{text-align:center;margin-top:22px;font-size:.75rem;color:var(--text2);opacity:.55}
+
+/* ========= WHICH PLAN ========= */
+.which{padding:90px 0;background:var(--bg2)}
+.which-inner{max-width:1200px;margin:0 auto;padding:0 56px}
+.which-header{text-align:center;margin-bottom:52px}
+.which-header h2{margin-bottom:10px}
+.which-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.which-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 20px;transition:transform .2s,border-color .2s}
+.which-card:hover{transform:translateY(-4px);border-color:rgba(142,168,150,.3)}
+.which-tier{font-size:.67rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--sage);margin-bottom:6px}
+.which-price{font-family:'Sora',sans-serif;font-size:.85rem;font-weight:800;color:var(--gold);margin-bottom:10px}
+.which-card p{font-size:.78rem;color:var(--text2);line-height:1.62}
+
+/* ========= NO FAKE PROMISES ========= */
+.nofake{padding:90px 0}
+.nofake-inner{max-width:1200px;margin:0 auto;padding:0 56px}
+.nofake-header{max-width:660px;margin-bottom:52px}
+.nofake-header h2{margin-bottom:14px}
+.nofake-header p{font-size:.9rem;color:var(--text2);line-height:1.78}
+.nofake-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:36px}
+.nofake-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 20px;display:flex;align-items:flex-start;gap:12px}
+.nofake-icon{width:32px;height:32px;border-radius:8px;background:rgba(224,168,107,.07);border:1px solid rgba(224,168,107,.14);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+.nofake-card h3{font-size:.82rem;margin-bottom:4px}
+.nofake-card p{font-size:.74rem;color:var(--text2);line-height:1.55}
+.nofake-disclaimer{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 24px;font-size:.82rem;color:var(--text2);line-height:1.72;border-left:3px solid rgba(142,168,150,.35)}
+
+/* ========= COMPARE TABLE ========= */
+.compare{padding:90px 0;background:var(--bg2)}
+.compare-inner{max-width:1200px;margin:0 auto;padding:0 56px}
+.compare-header{text-align:center;margin-bottom:48px}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:14px;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;min-width:680px}
+thead th{font-family:'Sora',sans-serif;font-size:.73rem;font-weight:700;color:var(--text2);padding:14px 16px;text-align:center;border-bottom:1px solid var(--border);background:var(--card2);white-space:nowrap}
+thead th:first-child{text-align:left;padding-left:20px}
+thead th.th-popular{color:var(--gold)}
+tbody tr{border-bottom:1px solid var(--border2);transition:background .15s}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:rgba(255,255,255,.02)}
+tbody td{padding:12px 16px;font-size:.79rem;color:var(--text2);text-align:center;vertical-align:middle}
+tbody td:first-child{text-align:left;color:var(--text);font-weight:500;font-size:.82rem;padding-left:20px}
+.tick{color:var(--sage);font-size:1rem}
+.dash{color:rgba(49,66,56,.7);font-size:.95rem}
+.best-row{background:rgba(255,255,255,.015)!important}
+.best-row td{font-size:.7rem;font-weight:600;color:var(--text2);padding:14px 16px}
+.best-row td:first-child{color:var(--text2);padding-left:20px}
+
+/* ========= FREE HUMAN NOTE ========= */
+.human-note{padding:80px 56px;text-align:center;background:var(--bg2);position:relative;overflow:hidden}
+.human-note::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:440px;height:220px;background:radial-gradient(ellipse,rgba(142,168,150,.05) 0%,transparent 70%);pointer-events:none}
+.hn-inner{max-width:580px;margin:0 auto;position:relative;z-index:1}
+.hn-inner h2{margin-bottom:14px}
+.hn-inner p{font-size:.9rem;color:var(--text2);line-height:1.78;margin-bottom:28px}
+
+/* ========= FAQ ========= */
+.faq{padding:90px 0}
+.faq-inner{max-width:780px;margin:0 auto;padding:0 56px}
+.faq-header{margin-bottom:40px}
+.faq-list{display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid var(--border2)}
+.faq-btn{width:100%;text-align:left;background:none;border:none;color:var(--text);padding:20px 0;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:.87rem;font-weight:600;font-family:'Sora',sans-serif;transition:color .2s}
+.faq-btn:hover{color:var(--gold)}
+.faq-icon{width:22px;height:22px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0;color:var(--text2);transition:transform .3s,background .2s}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--card2)}
+.faq-answer{font-size:.84rem;color:var(--text2);line-height:1.72;padding-bottom:18px;display:none}
+.faq-item.open .faq-answer{display:block}
+
+/* ========= FINAL CTA ========= */
+.final-cta{padding:110px 56px;text-align:center;background:var(--bg);position:relative;overflow:hidden}
+.final-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:560px;height:280px;background:radial-gradient(ellipse,rgba(224,168,107,.055) 0%,transparent 70%);pointer-events:none}
+.final-inner{max-width:580px;margin:0 auto;position:relative;z-index:1}
+.final-inner h2{margin-bottom:14px}
+.final-inner p{font-size:.9rem;color:var(--text2);margin-bottom:34px;line-height:1.75}
+.final-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ========= FOOTER ========= */
+footer{padding:44px 56px 28px;border-top:1px solid var(--border2);background:var(--bg)}
+.footer-top{max-width:1200px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:24px;margin-bottom:24px;border-bottom:1px solid var(--border2)}
+.footer-brand p{font-size:.76rem;color:var(--text2);margin-top:5px}
+.footer-brand .tagline{font-size:.7rem;color:rgba(185,195,183,.4);margin-top:3px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;align-items:center}
+.footer-links a{font-size:.78rem;color:var(--text2);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--text)}
+.footer-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer-bottom p,.footer-bottom a{font-size:.71rem;color:rgba(185,195,183,.38);text-decoration:none}
+.footer-bottom a:hover{color:var(--text2)}
+
+/* ========= MODAL ========= */
+.modal-overlay{position:fixed;inset:0;background:rgba(8,17,13,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .28s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:38px 42px;max-width:580px;width:100%;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 36px 90px rgba(0,0,0,.65);transform:translateY(18px);transition:transform .28s}
+.modal-overlay.open .modal{transform:translateY(0)}
+.modal::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(224,168,107,.3),transparent)}
+.modal-close{position:absolute;top:18px;right:18px;width:32px;height:32px;background:var(--card2);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.8rem;color:var(--text2);transition:background .2s}
+.modal-close:hover{background:var(--border)}
+.modal h2{font-size:1.25rem;margin-bottom:6px}
+.modal-sub{font-size:.82rem;color:var(--text2);margin-bottom:26px;line-height:1.62}
+.m-form{display:flex;flex-direction:column;gap:13px}
+.m-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.m-group{display:flex;flex-direction:column;gap:6px}
+.m-group label{font-size:.73rem;font-weight:600;color:var(--text2);letter-spacing:.04em}
+.m-group input,.m-group select,.m-group textarea{background:var(--card2);border:1px solid var(--border);color:var(--text);border-radius:9px;padding:11px 13px;font-family:'Inter',sans-serif;font-size:.86rem;outline:none;transition:border-color .2s,box-shadow .2s;width:100%}
+.m-group input::placeholder,.m-group textarea::placeholder{color:rgba(185,195,183,.3)}
+.m-group select option{background:var(--card)}
+.m-group input:focus,.m-group select:focus,.m-group textarea:focus{border-color:rgba(142,168,150,.5);box-shadow:0 0 0 3px rgba(142,168,150,.07)}
+.m-group select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B9C3B7' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:34px;cursor:pointer}
+.m-group textarea{resize:vertical;min-height:72px}
+.consent-row{display:flex;align-items:flex-start;gap:10px}
+.consent-row input[type=checkbox]{width:16px;height:16px;min-width:16px;margin-top:2px;accent-color:var(--cta);cursor:pointer}
+.consent-row label{font-size:.75rem;color:var(--text2);line-height:1.5;cursor:pointer}
+.field-err{font-size:.68rem;color:#e07a7a;display:none}
+.field-err.show{display:block}
+.btn-modal-submit{background:var(--cta);color:#08110D;padding:13px;border-radius:10px;font-size:.9rem;font-weight:700;font-family:'Sora',sans-serif;border:none;cursor:pointer;width:100%;transition:background .2s,transform .2s}
+.btn-modal-submit:hover{background:var(--cta-h);transform:translateY(-1px)}
+.modal-success{display:none;text-align:center;padding:24px 0}
+.modal-success.show{display:block}
+.ms-icon{width:54px;height:54px;border-radius:50%;background:rgba(142,168,150,.1);border:1px solid rgba(142,168,150,.22);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:0 auto 18px}
+.modal-success h3{font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:10px}
+.modal-success p{font-size:.83rem;color:var(--text2);line-height:1.68;margin-bottom:24px}
+.ms-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.readonly-field{background:rgba(20,32,26,.5)!important;color:var(--text2)!important;cursor:default!important}
+
+/* RESPONSIVE */
+@media(max-width:1200px){
+  .plans-grid{grid-template-columns:repeat(3,1fr)}
+  .which-grid{grid-template-columns:repeat(3,1fr)}
+  .nofake-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;gap:48px;text-align:center;padding:110px 40px 72px}
+  .hero-sub{max-width:100%;margin-left:auto;margin-right:auto}
+  .hero-ctas{justify-content:center}
+  .hero-visual{max-width:440px;margin:0 auto}
+}
+@media(max-width:960px){
+  header{padding:0 24px}
+  nav{display:none}
+  .hero,.nofake-inner,.faq-inner{padding-left:24px;padding-right:24px}
+  .philosophy-inner,.which-inner,.compare-inner,.plans-inner{padding-left:24px;padding-right:24px}
+  .human-note,.final-cta{padding-left:24px;padding-right:24px}
+  footer{padding:40px 24px 24px}
+  .divider{margin:0 24px}
+  .plans-grid{grid-template-columns:repeat(2,1fr)}
+  .which-grid{grid-template-columns:repeat(2,1fr)}
+  .phil-grid{grid-template-columns:1fr 1fr}
+  .m-row{grid-template-columns:1fr}
+  .modal{padding:28px 24px}
+}
+@media(max-width:640px){
+  .plans-grid,.which-grid,.phil-grid,.nofake-grid{grid-template-columns:1fr}
+  .hero{padding:100px 20px 60px}
+  .plans-inner{padding:0 16px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal.pre{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<header>
+  <a href="/" class="logo">Known<span>ly</span></a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/diagnosis.html">Diagnosis</a>
+    <a href="/profile-report.html">Report</a>
+    <a href="/pricing.html" class="active">Plans</a>
+    <a href="/early-access.html">Early Access</a>
+    <a href="/about.html">About</a>
+  </nav>
+  <div class="header-right">
+    <a href="/login.html" class="btn-login">Login</a>
+    <a href="/diagnosis.html" class="btn-nav">Start Free Diagnosis</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section style="background:var(--bg);padding-top:0">
+  <div class="hero">
+    <div class="hero-content reveal">
+      <div class="hero-badge">Knownly Plans</div>
+      <h1>Start free. Go deeper when you are <span class="gold">ready.</span></h1>
+      <p class="hero-gold-line">Build the online presence people can remember you for.</p>
+      <p class="hero-sub">Knownly begins with a free diagnosis and direction report. Paid plans help you turn that clarity into profile improvement, content execution, coaching, human guidance and stronger online presence.</p>
+      <div class="hero-ctas">
+        <a href="/diagnosis.html" class="btn-primary">Start Free Diagnosis</a>
+        <button class="btn-outline" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">Compare Plans →</button>
+      </div>
+      <p class="hero-note">No fake guarantees. No pressure. Upgrade only when you want deeper help.</p>
+    </div>
+    <div class="hero-visual reveal" style="transition-delay:.12s">
+      <div class="hv-glow"></div>
+      <div class="hv-card">
+        <div class="hv-icon sage">✦</div>
+        <div class="hv-body">
+          <div class="hv-name">Free Direction Report</div>
+          <div class="hv-desc">Diagnosis · Archetype · Next step</div>
+        </div>
+        <div class="hv-price sage">₹0</div>
+      </div>
+      <div class="hv-card">
+        <div class="hv-icon sage">◈</div>
+        <div class="hv-body">
+          <div class="hv-name">Profile Review</div>
+          <div class="hv-desc">Clarity score · Bio · 7-day plan</div>
+        </div>
+        <div class="hv-price">₹999</div>
+      </div>
+      <div class="hv-card">
+        <div class="hv-icon gold">◎</div>
+        <div class="hv-body">
+          <div class="hv-name">30-Day Launchpad <span class="hv-popular-tag">Popular</span></div>
+          <div class="hv-desc">Calendar · AI training · 1:1 call</div>
+        </div>
+        <div class="hv-price">₹4,999</div>
+      </div>
+      <div class="hv-card">
+        <div class="hv-icon purple">⬡</div>
+        <div class="hv-body">
+          <div class="hv-name">Brand Builder</div>
+          <div class="hv-desc">Human review · Weekly calls · Strategy</div>
+        </div>
+        <div class="hv-price">₹9,999+</div>
+      </div>
+      <div class="hv-card">
+        <div class="hv-icon" style="background:rgba(185,195,183,.06);border:1px solid rgba(185,195,183,.14)">✦</div>
+        <div class="hv-body">
+          <div class="hv-name">Executive Brand Studio</div>
+          <div class="hv-desc">Done-for-you · Team-led · Founders</div>
+        </div>
+        <div class="hv-price" style="font-size:.75rem;white-space:nowrap">₹25k+/mo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="philosophy-inner">
+    <div class="phil-header reveal">
+      <div class="section-label">Pricing Philosophy</div>
+      <h2>Knownly is free to start because <span class="gold">clarity should not be locked away.</span></h2>
+      <p style="margin-top:14px">Your first step is the free Knownly Diagnosis. It helps you understand your direction, strengths, blocker, content path and next practical step. Paid plans are for people who want deeper review, guided execution, human support or done-for-you brand building.</p>
+    </div>
+    <div class="phil-grid">
+      <div class="phil-card reveal">
+        <div class="phil-num">01</div>
+        <h3>Start with clarity</h3>
+        <p>Understand what you should be known for before investing in content, coaching or branding.</p>
+      </div>
+      <div class="phil-card reveal" style="transition-delay:.1s">
+        <div class="phil-num">02</div>
+        <h3>Upgrade for execution</h3>
+        <p>Paid plans help turn your direction into profile improvement, content calendars and action plans.</p>
+      </div>
+      <div class="phil-card reveal" style="transition-delay:.2s">
+        <div class="phil-num">03</div>
+        <h3>Human help when needed</h3>
+        <p>For users who want deeper guidance, Knownly can add human review, coaching, weekly calls and team-led support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PLANS GRID -->
+<section class="plans" id="plans">
+  <div class="plans-inner">
+    <div class="plans-header reveal">
+      <div class="section-label center">Plans</div>
+      <h2>Choose how deeply you want to build.</h2>
+      <p style="margin-top:10px">Start free, then choose the level of support that matches your stage, goal and urgency.</p>
+    </div>
+    <div class="plans-grid">
+
+      <!-- FREE -->
+      <div class="plan-card free reveal">
+        <span class="plan-badge b-free">Best starting point</span>
+        <div class="plan-name">Free Knownly Report</div>
+        <div class="plan-price">₹0</div>
+        <div class="plan-price-sub">Always free · No card required</div>
+        <div class="plan-desc">Discover your Knownly direction and understand what you should be known for.</div>
+        <div class="plan-label">What's included</div>
+        <ul class="plan-list">
+          <li>Free Knownly Diagnosis</li>
+          <li>Direction Report</li>
+          <li>Knownly Archetype</li>
+          <li>Hidden strengths</li>
+          <li>Current blocker</li>
+          <li>Content direction</li>
+          <li>Best-fit platform</li>
+          <li>Opportunity path</li>
+          <li>Next practical step</li>
+          <li>Profile Report Preview</li>
+        </ul>
+        <a href="/diagnosis.html" class="plan-cta-btn cta-free">Start Free Diagnosis</a>
+        <p class="plan-best"><strong>Best for:</strong> Anyone who wants clarity before creating online.</p>
+      </div>
+
+      <!-- DEEP REVIEW -->
+      <div class="plan-card reveal" style="transition-delay:.08s">
+        <span class="plan-badge b-starter">Profile clarity</span>
+        <div class="plan-name">Knownly Deep Profile Review</div>
+        <div class="plan-price">₹999</div>
+        <div class="plan-price-sub">One-time · Interest only now</div>
+        <div class="plan-desc">A focused review of your online profile with a clear 7-day execution and content plan.</div>
+        <div class="plan-label">What's included</div>
+        <ul class="plan-list">
+          <li>Deep profile review</li>
+          <li>Knownly direction summary</li>
+          <li>Profile clarity score</li>
+          <li>Positioning gap</li>
+          <li>Headline and bio improvement</li>
+          <li>Best-fit content direction</li>
+          <li>7-day content/action plan</li>
+          <li>7 personalized content ideas</li>
+          <li>Profile improvement checklist</li>
+        </ul>
+        <button class="plan-cta-btn cta-paid" onclick="openModal('Knownly Deep Profile Review — ₹999')">Request Profile Review</button>
+        <p class="plan-best"><strong>Best for:</strong> Students, job seekers, professionals, freelancers and beginners.</p>
+      </div>
+
+      <!-- LAUNCHPAD -->
+      <div class="plan-card popular reveal" style="transition-delay:.16s">
+        <span class="plan-badge b-popular">Most Popular</span>
+        <div class="plan-name">Knownly 30-Day Launchpad</div>
+        <div class="plan-price">₹4,999</div>
+        <div class="plan-price-sub">One-time · Interest only now</div>
+        <div class="plan-desc">A personalized 30-day roadmap to build your online presence with content direction, AI training and 1:1 guidance.</div>
+        <div class="plan-label">What's included</div>
+        <ul class="plan-list">
+          <li>Everything in Deep Profile Review</li>
+          <li>30-day personalized content calendar</li>
+          <li>30 ready-to-use post ideas</li>
+          <li>AI content creation training</li>
+          <li>Personal branding tutorial</li>
+          <li>1 one-on-one guidance call</li>
+          <li>Content pillar strategy</li>
+          <li>Weekly execution checklist</li>
+          <li>Best platform recommendation</li>
+          <li>Opportunity and monetization path</li>
+        </ul>
+        <button class="plan-cta-btn cta-paid" onclick="openModal('Knownly 30-Day Launchpad — ₹4,999')">Start 30-Day Launchpad</button>
+        <p class="plan-best"><strong>Best for:</strong> People who want structured execution and personal guidance.</p>
+      </div>
+
+      <!-- BRAND BUILDER -->
+      <div class="plan-card reveal" style="transition-delay:.24s">
+        <span class="plan-badge b-premium">Human-led</span>
+        <div class="plan-name">Knownly Brand Builder</div>
+        <div class="plan-price">₹9,999<span style="font-size:1rem;font-weight:500">+</span></div>
+        <div class="plan-price-sub">Custom scope · Interest only now</div>
+        <div class="plan-desc">Human-led support to improve your social profiles, positioning, content strategy and online authority.</div>
+        <div class="plan-label">What's included</div>
+        <ul class="plan-list">
+          <li>Human team review of social profiles</li>
+          <li>Profile rewrite suggestions</li>
+          <li>Bio and headline positioning</li>
+          <li>Content pillar strategy</li>
+          <li>Weekly calls</li>
+          <li>Strategic AI training</li>
+          <li>Social presence improvement plan</li>
+          <li>PR-readiness direction</li>
+          <li>Trust-building roadmap</li>
+          <li>Opportunity guidance</li>
+        </ul>
+        <button class="plan-cta-btn cta-paid" onclick="openModal('Knownly Brand Builder — ₹9,999+')">Apply for Brand Builder</button>
+        <p class="plan-best"><strong>Best for:</strong> Professionals, consultants, creators, coaches and business owners.</p>
+      </div>
+
+      <!-- EXECUTIVE -->
+      <div class="plan-card executive reveal" style="transition-delay:.32s">
+        <span class="plan-badge b-exec">Done-for-you premium</span>
+        <div class="plan-name">Knownly Executive Brand Studio</div>
+        <div class="plan-price" style="font-size:1.3rem">₹25,000<span style="font-size:.85rem;font-weight:500">+</span></div>
+        <div class="plan-price-sub">Per month · Interest only now</div>
+        <div class="plan-desc">Done-for-you online presence and authority building for founders, leaders and companies who do not have time to manage content execution themselves.</div>
+        <div class="plan-label">What's included</div>
+        <ul class="plan-list">
+          <li>Founder/leader positioning strategy</li>
+          <li>Profile optimization across platforms</li>
+          <li>Content strategy</li>
+          <li>LinkedIn/X/website presence improvement</li>
+          <li>Thought leadership direction</li>
+          <li>Authentic voice development</li>
+          <li>Trust-building content direction</li>
+          <li>PR-readiness and authority roadmap</li>
+          <li>Team-led execution</li>
+          <li>Regular strategy calls</li>
+        </ul>
+        <button class="plan-cta-btn cta-paid" onclick="openModal('Knownly Executive Brand Studio — ₹25,000+/month')">Apply for Executive Studio</button>
+        <p class="plan-best"><strong>Best for:</strong> Founders, CEOs, leaders, companies and senior professionals.</p>
+      </div>
+
+    </div>
+    <p class="plans-note">Plan CTAs register interest only. No payment is taken at this stage.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHICH PLAN -->
+<section class="which">
+  <div class="which-inner">
+    <div class="which-header reveal">
+      <div class="section-label center">Which Plan</div>
+      <h2>Not everyone needs the <span class="gold">same level of help.</span></h2>
+      <p style="margin-top:10px;font-size:.88rem;color:var(--text2)">Find the plan that matches your stage and urgency.</p>
+    </div>
+    <div class="which-grid">
+      <div class="which-card reveal">
+        <div class="which-tier">Free</div>
+        <div class="which-price">₹0</div>
+        <p>Start with Free if you are still discovering your direction and want to understand what you should be known for.</p>
+      </div>
+      <div class="which-card reveal" style="transition-delay:.08s">
+        <div class="which-tier">Profile Clarity</div>
+        <div class="which-price">₹999</div>
+        <p>Choose ₹999 if you want your profile reviewed and need a clear 7-day action plan.</p>
+      </div>
+      <div class="which-card reveal" style="transition-delay:.16s;border-color:rgba(224,168,107,.28)">
+        <div class="which-tier" style="color:var(--gold)">Most Popular</div>
+        <div class="which-price">₹4,999</div>
+        <p>Choose ₹4,999 if you want a 30-day content calendar, AI training and one-on-one guidance.</p>
+      </div>
+      <div class="which-card reveal" style="transition-delay:.24s">
+        <div class="which-tier">Human-led</div>
+        <div class="which-price">₹9,999+</div>
+        <p>Choose ₹9,999+ if you want human-led brand improvement, weekly calls and strategic guidance.</p>
+      </div>
+      <div class="which-card reveal" style="transition-delay:.32s">
+        <div class="which-tier">Executive</div>
+        <div class="which-price">₹25,000+/mo</div>
+        <p>Choose ₹25,000+/month if you are a founder, leader or company that wants done-for-you online presence support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- NO FAKE PROMISES -->
+<section class="nofake">
+  <div class="nofake-inner">
+    <div class="nofake-header reveal">
+      <div class="section-label">What paid plans are not</div>
+      <h2>No fake promises. <span class="gold">No overnight fame.</span></h2>
+      <p style="margin-top:14px">Knownly does not promise followers, jobs, clients, income or viral growth. The goal is to improve clarity, positioning, content direction, online presence, trust and opportunity readiness.</p>
+    </div>
+    <div class="nofake-grid">
+      <div class="nofake-card reveal">
+        <div class="nofake-icon">✗</div>
+        <div>
+          <h3>No guaranteed followers</h3>
+          <p>We do not promise audience size, reach or viral content.</p>
+        </div>
+      </div>
+      <div class="nofake-card reveal" style="transition-delay:.08s">
+        <div class="nofake-icon">✗</div>
+        <div>
+          <h3>No guaranteed clients</h3>
+          <p>We help with positioning and direction, not sales outcomes.</p>
+        </div>
+      </div>
+      <div class="nofake-card reveal" style="transition-delay:.16s">
+        <div class="nofake-icon">✗</div>
+        <div>
+          <h3>No guaranteed income</h3>
+          <p>Monetization direction is guidance, not revenue assurance.</p>
+        </div>
+      </div>
+      <div class="nofake-card reveal" style="transition-delay:.24s">
+        <div class="nofake-icon">✗</div>
+        <div>
+          <h3>No fake personal brand hype</h3>
+          <p>Knownly is calm, practical, and honest about what branding can and cannot do.</p>
+        </div>
+      </div>
+    </div>
+    <div class="nofake-disclaimer reveal">
+      Knownly helps you build the conditions for better visibility and trust — but your outcome depends on execution, consistency, market fit and audience response.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- COMPARE TABLE -->
+<section class="compare" id="compare">
+  <div class="compare-inner">
+    <div class="compare-header reveal">
+      <div class="section-label center">Compare Plans</div>
+      <h2>Compare what each plan includes.</h2>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Free</th>
+            <th>₹999</th>
+            <th class="th-popular">₹4,999</th>
+            <th>₹9,999+</th>
+            <th>₹25k+</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Knownly Diagnosis</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Direction Report</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Knownly Archetype</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Profile Review</td><td><span class="dash">–</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Profile Clarity Score</td><td><span class="dash">–</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>7-Day Content Plan</td><td><span class="dash">–</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>30-Day Content Calendar</td><td><span class="dash">–</span></td><td><span class="dash">–</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>AI Content Training</td><td><span class="dash">–</span></td><td><span class="dash">–</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>1:1 Guidance Call</td><td><span class="dash">–</span></td><td><span class="dash">–</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Weekly Calls</td><td><span class="dash">–</span></td><td><span class="dash">–</span></td><td><span class="dash">–</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Human-Led Strategy</td><td><span class="dash">–</span></td><td><span class="dash">–</span></td><td><span class="dash">–</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>PR-Readiness</td><td><span class="dash">–</span></td><td><span class="dash">–</span></td><td><span class="dash">–</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Team-Led Execution</td><td><span class="dash">–</span></td><td><span class="dash">–</span></td><td><span class="dash">–</span></td><td><span class="dash">–</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Done-for-You Support</td><td><span class="dash">–</span></td><td><span class="dash">–</span></td><td><span class="dash">–</span></td><td><span class="dash">–</span></td><td><span class="tick">✓</span></td></tr>
+          <tr class="best-row"><td>Best for</td><td>First clarity</td><td>Profile clarity</td><td>Guided execution</td><td>Human strategy</td><td>Done-for-you</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FREE HUMAN REVIEW NOTE -->
+<section class="human-note">
+  <div class="hn-inner reveal">
+    <div class="section-label center">Early Users</div>
+    <h2>Some early users may get <span class="gold">free human guidance.</span></h2>
+    <p>To improve Knownly and support early users, we may select a few people for free human review of their online presence. Selection is limited and manual. Permission will be requested before using any feedback publicly.</p>
+    <a href="/diagnosis.html" class="btn-primary">Take Free Diagnosis</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header reveal">
+      <div class="section-label">FAQ</div>
+      <h2>Common questions.</h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Should I start with the free report?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">Yes. The free Knownly Diagnosis is the best starting point. It helps you understand your direction before choosing any paid plan.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Is the ₹999 plan enough?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">Yes, if you mainly want profile clarity, positioning feedback and a 7-day content/action plan.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Why is the ₹4,999 plan marked Most Popular?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">Because it combines profile review, a 30-day personalized content calendar, AI training and one-on-one guidance. It gives both clarity and execution.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          What is the difference between ₹9,999+ and ₹25,000+?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">The ₹9,999+ Brand Builder is human-guided strategy and improvement. The ₹25,000+ Executive Brand Studio is a done-for-you premium service for founders, leaders and companies.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Do you guarantee followers, clients, jobs or income?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">No. Knownly does not guarantee followers, clients, jobs, income or viral growth. It helps improve clarity, positioning, content direction, trust and opportunity readiness.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Will Knownly use my private data?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">No. Knownly only uses the information you provide and the public profile links you choose to share.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Can I upgrade later?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">Yes. Start free and upgrade only when you want deeper help.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Is this only for creators?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">No. Knownly is for job seekers, professionals, freelancers, consultants, founders, students, creators, coaches and leaders who want a stronger online presence.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-inner reveal">
+    <div class="section-label center">Get Started</div>
+    <h2>Start with clarity. Upgrade when you are <span class="gold">ready to build.</span></h2>
+    <p>Take the free Knownly Diagnosis first. Once you know what you should be known for, choose the level of help you need to improve your profile, content and online presence.</p>
+    <div class="final-ctas">
+      <a href="/diagnosis.html" class="btn-primary">Start Free Diagnosis</a>
+      <a href="/early-access.html" class="btn-outline">Join Early Access →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="/" class="logo">Known<span>ly</span></a>
+      <p>WhatAmIKnownFor.com</p>
+      <p class="tagline">Personal Intelligence for Online Presence</p>
+    </div>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/diagnosis.html">Diagnosis</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/early-access.html">Early Access</a>
+      <a href="/about.html">About</a>
+      <a href="/login.html">Login</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Knownly · WhatAmIKnownFor.com · All rights reserved.</p>
+    <a href="https://whatamiknownfor.com">whatamiknownfor.com</a>
+  </div>
+</footer>
+
+<!-- INTEREST MODAL -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+
+    <div id="modal-form-wrap">
+      <div class="section-label">Register Interest</div>
+      <h2 id="modal-title">Register Interest</h2>
+      <p class="modal-sub">Tell us where to send the next steps for this Knownly plan.</p>
+
+      <form class="m-form" id="m-form" novalidate>
+        <div class="m-row">
+          <div class="m-group">
+            <label for="m-name">Name <span style="color:#e07a7a">*</span></label>
+            <input type="text" id="m-name" placeholder="Your full name" autocomplete="name">
+            <span class="field-err" id="m-err-name">Please enter your name.</span>
+          </div>
+          <div class="m-group">
+            <label for="m-email">Email <span style="color:#e07a7a">*</span></label>
+            <input type="email" id="m-email" placeholder="you@email.com" autocomplete="email">
+            <span class="field-err" id="m-err-email">Please enter a valid email.</span>
+          </div>
+        </div>
+
+        <div class="m-row">
+          <div class="m-group">
+            <label for="m-whatsapp">WhatsApp Number <span style="color:var(--text2);font-weight:400">(optional)</span></label>
+            <input type="tel" id="m-whatsapp" placeholder="+91 98765 43210" autocomplete="tel">
+          </div>
+          <div class="m-group">
+            <label for="m-stage">Current Role / Stage <span style="color:#e07a7a">*</span></label>
+            <select id="m-stage">
+              <option value="" disabled selected>Select your stage</option>
+              <option>Student</option>
+              <option>Job Seeker</option>
+              <option>Working Professional</option>
+              <option>Freelancer / Consultant</option>
+              <option>Founder / Business Owner</option>
+              <option>Creator / Coach / Educator</option>
+              <option>Senior Professional / Leader</option>
+              <option>Restarting or Changing Direction</option>
+            </select>
+            <span class="field-err" id="m-err-stage">Please select your stage.</span>
+          </div>
+        </div>
+
+        <div class="m-group">
+          <label for="m-goal">Main Goal <span style="color:#e07a7a">*</span></label>
+          <input type="text" id="m-goal" placeholder="What do you most want to achieve with Knownly?">
+          <span class="field-err" id="m-err-goal">Please tell us your main goal.</span>
+        </div>
+
+        <div class="m-group">
+          <label for="m-plan">Selected Plan <span style="color:#e07a7a">*</span></label>
+          <select id="m-plan">
+            <option value="" disabled selected>Select a plan</option>
+            <option>Knownly Deep Profile Review — ₹999</option>
+            <option>Knownly 30-Day Launchpad — ₹4,999</option>
+            <option>Knownly Brand Builder — ₹9,999+</option>
+            <option>Knownly Executive Brand Studio — ₹25,000+/month</option>
+            <option>Not sure yet</option>
+          </select>
+          <span class="field-err" id="m-err-plan">Please select a plan.</span>
+        </div>
+
+        <div class="m-group">
+          <label for="m-message">Short Message <span style="color:var(--text2);font-weight:400">(optional)</span></label>
+          <textarea id="m-message" placeholder="Any context you'd like to share…"></textarea>
+        </div>
+
+        <div class="consent-row">
+          <input type="checkbox" id="m-consent">
+          <label for="m-consent">I understand that Knownly does not guarantee followers, clients, jobs or income, and I agree to be contacted about next steps for the plan I have selected.</label>
+        </div>
+        <span class="field-err" id="m-err-consent">Please accept to continue.</span>
+
+        <button type="submit" class="btn-modal-submit">Submit Interest</button>
+      </form>
+    </div>
+
+    <div class="modal-success" id="modal-success">
+      <div class="ms-icon">✓</div>
+      <h3>Your interest has been saved.</h3>
+      <p>We will share the next steps soon. You can also start the free diagnosis now.</p>
+      <div class="ms-btns">
+        <a href="/diagnosis.html" class="btn-primary" style="font-size:.85rem;padding:11px 22px">Start Free Diagnosis</a>
+        <button class="btn-outline" onclick="closeModal()" style="font-size:.85rem;padding:10px 20px">Back to Plans</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// PROGRESS BAR
+const prog = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const st = document.documentElement.scrollTop;
+  const sh = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  if (sh > 0) prog.style.width = (st / sh * 100) + '%';
+}, {passive: true});
+
+// REVEAL ON SCROLL
+const reveals = document.querySelectorAll('.reveal');
+reveals.forEach(el => el.classList.add('pre'));
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.remove('pre'); ro.unobserve(e.target); }
+  });
+}, {threshold: 0, rootMargin: '0px 0px -40px 0px'});
+reveals.forEach(el => ro.observe(el));
+// Fallback for slow loads
+setTimeout(() => reveals.forEach(el => el.classList.remove('pre')), 800);
+
+// FAQ ACCORDION
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// MODAL
+const overlay = document.getElementById('modal-overlay');
+
+function openModal(planName) {
+  const planSel = document.getElementById('m-plan');
+  if (planName && planSel) {
+    const opts = Array.from(planSel.options);
+    const match = opts.find(o => o.value === planName || o.text === planName);
+    if (match) planSel.value = match.value;
+  }
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('m-name').focus(), 80);
+}
+
+function closeModal() {
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+  document.getElementById('modal-success').classList.remove('show');
+  document.getElementById('modal-form-wrap').style.display = '';
+  document.getElementById('m-form').reset();
+  document.querySelectorAll('.field-err').forEach(e => e.classList.remove('show'));
+}
+
+overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// FORM VALIDATION & SUBMIT
+function showErr(id, show) {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle('show', show);
+}
+
+document.getElementById('m-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  let valid = true;
+
+  const name = document.getElementById('m-name').value.trim();
+  const email = document.getElementById('m-email').value.trim();
+  const stage = document.getElementById('m-stage').value;
+  const goal = document.getElementById('m-goal').value.trim();
+  const plan = document.getElementById('m-plan').value;
+  const consent = document.getElementById('m-consent').checked;
+
+  showErr('m-err-name', !name); if (!name) valid = false;
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  showErr('m-err-email', !emailOk); if (!emailOk) valid = false;
+  showErr('m-err-stage', !stage); if (!stage) valid = false;
+  showErr('m-err-goal', !goal); if (!goal) valid = false;
+  showErr('m-err-plan', !plan); if (!plan) valid = false;
+  showErr('m-err-consent', !consent); if (!consent) valid = false;
+
+  if (!valid) return;
+
+  const lead = {
+    name,
+    email,
+    whatsapp: document.getElementById('m-whatsapp').value.trim(),
+    stage,
+    goal,
+    plan,
+    message: document.getElementById('m-message').value.trim(),
+    source: 'pricing',
+    submittedAt: new Date().toISOString()
+  };
+
+  try {
+    let prev = [];
+    try { prev = JSON.parse(localStorage.getItem('knownlyPricingLead') || '[]'); } catch(e) {}
+    if (!Array.isArray(prev)) prev = [prev];
+    prev.push(lead);
+    localStorage.setItem('knownlyPricingLead', JSON.stringify(prev));
+  } catch(err) { console.warn('localStorage error:', err); }
+
+  document.getElementById('modal-form-wrap').style.display = 'none';
+  document.getElementById('modal-success').classList.add('show');
+});
+
+// Clear errors on change
+['m-name','m-email','m-stage','m-goal','m-plan'].forEach(id => {
+  const errMap = {
+    'm-name':'m-err-name','m-email':'m-err-email',
+    'm-stage':'m-err-stage','m-goal':'m-err-goal','m-plan':'m-err-plan'
+  };
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('input', () => showErr(errMap[id], false));
+});
+document.getElementById('m-consent').addEventListener('change', () => showErr('m-err-consent', false));
+</script>
+</body>
+</html>

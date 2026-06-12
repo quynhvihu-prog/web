@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Brand Studio — Done-for-You Online Presence for Founders and Leaders</title>
+<meta name="description" content="Knownly Executive Brand Studio helps founders, CEOs and leaders build a trusted online presence through positioning, profile optimization, content strategy, thought leadership and done-for-you execution.">
+<link rel="canonical" href="https://whatamiknownfor.com/executive-brand-studio.html">
+
+<meta property="og:title" content="Executive Brand Studio — Knownly">
+<meta property="og:description" content="Done-for-you online presence support for founders, CEOs, executives and companies.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://whatamiknownfor.com/executive-brand-studio.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Is this a done-for-you service?","acceptedAnswer":{"@type":"Answer","text":"Yes, this is designed for premium human-led strategy and execution support. Exact deliverables depend on the plan and scope agreed."}},
+    {"@type":"Question","name":"Do you guarantee followers, PR or clients?","acceptedAnswer":{"@type":"Answer","text":"No. Knownly does not guarantee followers, PR, clients, jobs, revenue or viral growth. The studio focuses on clarity, trust, positioning and opportunity readiness."}},
+    {"@type":"Question","name":"Is this only for LinkedIn?","acceptedAnswer":{"@type":"Answer","text":"LinkedIn is often the core platform for founders and executives, but the strategy can also support websites, newsletters, X, YouTube or other relevant channels."}},
+    {"@type":"Question","name":"Is this the same as a content agency?","acceptedAnswer":{"@type":"Answer","text":"No. Knownly starts with personal intelligence, positioning and trust. Content is created around your direction, market context and opportunity path."}},
+    {"@type":"Question","name":"Can my company use this for multiple leaders?","acceptedAnswer":{"@type":"Answer","text":"Yes, companies can apply for leadership visibility support. Scope can be discussed after the application."}}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#08110D;
+    --bg2:#0D1713;
+    --card:#14201A;
+    --card-elev:#182620;
+    --text:#F7F2E8;
+    --text2:#B9C3B7;
+    --cta:#8EA896;
+    --cta-hover:#7C9885;
+    --gold:#E0A86B;
+    --border:#314238;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;}
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:700;line-height:1.25;}
+  a{color:inherit;}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  #scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--cta),var(--gold));z-index:1000;transition:width .1s ease-out;}
+
+  header{position:sticky;top:0;z-index:100;background:rgba(8,17,13,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:20px;}
+  .logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:.5px;text-decoration:none;}
+  .logo span{color:var(--gold);}
+  nav.main-nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap;}
+  nav.main-nav a{color:var(--text2);text-decoration:none;font-size:.92rem;font-weight:500;transition:color .2s;}
+  nav.main-nav a:hover{color:var(--text);}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border-radius:999px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;transition:all .25s ease;white-space:nowrap;}
+  .btn-primary{background:var(--cta);color:#0B1410;}
+  .btn-primary:hover{background:var(--cta-hover);transform:translateY(-1px);}
+  .btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border);}
+  .btn-secondary:hover{border-color:var(--cta);color:var(--cta);}
+
+  .hero{padding:80px 0 60px;background:radial-gradient(ellipse at top, rgba(142,168,150,0.08), transparent 60%);}
+  .badge{display:inline-block;padding:8px 18px;border-radius:999px;background:var(--card-elev);border:1px solid var(--border);color:var(--gold);font-size:.85rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:24px;}
+  .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center;}
+  .hero h1{font-size:clamp(2rem,4.5vw,3.1rem);margin-bottom:14px;}
+  .gold-line{color:var(--gold);font-weight:700;font-size:1.1rem;margin-bottom:16px;font-family:'Sora',sans-serif;}
+  .hero .sub{color:var(--text2);font-size:clamp(1rem,2vw,1.1rem);margin-bottom:32px;max-width:600px;}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:16px;}
+
+  .map-card{background:linear-gradient(160deg,var(--card-elev),var(--card));border:1px solid var(--border);border-radius:22px;padding:30px;box-shadow:0 0 60px rgba(142,168,150,0.08);}
+  .map-card h3{font-size:1rem;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:20px;text-align:center;}
+  .map-list{display:flex;flex-direction:column;gap:12px;}
+  .map-item{display:flex;align-items:center;gap:14px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:14px 16px;font-size:.95rem;font-weight:600;}
+  .map-num{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--card-elev);color:var(--gold);font-family:'Sora',sans-serif;font-weight:700;font-size:.85rem;border:1px solid var(--border);flex-shrink:0;}
+
+  section{padding:70px 0;}
+  .section-bg{background:var(--bg2);}
+  .section-tag{color:var(--gold);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;}
+  .section-heading{font-size:clamp(1.6rem,3.5vw,2.4rem);margin-bottom:18px;max-width:760px;}
+  .section-text{color:var(--text2);max-width:760px;font-size:1.02rem;margin-bottom:36px;}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  .cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .cards-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .info-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px;transition:transform .3s ease,border-color .3s ease;}
+  .info-card:hover{transform:translateY(-4px);border-color:var(--cta);}
+  .info-card h4{font-size:1rem;margin-bottom:8px;}
+  .info-card p{color:var(--text2);font-size:.92rem;}
+
+  /* Not list */
+  .not-card{background:var(--card-elev);border:1px solid var(--border);border-radius:14px;padding:20px 22px;font-size:.95rem;color:var(--text2);display:flex;align-items:flex-start;gap:12px;}
+  .not-card::before{content:'—';color:var(--gold);font-weight:700;flex-shrink:0;}
+
+  /* Deliverables */
+  .deliverable-list{display:flex;flex-direction:column;gap:0;background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;}
+  .deliverable-item{display:flex;align-items:center;gap:18px;padding:18px 24px;border-bottom:1px solid var(--border);}
+  .deliverable-item:last-child{border-bottom:none;}
+  .deliverable-num{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--card-elev);color:var(--gold);font-family:'Sora',sans-serif;font-weight:700;border:1px solid var(--border);font-size:.85rem;flex-shrink:0;}
+  .deliverable-text{font-size:.98rem;color:var(--text);}
+
+  /* Pricing highlight */
+  .price-highlight{
+    background:linear-gradient(160deg,var(--card-elev),var(--card));border:1px solid var(--gold);border-radius:20px;
+    padding:34px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;margin-bottom:20px;
+  }
+  .price-highlight .price{font-family:'Sora',sans-serif;font-weight:800;color:var(--gold);font-size:1.8rem;}
+  .price-highlight .price-label{color:var(--text2);font-size:.9rem;margin-top:4px;}
+  .price-highlight p{color:var(--text2);max-width:480px;font-size:.95rem;}
+  .price-secondary{
+    background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px 26px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+  }
+  .price-secondary .price{font-family:'Sora',sans-serif;font-weight:700;color:var(--text);font-size:1.2rem;}
+  .price-secondary .label{color:var(--text2);font-size:.88rem;}
+
+  /* Form */
+  .form-card{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:40px;box-shadow:0 0 50px rgba(142,168,150,0.05);}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .form-group{display:flex;flex-direction:column;gap:8px;}
+  .form-group.full{grid-column:1/-1;}
+  .form-group label{font-size:.85rem;color:var(--text2);font-weight:600;}
+  .form-group label .req{color:var(--gold);}
+  .form-group input, .form-group textarea, .form-group select{
+    background:var(--bg2);border:1px solid var(--border);border-radius:10px;
+    padding:13px 16px;color:var(--text);font-family:'Inter',sans-serif;font-size:.95rem;
+    outline:none;transition:border-color .2s;
+  }
+  .form-group select{appearance:none;cursor:pointer;}
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus{border-color:var(--cta);}
+  .form-group textarea{resize:vertical;min-height:90px;}
+  .form-error{color:#E08E6B;font-size:.85rem;margin-top:14px;display:none;}
+  .form-submit{margin-top:28px;}
+
+  .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .related-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;text-decoration:none;color:var(--text);transition:transform .3s ease,border-color .3s;display:block;}
+  .related-card:hover{transform:translateY(-4px);border-color:var(--cta);}
+  .related-card .tag{font-size:.75rem;color:var(--gold);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:8px;display:block;}
+  .related-card h4{font-size:1.02rem;}
+
+  .faq-item{border:1px solid var(--border);border-radius:14px;margin-bottom:14px;background:var(--card);overflow:hidden;}
+  .faq-question{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-family:'Sora',sans-serif;font-size:1rem;user-select:none;}
+  .faq-icon{font-size:1.3rem;color:var(--gold);transition:transform .3s;}
+  .faq-item.open .faq-icon{transform:rotate(45deg);}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;padding:0 24px;color:var(--text2);font-size:.95rem;}
+  .faq-item.open .faq-answer{max-height:300px;padding:0 24px 22px;}
+
+  .final-cta{text-align:center;background:linear-gradient(160deg,var(--card-elev),var(--card));border:1px solid var(--border);border-radius:24px;padding:60px 30px;box-shadow:0 0 60px rgba(142,168,150,0.06);}
+  .final-cta h2{font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:14px;}
+  .final-cta p{color:var(--text2);max-width:600px;margin:0 auto 30px;}
+
+  footer{background:var(--bg2);border-top:1px solid var(--border);padding:50px 0 30px;}
+  .footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-bottom:30px;}
+  .footer-brand .logo{margin-bottom:8px;}
+  .footer-brand p{color:var(--text2);font-size:.9rem;}
+  .footer-links{display:flex;gap:14px;flex-wrap:wrap;max-width:600px;}
+  .footer-links a{color:var(--text2);text-decoration:none;font-size:.9rem;transition:color .2s;}
+  .footer-links a:hover{color:var(--cta);}
+  .footer-bottom{border-top:1px solid var(--border);padding-top:20px;color:var(--text2);font-size:.82rem;text-align:center;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;}
+    .reveal{opacity:1;transform:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .cards-grid{grid-template-columns:1fr 1fr;}
+    .cards-3, .cards-2{grid-template-columns:1fr 1fr;}
+    .related-grid{grid-template-columns:1fr 1fr;}
+    .form-grid{grid-template-columns:1fr;}
+    nav.main-nav{display:none;}
+  }
+  @media (max-width:560px){
+    .cards-grid, .cards-3, .cards-2, .related-grid{grid-template-columns:1fr;}
+    section{padding:50px 0;}
+    .hero{padding:50px 0 40px;}
+    .form-card{padding:24px;}
+    .price-highlight, .price-secondary{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<header>
+  <div class="container nav-wrap">
+    <a href="/" class="logo">Known<span>ly</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/diagnosis.html">Diagnosis</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/early-access.html">Early Access</a>
+      <a href="/free-tools.html">Free Tools</a>
+      <a href="/resources.html">Resources</a>
+      <a href="/about.html">About</a>
+      <a href="/login.html">Login</a>
+    </nav>
+    <a href="#apply" class="btn btn-primary">Apply Now</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">Executive Brand Studio</div>
+      <h1>Build a trusted online presence without managing content execution yourself.</h1>
+      <div class="gold-line">For founders, leaders and companies who need selective visibility with the right audience.</div>
+      <p class="sub">Knownly Executive Brand Studio helps turn your experience, business context, market understanding and point of view into a premium online presence across LinkedIn and other relevant platforms.</p>
+      <div class="hero-ctas">
+        <a href="#apply" class="btn btn-primary">Apply for Executive Brand Studio</a>
+        <a href="/pricing.html" class="btn btn-secondary">View Pricing</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="map-card">
+        <h3>Executive Presence System</h3>
+        <div class="map-list">
+          <div class="map-item"><span class="map-num">1</span> Positioning Strategy</div>
+          <div class="map-item"><span class="map-num">2</span> Profile Optimization</div>
+          <div class="map-item"><span class="map-num">3</span> Thought Leadership</div>
+          <div class="map-item"><span class="map-num">4</span> Content Direction</div>
+          <div class="map-item"><span class="map-num">5</span> Selective Targeting</div>
+          <div class="map-item"><span class="map-num">6</span> PR-Readiness</div>
+          <div class="map-item"><span class="map-num">7</span> Strategy Calls</div>
+          <div class="map-item"><span class="map-num">8</span> Done-for-You Execution</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1: WHO THIS IS FOR -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">Who This Is For</div>
+    <h2 class="section-heading">Who the Executive Brand Studio is for.</h2>
+    <div class="cards-grid">
+      <div class="info-card"><h4>Founders</h4></div>
+      <div class="info-card"><h4>CEOs</h4></div>
+      <div class="info-card"><h4>Business owners</h4></div>
+      <div class="info-card"><h4>Consultants</h4></div>
+      <div class="info-card"><h4>Agency owners</h4></div>
+      <div class="info-card"><h4>Startup leaders</h4></div>
+      <div class="info-card"><h4>Executives</h4></div>
+      <div class="info-card"><h4>Companies building leadership visibility</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: WHY EXECUTIVE PRESENCE MATTERS -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">Why It Matters</div>
+    <h2 class="section-heading">Leadership visibility should build trust, not noise.</h2>
+    <p class="section-text">A strong executive presence can support trust, partnerships, hiring, customer confidence, investor conversations, media readiness and category authority. It should be strategic, credible and selective — not noisy.</p>
+    <div class="cards-3">
+      <div class="info-card"><h4>Trust before conversations</h4><p>People often form an impression before a meeting even happens.</p></div>
+      <div class="info-card"><h4>Founder-led credibility</h4><p>A clear voice can reinforce confidence in the company's direction.</p></div>
+      <div class="info-card"><h4>Hiring and partnership support</h4><p>Visibility can make it easier for the right people to find and evaluate you.</p></div>
+      <div class="info-card"><h4>Market authority</h4><p>Consistent insight can position you as a reference point in your space.</p></div>
+      <div class="info-card"><h4>PR-readiness</h4><p>A clear public point of view can support media and speaking opportunities.</p></div>
+      <div class="info-card"><h4>Company trust</h4><p>Leadership visibility often reflects on how the company itself is perceived.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: WHAT THE STUDIO HELPS WITH -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">What's Included</div>
+    <h2 class="section-heading">What the studio helps with.</h2>
+    <div class="cards-grid">
+      <div class="info-card"><h4>Personal positioning strategy</h4></div>
+      <div class="info-card"><h4>Profile optimization</h4></div>
+      <div class="info-card"><h4>LinkedIn and platform direction</h4></div>
+      <div class="info-card"><h4>Thought leadership themes</h4></div>
+      <div class="info-card"><h4>Content calendar direction</h4></div>
+      <div class="info-card"><h4>Ghostwriting / done-for-you support</h4></div>
+      <div class="info-card"><h4>Authority-building content</h4></div>
+      <div class="info-card"><h4>PR-readiness guidance</h4></div>
+      <div class="info-card"><h4>Review calls</h4></div>
+      <div class="info-card"><h4>Messaging alignment</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: WHAT THIS IS NOT -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">Set Expectations</div>
+    <h2 class="section-heading">What this is not.</h2>
+    <div class="cards-2">
+      <div class="not-card">Not fake follower growth</div>
+      <div class="not-card">Not viral-content promises</div>
+      <div class="not-card">Not generic motivational posting</div>
+      <div class="not-card">Not random ghostwriting</div>
+      <div class="not-card">Not personal oversharing</div>
+      <div class="not-card">Not guaranteed PR, clients or revenue</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: DELIVERABLES -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">Deliverables</div>
+    <h2 class="section-heading">Executive Brand Studio deliverables.</h2>
+    <p class="section-text">A structured approach that connects strategy to ongoing execution.</p>
+    <div class="deliverable-list">
+      <div class="deliverable-item"><div class="deliverable-num">1</div><div class="deliverable-text">Positioning and public signal map</div></div>
+      <div class="deliverable-item"><div class="deliverable-num">2</div><div class="deliverable-text">LinkedIn/profile optimization direction</div></div>
+      <div class="deliverable-item"><div class="deliverable-num">3</div><div class="deliverable-text">Content pillars and thought leadership angles</div></div>
+      <div class="deliverable-item"><div class="deliverable-num">4</div><div class="deliverable-text">Monthly content strategy</div></div>
+      <div class="deliverable-item"><div class="deliverable-num">5</div><div class="deliverable-text">Done-for-you post drafts / content support</div></div>
+      <div class="deliverable-item"><div class="deliverable-num">6</div><div class="deliverable-text">Trust-building story bank</div></div>
+      <div class="deliverable-item"><div class="deliverable-num">7</div><div class="deliverable-text">PR-readiness talking points</div></div>
+      <div class="deliverable-item"><div class="deliverable-num">8</div><div class="deliverable-text">Regular strategy/review calls</div></div>
+      <div class="deliverable-item"><div class="deliverable-num">9</div><div class="deliverable-text">Selective audience targeting</div></div>
+      <div class="deliverable-item"><div class="deliverable-num">10</div><div class="deliverable-text">Opportunity path mapping</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: PRICING PREVIEW -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">Pricing</div>
+    <h2 class="section-heading">Pricing preview.</h2>
+    <div class="price-highlight">
+      <div>
+        <div class="price">₹25,000+/month</div>
+        <div class="price-label">Executive Brand Studio</div>
+      </div>
+      <p>Designed for founders, leaders and companies that want premium human-led strategy and execution support.</p>
+      <a href="#apply" class="btn btn-primary">Apply Now</a>
+    </div>
+    <div class="price-secondary">
+      <div>
+        <div class="price">₹9,999+ Brand Builder</div>
+        <div class="label">For lighter, structured support</div>
+      </div>
+      <a href="/pricing.html" class="btn btn-secondary">View Pricing</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: APPLICATION FORM -->
+<section class="section-bg" id="apply">
+  <div class="container reveal">
+    <div class="section-tag">Apply</div>
+    <h2 class="section-heading">Apply for Executive Brand Studio.</h2>
+    <p class="section-text">Tell us a little about your context and goals. Knownly will review applications and follow up with next steps.</p>
+    <div class="form-card">
+      <form id="studio-form" novalidate>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="es-name">Name <span class="req">*</span></label>
+            <input type="text" id="es-name" name="name">
+          </div>
+          <div class="form-group">
+            <label for="es-email">Email <span class="req">*</span></label>
+            <input type="email" id="es-email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="es-whatsapp">WhatsApp (optional)</label>
+            <input type="text" id="es-whatsapp" name="whatsapp">
+          </div>
+          <div class="form-group">
+            <label for="es-company">Company <span class="req">*</span></label>
+            <input type="text" id="es-company" name="company">
+          </div>
+          <div class="form-group">
+            <label for="es-role">Role <span class="req">*</span></label>
+            <input type="text" id="es-role" name="role">
+          </div>
+          <div class="form-group">
+            <label for="es-website">Website</label>
+            <input type="url" id="es-website" name="website" placeholder="https://...">
+          </div>
+          <div class="form-group">
+            <label for="es-linkedin">LinkedIn URL</label>
+            <input type="url" id="es-linkedin" name="linkedinUrl" placeholder="https://linkedin.com/in/...">
+          </div>
+          <div class="form-group">
+            <label for="es-budget">Budget range <span class="req">*</span></label>
+            <select id="es-budget" name="budgetRange">
+              <option value="">Select a range</option>
+              <option value="₹25,000+/month">₹25,000+/month</option>
+              <option value="₹50,000+/month">₹50,000+/month</option>
+              <option value="Need a custom plan">Need a custom plan</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label for="es-goal">What do you want your online presence to help with? <span class="req">*</span></label>
+            <textarea id="es-goal" name="mainGoal" placeholder="e.g. Build trust with potential investors and partners..."></textarea>
+          </div>
+          <div class="form-group full">
+            <label for="es-challenge">Current biggest challenge</label>
+            <textarea id="es-challenge" name="currentChallenge" placeholder="e.g. No time to create content consistently..."></textarea>
+          </div>
+          <div class="form-group full">
+            <label for="es-message">Message</label>
+            <textarea id="es-message" name="message" placeholder="Anything else you'd like to share..."></textarea>
+          </div>
+        </div>
+        <div class="form-error" id="form-error">Please fill in name, email, company, role, main goal and budget range before submitting.</div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary">Apply for Executive Brand Studio</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED PAGES -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">Continue Exploring</div>
+    <h2 class="section-heading">Related Knownly pages.</h2>
+    <div class="related-grid">
+      <a href="/founder-personal-branding-service.html" class="related-card"><span class="tag">Service</span><h4>Founder Personal Branding Service</h4></a>
+      <a href="/personal-branding-for-founders.html" class="related-card"><span class="tag">Guide</span><h4>Personal Branding for Founders</h4></a>
+      <a href="/pricing.html" class="related-card"><span class="tag">Pricing</span><h4>Pricing</h4></a>
+      <a href="/early-access.html" class="related-card"><span class="tag">Early Access</span><h4>Early Access</h4></a>
+      <a href="/online-presence-audit.html" class="related-card"><span class="tag">Audit</span><h4>Online Presence Audit</h4></a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">FAQ</div>
+    <h2 class="section-heading">Frequently asked questions.</h2>
+    <div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Is this a done-for-you service?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Yes, this is designed for premium human-led strategy and execution support. Exact deliverables depend on the plan and scope agreed.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Do you guarantee followers, PR or clients?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>No. Knownly does not guarantee followers, PR, clients, jobs, revenue or viral growth. The studio focuses on clarity, trust, positioning and opportunity readiness.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Is this only for LinkedIn?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>LinkedIn is often the core platform for founders and executives, but the strategy can also support websites, newsletters, X, YouTube or other relevant channels.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Is this the same as a content agency?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>No. Knownly starts with personal intelligence, positioning and trust. Content is created around your direction, market context and opportunity path.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Can my company use this for multiple leaders?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Yes, companies can apply for leadership visibility support. Scope can be discussed after the application.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section>
+  <div class="container reveal">
+    <div class="final-cta">
+      <h2>Build a public presence that supports trust, not noise.</h2>
+      <p>Apply for Knownly Executive Brand Studio and turn your experience, market understanding and leadership voice into a clearer online presence.</p>
+      <a href="#apply" class="btn btn-primary">Apply for Executive Brand Studio</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">Known<span style="color:var(--gold)">ly</span></div>
+        <p>WhatAmIKnownFor.com<br>Personal Intelligence for Online Presence</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/diagnosis.html">Diagnosis</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/early-access.html">Early Access</a>
+        <a href="/free-tools.html">Free Tools</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/about.html">About</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/sitemap.html">Sitemap</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Knownly. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Scroll progress
+  var progress = document.getElementById('scroll-progress');
+  function updateProgress(){
+    var h = document.documentElement;
+    var scrollTop = h.scrollTop || document.body.scrollTop;
+    var height = h.scrollHeight - h.clientHeight;
+    var pct = height > 0 ? (scrollTop / height) * 100 : 0;
+    progress.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress, {passive:true});
+  updateProgress();
+
+  // Reveal on scroll
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if(prefersReduced){
+    reveals.forEach(function(el){ el.classList.add('visible'); });
+  } else {
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12});
+    reveals.forEach(function(el){ observer.observe(el); });
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(function(q){
+    function toggle(){
+      var item = q.parentElement;
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(o){
+        o.classList.remove('open');
+        o.querySelector('.faq-question').setAttribute('aria-expanded','false');
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        q.setAttribute('aria-expanded','true');
+      }
+    }
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+
+  // Application form
+  var form = document.getElementById('studio-form');
+  var errorEl = document.getElementById('form-error');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var name = document.getElementById('es-name').value.trim();
+    var email = document.getElementById('es-email').value.trim();
+    var whatsapp = document.getElementById('es-whatsapp').value.trim();
+    var company = document.getElementById('es-company').value.trim();
+    var role = document.getElementById('es-role').value.trim();
+    var website = document.getElementById('es-website').value.trim();
+    var linkedinUrl = document.getElementById('es-linkedin').value.trim();
+    var budgetRange = document.getElementById('es-budget').value.trim();
+    var mainGoal = document.getElementById('es-goal').value.trim();
+    var currentChallenge = document.getElementById('es-challenge').value.trim();
+    var message = document.getElementById('es-message').value.trim();
+
+    if(!name || !email || !company || !role || !mainGoal || !budgetRange){
+      errorEl.style.display = 'block';
+      return;
+    }
+    errorEl.style.display = 'none';
+
+    var payload = {
+      name: name,
+      email: email,
+      whatsapp: whatsapp,
+      company: company,
+      role: role,
+      website: website,
+      linkedinUrl: linkedinUrl,
+      mainGoal: mainGoal,
+      currentChallenge: currentChallenge,
+      budgetRange: budgetRange,
+      message: message,
+      source: 'executive-brand-studio',
+      submittedAt: new Date().toISOString()
+    };
+
+    try{
+      localStorage.setItem('knownlyExecutiveStudioLead', JSON.stringify(payload));
+    }catch(err){}
+
+    window.location.href = '/thank-you.html';
+  });
+})();
+</script>
+
+</body>
+</html>

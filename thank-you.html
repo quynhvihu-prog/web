@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — Knownly</title>
+<meta name="description" content="Thank you for submitting your Knownly request. Continue to your diagnosis, pricing page or homepage.">
+<link rel="canonical" href="https://whatamiknownfor.com/thank-you.html">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #08110D; --bg2: #0D1713; --card: #14201A; --card-el: #182620;
+    --text: #F7F2E8; --text2: #B9C3B7; --cta: #8EA896; --cta-h: #7C9885;
+    --gold: #E0A86B; --sage: #A7C0AB; --border: #314238;
+    --gold-glow: rgba(224,168,107,0.22); --sage-glow: rgba(142,168,150,0.16);
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+  header { position: fixed; top: 0; left: 0; right: 0; z-index: 900; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 68px; background: rgba(8,17,13,0.82); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(49,66,56,0.5); }
+  .logo { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; }
+  .logo-mark { width: 32px; height: 32px; flex-shrink: 0; }
+  .logo-wordmark { font-family: 'Sora', sans-serif; font-size: 1.28rem; font-weight: 700; letter-spacing: -0.03em; color: var(--text); line-height: 1; }
+  .logo-wordmark .ly { color: var(--gold); }
+  nav { display: flex; gap: 28px; }
+  nav a { font-size: 0.875rem; color: var(--text2); text-decoration: none; transition: color 0.2s; }
+  nav a:hover { color: var(--text); }
+  .header-right { display: flex; gap: 12px; align-items: center; }
+  .btn-ghost { background: none; border: 1px solid var(--border); color: var(--text2); padding: 8px 18px; border-radius: 8px; font-size: 0.85rem; font-family: 'Inter', sans-serif; transition: all 0.2s; text-decoration: none; display: inline-block; }
+  .btn-ghost:hover { border-color: var(--sage); color: var(--text); }
+  .btn-primary { background: var(--cta); color: #08110D; padding: 9px 20px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; font-family: 'Inter', sans-serif; transition: all 0.25s; display: inline-block; text-decoration: none; }
+  .btn-primary:hover { background: var(--cta-h); transform: translateY(-1px); }
+
+  /* HERO */
+  .page-hero { padding: 140px 60px 80px; max-width: 860px; margin: 0 auto; text-align: center; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(142,168,150,0.12); border: 1px solid rgba(142,168,150,0.3); padding: 6px 14px; border-radius: 40px; margin-bottom: 28px; font-size: 0.78rem; font-weight: 500; color: var(--sage); letter-spacing: 0.04em; }
+  .hero-badge::before { content: '✓'; font-size: 0.75rem; }
+  h1 { font-family: 'Sora', sans-serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; color: var(--text); margin-bottom: 16px; }
+  h1 .gold { color: var(--gold); }
+  .hero-sub { font-size: 1rem; color: var(--text2); line-height: 1.7; font-weight: 300; max-width: 520px; margin: 0 auto 12px; }
+
+  /* DYNAMIC MESSAGE */
+  .dynamic-msg { background: var(--card); border: 1px solid rgba(224,168,107,0.25); border-radius: 16px; padding: 22px 28px; margin: 28px auto 36px; max-width: 560px; position: relative; overflow: hidden; font-size: 0.9rem; color: var(--text2); line-height: 1.65; }
+  .dynamic-msg::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+  /* CTA BUTTONS */
+  .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 80px; }
+  .btn-hero { background: var(--cta); color: #08110D; padding: 14px 28px; border-radius: 10px; font-size: 0.92rem; font-weight: 700; font-family: 'Sora', sans-serif; transition: all 0.25s; display: inline-block; text-decoration: none; }
+  .btn-hero:hover { background: var(--cta-h); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(142,168,150,0.28); }
+  .btn-outline { background: none; border: 1px solid var(--border); color: var(--text2); padding: 13px 22px; border-radius: 10px; font-size: 0.9rem; font-family: 'Inter', sans-serif; transition: all 0.2s; display: inline-block; text-decoration: none; }
+  .btn-outline:hover { border-color: var(--sage); color: var(--text); }
+
+  /* SECTIONS */
+  .section-bg { background: var(--bg2); padding: 80px 0; }
+  .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
+  .section { max-width: 1200px; margin: 0 auto; padding: 80px 60px; }
+  .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; justify-content: center; }
+  .section-label::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+  h2 { font-family: 'Sora', sans-serif; font-size: clamp(1.8rem, 3vw, 2.2rem); font-weight: 800; line-height: 1.2; letter-spacing: -0.025em; color: var(--text); margin-bottom: 16px; }
+  h2 .gold { color: var(--gold); }
+
+  /* WHAT HAPPENS NEXT CARDS */
+  .next-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .next-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px 22px; transition: all 0.25s; }
+  .next-card:hover { border-color: rgba(167,192,171,0.35); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+  .next-icon { font-size: 1.3rem; margin-bottom: 12px; }
+  .next-title { font-family: 'Sora', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+  .next-text { font-size: 0.8rem; color: var(--text2); line-height: 1.55; }
+
+  /* RECOMMENDED STEPS */
+  .steps-list { display: flex; flex-direction: column; gap: 12px; max-width: 680px; margin: 0 auto; }
+  .step-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px 22px; font-size: 0.88rem; color: var(--text2); line-height: 1.6; display: flex; align-items: flex-start; gap: 12px; }
+  .step-item::before { content: '→'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .step-item a { color: var(--sage); text-decoration: none; }
+  .step-item a:hover { color: var(--text); }
+
+  /* FINAL CTA */
+  .cta-box { background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 56px 48px; text-align: center; position: relative; overflow: hidden; }
+  .cta-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--gold-glow), transparent), radial-gradient(ellipse 60% 40% at 50% 100%, var(--sage-glow), transparent); pointer-events: none; }
+  .cta-box::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+  footer { background: #060E09; border-top: 1px solid var(--border); padding: 56px 60px 28px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .footer-col h4 { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 700; color: var(--text); margin-bottom: 14px; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .footer-col ul li a { font-size: 0.82rem; color: var(--text2); text-decoration: none; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--text); }
+  .footer-brand-text { font-size: 0.82rem; color: var(--text2); line-height: 1.6; margin: 10px 0 16px; max-width: 220px; }
+  .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .footer-bottom p { font-size: 0.78rem; color: var(--text2); }
+  .footer-bottom a { color: var(--gold); text-decoration: none; }
+
+  .reveal { opacity: 1; transform: translateY(0); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.pre-reveal { opacity: 0; transform: translateY(28px); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  @media (max-width: 1100px) { .next-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 768px) {
+    header { padding: 0 20px; } nav { display: none; }
+    .page-hero { padding: 120px 24px 60px; }
+    .section-inner, .section { padding-left: 24px; padding-right: 24px; }
+    .next-grid { grid-template-columns: 1fr; }
+    .cta-row { flex-direction: column; align-items: center; }
+    .cta-box { padding: 36px 24px; }
+    footer { padding: 40px 24px 24px; }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .reveal { transition: none; } }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">
+    <svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="16" r="14" stroke="rgba(167,192,171,0.25)" stroke-width="1" stroke-dasharray="3 5"/>
+      <circle cx="16" cy="16" r="9.5" stroke="rgba(224,168,107,0.35)" stroke-width="1"/>
+      <circle cx="16" cy="16" r="7" fill="rgba(224,168,107,0.08)"/>
+      <ellipse cx="16" cy="12.8" rx="2.8" ry="3.2" fill="#A7C0AB" opacity="0.9"/>
+      <path d="M11.5 22.5 C11.5 18.8 13.4 17 16 17 C18.6 17 20.5 18.8 20.5 22.5" fill="#A7C0AB" opacity="0.75"/>
+      <circle cx="16" cy="2.5" r="2" fill="#E0A86B" opacity="0.9"/>
+      <circle cx="28.5" cy="19" r="1.4" fill="#A7C0AB" opacity="0.7"/>
+      <circle cx="4.5" cy="21" r="1.2" fill="rgba(167,192,171,0.5)"/>
+      <path d="M12.5 9.2 Q16 7.2 19.5 9.2" stroke="#E0A86B" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.7"/>
+    </svg>
+    <span class="logo-wordmark"><span class="known">Known</span><span class="ly">ly</span></span>
+  </a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/diagnosis.html">Diagnosis</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/early-access.html">Early Access</a>
+    <a href="/about.html">About</a>
+  </nav>
+  <div class="header-right">
+    <a href="/login.html" class="btn-ghost">Login</a>
+    <a href="/diagnosis.html" class="btn-primary">Start Free Diagnosis</a>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="hero-badge">Submitted</div>
+  <h1>Thank you. Your Knownly request <span class="gold">has been saved.</span></h1>
+  <p class="hero-sub">We have recorded your interest. You can continue exploring Knownly or start your free diagnosis.</p>
+  <div id="dynamicMsg" class="dynamic-msg" style="display:none;"></div>
+</div>
+
+<div style="text-align:center;padding:0 24px;">
+  <div class="cta-row">
+    <a href="/diagnosis.html" class="btn-hero">Start Free Diagnosis</a>
+    <a href="/pricing.html" class="btn-outline">View Pricing</a>
+    <a href="/" class="btn-outline">Go Home</a>
+  </div>
+</div>
+
+<!-- WHAT HAPPENS NEXT -->
+<div class="section-bg">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;margin-bottom:48px;">
+      <div class="section-label">What happens next</div>
+      <h2>Here is what you <span class="gold">should know.</span></h2>
+    </div>
+    <div class="next-grid">
+      <div class="next-card reveal">
+        <div class="next-icon">◎</div>
+        <div class="next-title">Your request will be reviewed</div>
+        <div class="next-text">Knownly is early-stage, so requests may be reviewed manually and carefully.</div>
+      </div>
+      <div class="next-card reveal reveal-delay-1">
+        <div class="next-icon">⚡</div>
+        <div class="next-title">Free reviews are limited</div>
+        <div class="next-text">Some users may receive free human review opportunities, but selection is limited and manual.</div>
+      </div>
+      <div class="next-card reveal reveal-delay-2">
+        <div class="next-icon">✦</div>
+        <div class="next-title">No fake guarantees</div>
+        <div class="next-text">Knownly does not promise followers, clients, jobs, income or viral growth.</div>
+      </div>
+      <div class="next-card reveal reveal-delay-3">
+        <div class="next-icon">🌿</div>
+        <div class="next-title">You can continue anytime</div>
+        <div class="next-text">You can start or retake the diagnosis whenever you want. Your journey is your own pace.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RECOMMENDED NEXT STEPS -->
+<div class="section" style="padding-top:80px;padding-bottom:80px;">
+  <div class="reveal" style="text-align:center;margin-bottom:40px;">
+    <div class="section-label">Recommended next steps</div>
+    <h2>Choose what fits <span class="gold">where you are.</span></h2>
+  </div>
+  <div class="steps-list reveal">
+    <div class="step-item">If you have not taken the diagnosis, <a href="/diagnosis.html">start there</a> — it is free and gives you your direction report.</div>
+    <div class="step-item">If you have your result, submit public profile links for a <a href="/profile-report.html">deeper profile report</a>.</div>
+    <div class="step-item">If you want paid help, <a href="/pricing.html">compare Knownly plans</a> from profile review to the executive brand studio.</div>
+    <div class="step-item">If you are a founder or leader, <a href="/early-access.html">apply for early access</a> for priority guidance.</div>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div style="background:var(--bg2);padding:80px 60px;">
+  <div style="max-width:680px;margin:0 auto;">
+    <div class="cta-box reveal">
+      <div class="section-label" style="position:relative;z-index:1;">Ready to discover your direction?</div>
+      <h2 style="position:relative;z-index:1;margin-bottom:14px;">Start with the free <span class="gold">Knownly Diagnosis.</span></h2>
+      <a href="/diagnosis.html" class="btn-hero" style="position:relative;z-index:1;">Start Free Diagnosis</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <a href="/" class="logo" style="margin-bottom:0">
+        <svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" stroke="rgba(167,192,171,0.25)" stroke-width="1" stroke-dasharray="3 5"/>
+          <circle cx="16" cy="16" r="9.5" stroke="rgba(224,168,107,0.35)" stroke-width="1"/>
+          <circle cx="16" cy="16" r="7" fill="rgba(224,168,107,0.08)"/>
+          <ellipse cx="16" cy="12.8" rx="2.8" ry="3.2" fill="#A7C0AB" opacity="0.9"/>
+          <path d="M11.5 22.5 C11.5 18.8 13.4 17 16 17 C18.6 17 20.5 18.8 20.5 22.5" fill="#A7C0AB" opacity="0.75"/>
+          <circle cx="16" cy="2.5" r="2" fill="#E0A86B" opacity="0.9"/>
+          <circle cx="28.5" cy="19" r="1.4" fill="#A7C0AB" opacity="0.7"/>
+          <circle cx="4.5" cy="21" r="1.2" fill="rgba(167,192,171,0.5)"/>
+          <path d="M12.5 9.2 Q16 7.2 19.5 9.2" stroke="#E0A86B" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.7"/>
+        </svg>
+        <span class="logo-wordmark"><span class="known">Known</span><span class="ly">ly</span></span>
+      </a>
+      <p class="footer-brand-text">Personal Intelligence for Online Presence. WhatAmIKnownFor.com</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="/diagnosis.html">Diagnosis</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/early-access.html">Early Access</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms of Use</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Account</h4>
+      <ul>
+        <li><a href="/login.html">Login</a></li>
+        <li><a href="/diagnosis.html">Start Free</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Knownly. All rights reserved.</p>
+    <p><a href="https://WhatAmIKnownFor.com">WhatAmIKnownFor.com</a></p>
+  </div>
+</footer>
+
+<script>
+// Dynamic message based on localStorage
+(function() {
+  const msgEl = document.getElementById('dynamicMsg');
+  let msg = '';
+  try {
+    if (localStorage.getItem('knownlyEarlyAccessLead')) {
+      msg = 'Thanks for applying for early access. If selected, you may receive follow-up guidance or a free human review opportunity.';
+    } else if (localStorage.getItem('knownlyPricingLead')) {
+      msg = 'Thanks for registering interest in a Knownly plan. We will share next steps when the plan is available or when your request is reviewed.';
+    } else if (localStorage.getItem('knownlyContactLead')) {
+      msg = 'Thanks for contacting Knownly. Your message has been saved and serious requests will be reviewed carefully.';
+    } else if (localStorage.getItem('knownlyProfileReportLead')) {
+      msg = 'Thanks for requesting human guidance on your profile. Your request has been saved.';
+    } else if (localStorage.getItem('knownlyAccountWaitlist')) {
+      msg = 'Thanks for joining the Knownly account waitlist. We will notify you when accounts and saved dashboards are ready.';
+    } else {
+      msg = 'Thanks for your submission. You can continue exploring Knownly below.';
+    }
+  } catch(err) {
+    msg = 'Thanks for your submission. You can continue exploring Knownly below.';
+  }
+  if (msg) { msgEl.textContent = msg; msgEl.style.display = 'block'; }
+})();
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+reveals.forEach(el => el.classList.add('pre-reveal'));
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.remove('pre-reveal'); e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0, rootMargin: '0px 0px 60px 0px' });
+reveals.forEach(el => obs.observe(el));
+setTimeout(() => { document.querySelectorAll('.reveal').forEach(el => { el.classList.remove('pre-reveal'); el.classList.add('visible'); }); }, 600);
+</script>
+</body>
+</html>

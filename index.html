@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knownly — Discover What You Should Be Known For</title>
+<meta name="description" content="Knownly helps you discover what you should be known for, understand your online presence direction, and build visibility, trust and opportunities with a personal direction report.">
+<link rel="canonical" href="https://whatamiknownfor.com/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Knownly — Discover What You Should Be Known For">
+<meta property="og:description" content="Get a personal direction report showing your archetype, hidden strengths, current blocker, content direction and next practical step.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://whatamiknownfor.com/">
+<meta property="og:image" content="https://whatamiknownfor.com/og-image.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Knownly — Discover What You Should Be Known For">
+<meta name="twitter:description" content="Discover your personal direction report with your archetype, hidden strengths, blocker, content direction and next step.">
+<meta name="twitter:image" content="https://whatamiknownfor.com/og-image.jpg">
+
+<!-- Structured Data (AEO/GEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Knownly",
+  "url": "https://whatamiknownfor.com/",
+  "applicationCategory": "PersonalDevelopmentApplication",
+  "description": "Knownly helps people discover what they should be known for, understand their online presence direction, and build visibility, trust and opportunities through a personal direction report covering archetype, hidden strengths, content direction and next practical step.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  }
+}
+</script>
+
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #08110D;
+    --bg2: #0D1713;
+    --card: #14201A;
+    --card-el: #182620;
+    --text: #F7F2E8;
+    --text2: #B9C3B7;
+    --cta: #8EA896;
+    --cta-h: #7C9885;
+    --gold: #E0A86B;
+    --sage: #A7C0AB;
+    --border: #314238;
+    --gold-glow: rgba(224,168,107,0.22);
+    --sage-glow: rgba(142,168,150,0.16);
+    --overlay: rgba(247,242,232,0.06);
+  }
+
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+  /* SCROLL PROGRESS */
+  #progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(90deg, var(--gold), var(--sage)); width: 0%; z-index: 1000; transition: width 0.1s; }
+
+  /* HEADER */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 68px;
+    background: rgba(8,17,13,0.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(49,66,56,0.5);
+  }
+  .logo { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; user-select: none; }
+  .logo-mark { width: 32px; height: 32px; flex-shrink: 0; }
+  .logo-wordmark { font-family: 'Sora', sans-serif; font-size: 1.28rem; font-weight: 700; letter-spacing: -0.03em; color: var(--text); line-height: 1; }
+  .logo-wordmark .known { color: var(--text); }
+  .logo-wordmark .ly { color: var(--gold); }
+  nav { display: flex; gap: 32px; }
+  nav a { font-size: 0.875rem; color: var(--text2); text-decoration: none; font-weight: 400; transition: color 0.2s; position: relative; padding-bottom: 2px; }
+  nav a:hover { color: var(--text); }
+  nav a.active { color: var(--text); }
+  nav a.active::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 1.5px; background: var(--gold); border-radius: 2px; }
+  .header-right { display: flex; gap: 12px; align-items: center; }
+  .btn-ghost { background: none; border: 1px solid var(--border); color: var(--text2); padding: 8px 18px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-family: 'Inter', sans-serif; transition: all 0.2s; }
+  .btn-ghost:hover { border-color: var(--sage); color: var(--text); }
+  .btn-primary { background: var(--cta); color: #08110D; padding: 9px 20px; border-radius: 8px; border: none; cursor: pointer; font-size: 0.85rem; font-weight: 600; font-family: 'Inter', sans-serif; transition: all 0.25s; letter-spacing: 0.01em; display: inline-block; text-decoration: none; }
+  .btn-primary:hover { background: var(--cta-h); transform: translateY(-1px); box-shadow: 0 4px 20px var(--sage-glow); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; padding-top: 68px;
+    display: grid; grid-template-columns: 1fr 1.15fr 0.9fr;
+    align-items: center; gap: 32px;
+    padding-left: 60px; padding-right: 60px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(142,168,150,0.07) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 20% 70%, rgba(224,168,107,0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  /* Subtle grid texture */
+  .hero::after {
+    content: ''; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(49,66,56,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(49,66,56,0.12) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 80%);
+    pointer-events: none;
+  }
+
+  /* HERO LEFT */
+  .hero-left { position: relative; z-index: 2; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(224,168,107,0.1); border: 1px solid rgba(224,168,107,0.28);
+    padding: 6px 14px; border-radius: 40px; margin-bottom: 28px;
+    font-size: 0.78rem; font-weight: 500; color: var(--gold); letter-spacing: 0.04em;
+  }
+  .hero-badge::before { content: '◈'; font-size: 0.7rem; }
+  h1 { font-family: 'Sora', sans-serif; font-size: clamp(2.8rem, 4.8vw, 4.2rem); font-weight: 800; line-height: 1.06; letter-spacing: -0.04em; color: var(--text); margin-bottom: 24px; }
+  h1 .gold { color: var(--gold); position: relative; }
+  h1 .gold::after {
+    content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    opacity: 0.5; border-radius: 2px;
+  }
+  .hero-sub { font-size: 1rem; color: var(--text2); max-width: 420px; line-height: 1.7; margin-bottom: 36px; font-weight: 300; }
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
+  .btn-hero { background: var(--cta); color: #08110D; padding: 14px 28px; border-radius: 10px; border: none; cursor: pointer; font-size: 0.92rem; font-weight: 700; font-family: 'Sora', sans-serif; transition: all 0.25s; letter-spacing: 0.01em; display: inline-block; text-decoration: none; }
+  .btn-hero:hover { background: var(--cta-h); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(142,168,150,0.28); }
+  .btn-outline-hero { background: none; border: 1px solid var(--border); color: var(--text2); padding: 13px 22px; border-radius: 10px; cursor: pointer; font-size: 0.9rem; font-family: 'Inter', sans-serif; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+  .btn-outline-hero:hover { border-color: var(--sage); color: var(--text); }
+  .btn-outline-hero .arrow { font-size: 0.8rem; }
+  .hero-proof { display: flex; align-items: center; gap: 12px; }
+  .avatars { display: flex; }
+  .avatar { width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--bg); overflow: hidden; margin-left: -8px; background: var(--card-el); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: var(--text2); }
+  .avatars .avatar:first-child { margin-left: 0; }
+  .av1 { background: linear-gradient(135deg, #2d4a38, #4a6b52); }
+  .av2 { background: linear-gradient(135deg, #3d3020, #6b5230); }
+  .av3 { background: linear-gradient(135deg, #1e3530, #3a6055); }
+  .av4 { background: linear-gradient(135deg, #3a2d40, #6b5070); }
+  .proof-text { font-size: 0.78rem; color: var(--text2); line-height: 1.4; max-width: 220px; }
+  .proof-text strong { color: var(--sage); }
+
+  /* HERO CENTER — ORBIT */
+  .hero-center { position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; height: 520px; }
+  .orbit-wrap { position: relative; width: 480px; height: 480px; }
+  .orbit-wrap svg { width: 100%; height: 100%; }
+
+  /* HERO RIGHT — MOBILE */
+  .hero-right { position: relative; z-index: 2; display: flex; justify-content: center; }
+  .phone-shell {
+    width: 240px; background: #0a0f0c; border-radius: 40px; padding: 10px;
+    border: 1.5px solid rgba(49,66,56,0.7);
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 24px 60px rgba(0,0,0,0.7), 0 0 40px rgba(142,168,150,0.08);
+    position: relative;
+  }
+  .phone-shell::before { content: ''; position: absolute; top: 14px; left: 50%; transform: translateX(-50%); width: 60px; height: 8px; background: #0a0f0c; border-radius: 10px; z-index: 5; }
+  .phone-screen { background: #0D1713; border-radius: 32px; overflow: hidden; padding: 28px 18px 14px; min-height: 480px; display: flex; flex-direction: column; gap: 14px; position: relative; }
+  .phone-screen::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 80px; background: radial-gradient(ellipse at 50% 0%, rgba(142,168,150,0.12), transparent); pointer-events: none; }
+  .phone-topbar { display: flex; justify-content: space-between; align-items: center; }
+  .phone-logo { font-family: 'Sora', sans-serif; font-size: 0.7rem; font-weight: 700; color: var(--text); }
+  .phone-logo span { color: var(--gold); }
+  .phone-time { font-size: 0.6rem; color: var(--text2); }
+  .phone-hero-text { font-family: 'Sora', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--text); line-height: 1.3; }
+  .phone-hero-text span { color: var(--gold); }
+  .phone-cta { background: var(--cta); color: #08110D; border-radius: 8px; padding: 8px 12px; font-size: 0.72rem; font-weight: 700; font-family: 'Sora', sans-serif; text-align: center; cursor: pointer; }
+  .phone-proof { font-size: 0.6rem; color: var(--text2); text-align: center; }
+  .score-card { background: var(--card-el); border: 1px solid var(--border); border-radius: 14px; padding: 14px; position: relative; overflow: hidden; }
+  .score-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .score-label { font-size: 0.62rem; color: var(--text2); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; }
+  .score-num { font-family: 'Sora', sans-serif; font-size: 2rem; font-weight: 800; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+  .score-bar-wrap { display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
+  .score-bar-row { display: flex; align-items: center; gap: 6px; }
+  .score-bar-label { font-size: 0.56rem; color: var(--text2); width: 52px; flex-shrink: 0; }
+  .score-bar-track { flex: 1; height: 4px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; }
+  .score-bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--sage), var(--gold)); }
+  .score-desc { font-size: 0.6rem; color: var(--text2); line-height: 1.4; margin-top: 6px; }
+  .phone-tabbar { display: flex; justify-content: space-around; padding: 8px 0 4px; border-top: 1px solid rgba(49,66,56,0.4); margin-top: auto; }
+  .tab-item { display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; }
+  .tab-icon { font-size: 0.75rem; color: var(--text2); }
+  .tab-icon.active-tab { color: var(--gold); }
+  .tab-label { font-size: 0.5rem; color: var(--text2); }
+  .tab-label.active-tab { color: var(--gold); }
+
+  /* REPORT REVEALS STRIP */
+  .report-reveals-strip {
+    background: rgba(224,168,107,0.06);
+    border-top: 1px solid rgba(224,168,107,0.18);
+    border-bottom: 1px solid rgba(224,168,107,0.18);
+    padding: 18px 60px;
+  }
+  .rr-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  }
+  .rr-eyebrow {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gold);
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .rr-pills {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .rr-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.82rem; font-weight: 500; color: var(--text2);
+    padding: 5px 12px; border-radius: 30px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(49,66,56,0.6);
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+  }
+  .rr-pill:hover { color: var(--text); border-color: rgba(167,192,171,0.4); }
+  .rr-pill-icon { font-size: 0.7rem; color: var(--gold); }
+  .rr-sep { color: var(--border); font-size: 1rem; user-select: none; }
+
+  /* ANIMATION PERFORMANCE */
+  .orbit-wrap svg { will-change: transform; }
+  @media (prefers-reduced-motion: reduce) {
+    .orbit-wrap svg animate,
+    .orbit-wrap svg animateTransform { display: none; }
+  }
+
+  /* ── LIGHTWEIGHT ANIMATIONS ── */
+
+  /* 1. Hero badge shimmer sweep */
+  @keyframes badgeShimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  .hero-badge {
+    background-image: linear-gradient(
+      110deg,
+      rgba(224,168,107,0.1) 0%,
+      rgba(224,168,107,0.1) 35%,
+      rgba(224,168,107,0.26) 50%,
+      rgba(224,168,107,0.1) 65%,
+      rgba(224,168,107,0.1) 100%
+    );
+    background-size: 200% 100%;
+    animation: badgeShimmer 3.2s ease-in-out infinite;
+  }
+
+  /* 2. Gold "known for" — soft breathing glow */
+  @keyframes knownGlow {
+    0%, 100% { text-shadow: 0 0 0px transparent; opacity: 1; }
+    50%       { text-shadow: 0 0 22px rgba(224,168,107,0.45), 0 0 48px rgba(224,168,107,0.18); opacity: 0.95; }
+  }
+  h1 .gold { animation: knownGlow 3.8s ease-in-out infinite; }
+
+  /* 3. Hero entry — stagger children */
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-badge      { animation: badgeShimmer 3.2s ease-in-out infinite, fadeSlideUp 0.7s ease both; animation-delay: 0s, 0.1s; }
+  .hero h1         { animation: fadeSlideUp 0.7s ease 0.25s both; }
+  .hero .hero-sub  { animation: fadeSlideUp 0.7s ease 0.45s both; }
+  .hero .hero-ctas { animation: fadeSlideUp 0.7s ease 0.6s both; }
+  .hero .hero-proof{ animation: fadeSlideUp 0.7s ease 0.75s both; }
+
+  /* 4. Report reveals strip — pills appear sequentially */
+  @keyframes pillPop {
+    from { opacity: 0; transform: translateY(8px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .rr-strip-ready .rr-pill:nth-child(1) { animation: pillPop 0.4s ease 0.05s both; }
+  .rr-strip-ready .rr-pill:nth-child(2) { animation: pillPop 0.4s ease 0.15s both; }
+  .rr-strip-ready .rr-pill:nth-child(3) { animation: pillPop 0.4s ease 0.25s both; }
+  .rr-strip-ready .rr-pill:nth-child(4) { animation: pillPop 0.4s ease 0.35s both; }
+  .rr-strip-ready .rr-pill:nth-child(5) { animation: pillPop 0.4s ease 0.45s both; }
+
+  /* 5. "Personal Intelligence" badge — pulse ring */
+  @keyframes ringPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(224,168,107,0.3); }
+    60%  { box-shadow: 0 0 0 8px rgba(224,168,107,0); }
+    100% { box-shadow: 0 0 0 0 rgba(224,168,107,0); }
+  }
+  .hero-badge { animation: badgeShimmer 3.2s ease-in-out infinite, fadeSlideUp 0.7s ease 0.1s both, ringPulse 3.8s ease 1.2s infinite; }
+
+  /* 6. Hero CTA button — idle shimmer */
+  @keyframes btnShimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  .btn-hero {
+    background-image: linear-gradient(110deg, var(--cta) 0%, var(--cta) 38%, #a0c4a8 50%, var(--cta) 62%, var(--cta) 100%);
+    background-size: 220% 100%;
+    animation: btnShimmer 3.5s ease-in-out 2s infinite;
+  }
+
+  /* 7. Typewriter cursor blink on h1 gold span */
+  @keyframes cursorBlink {
+    0%, 49% { border-right-color: rgba(224,168,107,0.7); }
+    50%,100% { border-right-color: transparent; }
+  }
+
+  /* 8. Report dashboard — card data items count up */
+  @keyframes countUp { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+  .dash-archetype-name { animation: countUp 0.6s ease both; }
+
+  /* 9. Hero-sub phrase highlights */
+  @keyframes hlSweep {
+    0%   { background-size: 0% 100%; color: var(--text2); }
+    40%  { background-size: 100% 100%; color: var(--text); }
+    70%  { background-size: 100% 100%; color: var(--text); }
+    100% { background-size: 100% 100%; color: var(--sage); }
+  }
+  mark.hl-phrase {
+    background: none;
+    background-image: linear-gradient(90deg, rgba(142,168,150,0.18) 0%, rgba(142,168,150,0.12) 100%);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 0% 100%;
+    border-radius: 3px;
+    padding: 0 2px;
+    color: var(--text2);
+    animation: hlSweep 0.9s ease forwards;
+    animation-play-state: paused;
+  }
+  .hero-sub-animated mark.hl-phrase { animation-play-state: running; }
+
+  /* FEATURE STRIP */
+  .feature-strip { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 40px 60px; }
+  .feature-strip-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; max-width: 1200px; margin: 0 auto; }
+  .feat-item { display: flex; flex-direction: column; gap: 10px; }
+  .feat-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+  .feat-title { font-family: 'Sora', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--text); }
+  .feat-text { font-size: 0.82rem; color: var(--text2); line-height: 1.55; }
+
+  /* SECTIONS COMMON */
+  section { padding: 100px 60px; max-width: 1200px; margin: 0 auto; }
+  .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .section-label::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+  h2 { font-family: 'Sora', sans-serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800; line-height: 1.18; letter-spacing: -0.025em; color: var(--text); margin-bottom: 16px; }
+  h2 .gold { color: var(--gold); }
+  .sub { font-size: 1rem; color: var(--text2); max-width: 500px; line-height: 1.7; }
+
+  /* HOW IT WORKS */
+  .hiw-section { background: var(--bg2); padding: 100px 0; max-width: 100%; }
+  .hiw-inner { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
+  .hiw-header { text-align: center; margin-bottom: 64px; }
+  .hiw-header .sub { margin: 0 auto; }
+  .steps-row { display: flex; gap: 20px; position: relative; align-items: flex-start; }
+  .steps-row::before {
+    content: ''; position: absolute; top: 36px; left: 52px; right: 52px; height: 1px;
+    border-top: 1.5px dashed rgba(49,66,56,0.7); z-index: 0;
+  }
+  .step-card {
+    flex: 1; background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 28px 22px; position: relative; z-index: 1;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  }
+  .step-card:hover { transform: translateY(-6px); border-color: var(--sage); box-shadow: 0 12px 40px rgba(142,168,150,0.1); }
+  .step-num { font-family: 'Sora', sans-serif; font-size: 0.68rem; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 14px; }
+  .step-icon { font-size: 1.4rem; margin-bottom: 14px; }
+  .step-title { font-family: 'Sora', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+  .step-text { font-size: 0.8rem; color: var(--text2); line-height: 1.55; }
+
+  /* REPORT PREVIEW */
+  .report-section { background: var(--bg); padding: 100px 0; max-width: 100%; }
+  .report-inner { max-width: 1200px; margin: 0 auto; padding: 0 60px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; }
+  .report-checklist { margin: 28px 0 36px; display: flex; flex-direction: column; gap: 12px; }
+  .check-item { display: flex; align-items: center; gap: 12px; font-size: 0.88rem; color: var(--text2); }
+  .check-item::before { content: '✓'; color: var(--gold); font-weight: 700; font-size: 0.8rem; width: 20px; height: 20px; background: rgba(224,168,107,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .report-dashboard { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 28px; position: relative; overflow: hidden; }
+  .report-dashboard::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), var(--sage), transparent); }
+  .report-dashboard::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse 60% 40% at 80% 20%, var(--gold-glow), transparent); pointer-events: none; }
+  .dash-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 16px; position: relative; z-index: 1; }
+  .dash-left { background: var(--card-el); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+  .dash-right { background: var(--card-el); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+  .dash-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text2); margin-bottom: 10px; }
+  .dash-archetype-name { font-family: 'Sora', sans-serif; font-size: 1.35rem; font-weight: 800; color: var(--gold); line-height: 1.2; margin-bottom: 2px; }
+  .dash-score { font-family: 'Sora', sans-serif; font-size: 2.8rem; font-weight: 800; color: var(--gold); line-height: 1; }
+  .dash-score-label { font-size: 0.72rem; color: var(--text2); margin-top: 4px; margin-bottom: 14px; }
+  .impact-bars { display: flex; flex-direction: column; gap: 7px; }
+  .impact-row { display: flex; align-items: center; gap: 8px; }
+  .impact-label { font-size: 0.65rem; color: var(--text2); width: 72px; flex-shrink: 0; }
+  .impact-track { flex: 1; height: 5px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; }
+  .impact-fill { height: 100%; border-radius: 4px; }
+  .if-gold { background: linear-gradient(90deg, var(--gold), rgba(224,168,107,0.3)); }
+  .if-sage { background: linear-gradient(90deg, var(--sage), rgba(167,192,171,0.3)); }
+  .if-cta { background: linear-gradient(90deg, var(--cta), rgba(142,168,150,0.3)); }
+  .dash-quote { font-family: 'Sora', sans-serif; font-size: 0.88rem; font-weight: 600; color: var(--text); line-height: 1.5; margin-bottom: 16px; position: relative; padding-left: 14px; }
+  .dash-quote::before { content: ''; position: absolute; left: 0; top: 4px; bottom: 4px; width: 2px; background: var(--gold); border-radius: 2px; }
+  .strength-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { background: rgba(142,168,150,0.1); border: 1px solid rgba(142,168,150,0.22); color: var(--sage); padding: 4px 10px; border-radius: 20px; font-size: 0.68rem; font-weight: 500; }
+
+  /* AUDIENCE MIRROR */
+  .audience-section { background: var(--bg); padding: 100px 0; max-width: 100%; }
+  .audience-inner { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
+  .audience-header { text-align: center; margin-bottom: 56px; }
+  .audience-header .sub { margin: 0 auto; }
+  .audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .audience-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 26px 24px; display: flex; flex-direction: column; gap: 8px;
+    position: relative; overflow: hidden; transition: all 0.25s; cursor: default;
+  }
+  .audience-card::after { content: ''; position: absolute; inset: 0; border-radius: 16px; opacity: 0; transition: opacity 0.25s; background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--sage-glow), transparent); pointer-events: none; }
+  .audience-card:hover { border-color: rgba(167,192,171,0.38); transform: translateY(-4px); box-shadow: 0 14px 40px rgba(0,0,0,0.4); }
+  .audience-card:hover::after { opacity: 1; }
+  .audience-role { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text); }
+  .audience-role span { color: var(--gold); }
+  .audience-line { font-size: 0.83rem; color: var(--text2); line-height: 1.5; }
+  .audience-arrow { font-size: 0.75rem; color: var(--sage); margin-top: 4px; opacity: 0; transform: translateX(-4px); transition: all 0.25s; }
+  .audience-card:hover .audience-arrow { opacity: 1; transform: translateX(0); }
+
+  /* EARLY ACCESS TRUST */
+  .earlyaccess-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .ea-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 32px 28px;
+    display: flex; flex-direction: column; gap: 20px; position: relative; overflow: hidden;
+    transition: all 0.25s;
+  }
+  .ea-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--sage-glow), transparent); transition: background 0.25s; }
+  .ea-card:hover { border-color: rgba(167,192,171,0.35); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.45); }
+  .ea-card:hover::before { background: linear-gradient(90deg, transparent, rgba(167,192,171,0.4), transparent); }
+  .ea-icon-row { display: flex; align-items: center; gap: 14px; }
+  .ea-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+  .ea-ic1 { background: rgba(224,168,107,0.1); border: 1px solid rgba(224,168,107,0.25); }
+  .ea-ic2 { background: rgba(142,168,150,0.1); border: 1px solid rgba(142,168,150,0.25); }
+  .ea-ic3 { background: rgba(167,192,171,0.08); border: 1px solid rgba(167,192,171,0.22); }
+  .ea-label-text { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text); line-height: 1.3; }
+  .ea-description { font-size: 0.85rem; color: var(--text2); line-height: 1.65; }
+  .ea-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(142,168,150,0.08); border: 1px solid rgba(142,168,150,0.2); padding: 5px 12px; border-radius: 30px; font-size: 0.72rem; color: var(--sage); font-weight: 500; width: fit-content; }
+  .ea-badge::before { content: '◉'; font-size: 0.55rem; color: var(--sage); }
+  .reveals-section { background: var(--bg2); padding: 100px 0; max-width: 100%; }
+  .reveals-inner { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
+  .reveals-header { text-align: center; margin-bottom: 60px; }
+  .reveals-header .sub { margin: 0 auto; }
+  .reveals-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .reveal-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px;
+    transition: all 0.25s; cursor: default;
+  }
+  .reveal-card:hover { border-color: rgba(167,192,171,0.4); background: var(--card-el); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+  .reveal-card:nth-child(1):hover, .reveal-card:nth-child(4):hover { border-color: rgba(224,168,107,0.3); box-shadow: 0 16px 40px var(--gold-glow); }
+  .reveal-icon { font-size: 1.4rem; margin-bottom: 14px; }
+  .reveal-title { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .reveal-line { font-size: 0.82rem; color: var(--text2); line-height: 1.55; }
+
+  /* TRUST */
+  .trust-section { background: var(--bg); padding: 100px 0; max-width: 100%; }
+  .trust-inner { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
+  .trust-header { text-align: center; margin-bottom: 60px; }
+  .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .trust-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 32px;
+    position: relative; overflow: hidden; transition: all 0.25s;
+  }
+  .trust-card::before { content: '"'; position: absolute; top: 16px; right: 22px; font-size: 4rem; color: rgba(224,168,107,0.12); font-family: Georgia, serif; line-height: 1; }
+  .trust-card:hover { border-color: rgba(167,192,171,0.35); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+  .trust-quote { font-size: 0.88rem; color: var(--text); line-height: 1.65; margin-bottom: 22px; font-style: italic; position: relative; z-index: 1; }
+  .trust-person { display: flex; align-items: center; gap: 12px; }
+  .trust-avatar { width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 600; font-family: 'Sora', sans-serif; }
+  .ta1 { background: linear-gradient(135deg, #2a3f32, #4a6b52); color: #a7c0ab; }
+  .ta2 { background: linear-gradient(135deg, #3d3020, #6b5230); color: #d4934f; }
+  .ta3 { background: linear-gradient(135deg, #1e3530, #3a6055); color: #8ea896; }
+  .trust-name { font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--text); }
+  .trust-role { font-size: 0.75rem; color: var(--text2); }
+
+  /* FINAL CTA */
+  .cta-section { background: var(--bg2); padding: 100px 0; max-width: 100%; }
+  .cta-inner {
+    max-width: 720px; margin: 0 auto; padding: 0 60px; text-align: center;
+  }
+  .cta-box {
+    background: var(--card); border: 1px solid var(--border); border-radius: 24px;
+    padding: 64px 48px; position: relative; overflow: hidden;
+  }
+  .cta-box::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--gold-glow), transparent),
+                radial-gradient(ellipse 60% 40% at 50% 100%, var(--sage-glow), transparent);
+    pointer-events: none;
+  }
+  .cta-box::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .cta-box h2 { margin-bottom: 14px; }
+  .cta-box .sub { margin: 0 auto 36px; }
+  .btn-cta-big { background: var(--cta); color: #08110D; padding: 16px 36px; border-radius: 12px; border: none; cursor: pointer; font-size: 1rem; font-weight: 700; font-family: 'Sora', sans-serif; transition: all 0.25s; letter-spacing: 0.01em; display: inline-block; text-decoration: none; }
+  .btn-cta-big:hover { background: var(--cta-h); transform: translateY(-2px); box-shadow: 0 8px 40px rgba(142,168,150,0.3); }
+
+  /* FOOTER */
+  footer { background: #060E09; border-top: 1px solid var(--border); padding: 64px 60px 32px; max-width: 100%; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr 1.4fr; gap: 40px; margin-bottom: 48px; }
+  .footer-col h4 { font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul li a { font-size: 0.82rem; color: var(--text2); text-decoration: none; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--text); }
+  .footer-brand-text { font-size: 0.82rem; color: var(--text2); line-height: 1.6; margin: 12px 0 20px; max-width: 220px; }
+  .social-icons { display: flex; gap: 10px; }
+  .social-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: var(--text2); cursor: pointer; transition: all 0.2s; text-decoration: none; }
+  .social-icon:hover { border-color: var(--sage); color: var(--sage); }
+  .footer-cta-box { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
+  .footer-cta-box h5 { font-family: 'Sora', sans-serif; font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+  .footer-cta-box p { font-size: 0.75rem; color: var(--text2); margin-bottom: 14px; line-height: 1.5; }
+  .btn-footer { background: var(--cta); color: #08110D; padding: 9px 18px; border-radius: 8px; border: none; cursor: pointer; font-size: 0.8rem; font-weight: 700; font-family: 'Sora', sans-serif; transition: all 0.2s; width: 100%; display: block; text-align: center; text-decoration: none; }
+  .btn-footer:hover { background: var(--cta-h); }
+  .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .footer-bottom p { font-size: 0.78rem; color: var(--text2); }
+  .footer-bottom a { color: var(--gold); text-decoration: none; }
+
+  /* ANIMATIONS */
+  .reveal { opacity: 1; transform: translateY(0); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.pre-reveal { opacity: 0; transform: translateY(28px); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1100px) {
+    .hero { grid-template-columns: 1fr 1fr; padding: 88px 40px 60px; }
+    .hero-right { display: none; }
+    .footer-inner { grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+    .feature-strip-inner { grid-template-columns: repeat(2,1fr); }
+    .audience-inner { padding: 0 40px; }
+  }
+  @media (max-width: 768px) {
+    header { padding: 0 20px; }
+    nav { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 88px 24px 60px; text-align: center; }
+    .hero-center { display: none; }
+    .hero-proof { justify-content: center; }
+    .hero-ctas { justify-content: center; }
+    .audience-grid { grid-template-columns: 1fr 1fr; }
+    .earlyaccess-grid { grid-template-columns: 1fr; }
+    section, .hiw-inner, .report-inner, .reveals-inner, .trust-inner, .cta-inner, .footer-inner, .audience-inner { padding: 0 24px; }
+    .steps-row { flex-direction: column; }
+    .steps-row::before { display: none; }
+    .report-inner { grid-template-columns: 1fr; }
+    .reveals-grid { grid-template-columns: 1fr 1fr; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .dash-grid { grid-template-columns: 1fr; }
+    h2 { font-size: 1.8rem; }
+    h1 { font-size: 2rem; }
+    .feature-strip-inner { grid-template-columns: 1fr 1fr; }
+    .feature-strip { padding: 40px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo">
+    <svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Outer orbit ring -->
+      <circle cx="16" cy="16" r="14" stroke="rgba(167,192,171,0.25)" stroke-width="1" stroke-dasharray="3 5"/>
+      <!-- Mid orbit ring -->
+      <circle cx="16" cy="16" r="9.5" stroke="rgba(224,168,107,0.35)" stroke-width="1"/>
+      <!-- Center glow fill -->
+      <circle cx="16" cy="16" r="7" fill="rgba(224,168,107,0.08)"/>
+      <!-- Human figure — head -->
+      <ellipse cx="16" cy="12.8" rx="2.8" ry="3.2" fill="#A7C0AB" opacity="0.9"/>
+      <!-- Body -->
+      <path d="M11.5 22.5 C11.5 18.8 13.4 17 16 17 C18.6 17 20.5 18.8 20.5 22.5" fill="#A7C0AB" opacity="0.75"/>
+      <!-- Orbit dot — gold highlight at top -->
+      <circle cx="16" cy="2.5" r="2" fill="#E0A86B" opacity="0.9"/>
+      <!-- Orbit dot — sage right -->
+      <circle cx="28.5" cy="19" r="1.4" fill="#A7C0AB" opacity="0.7"/>
+      <!-- Orbit dot — muted left-bottom -->
+      <circle cx="4.5" cy="21" r="1.2" fill="rgba(167,192,171,0.5)"/>
+      <!-- Gold crown arc above head -->
+      <path d="M12.5 9.2 Q16 7.2 19.5 9.2" stroke="#E0A86B" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.7"/>
+    </svg>
+    <span class="logo-wordmark"><span class="known">Known</span><span class="ly">ly</span></span>
+  </a>
+  <nav>
+    <a href="#" class="active">Home</a>
+    <a href="#hiw">How It Works</a>
+    <a href="#report-preview">Report</a>
+    <a href="#audience">Who It's For</a>
+    <a href="#plans">Plans</a>
+    <a href="#about">About</a>
+  </nav>
+  <div class="header-right">
+    <a href="/login.html" class="btn-ghost">Login</a>
+    <a href="/diagnosis.html" class="btn-primary">Start Free Diagnosis</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">Personal Intelligence for Online Presence</div>
+    <h1>Discover what you should be <span class="gold">known for.</span></h1>
+    <p style="font-family:'Sora',sans-serif;font-size:1.08rem;font-weight:600;color:var(--gold);margin-bottom:18px;letter-spacing:-0.01em;line-height:1.3;">Then build your online presence around it.</p>
+    <p class="hero-sub">Knownly maps your strengths, interests, experiences, goals and public identity into a personal direction report — so you know what to create, how to present yourself and how to become easier to understand, remember and trust.</p>
+    <div class="hero-ctas">
+      <a href="/diagnosis.html" class="btn-hero">Start Free Diagnosis</a>
+      <a href="#hiw" class="btn-outline-hero">See How It Works <span class="arrow">→</span></a>
+    </div>
+    <div class="hero-proof">
+      <div class="avatars">
+        <div class="avatar av1">R</div>
+        <div class="avatar av2">A</div>
+        <div class="avatar av3">N</div>
+        <div class="avatar av4">S</div>
+      </div>
+      <p class="proof-text">Free to start. No fake guarantees. No pressure to become someone you are not.</p>
+    </div>
+  </div>
+
+  <!-- ORBIT VISUAL -->
+  <div class="hero-center">
+    <div class="orbit-wrap">
+      <svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+        <defs>
+          <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(224,168,107,0.26)"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </radialGradient>
+          <radialGradient id="sageGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(142,168,150,0.2)"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </radialGradient>
+          <radialGradient id="figureGlow" cx="50%" cy="40%" r="55%">
+            <stop offset="0%" stop-color="rgba(167,192,171,0.18)"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </radialGradient>
+          <filter id="blur1">
+            <feGaussianBlur stdDeviation="8"/>
+          </filter>
+          <filter id="blur2">
+            <feGaussianBlur stdDeviation="4"/>
+          </filter>
+          <filter id="softGlow">
+            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="goldGlow">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feFlood flood-color="rgba(224,168,107,0.4)" result="color"/>
+            <feComposite in="color" in2="blur" operator="in" result="shadow"/>
+            <feMerge><feMergeNode in="shadow"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- ── BACKGROUND BREATHING GLOWS ── -->
+        <circle cx="240" cy="240" r="200" fill="url(#centerGlow)">
+          <animate attributeName="opacity" values="0.7;1;0.7" dur="5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="240" cy="240" r="140" fill="url(#sageGlow)">
+          <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite" begin="1s"/>
+        </circle>
+
+        <!-- ── OUTER ORBIT RING — slow clockwise ── -->
+        <circle cx="240" cy="240" r="180" fill="none" stroke="rgba(49,66,56,0.55)" stroke-width="1" stroke-dasharray="4 8">
+          <animateTransform attributeName="transform" type="rotate" from="0 240 240" to="360 240 240" dur="80s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- ── MIDDLE ORBIT RING — counter-clockwise ── -->
+        <circle cx="240" cy="240" r="120" fill="none" stroke="rgba(167,192,171,0.2)" stroke-width="1" stroke-dasharray="3 7">
+          <animateTransform attributeName="transform" type="rotate" from="0 240 240" to="-360 240 240" dur="55s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- ── INNER PULSE RING — breathes ── -->
+        <circle cx="240" cy="240" r="82" fill="none" stroke="rgba(224,168,107,0.12)" stroke-width="1">
+          <animate attributeName="r" values="82;86;82" dur="4s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- ── FIGURE — gentle float up/down ── -->
+        <g>
+          <animateTransform attributeName="transform" type="translate" values="0,0;0,-6;0,0" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+
+          <!-- Aura glows behind figure -->
+          <ellipse cx="240" cy="278" rx="50" ry="78" fill="rgba(142,168,150,0.09)" filter="url(#blur1)">
+            <animate attributeName="ry" values="78;84;78" dur="6s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.7;1;0.7" dur="6s" repeatCount="indefinite"/>
+          </ellipse>
+          <ellipse cx="240" cy="192" rx="30" ry="34" fill="rgba(224,168,107,0.08)" filter="url(#blur1)">
+            <animate attributeName="opacity" values="0.6;1;0.6" dur="4.5s" repeatCount="indefinite" begin="0.5s"/>
+          </ellipse>
+
+          <!-- Torso -->
+          <path d="M216 230 C206 235 200 246 198 260 L196 314 C196 318 199 320 203 320 L277 320 C281 320 284 318 284 314 L282 260 C280 246 274 235 264 230 C256 226 248 224 240 224 C232 224 224 226 216 230 Z" fill="#182620" stroke="rgba(167,192,171,0.28)" stroke-width="1.3"/>
+          <path d="M218 252 Q240 260 262 252" fill="none" stroke="rgba(247,242,232,0.08)" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M208 238 Q224 231 240 230 Q256 231 272 238" fill="none" stroke="rgba(247,242,232,0.13)" stroke-width="1.5" stroke-linecap="round"/>
+
+          <!-- Arms -->
+          <path d="M198 260 C192 272 190 292 192 312 C193 317 197 318 200 316 C203 313 204 308 204 302 L206 264 Z" fill="#182620" stroke="rgba(167,192,171,0.18)" stroke-width="1"/>
+          <path d="M282 260 C288 272 290 292 288 312 C287 317 283 318 280 316 C277 313 276 308 276 302 L274 264 Z" fill="#182620" stroke="rgba(167,192,171,0.18)" stroke-width="1"/>
+
+          <!-- Neck -->
+          <path d="M231 220 C230 221 229 224 229 227 L251 227 C251 224 250 221 249 220 C246 218 242 217 240 217 C238 217 234 218 231 220 Z" fill="#182620" stroke="rgba(167,192,171,0.22)" stroke-width="1"/>
+
+          <!-- Head -->
+          <ellipse cx="240" cy="198" rx="23" ry="27" fill="#182620" stroke="rgba(167,192,171,0.42)" stroke-width="1.4">
+            <animate attributeName="stroke-opacity" values="0.42;0.7;0.42" dur="5s" repeatCount="indefinite"/>
+          </ellipse>
+          <ellipse cx="240" cy="196" rx="19" ry="23" fill="#14201A"/>
+          <ellipse cx="238" cy="186" rx="10" ry="8" fill="rgba(247,242,232,0.07)"/>
+          <path d="M230 194 Q234 191 238 192 M242 192 Q246 191 250 194" fill="none" stroke="rgba(167,192,171,0.2)" stroke-width="1" stroke-linecap="round"/>
+
+          <!-- Eyes — animated blink -->
+          <ellipse cx="234" cy="197" rx="2.8" ry="2.2" fill="rgba(167,192,171,0.22)">
+            <animate attributeName="ry" values="2.2;0.2;2.2" dur="7s" repeatCount="indefinite" begin="2s" keyTimes="0;0.07;0.14;1" values="2.2;0.2;2.2;2.2" calcMode="spline" keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"/>
+          </ellipse>
+          <ellipse cx="246" cy="197" rx="2.8" ry="2.2" fill="rgba(167,192,171,0.22)">
+            <animate attributeName="ry" values="2.2;0.2;2.2" dur="7s" repeatCount="indefinite" begin="2s" keyTimes="0;0.07;0.14;1" values="2.2;0.2;2.2;2.2" calcMode="spline" keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"/>
+          </ellipse>
+          <circle cx="235.2" cy="196.4" r="0.8" fill="rgba(247,242,232,0.4)"/>
+          <circle cx="247.2" cy="196.4" r="0.8" fill="rgba(247,242,232,0.4)"/>
+          <path d="M240 200 Q239 205 238 208" fill="none" stroke="rgba(167,192,171,0.1)" stroke-width="0.8" stroke-linecap="round"/>
+          <path d="M221 210 Q240 220 259 210" fill="none" stroke="rgba(247,242,232,0.07)" stroke-width="1" stroke-linecap="round"/>
+
+          <!-- Gold crown arc — pulses -->
+          <path d="M218 172 Q240 163 262 172" fill="none" stroke="rgba(224,168,107,0.4)" stroke-width="1.5" stroke-linecap="round" filter="url(#goldGlow)">
+            <animate attributeName="stroke-opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"/>
+          </path>
+          <path d="M222 169 Q240 161 258 169" fill="none" stroke="rgba(224,168,107,0.18)" stroke-width="1" stroke-linecap="round"/>
+
+          <!-- Crown sparkles — independent pulse timings -->
+          <circle cx="240" cy="160" r="2.8" fill="rgba(224,168,107,0.85)" filter="url(#goldGlow)">
+            <animate attributeName="r" values="2.8;3.8;2.8" dur="2.4s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.85;0.3;0.85" dur="2.4s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="224" cy="167" r="1.8" fill="rgba(224,168,107,0.6)">
+            <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.8s" repeatCount="indefinite" begin="0.4s"/>
+          </circle>
+          <circle cx="256" cy="167" r="1.8" fill="rgba(224,168,107,0.6)">
+            <animate attributeName="opacity" values="0.6;0.15;0.6" dur="3.1s" repeatCount="indefinite" begin="0.9s"/>
+          </circle>
+
+          <!-- Sage identity radiance lines — animate length -->
+          <line x1="240" y1="156" x2="240" y2="144" stroke="rgba(167,192,171,0.0)" stroke-width="1" stroke-linecap="round">
+            <animate attributeName="stroke-opacity" values="0;0.35;0" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="y2" values="150;140;150" dur="3s" repeatCount="indefinite"/>
+          </line>
+          <line x1="218" y1="163" x2="210" y2="153" stroke="rgba(167,192,171,0.0)" stroke-width="1" stroke-linecap="round">
+            <animate attributeName="stroke-opacity" values="0;0.28;0" dur="3.5s" repeatCount="indefinite" begin="0.6s"/>
+          </line>
+          <line x1="262" y1="163" x2="270" y2="153" stroke="rgba(167,192,171,0.0)" stroke-width="1" stroke-linecap="round">
+            <animate attributeName="stroke-opacity" values="0;0.28;0" dur="3.2s" repeatCount="indefinite" begin="1.1s"/>
+          </line>
+        </g>
+
+        <!-- ── CENTER LABEL — pulse border ── -->
+        <g transform="translate(240,240)">
+          <rect x="-66" y="62" width="132" height="28" rx="14" fill="#182620" stroke="rgba(224,168,107,0.45)" stroke-width="1">
+            <animate attributeName="stroke-opacity" values="0.45;0.9;0.45" dur="3.5s" repeatCount="indefinite"/>
+          </rect>
+          <text x="0" y="81" text-anchor="middle" fill="#E0A86B" font-size="9" font-family="Sora, sans-serif" font-weight="600" letter-spacing="1">YOUR KNOWNLY DIRECTION</text>
+        </g>
+
+        <!-- ── NODE 1: Strengths — top, bounces in ── -->
+        <g transform="translate(240,60)">
+          <animateTransform attributeName="transform" type="translate" additive="sum" values="0,0;0,-4;0,0" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          <circle r="36" fill="rgba(224,168,107,0.06)" filter="url(#blur2)">
+            <animate attributeName="r" values="36;42;36" dur="4s" repeatCount="indefinite"/>
+          </circle>
+          <circle r="32" fill="#14201A" stroke="rgba(224,168,107,0.55)" stroke-width="1.5">
+            <animate attributeName="stroke-opacity" values="0.55;1;0.55" dur="4s" repeatCount="indefinite"/>
+          </circle>
+          <circle r="27" fill="#182620"/>
+          <text x="0" y="-5" text-anchor="middle" font-size="14">⚡</text>
+          <text x="0" y="11" text-anchor="middle" fill="#F7F2E8" font-size="7.5" font-family="Sora, sans-serif" font-weight="600">Strengths</text>
+          <line x1="0" y1="32" x2="0" y2="56" stroke="rgba(224,168,107,0.0)" stroke-width="1">
+            <animate attributeName="stroke-opacity" values="0.1;0.4;0.1" dur="4s" repeatCount="indefinite"/>
+          </line>
+        </g>
+
+        <!-- ── NODE 2: Interests — top right ── -->
+        <g transform="translate(396,150)">
+          <animateTransform attributeName="transform" type="translate" additive="sum" values="0,0;3,-3;0,0" dur="5.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1" begin="0.8s"/>
+          <circle r="36" fill="rgba(167,192,171,0.06)" filter="url(#blur2)">
+            <animate attributeName="r" values="36;43;36" dur="4.5s" repeatCount="indefinite" begin="0.5s"/>
+          </circle>
+          <circle r="32" fill="#14201A" stroke="rgba(167,192,171,0.45)" stroke-width="1.5">
+            <animate attributeName="stroke-opacity" values="0.45;0.9;0.45" dur="4.5s" repeatCount="indefinite" begin="0.5s"/>
+          </circle>
+          <circle r="27" fill="#182620"/>
+          <text x="0" y="-5" text-anchor="middle" font-size="14">✦</text>
+          <text x="0" y="11" text-anchor="middle" fill="#F7F2E8" font-size="7.5" font-family="Sora, sans-serif" font-weight="600">Interests</text>
+          <line x1="-32" y1="0" x2="-56" y2="12" stroke="rgba(167,192,171,0.0)" stroke-width="1">
+            <animate attributeName="stroke-opacity" values="0.1;0.38;0.1" dur="4.5s" repeatCount="indefinite" begin="0.5s"/>
+          </line>
+        </g>
+
+        <!-- ── NODE 3: Life Experiences — bottom right ── -->
+        <g transform="translate(390,340)">
+          <animateTransform attributeName="transform" type="translate" additive="sum" values="0,0;3,4;0,0" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1" begin="1.4s"/>
+          <circle r="36" fill="rgba(142,168,150,0.06)" filter="url(#blur2)">
+            <animate attributeName="r" values="36;42;36" dur="5s" repeatCount="indefinite" begin="1s"/>
+          </circle>
+          <circle r="32" fill="#14201A" stroke="rgba(142,168,150,0.45)" stroke-width="1.5">
+            <animate attributeName="stroke-opacity" values="0.45;0.85;0.45" dur="5s" repeatCount="indefinite" begin="1s"/>
+          </circle>
+          <circle r="27" fill="#182620"/>
+          <text x="0" y="-5" text-anchor="middle" font-size="14">🌿</text>
+          <text x="0" y="11" text-anchor="middle" fill="#F7F2E8" font-size="7.5" font-family="Sora, sans-serif" font-weight="600">Life Exp.</text>
+          <line x1="-32" y1="0" x2="-54" y2="-12" stroke="rgba(142,168,150,0.0)" stroke-width="1">
+            <animate attributeName="stroke-opacity" values="0.1;0.38;0.1" dur="5s" repeatCount="indefinite" begin="1s"/>
+          </line>
+        </g>
+
+        <!-- ── NODE 4: Goals — bottom ── -->
+        <g transform="translate(240,418)">
+          <animateTransform attributeName="transform" type="translate" additive="sum" values="0,0;0,5;0,0" dur="5.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1" begin="0.3s"/>
+          <circle r="36" fill="rgba(224,168,107,0.06)" filter="url(#blur2)">
+            <animate attributeName="r" values="36;44;36" dur="4.8s" repeatCount="indefinite" begin="0.3s"/>
+          </circle>
+          <circle r="32" fill="#14201A" stroke="rgba(224,168,107,0.45)" stroke-width="1.5">
+            <animate attributeName="stroke-opacity" values="0.45;0.9;0.45" dur="4.8s" repeatCount="indefinite" begin="0.3s"/>
+          </circle>
+          <circle r="27" fill="#182620"/>
+          <text x="0" y="-5" text-anchor="middle" font-size="14">◎</text>
+          <text x="0" y="11" text-anchor="middle" fill="#F7F2E8" font-size="7.5" font-family="Sora, sans-serif" font-weight="600">Goals</text>
+          <line x1="0" y1="-32" x2="0" y2="-54" stroke="rgba(224,168,107,0.0)" stroke-width="1">
+            <animate attributeName="stroke-opacity" values="0.1;0.4;0.1" dur="4.8s" repeatCount="indefinite" begin="0.3s"/>
+          </line>
+        </g>
+
+        <!-- ── NODE 5: Comfort Zone — bottom left ── -->
+        <g transform="translate(88,340)">
+          <animateTransform attributeName="transform" type="translate" additive="sum" values="0,0;-3,4;0,0" dur="5.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1" begin="1.8s"/>
+          <circle r="36" fill="rgba(167,192,171,0.06)" filter="url(#blur2)">
+            <animate attributeName="r" values="36;42;36" dur="5.5s" repeatCount="indefinite" begin="1.5s"/>
+          </circle>
+          <circle r="32" fill="#14201A" stroke="rgba(167,192,171,0.4)" stroke-width="1.5">
+            <animate attributeName="stroke-opacity" values="0.4;0.8;0.4" dur="5.5s" repeatCount="indefinite" begin="1.5s"/>
+          </circle>
+          <circle r="27" fill="#182620"/>
+          <text x="0" y="-5" text-anchor="middle" font-size="14">⟳</text>
+          <text x="0" y="11" text-anchor="middle" fill="#F7F2E8" font-size="7" font-family="Sora, sans-serif" font-weight="600">Comfort Zone</text>
+          <line x1="32" y1="0" x2="54" y2="-12" stroke="rgba(167,192,171,0.0)" stroke-width="1">
+            <animate attributeName="stroke-opacity" values="0.1;0.35;0.1" dur="5.5s" repeatCount="indefinite" begin="1.5s"/>
+          </line>
+        </g>
+
+        <!-- ── NODE 6: Patterns — top left ── -->
+        <g transform="translate(84,150)">
+          <animateTransform attributeName="transform" type="translate" additive="sum" values="0,0;-4,-3;0,0" dur="5.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1" begin="2.2s"/>
+          <circle r="36" fill="rgba(224,168,107,0.06)" filter="url(#blur2)">
+            <animate attributeName="r" values="36;43;36" dur="5s" repeatCount="indefinite" begin="2s"/>
+          </circle>
+          <circle r="32" fill="#14201A" stroke="rgba(224,168,107,0.45)" stroke-width="1.5">
+            <animate attributeName="stroke-opacity" values="0.45;0.88;0.45" dur="5s" repeatCount="indefinite" begin="2s"/>
+          </circle>
+          <circle r="27" fill="#182620"/>
+          <text x="0" y="-5" text-anchor="middle" font-size="14">⋮</text>
+          <text x="0" y="11" text-anchor="middle" fill="#F7F2E8" font-size="7.5" font-family="Sora, sans-serif" font-weight="600">Patterns</text>
+          <line x1="32" y1="0" x2="54" y2="12" stroke="rgba(224,168,107,0.0)" stroke-width="1">
+            <animate attributeName="stroke-opacity" values="0.1;0.38;0.1" dur="5s" repeatCount="indefinite" begin="2s"/>
+          </line>
+        </g>
+
+        <!-- ── FLOATING PARTICLES ── -->
+        <!-- Travel along orbit paths -->
+        <circle r="3" fill="rgba(224,168,107,0.85)" filter="url(#softGlow)">
+          <animateMotion dur="20s" repeatCount="indefinite" calcMode="linear">
+            <mpath href="#outerOrbit"/>
+          </animateMotion>
+          <animate attributeName="opacity" values="0;0.85;0.85;0" dur="20s" repeatCount="indefinite" keyTimes="0;0.05;0.9;1"/>
+        </circle>
+        <circle r="2" fill="rgba(167,192,171,0.8)" filter="url(#softGlow)">
+          <animateMotion dur="20s" repeatCount="indefinite" begin="10s" calcMode="linear">
+            <mpath href="#outerOrbit"/>
+          </animateMotion>
+          <animate attributeName="opacity" values="0;0.8;0.8;0" dur="20s" repeatCount="indefinite" begin="10s" keyTimes="0;0.05;0.9;1"/>
+        </circle>
+        <circle r="2" fill="rgba(224,168,107,0.7)">
+          <animateMotion dur="14s" repeatCount="indefinite" begin="3s" calcMode="linear" direction="reverse">
+            <mpath href="#innerOrbit"/>
+          </animateMotion>
+          <animate attributeName="opacity" values="0;0.7;0.7;0" dur="14s" repeatCount="indefinite" begin="3s" keyTimes="0;0.08;0.88;1"/>
+        </circle>
+
+        <!-- Hidden path definitions for animateMotion -->
+        <defs>
+          <path id="outerOrbit" d="M240,60 A180,180 0 1,1 239.999,60Z"/>
+          <path id="innerOrbit" d="M240,120 A120,120 0 1,1 239.999,120Z"/>
+        </defs>
+
+        <!-- Static scattered sparkles — staggered flicker -->
+        <circle cx="180" cy="118" r="2.2" fill="rgba(224,168,107,0.9)">
+          <animate attributeName="opacity" values="0.9;0.2;0.9" dur="3.1s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="2.2;1.2;2.2" dur="3.1s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="322" cy="128" r="1.8" fill="rgba(167,192,171,0.9)">
+          <animate attributeName="opacity" values="0.9;0.2;0.9" dur="2.6s" repeatCount="indefinite" begin="0.5s"/>
+        </circle>
+        <circle cx="344" cy="302" r="2.2" fill="rgba(224,168,107,0.8)">
+          <animate attributeName="opacity" values="0.8;0.1;0.8" dur="3.7s" repeatCount="indefinite" begin="1.2s"/>
+        </circle>
+        <circle cx="148" cy="292" r="1.8" fill="rgba(142,168,150,0.9)">
+          <animate attributeName="opacity" values="0.9;0.2;0.9" dur="2.9s" repeatCount="indefinite" begin="0.8s"/>
+        </circle>
+        <circle cx="240" cy="352" r="1.8" fill="rgba(224,168,107,0.8)">
+          <animate attributeName="opacity" values="0.8;0.25;0.8" dur="4.1s" repeatCount="indefinite" begin="2s"/>
+        </circle>
+        <circle cx="198" cy="153" r="1.2" fill="rgba(247,242,232,0.7)">
+          <animate attributeName="opacity" values="0.7;0;0.7" dur="2.1s" repeatCount="indefinite" begin="0.3s"/>
+        </circle>
+        <circle cx="288" cy="162" r="1.2" fill="rgba(247,242,232,0.6)">
+          <animate attributeName="opacity" values="0.6;0;0.6" dur="3.3s" repeatCount="indefinite" begin="1.6s"/>
+        </circle>
+        <circle cx="155" cy="200" r="1" fill="rgba(167,192,171,0.6)">
+          <animate attributeName="opacity" values="0.6;0;0.6" dur="4s" repeatCount="indefinite" begin="2.4s"/>
+        </circle>
+        <circle cx="332" cy="210" r="1" fill="rgba(224,168,107,0.5)">
+          <animate attributeName="opacity" values="0.5;0;0.5" dur="3.6s" repeatCount="indefinite" begin="1s"/>
+        </circle>
+
+        <!-- Slow rotating outer ambient ring -->
+        <circle cx="240" cy="240" r="210" fill="none" stroke="rgba(224,168,107,0.06)" stroke-width="1.5">
+          <animateTransform attributeName="transform" type="rotate" from="0 240 240" to="360 240 240" dur="100s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.4;0.8;0.4" dur="8s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+    </div>
+  </div>
+
+  <!-- MOBILE MOCKUP -->
+  <div class="hero-right">
+    <div class="phone-shell">
+      <div class="phone-screen">
+        <div class="phone-topbar">
+          <div class="phone-logo" style="display:flex;align-items:center;gap:5px;">
+            <svg width="14" height="14" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="14" stroke="rgba(167,192,171,0.3)" stroke-width="1.5" stroke-dasharray="3 5"/>
+              <circle cx="16" cy="16" r="9.5" stroke="rgba(224,168,107,0.5)" stroke-width="1.5"/>
+              <ellipse cx="16" cy="12.8" rx="2.8" ry="3.2" fill="#A7C0AB" opacity="0.9"/>
+              <path d="M11.5 22.5 C11.5 18.8 13.4 17 16 17 C18.6 17 20.5 18.8 20.5 22.5" fill="#A7C0AB" opacity="0.75"/>
+              <circle cx="16" cy="2.5" r="2" fill="#E0A86B" opacity="0.9"/>
+            </svg>
+            <span>Known<span style="color:var(--gold)">ly</span></span>
+          </div>
+          <div class="phone-time">9:41</div>
+        </div>
+        <div class="phone-hero-text">What are you here to be <span>known for?</span></div>
+        <div class="phone-cta">Discover My Report</div>
+        <div class="phone-proof">Clarity. Direction. Identity.</div>
+        <div class="score-card">
+          <div class="score-label">Your Knownly Score</div>
+          <div class="score-num">87%</div>
+          <div class="score-desc">You have a clear direction signal. Your report reveals what people should remember you for.</div>
+          <div class="score-bar-wrap">
+            <div class="score-bar-row">
+              <span class="score-bar-label">Clarity</span>
+              <div class="score-bar-track"><div class="score-bar-fill" style="width:87%"></div></div>
+            </div>
+            <div class="score-bar-row">
+              <span class="score-bar-label">Direction</span>
+              <div class="score-bar-track"><div class="score-bar-fill" style="width:92%"></div></div>
+            </div>
+            <div class="score-bar-row">
+              <span class="score-bar-label">Identity</span>
+              <div class="score-bar-track"><div class="score-bar-fill" style="width:79%"></div></div>
+            </div>
+            <div class="score-bar-row">
+              <span class="score-bar-label">Presence</span>
+              <div class="score-bar-track"><div class="score-bar-fill" style="width:84%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-tabbar">
+          <div class="tab-item">
+            <span class="tab-icon active-tab">⌂</span>
+            <span class="tab-label active-tab">Home</span>
+          </div>
+          <div class="tab-item">
+            <span class="tab-icon">◈</span>
+            <span class="tab-label">Report</span>
+          </div>
+          <div class="tab-item">
+            <span class="tab-icon">✦</span>
+            <span class="tab-label">Insights</span>
+          </div>
+          <div class="tab-item">
+            <span class="tab-icon">◎</span>
+            <span class="tab-label">Profile</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REPORT REVEALS STRIP — immediately after hero -->
+<div class="report-reveals-strip">
+  <div class="rr-inner">
+    <div class="rr-eyebrow">Your free Knownly report can reveal</div>
+    <div class="rr-pills">
+      <span class="rr-pill"><span class="rr-pill-icon">◎</span>Archetype</span>
+      <span class="rr-sep">·</span>
+      <span class="rr-pill"><span class="rr-pill-icon">⚡</span>Hidden Strengths</span>
+      <span class="rr-sep">·</span>
+      <span class="rr-pill"><span class="rr-pill-icon">⋯</span>Current Blocker</span>
+      <span class="rr-sep">·</span>
+      <span class="rr-pill"><span class="rr-pill-icon">✦</span>Content Direction</span>
+      <span class="rr-sep">·</span>
+      <span class="rr-pill"><span class="rr-pill-icon">◈</span>Best-Fit Platform</span>
+      <span class="rr-sep">·</span>
+      <span class="rr-pill"><span class="rr-pill-icon">⟳</span>Opportunity Path</span>
+      <span class="rr-sep">·</span>
+      <span class="rr-pill"><span class="rr-pill-icon">→</span>Next Practical Step</span>
+    </div>
+  </div>
+</div>
+
+<!-- EMOTIONAL PROBLEM SECTION -->
+<div class="feature-strip" style="padding:80px 0;max-width:100%;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 60px;">
+    <div class="reveal" style="text-align:center;margin-bottom:56px;">
+      <div class="section-label" style="justify-content:center;">The Real Problem</div>
+      <h2>You may not need more motivation.<br>You may need a <span class="gold">clearer signal.</span></h2>
+      <p class="sub" style="margin:0 auto;max-width:560px;">People do not remember you for everything you are capable of. They remember the clearest signal you repeatedly show them. If your skills, interests, goals and online presence feel scattered, people may not know where to place you — even if you have real talent. Knownly helps you find the direction people can remember you for.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;" class="reveal reveal-delay-1">
+      <div class="reveal-card reveal">
+        <div class="reveal-icon">◎</div>
+        <div class="reveal-title">You have strengths, but no clear public identity</div>
+        <div class="reveal-line">People may value you, but your online presence may not make your strongest direction obvious.</div>
+      </div>
+      <div class="reveal-card reveal reveal-delay-1">
+        <div class="reveal-icon">✦</div>
+        <div class="reveal-title">You want to create, but do not know what fits you</div>
+        <div class="reveal-line">Knownly helps you understand what content style, themes and platform suit your natural strengths.</div>
+      </div>
+      <div class="reveal-card reveal reveal-delay-2">
+        <div class="reveal-icon">⟳</div>
+        <div class="reveal-title">You want opportunities, but need trust first</div>
+        <div class="reveal-line">Visibility becomes valuable when people understand what you stand for and why they should trust you.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AUDIENCE MIRROR -->
+<div class="audience-section" id="audience">
+  <div class="audience-inner">
+    <div class="audience-header reveal">
+      <div class="section-label" style="justify-content:center">Who It's For</div>
+      <h2>Built for anyone who wants to become easier to <span class="gold">understand, remember and trust.</span></h2>
+      <p class="sub" style="margin:0 auto;">Knownly meets you at your stage, your goals and your natural style.</p>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card reveal">
+        <div class="audience-role"><span>Job Seekers</span></div>
+        <div class="audience-line">Make your value clear before interviews happen.</div>
+        <div class="audience-arrow">Start your diagnosis →</div>
+      </div>
+      <div class="audience-card reveal reveal-delay-1">
+        <div class="audience-role"><span>Working Professionals</span></div>
+        <div class="audience-line">Become known for more than your job title.</div>
+        <div class="audience-arrow">Start your diagnosis →</div>
+      </div>
+      <div class="audience-card reveal reveal-delay-2">
+        <div class="audience-role"><span>Freelancers &amp; Consultants</span></div>
+        <div class="audience-line">Position your expertise so better clients understand why they should trust you.</div>
+        <div class="audience-arrow">Start your diagnosis →</div>
+      </div>
+      <div class="audience-card reveal reveal-delay-3">
+        <div class="audience-role"><span>Founders &amp; Business Owners</span></div>
+        <div class="audience-line">Build founder-led credibility around your product, market and point of view.</div>
+        <div class="audience-arrow">Start your diagnosis →</div>
+      </div>
+      <div class="audience-card reveal reveal-delay-4">
+        <div class="audience-role"><span>Creators, Coaches &amp; Educators</span></div>
+        <div class="audience-line">Turn scattered ideas into memorable themes and a trusted voice.</div>
+        <div class="audience-arrow">Start your diagnosis →</div>
+      </div>
+      <div class="audience-card reveal reveal-delay-5">
+        <div class="audience-role"><span>Students &amp; Career Starters</span></div>
+        <div class="audience-line">Find a direction before your online identity becomes random.</div>
+        <div class="audience-arrow">Start your diagnosis →</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- HOW IT WORKS -->
+<div class="hiw-section" id="hiw">
+  <div class="hiw-inner">
+    <div class="hiw-header reveal">
+      <div class="section-label" style="justify-content:center">How It Works</div>
+      <h2>Four steps from scattered<br><span class="gold">to clear direction.</span></h2>
+    </div>
+    <div class="steps-row">
+      <div class="step-card reveal">
+        <div class="step-num">01</div>
+        <div class="step-icon">💬</div>
+        <div class="step-title">Take the Knownly Diagnosis</div>
+        <div class="step-text">Answer thoughtful questions about your stage, goals, strengths, interests, style and blockers.</div>
+      </div>
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-num">02</div>
+        <div class="step-icon">◎</div>
+        <div class="step-title">Get Your Direction Report</div>
+        <div class="step-text">Knownly shows your archetype, hidden strengths, current blocker, content direction and next practical step.</div>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-num">03</div>
+        <div class="step-icon">🔍</div>
+        <div class="step-title">Unlock Your Profile Report</div>
+        <div class="step-text">Share public profile links if you want a deeper report about your visibility, positioning and profile gaps.</div>
+      </div>
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-num">04</div>
+        <div class="step-icon">🌿</div>
+        <div class="step-title">Build Your Presence</div>
+        <div class="step-text">Use your roadmap, content pillars, action plan and optional expert guidance to build trust and opportunities online.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REPORT PREVIEW -->
+<div class="report-section" id="report-preview">
+  <div class="report-inner">
+    <div class="reveal">
+      <div class="section-label">Your Knownly report</div>
+      <h2>A free report that feels<br><span class="gold">personal — not generic.</span></h2>
+      <p class="sub">Knownly is designed to explain why a direction fits you, not just label you.</p>
+      <div class="report-checklist">
+        <div class="check-item">Knownly Archetype</div>
+        <div class="check-item">What You Should Be Known For</div>
+        <div class="check-item">Hidden Strength Pattern</div>
+        <div class="check-item">Current Blocker</div>
+        <div class="check-item">Content Direction</div>
+        <div class="check-item">Best-Fit Platform</div>
+        <div class="check-item">Opportunity Path</div>
+        <div class="check-item">Next Practical Step</div>
+      </div>
+      <a href="/diagnosis.html" class="btn-hero" style="display:inline-block;text-decoration:none;background:var(--cta);color:#08110D;font-family:'Sora',sans-serif;padding:13px 28px;border-radius:10px;font-size:0.9rem;font-weight:700;transition:all 0.25s;">Start Free Diagnosis</a>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="report-dashboard">
+        <div class="dash-grid">
+          <div class="dash-left">
+            <div class="dash-label">Archetype</div>
+            <div class="dash-archetype-name">Strategic<br>Opportunity Spotter</div>
+            <div class="dash-score-label" style="margin-top:8px;margin-bottom:16px">Your direction profile</div>
+            <div class="dash-label" style="margin-bottom:8px">Hidden Strength</div>
+            <div class="dash-quote">Turning scattered ideas into practical direction</div>
+            <div class="dash-label" style="margin-top:14px;margin-bottom:8px">Current Blocker</div>
+            <div style="font-size:0.78rem;color:var(--text2);line-height:1.5;padding-left:14px;border-left:2px solid rgba(224,168,107,0.35)">Too many interests, unclear positioning</div>
+          </div>
+          <div class="dash-right">
+            <div class="dash-label">Content Direction</div>
+            <div class="dash-quote">Practical breakdowns and personal lessons</div>
+            <div class="dash-label" style="margin-top:16px;margin-bottom:8px">Content Themes</div>
+            <div class="strength-tags" style="margin-bottom:16px">
+              <span class="tag">Practical breakdowns</span>
+              <span class="tag">Personal lessons</span>
+              <span class="tag">Strategic thinking</span>
+            </div>
+            <div class="dash-label" style="margin-bottom:8px">Next Practical Step</div>
+            <div style="background:rgba(142,168,150,0.08);border:1px solid rgba(142,168,150,0.22);border-radius:10px;padding:12px 14px;">
+              <div style="font-size:0.78rem;color:var(--sage);font-weight:600;margin-bottom:4px;">→ Your action</div>
+              <div style="font-size:0.76rem;color:var(--text2);line-height:1.5;">Choose one audience and build 3 content pillars</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NOT EVERYONE NEEDS TO BE AN INFLUENCER -->
+<div class="reveals-section">
+  <div class="reveals-inner">
+    <div class="reveals-header reveal">
+      <div class="section-label" style="justify-content:center">Your Natural Style</div>
+      <h2>Everyone does not need to become<br>an influencer. Everyone needs a <span class="gold">clear signal.</span></h2>
+      <p class="sub" style="margin:0 auto">Some people are best suited for educational posts. Some for frameworks. Some for case studies. Some for founder lessons. Some for quiet authority. Knownly helps you build around your natural style instead of forcing you into a loud online persona.</p>
+    </div>
+    <div class="reveals-grid">
+      <div class="reveal-card reveal">
+        <div class="reveal-icon">🌿</div>
+        <div class="reveal-title">Silent Expert</div>
+        <div class="reveal-line">Deep credibility through consistent insight and proof, without constant self-promotion.</div>
+      </div>
+      <div class="reveal-card reveal reveal-delay-1">
+        <div class="reveal-icon">◎</div>
+        <div class="reveal-title">Practical Authority Builder</div>
+        <div class="reveal-line">Frameworks, breakdowns and structured thinking that positions you as a trusted guide.</div>
+      </div>
+      <div class="reveal-card reveal reveal-delay-2">
+        <div class="reveal-icon">✦</div>
+        <div class="reveal-title">Trusted Educator</div>
+        <div class="reveal-line">Clear explanations and actionable lessons that build lasting trust with a specific audience.</div>
+      </div>
+      <div class="reveal-card reveal reveal-delay-3">
+        <div class="reveal-icon">⚡</div>
+        <div class="reveal-title">Strategic Opportunity Spotter</div>
+        <div class="reveal-line">Identifying trends, gaps and possibilities others miss — shared in a way that builds authority.</div>
+      </div>
+      <div class="reveal-card reveal reveal-delay-4">
+        <div class="reveal-icon">⋯</div>
+        <div class="reveal-title">Founder-Led Voice</div>
+        <div class="reveal-line">Building in public, sharing lessons from the journey and building trust through transparency.</div>
+      </div>
+      <div class="reveal-card reveal reveal-delay-5">
+        <div class="reveal-icon">→</div>
+        <div class="reveal-title">Creative Story Educator</div>
+        <div class="reveal-line">Turning experiences, metaphors and narratives into memorable, shareable lessons.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OPPORTUNITIES SECTION -->
+<div style="background:var(--bg2);padding:100px 0;max-width:100%;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 60px;">
+    <div class="reveal" style="text-align:center;margin-bottom:56px;">
+      <div class="section-label" style="justify-content:center;">What Presence Creates</div>
+      <h2>Online presence is not only <span class="gold">about followers.</span></h2>
+      <p class="sub" style="margin:0 auto;">The right presence can create trust, discovery and opportunities — depending on your path.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px;">
+      <div class="audience-card reveal">
+        <div class="audience-role"><span>Career Opportunities</span></div>
+        <div class="audience-line">For job seekers and professionals who want stronger visibility and credibility.</div>
+        <div class="audience-arrow">Start your diagnosis →</div>
+      </div>
+      <div class="audience-card reveal reveal-delay-1">
+        <div class="audience-role"><span>Client Opportunities</span></div>
+        <div class="audience-line">For freelancers, consultants and service providers who want inbound trust.</div>
+        <div class="audience-arrow">Start your diagnosis →</div>
+      </div>
+      <div class="audience-card reveal reveal-delay-2">
+        <div class="audience-role"><span>Founder Opportunities</span></div>
+        <div class="audience-line">For founders who want to build authority, partnerships and market trust.</div>
+        <div class="audience-arrow">Start your diagnosis →</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:800px;margin:0 auto;">
+      <div class="audience-card reveal">
+        <div class="audience-role"><span>Creator Opportunities</span></div>
+        <div class="audience-line">For creators, educators and coaches who want sharper content direction.</div>
+        <div class="audience-arrow">Start your diagnosis →</div>
+      </div>
+      <div class="audience-card reveal reveal-delay-1">
+        <div class="audience-role"><span>Business &amp; Brand Opportunities</span></div>
+        <div class="audience-line">For leaders who want to become more visible, authentic and trusted in their niche.</div>
+        <div class="audience-arrow">Start your diagnosis →</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PLANS PREVIEW -->
+<div style="background:var(--bg2);padding:100px 0;max-width:100%;" id="plans">
+  <div style="max-width:1200px;margin:0 auto;padding:0 60px;">
+    <div class="reveal" style="text-align:center;margin-bottom:56px;">
+      <div class="section-label" style="justify-content:center;">Plans</div>
+      <h2>Start free. Go deeper <span class="gold">when you are ready.</span></h2>
+      <p class="sub" style="margin:0 auto;">Knownly starts with a free report. Paid plans help turn your direction into profile improvement, content execution and expert-guided online presence building.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:start;">
+      <!-- Free -->
+      <div class="ea-card reveal" style="position:relative;">
+        <div style="font-family:'Sora',sans-serif;font-size:0.85rem;font-weight:700;color:var(--text);margin-bottom:4px;">Free Knownly Report</div>
+        <div style="font-family:'Sora',sans-serif;font-size:1.8rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:12px;">₹0</div>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:20px;font-size:0.78rem;color:var(--text2);">
+          <div>◉ Diagnosis</div>
+          <div>◉ Direction Report</div>
+          <div>◉ Profile Report Preview</div>
+        </div>
+        <a href="/diagnosis.html" class="btn-footer" style="display:block;text-align:center;text-decoration:none;">Start Free Diagnosis</a>
+      </div>
+      <!-- Deep Profile -->
+      <div class="ea-card reveal reveal-delay-1">
+        <div style="font-family:'Sora',sans-serif;font-size:0.85rem;font-weight:700;color:var(--text);margin-bottom:4px;">Deep Profile Review</div>
+        <div style="font-family:'Sora',sans-serif;font-size:1.8rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:12px;">₹999</div>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:20px;font-size:0.78rem;color:var(--text2);">
+          <div>◉ Deep profile review</div>
+          <div>◉ Positioning gap analysis</div>
+          <div>◉ 7-day content/action plan</div>
+        </div>
+        <a href="/pricing.html" class="btn-footer" style="display:block;text-align:center;text-decoration:none;background:var(--card-el);color:var(--text2);border:1px solid var(--border);">View Pricing</a>
+      </div>
+      <!-- 30-Day Launchpad -->
+      <div class="ea-card reveal reveal-delay-2" style="border-color:rgba(224,168,107,0.35);position:relative;">
+        <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#08110D;font-size:0.65rem;font-weight:700;font-family:'Sora',sans-serif;padding:4px 12px;border-radius:20px;white-space:nowrap;">Most Popular</div>
+        <div style="font-family:'Sora',sans-serif;font-size:0.85rem;font-weight:700;color:var(--text);margin-bottom:4px;margin-top:8px;">30-Day Launchpad</div>
+        <div style="font-family:'Sora',sans-serif;font-size:1.8rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:12px;">₹4,999</div>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:20px;font-size:0.78rem;color:var(--text2);">
+          <div>◉ 30-day content calendar</div>
+          <div>◉ AI content training</div>
+          <div>◉ 1:1 guidance call</div>
+        </div>
+        <a href="/pricing.html" class="btn-footer" style="display:block;text-align:center;text-decoration:none;">View Pricing</a>
+      </div>
+      <!-- Brand Builder -->
+      <div class="ea-card reveal reveal-delay-3">
+        <div style="font-family:'Sora',sans-serif;font-size:0.85rem;font-weight:700;color:var(--text);margin-bottom:4px;">Brand Builder</div>
+        <div style="font-family:'Sora',sans-serif;font-size:1.8rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:12px;">₹9,999<span style="font-size:1rem;">+</span></div>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:20px;font-size:0.78rem;color:var(--text2);">
+          <div>◉ Human-led profile improvement</div>
+          <div>◉ Weekly calls</div>
+          <div>◉ Branding strategy</div>
+          <div>◉ AI training</div>
+        </div>
+        <a href="/early-access.html" class="btn-footer" style="display:block;text-align:center;text-decoration:none;background:var(--card-el);color:var(--text2);border:1px solid var(--border);">Join Early Access</a>
+      </div>
+      <!-- Executive Studio -->
+      <div class="ea-card reveal reveal-delay-4">
+        <div style="font-family:'Sora',sans-serif;font-size:0.85rem;font-weight:700;color:var(--text);margin-bottom:4px;">Executive Brand Studio</div>
+        <div style="font-family:'Sora',sans-serif;font-size:1.5rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:12px;">₹25,000+<span style="font-size:0.75rem;color:var(--text2);display:block;font-weight:400;">/month</span></div>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:20px;font-size:0.78rem;color:var(--text2);">
+          <div>◉ Done-for-you presence</div>
+          <div>◉ Content strategy</div>
+          <div>◉ Niche targeting</div>
+          <div>◉ Trust-building execution</div>
+        </div>
+        <a href="/early-access.html" class="btn-footer" style="display:block;text-align:center;text-decoration:none;background:var(--card-el);color:var(--text2);border:1px solid var(--border);">Apply for Studio</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST / EARLY ACCESS -->
+<div class="trust-section" id="about">
+  <div class="trust-inner">
+    <div class="trust-header reveal">
+      <div class="section-label" style="justify-content:center">Early Access</div>
+      <h2>Some users will get <span class="gold">free human guidance.</span></h2>
+      <p class="sub" style="margin:0 auto;margin-top:8px">To improve Knownly and help early users, we may select a few people for free human review of their online presence.</p>
+    </div>
+    <div class="earlyaccess-grid">
+      <div class="ea-card reveal">
+        <div class="ea-icon-row">
+          <div class="ea-icon ea-ic1">◈</div>
+          <div class="ea-label-text">Profile feedback</div>
+        </div>
+        <div class="ea-description">A real human review of how your profile presents you and what could be improved for stronger positioning.</div>
+        <div class="ea-badge">For early users</div>
+      </div>
+      <div class="ea-card reveal reveal-delay-1">
+        <div class="ea-icon-row">
+          <div class="ea-icon ea-ic2">✦</div>
+          <div class="ea-label-text">Content direction feedback</div>
+        </div>
+        <div class="ea-description">Guidance on whether your content direction aligns with your strengths and what you want to be known for.</div>
+        <div class="ea-badge">Selected manually</div>
+      </div>
+      <div class="ea-card reveal reveal-delay-2">
+        <div class="ea-icon-row">
+          <div class="ea-icon ea-ic3">⚡</div>
+          <div class="ea-label-text">Positioning suggestions</div>
+        </div>
+        <div class="ea-description">Specific ideas for how to improve how you present yourself across your main platform or profile.</div>
+        <div class="ea-badge">Limited spots</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="reveal">
+      <p style="font-size:0.8rem;color:var(--text2);margin-bottom:20px;">Free reviews are limited and selected manually. Permission will be requested before using any feedback publicly.</p>
+      <a href="/diagnosis.html" class="btn-cta-big" style="display:inline-block;text-decoration:none;">Take the Diagnosis to Be Considered</a>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ SECTION -->
+<div style="background:var(--bg2);padding:100px 0;max-width:100%;">
+  <div style="max-width:800px;margin:0 auto;padding:0 60px;">
+    <div class="reveal" style="text-align:center;margin-bottom:56px;">
+      <div class="section-label" style="justify-content:center;">FAQ</div>
+      <h2>Common <span class="gold">questions.</span></h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="ea-card reveal" style="padding:24px 28px;">
+        <div style="font-family:'Sora',sans-serif;font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:8px;">Is Knownly a personal branding tool?</div>
+        <div style="font-size:0.85rem;color:var(--text2);line-height:1.65;">Yes, but it starts before typical personal branding. Knownly first helps you understand what you should be known for, then guides your profile, content and visibility direction.</div>
+      </div>
+      <div class="ea-card reveal reveal-delay-1" style="padding:24px 28px;">
+        <div style="font-family:'Sora',sans-serif;font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:8px;">Is the free report actually useful?</div>
+        <div style="font-size:0.85rem;color:var(--text2);line-height:1.65;">The free report is designed to give real clarity: your direction, strengths, blocker, content path and next step. Deeper paid plans are optional.</div>
+      </div>
+      <div class="ea-card reveal reveal-delay-2" style="padding:24px 28px;">
+        <div style="font-family:'Sora',sans-serif;font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:8px;">Does Knownly guarantee followers, clients, jobs or income?</div>
+        <div style="font-size:0.85rem;color:var(--text2);line-height:1.65;">No. Knownly gives clarity, positioning guidance and action direction. It does not guarantee followers, clients, jobs, income or viral growth.</div>
+      </div>
+      <div class="ea-card reveal reveal-delay-3" style="padding:24px 28px;">
+        <div style="font-family:'Sora',sans-serif;font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:8px;">Does Knownly scan private accounts?</div>
+        <div style="font-size:0.85rem;color:var(--text2);line-height:1.65;">No. Knownly only uses information you provide and public profile links you choose to share.</div>
+      </div>
+      <div class="ea-card reveal reveal-delay-4" style="padding:24px 28px;">
+        <div style="font-family:'Sora',sans-serif;font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:8px;">Who should use Knownly first?</div>
+        <div style="font-size:0.85rem;color:var(--text2);line-height:1.65;">Anyone who wants a stronger online presence but feels unclear about their direction, content, profile or positioning.</div>
+      </div>
+      <div class="ea-card reveal reveal-delay-5" style="padding:24px 28px;">
+        <div style="font-family:'Sora',sans-serif;font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:8px;">What should I do first?</div>
+        <div style="font-size:0.85rem;color:var(--text2);line-height:1.65;">Start with the free Knownly Diagnosis. It will give you your first direction report.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-box reveal">
+      <div class="section-label" style="justify-content:center;position:relative;z-index:1">Your Direction Awaits</div>
+      <h2 style="position:relative;z-index:1">Find the direction people can <span class="gold">remember you for.</span></h2>
+      <p class="sub" style="margin:0 auto 36px;position:relative;z-index:1">Start with a free Knownly Diagnosis and discover what you should be known for, what content fits you and how to begin building your online presence with clarity.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;">
+        <a href="/diagnosis.html" class="btn-cta-big" style="display:inline-block;text-decoration:none;">Start Free Diagnosis</a>
+        <a href="/pricing.html" class="btn-outline-hero" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none;padding:15px 28px;">View Pricing</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <a href="#" class="logo" style="margin-bottom:0">
+        <svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" stroke="rgba(167,192,171,0.25)" stroke-width="1" stroke-dasharray="3 5"/>
+          <circle cx="16" cy="16" r="9.5" stroke="rgba(224,168,107,0.35)" stroke-width="1"/>
+          <circle cx="16" cy="16" r="7" fill="rgba(224,168,107,0.08)"/>
+          <ellipse cx="16" cy="12.8" rx="2.8" ry="3.2" fill="#A7C0AB" opacity="0.9"/>
+          <path d="M11.5 22.5 C11.5 18.8 13.4 17 16 17 C18.6 17 20.5 18.8 20.5 22.5" fill="#A7C0AB" opacity="0.75"/>
+          <circle cx="16" cy="2.5" r="2" fill="#E0A86B" opacity="0.9"/>
+          <circle cx="28.5" cy="19" r="1.4" fill="#A7C0AB" opacity="0.7"/>
+          <circle cx="4.5" cy="21" r="1.2" fill="rgba(167,192,171,0.5)"/>
+          <path d="M12.5 9.2 Q16 7.2 19.5 9.2" stroke="#E0A86B" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.7"/>
+        </svg>
+        <span class="logo-wordmark"><span class="known">Known</span><span class="ly">ly</span></span>
+      </a>
+      <p class="footer-brand-text">Personal Intelligence for Online Presence. WhatAmIKnownFor.com</p>
+      <div class="social-icons">
+        <a class="social-icon" href="https://twitter.com/knownlyapp" target="_blank" rel="noopener" title="Twitter">𝕏</a>
+        <a class="social-icon" href="https://linkedin.com/company/knownly" target="_blank" rel="noopener" title="LinkedIn">in</a>
+        <a class="social-icon" href="https://instagram.com/knownlyapp" target="_blank" rel="noopener" title="Instagram">◈</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="#hiw">How It Works</a></li>
+        <li><a href="#report-preview">Report</a></li>
+        <li><a href="#audience">Who It's For</a></li>
+        <li><a href="#plans">Plans</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/early-access.html">Early Access</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms of Use</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/login.html">Login</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-cta-box">
+        <h5>Ready to discover your direction?</h5>
+        <p>Start with the free Knownly Diagnosis.</p>
+        <a href="/diagnosis.html" class="btn-footer">Start Free Diagnosis</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Knownly. All rights reserved.</p>
+    <p><a href="https://WhatAmIKnownFor.com">WhatAmIKnownFor.com</a></p>
+  </div>
+</footer>
+
+<script>
+// Scroll progress
+const progressBar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  progressBar.style.width = (scrollTop / scrollHeight * 100) + '%';
+});
+
+// Reveal on scroll — add pre-reveal only if JS runs, then remove on intersect
+const reveals = document.querySelectorAll('.reveal');
+reveals.forEach(el => el.classList.add('pre-reveal'));
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.remove('pre-reveal');
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0, rootMargin: '0px 0px 60px 0px' });
+reveals.forEach(el => revealObserver.observe(el));
+
+// Safety fallback — ensure everything visible after 600ms
+setTimeout(() => {
+  document.querySelectorAll('.reveal').forEach(el => {
+    el.classList.remove('pre-reveal');
+    el.classList.add('visible');
+  });
+}, 600);
+
+// Hero elements visible immediately
+document.querySelectorAll('.hero .reveal, .hero-left, .hero-center, .hero-right').forEach(el => {
+  el.classList.add('visible');
+});
+
+// ── TYPEWRITER: cycle "known for" phrases ──
+(function() {
+  const goldSpan = document.querySelector('h1 .gold');
+  if (!goldSpan) return;
+  const phrases = ['known for.', 'remembered as.', 'trusted with.', 'known for.'];
+  let current = 0;
+  let charIndex = 0;
+  let deleting = false;
+  let pauseTimer = null;
+
+  function type() {
+    const phrase = phrases[current];
+    if (!deleting) {
+      charIndex++;
+      goldSpan.textContent = phrase.slice(0, charIndex);
+      if (charIndex === phrase.length) {
+        deleting = false;
+        pauseTimer = setTimeout(() => { deleting = true; tick(); }, 2200);
+        return;
+      }
+    } else {
+      charIndex--;
+      goldSpan.textContent = phrase.slice(0, charIndex);
+      if (charIndex === 0) {
+        deleting = false;
+        current = (current + 1) % phrases.length;
+        // skip duplicate 'known for' at end
+        setTimeout(tick, 180);
+        return;
+      }
+    }
+    tick();
+  }
+
+  function tick() {
+    clearTimeout(pauseTimer);
+    const speed = deleting ? 42 : 68;
+    setTimeout(type, speed);
+  }
+
+  // Start after hero animation settles
+  setTimeout(() => { charIndex = phrases[0].length; setTimeout(tick, 3200); }, 900);
+})();
+
+// ── PILL SEQUENTIAL REVEAL via IntersectionObserver ──
+(function() {
+  const pillsRow = document.querySelector('.rr-pills');
+  if (!pillsRow) return;
+  const stripObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        pillsRow.classList.add('rr-strip-ready');
+        stripObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+  stripObserver.observe(pillsRow);
+})();
+
+// ── HIGHLIGHT SCAN: key phrases in hero-sub ──
+(function() {
+  const sub = document.querySelector('.hero-sub');
+  if (!sub) return;
+  const highlights = ['personal direction report', 'online presence', 'trust'];
+  let original = sub.innerHTML;
+  highlights.forEach((phrase, i) => {
+    original = original.replace(
+      phrase,
+      `<mark class="hl-phrase" style="animation-delay:${1.2 + i * 1.4}s">${phrase}</mark>`
+    );
+  });
+  sub.innerHTML = original;
+  // Trigger hero-sub highlight after entry animation settles
+  setTimeout(() => {
+    const sub = document.querySelector('.hero-sub');
+    if (sub) sub.classList.add('hero-sub-animated');
+  }, 1100);
+</script>
+</body>
+</html>

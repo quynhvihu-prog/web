@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Brand Quiz — Discover Your Knownly Archetype</title>
+<meta name="description" content="Take the personal brand quiz that shows what you should be known for. Discover your Knownly Archetype, content direction and best-fit platform in minutes.">
+<link rel="canonical" href="https://whatamiknownfor.com/personal-brand-quiz.html">
+<meta property="og:title" content="Personal Brand Quiz — Discover Your Knownly Archetype">
+<meta property="og:description" content="Take the personal brand quiz that shows what you should be known for. Discover your Knownly Archetype, content direction and best-fit platform in minutes.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://whatamiknownfor.com/personal-brand-quiz.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Personal Brand Quiz — Discover Your Knownly Archetype">
+<meta name="twitter:description" content="Take the personal brand quiz that shows what you should be known for. Discover your Knownly Archetype, content direction and best-fit platform in minutes.">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Personal Brand Quiz — Discover Your Knownly Archetype",
+  "description": "Take the personal brand quiz that shows what you should be known for. Discover your Knownly Archetype, content direction and best-fit platform in minutes.",
+  "url": "https://whatamiknownfor.com/personal-brand-quiz.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Knownly",
+    "url": "https://whatamiknownfor.com"
+  }
+}
+</script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#08110D;--bg2:#0D1713;--card:#14201A;--card2:#182620;
+  --text:#F7F2E8;--text2:#B9C3B7;
+  --cta:#8EA896;--cta-h:#7C9885;
+  --gold:#E0A86B;--gold-l:rgba(224,168,107,.12);
+  --sage:#8EA896;--border:#314238;--border2:rgba(49,66,56,.5);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* PROGRESS */
+#progress{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--gold),var(--sage));z-index:9999;transition:width .1s linear;pointer-events:none}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:800;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 56px;background:rgba(8,17,13,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border2)}
+.logo{font-family:'Sora',sans-serif;font-size:1.15rem;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-.02em}
+.logo span{color:var(--gold)}
+nav{display:flex;gap:24px;align-items:center}
+nav a{font-size:.82rem;color:var(--text2);text-decoration:none;font-weight:500;transition:color .2s}
+nav a:hover{color:var(--text)}
+.header-right{display:flex;align-items:center;gap:14px}
+.btn-login{font-size:.82rem;color:var(--text2);text-decoration:none;font-weight:500;transition:color .2s}
+.btn-login:hover{color:var(--text)}
+.btn-nav{background:var(--cta);color:#08110D;padding:8px 18px;border-radius:8px;font-size:.82rem;font-weight:700;font-family:'Sora',sans-serif;text-decoration:none;transition:background .2s;white-space:nowrap;display:inline-block}
+.btn-nav:hover{background:var(--cta-h)}
+
+/* UTILITIES */
+.section-label{display:flex;align-items:center;gap:8px;font-size:.68rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.section-label::before{content:'';width:18px;height:1px;background:var(--gold);opacity:.5}
+.section-label.center{justify-content:center}
+.section-label.center::before{display:none}
+h1,h2,h3{font-family:'Sora',sans-serif}
+h1{font-size:clamp(2rem,4.2vw,3.1rem);font-weight:800;line-height:1.1;letter-spacing:-.03em}
+h2{font-size:clamp(1.45rem,3vw,2.1rem);font-weight:700;line-height:1.22;letter-spacing:-.025em}
+h3{font-size:.96rem;font-weight:700;line-height:1.3}
+.gold{color:var(--gold)}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0 56px}
+.btn-primary{background:var(--cta);color:#08110D;padding:14px 28px;border-radius:10px;font-size:.92rem;font-weight:700;font-family:'Sora',sans-serif;text-decoration:none;display:inline-block;transition:background .2s,transform .2s,box-shadow .2s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--cta-h);transform:translateY(-2px);box-shadow:0 8px 28px rgba(142,168,150,.22)}
+.btn-outline{background:none;border:1px solid var(--border);color:var(--text2);padding:13px 22px;border-radius:10px;font-size:.88rem;font-family:'Inter',sans-serif;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:border-color .2s,color .2s;cursor:pointer}
+.btn-outline:hover{border-color:var(--sage);color:var(--text)}
+
+/* REVEAL */
+.reveal{opacity:1;transform:translateY(0);transition:opacity .65s ease,transform .65s ease}
+.reveal.pre{opacity:0;transform:translateY(24px)}
+
+/* ========= HERO ========= */
+.hero{padding:128px 56px 84px;max-width:1260px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:var(--gold-l);border:1px solid rgba(224,168,107,.22);padding:5px 14px;border-radius:30px;margin-bottom:26px}
+.hero h1{margin-bottom:16px}
+.hero-gold-line{font-family:'Sora',sans-serif;font-size:1rem;font-weight:600;color:var(--gold);margin-bottom:20px}
+.hero-sub{font-size:.93rem;color:var(--text2);line-height:1.78;margin-bottom:32px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.hero-note{font-size:.76rem;color:var(--text2);opacity:.5}
+
+/* QUIZ PREVIEW CARD */
+.quiz-preview{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:30px;position:relative;overflow:hidden}
+.quiz-preview::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(224,168,107,.3),transparent)}
+.qp-glow{position:absolute;top:-20px;right:-20px;width:160px;height:160px;background:radial-gradient(ellipse,rgba(224,168,107,.06) 0%,transparent 70%);pointer-events:none}
+.qp-label{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.qp-steps{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.qp-step{background:var(--card2);border:1px solid var(--border2);border-radius:9px;padding:11px 14px;display:flex;align-items:center;gap:11px}
+.qp-step-num{width:22px;height:22px;border-radius:6px;background:rgba(142,168,150,.1);border:1px solid rgba(142,168,150,.18);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:.65rem;font-weight:800;color:var(--sage);flex-shrink:0}
+.qp-step-text{font-size:.78rem;color:var(--text);font-weight:500}
+.qp-step-sub{font-size:.67rem;color:var(--text2);margin-top:1px}
+.qp-divider{height:1px;background:var(--border2);margin:18px 0}
+.qp-result-label{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text2);margin-bottom:10px}
+.qp-result-item{background:rgba(224,168,107,.05);border:1px solid rgba(224,168,107,.18);border-radius:9px;padding:10px 14px;display:flex;align-items:center;gap:10px;margin-bottom:7px}
+.qp-result-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.qp-result-text{font-size:.76rem;color:var(--text);font-family:'Sora',sans-serif;font-weight:600}
+
+/* ========= SECTIONS ========= */
+.section-pad{padding:90px 0}
+.section-pad.bg2{background:var(--bg2)}
+.section-inner{max-width:1200px;margin:0 auto;padding:0 56px}
+.section-header{max-width:680px;margin-bottom:52px}
+.section-header.center{text-align:center;max-width:100%;margin-left:auto;margin-right:auto}
+.section-header h2{margin-bottom:14px}
+.section-header p{font-size:.9rem;color:var(--text2);line-height:1.78}
+
+/* ========= GENERIC CARDS ========= */
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cards-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cards-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card-base{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px 22px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s}
+.card-base::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(49,66,56,.8),transparent)}
+.card-base:hover{transform:translateY(-4px);border-color:rgba(142,168,150,.28)}
+.card-icon{font-size:1.2rem;margin-bottom:12px}
+.card-base h3{margin-bottom:8px}
+.card-base p{font-size:.8rem;color:var(--text2);line-height:1.65}
+.card-num{font-family:'Sora',sans-serif;font-size:1.7rem;font-weight:800;color:rgba(224,168,107,.12);margin-bottom:10px;line-height:1}
+
+/* ========= WHY GENERIC ========= */
+.complaint-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.complaint-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px 22px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s}
+.complaint-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(49,66,56,.8),transparent)}
+.complaint-card:hover{transform:translateY(-4px)}
+.cc-tag{font-size:.64rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(224,168,107,.65);margin-bottom:10px}
+.complaint-card h3{margin-bottom:8px}
+.complaint-card p{font-size:.8rem;color:var(--text2);line-height:1.65}
+.cc-vs{font-size:.72rem;color:var(--sage);margin-top:12px;font-weight:600;border-top:1px solid var(--border2);padding-top:10px}
+
+/* ========= ARCHETYPE SECTION ========= */
+.arch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.arch-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px 22px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s;cursor:default}
+.arch-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(49,66,56,.8),transparent)}
+.arch-card:hover{transform:translateY(-4px);border-color:rgba(224,168,107,.25)}
+.arch-badge{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:20px;display:inline-block;margin-bottom:14px;color:var(--gold);background:var(--gold-l);border:1px solid rgba(224,168,107,.22)}
+.arch-card h3{margin-bottom:10px;font-size:.92rem}
+.arch-row{margin-bottom:8px}
+.arch-row-label{font-size:.62rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--sage);margin-bottom:4px}
+.arch-row p{font-size:.77rem;color:var(--text2);line-height:1.55}
+.arch-signal{margin-top:12px;padding-top:10px;border-top:1px solid var(--border2);font-size:.74rem;color:var(--gold);font-weight:500}
+
+/* ========= QUIZ INTERACTIVE ========= */
+.quiz-wrap{max-width:760px;margin:0 auto}
+.quiz-box{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;position:relative}
+.quiz-box::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(224,168,107,.3),transparent)}
+.quiz-header{padding:28px 32px 20px;border-bottom:1px solid var(--border2)}
+.quiz-progress-bar{height:3px;background:var(--border);border-radius:2px;margin-bottom:16px;overflow:hidden}
+.quiz-progress-fill{height:100%;background:linear-gradient(90deg,var(--sage),var(--gold));border-radius:2px;transition:width .35s ease}
+.quiz-step-label{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text2)}
+.quiz-body{padding:28px 32px}
+.quiz-q{font-family:'Sora',sans-serif;font-size:1.02rem;font-weight:700;color:var(--text);margin-bottom:24px;line-height:1.4}
+.quiz-options{display:flex;flex-direction:column;gap:10px}
+.quiz-opt{background:var(--card2);border:1px solid var(--border);border-radius:11px;padding:14px 18px;cursor:pointer;display:flex;align-items:center;gap:12px;transition:border-color .2s,background .2s;text-align:left;width:100%}
+.quiz-opt:hover{border-color:rgba(142,168,150,.4);background:rgba(142,168,150,.05)}
+.quiz-opt.selected{border-color:var(--sage);background:rgba(142,168,150,.08)}
+.quiz-opt-letter{width:26px;height:26px;border-radius:7px;background:rgba(142,168,150,.08);border:1px solid rgba(142,168,150,.18);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:.72rem;font-weight:800;color:var(--sage);flex-shrink:0;transition:background .2s,border-color .2s}
+.quiz-opt.selected .quiz-opt-letter{background:var(--sage);border-color:var(--sage);color:#08110D}
+.quiz-opt-text{font-size:.85rem;color:var(--text2);line-height:1.45;transition:color .2s}
+.quiz-opt.selected .quiz-opt-text{color:var(--text)}
+.quiz-footer{padding:20px 32px 28px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.quiz-back{background:none;border:1px solid var(--border);color:var(--text2);padding:10px 18px;border-radius:9px;font-size:.82rem;cursor:pointer;font-family:'Inter',sans-serif;transition:border-color .2s,color .2s}
+.quiz-back:hover{border-color:var(--sage);color:var(--text)}
+.quiz-back:disabled{opacity:.3;cursor:default}
+.quiz-next{background:var(--cta);color:#08110D;border:none;padding:11px 24px;border-radius:9px;font-size:.85rem;font-weight:700;font-family:'Sora',sans-serif;cursor:pointer;transition:background .2s,transform .15s}
+.quiz-next:hover{background:var(--cta-h);transform:translateY(-1px)}
+.quiz-next:disabled{opacity:.4;cursor:default;transform:none}
+
+/* RESULT STATE */
+.quiz-result{padding:36px 32px;text-align:center;display:none}
+.quiz-result.show{display:block}
+.qr-archetype-badge{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);background:var(--gold-l);border:1px solid rgba(224,168,107,.25);padding:6px 16px;border-radius:30px;margin-bottom:18px}
+.qr-title{font-family:'Sora',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);margin-bottom:10px}
+.qr-desc{font-size:.88rem;color:var(--text2);line-height:1.72;margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto}
+.qr-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px}
+.qr-tag{font-size:.72rem;font-weight:600;padding:5px 12px;border-radius:20px;background:rgba(142,168,150,.08);border:1px solid rgba(142,168,150,.18);color:var(--sage)}
+.qr-note{font-size:.78rem;color:var(--text2);opacity:.55;margin-top:16px}
+
+/* ========= WHAT ARCHETYPE REVEALS ========= */
+.reveals-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.rev-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 18px;transition:transform .2s,border-color .2s}
+.rev-card:hover{transform:translateY(-3px);border-color:rgba(142,168,150,.3)}
+.rev-icon{font-size:1.1rem;margin-bottom:10px}
+.rev-card h3{font-size:.83rem;margin-bottom:5px}
+.rev-card p{font-size:.74rem;color:var(--text2);line-height:1.55}
+
+/* ========= COMPARISON ========= */
+.compare-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:860px;margin:0 auto}
+.compare-col{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px 26px;position:relative;overflow:hidden}
+.compare-col::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(49,66,56,.8),transparent)}
+.compare-col.better::before{background:linear-gradient(90deg,transparent,rgba(224,168,107,.3),transparent)}
+.compare-col.better{border-color:rgba(224,168,107,.25)}
+.col-tag{font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:14px;display:inline-block}
+.tag-bad{color:rgba(224,100,100,.8);background:rgba(224,100,100,.07);border:1px solid rgba(224,100,100,.15)}
+.tag-good{color:var(--gold);background:var(--gold-l);border:1px solid rgba(224,168,107,.22)}
+.compare-col h3{margin-bottom:14px}
+.compare-list{list-style:none;display:flex;flex-direction:column;gap:9px}
+.compare-list li{font-size:.8rem;color:var(--text2);padding-left:16px;position:relative;line-height:1.5}
+.compare-list li::before{position:absolute;left:0;font-size:.72rem}
+.bad-list li::before{content:'✗';color:rgba(224,100,100,.6)}
+.good-list li::before{content:'→';color:var(--sage)}
+
+/* ========= FINAL CTA ========= */
+.final-cta{padding:110px 56px;text-align:center;background:var(--bg2);position:relative;overflow:hidden}
+.final-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:560px;height:280px;background:radial-gradient(ellipse,rgba(224,168,107,.055) 0%,transparent 70%);pointer-events:none}
+.final-inner{max-width:580px;margin:0 auto;position:relative;z-index:1}
+.final-inner h2{margin-bottom:14px}
+.final-inner p{font-size:.9rem;color:var(--text2);margin-bottom:34px;line-height:1.75}
+
+/* ========= FAQ ========= */
+.faq-inner{max-width:780px;margin:0 auto;padding:0 56px}
+.faq-header{margin-bottom:40px}
+.faq-list{display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid var(--border2)}
+.faq-btn{width:100%;text-align:left;background:none;border:none;color:var(--text);padding:20px 0;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:.87rem;font-weight:600;font-family:'Sora',sans-serif;transition:color .2s}
+.faq-btn:hover{color:var(--gold)}
+.faq-icon{width:22px;height:22px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0;color:var(--text2);transition:transform .3s,background .2s}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--card2)}
+.faq-answer{font-size:.84rem;color:var(--text2);line-height:1.72;padding-bottom:18px;display:none}
+.faq-item.open .faq-answer{display:block}
+
+/* ========= FOOTER ========= */
+footer{padding:44px 56px 28px;border-top:1px solid var(--border2);background:var(--bg)}
+.footer-top{max-width:1200px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:24px;margin-bottom:24px;border-bottom:1px solid var(--border2)}
+.footer-brand p{font-size:.76rem;color:var(--text2);margin-top:5px}
+.footer-brand .tagline{font-size:.7rem;color:rgba(185,195,183,.4);margin-top:3px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;align-items:center}
+.footer-links a{font-size:.78rem;color:var(--text2);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--text)}
+.footer-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer-bottom p,.footer-bottom a{font-size:.71rem;color:rgba(185,195,183,.38);text-decoration:none}
+.footer-bottom a:hover{color:var(--text2)}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .arch-grid{grid-template-columns:repeat(2,1fr)}
+  .reveals-grid{grid-template-columns:repeat(2,1fr)}
+  .cards-4{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;gap:48px;text-align:center;padding:110px 40px 72px}
+  .hero-ctas{justify-content:center}
+}
+@media(max-width:960px){
+  header{padding:0 24px}
+  nav{display:none}
+  .section-inner,.faq-inner{padding-left:24px;padding-right:24px}
+  .hero{padding-left:24px;padding-right:24px}
+  .final-cta{padding-left:24px;padding-right:24px}
+  footer{padding:40px 24px 24px}
+  .divider{margin:0 24px}
+  .complaint-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  .compare-wrap{grid-template-columns:1fr}
+  .quiz-header,.quiz-body,.quiz-footer,.quiz-result{padding-left:20px;padding-right:20px}
+}
+@media(max-width:640px){
+  .arch-grid,.complaint-grid,.cards-3,.cards-4,.reveals-grid{grid-template-columns:1fr}
+  .hero{padding:100px 20px 60px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal.pre{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<header>
+  <a href="/" class="logo">Known<span>ly</span></a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/diagnosis.html">Diagnosis</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/early-access.html">Early Access</a>
+    <a href="/about.html">About</a>
+  </nav>
+  <div class="header-right">
+    <a href="/login.html" class="btn-login">Login</a>
+    <a href="/diagnosis.html" class="btn-nav">Start Free Diagnosis</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section style="background:var(--bg)">
+  <div class="hero">
+    <div class="reveal">
+      <div class="hero-badge">Free Personal Brand Quiz</div>
+      <h1>Take the personal brand quiz that shows what you should be <span class="gold">known for.</span></h1>
+      <p class="hero-gold-line">Discover your Knownly Archetype, content direction and best-fit platform.</p>
+      <p class="hero-sub">Most personal brand quizzes give you a generic label. Knownly's quiz looks at your stage, strengths, interests and goals to reveal a direction that is actually yours — one you can start building around today.</p>
+      <div class="hero-ctas">
+        <button class="btn-primary" onclick="document.getElementById('quiz-section').scrollIntoView({behavior:'smooth'})">Take the Quiz Now</button>
+        <a href="/diagnosis.html" class="btn-outline">Full Free Diagnosis →</a>
+      </div>
+      <p class="hero-note">Takes about 2 minutes. No login required.</p>
+    </div>
+    <div class="quiz-preview reveal" style="transition-delay:.12s">
+      <div class="qp-glow"></div>
+      <div class="qp-label">Quiz Preview — What you will find out</div>
+      <div class="qp-steps">
+        <div class="qp-step">
+          <div class="qp-step-num">Q1</div>
+          <div><div class="qp-step-text">Where are you right now?</div><div class="qp-step-sub">Your current stage and context</div></div>
+        </div>
+        <div class="qp-step">
+          <div class="qp-step-num">Q2</div>
+          <div><div class="qp-step-text">What comes naturally to you?</div><div class="qp-step-sub">Your hidden strengths</div></div>
+        </div>
+        <div class="qp-step">
+          <div class="qp-step-num">Q3</div>
+          <div><div class="qp-step-text">How do you communicate?</div><div class="qp-step-sub">Your natural content style</div></div>
+        </div>
+        <div class="qp-step">
+          <div class="qp-step-num">Q4</div>
+          <div><div class="qp-step-text">What opportunities do you want?</div><div class="qp-step-sub">Your goal and direction</div></div>
+        </div>
+        <div class="qp-step">
+          <div class="qp-step-num">Q5</div>
+          <div><div class="qp-step-text">What is holding you back?</div><div class="qp-step-sub">Your current blocker</div></div>
+        </div>
+      </div>
+      <div class="qp-divider"></div>
+      <div class="qp-result-label">Your results include</div>
+      <div class="qp-result-item">
+        <div class="qp-result-dot"></div>
+        <div class="qp-result-text">Your Knownly Archetype</div>
+      </div>
+      <div class="qp-result-item">
+        <div class="qp-result-dot"></div>
+        <div class="qp-result-text">What you should be known for</div>
+      </div>
+      <div class="qp-result-item">
+        <div class="qp-result-dot"></div>
+        <div class="qp-result-text">Your best-fit content direction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHY GENERIC ADVICE FAILS -->
+<section class="section-pad bg2">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">The Problem</div>
+      <h2>Why most personal branding advice <span class="gold">feels generic.</span></h2>
+      <p style="margin-top:14px">Most advice tells everyone to "post consistently," "find your niche" or "build a personal brand." But it does not account for who you actually are — your natural style, your current situation and what kind of presence fits you.</p>
+    </div>
+    <div class="complaint-grid">
+      <div class="complaint-card reveal">
+        <div class="cc-tag">The problem</div>
+        <h3>One-size advice ignores your identity</h3>
+        <p>Advice like "post three times a week" works for some people and burns out others. Your style, energy and strengths matter.</p>
+        <div class="cc-vs">Knownly → starts with who you are, not a template</div>
+      </div>
+      <div class="complaint-card reveal" style="transition-delay:.1s">
+        <div class="cc-tag">The problem</div>
+        <h3>Niche-first thinking skips the foundation</h3>
+        <p>Picking a niche before understanding your signal often leads to building around the wrong thing for too long.</p>
+        <div class="cc-vs">Knownly → your identity comes before your niche</div>
+      </div>
+      <div class="complaint-card reveal" style="transition-delay:.2s">
+        <div class="cc-tag">The problem</div>
+        <h3>Generic quizzes give generic labels</h3>
+        <p>"You are a visionary!" tells you nothing about what to create, where to show up or how to position yourself online.</p>
+        <div class="cc-vs">Knownly → gives you a direction, not just a label</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- INTERACTIVE QUIZ -->
+<section class="section-pad" id="quiz-section">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:40px" class="reveal">
+      <div class="section-label center">Knownly Direction Quiz</div>
+      <h2>Answer 5 questions. Discover your <span class="gold">direction archetype.</span></h2>
+      <p style="margin-top:10px;font-size:.88rem;color:var(--text2);max-width:520px;margin-left:auto;margin-right:auto">This is a preview quiz. For your full personalized report — including content pillars, platform recommendation and 7-day action plan — take the complete free Knownly Diagnosis.</p>
+    </div>
+    <div class="quiz-wrap reveal">
+      <div class="quiz-box" id="quiz-box">
+        <div class="quiz-header">
+          <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-fill" style="width:20%"></div></div>
+          <div class="quiz-step-label" id="quiz-step-label">Question 1 of 5</div>
+        </div>
+        <div class="quiz-body" id="quiz-body">
+          <div class="quiz-q" id="quiz-q">Where are you right now professionally or creatively?</div>
+          <div class="quiz-options" id="quiz-opts"></div>
+        </div>
+        <div class="quiz-footer" id="quiz-footer">
+          <button class="quiz-back" id="quiz-back" onclick="quizBack()" disabled>← Back</button>
+          <button class="quiz-next" id="quiz-next" onclick="quizNext()" disabled>Next →</button>
+        </div>
+        <div class="quiz-result" id="quiz-result">
+          <div class="qr-archetype-badge">Your Knownly Archetype</div>
+          <div class="qr-title" id="qr-title"></div>
+          <div class="qr-desc" id="qr-desc"></div>
+          <div class="qr-tags" id="qr-tags"></div>
+          <a href="/diagnosis.html" class="btn-primary" style="font-size:.9rem">Get My Full Direction Report →</a>
+          <p class="qr-note">This is a preview. Your full free Knownly report includes content pillars, platform fit, blocker analysis and a 7-day action plan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHAT YOUR ARCHETYPE REVEALS -->
+<section class="section-pad bg2">
+  <div class="section-inner">
+    <div class="section-header center reveal" style="margin-bottom:48px">
+      <div class="section-label center">What Your Archetype Reveals</div>
+      <h2>Your Knownly Archetype is more than a label. <span class="gold">It is a direction.</span></h2>
+      <p style="margin-top:10px">Each archetype comes with a content strategy, platform fit, growth path and a clear signal you can build your online presence around.</p>
+    </div>
+    <div class="reveals-grid">
+      <div class="rev-card reveal">
+        <div class="rev-icon">◈</div>
+        <h3>Your public signal</h3>
+        <p>The one thing people should remember you for, based on your strengths and style.</p>
+      </div>
+      <div class="rev-card reveal" style="transition-delay:.08s">
+        <div class="rev-icon">📝</div>
+        <h3>Content direction</h3>
+        <p>The topics, formats and posting angles that fit your natural communication style.</p>
+      </div>
+      <div class="rev-card reveal" style="transition-delay:.16s">
+        <div class="rev-icon">📱</div>
+        <h3>Best-fit platform</h3>
+        <p>Where your archetype performs best — LinkedIn, X, YouTube, newsletters or elsewhere.</p>
+      </div>
+      <div class="rev-card reveal" style="transition-delay:.24s">
+        <div class="rev-icon">🔓</div>
+        <h3>Your current blocker</h3>
+        <p>The specific gap between where you are and where you want your presence to be.</p>
+      </div>
+      <div class="rev-card reveal" style="transition-delay:.32s">
+        <div class="rev-icon">📈</div>
+        <h3>Opportunity path</h3>
+        <p>The type of visibility, trust and opportunities your direction can attract over time.</p>
+      </div>
+      <div class="rev-card reveal" style="transition-delay:.4s">
+        <div class="rev-icon">→</div>
+        <h3>Next practical step</h3>
+        <p>One clear, immediate action you can take to start moving in the right direction.</p>
+      </div>
+      <div class="rev-card reveal" style="transition-delay:.48s">
+        <div class="rev-icon">🧱</div>
+        <h3>Content pillars</h3>
+        <p>The 3–4 core themes your presence should consistently return to for trust and recognition.</p>
+      </div>
+      <div class="rev-card reveal" style="transition-delay:.56s;border-color:rgba(224,168,107,.22)">
+        <div class="rev-icon" style="color:var(--gold)">✦</div>
+        <h3 style="color:var(--gold)">7-day action plan</h3>
+        <p>A day-by-day plan to start building your online presence in the first week.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:44px" class="reveal">
+      <a href="/diagnosis.html" class="btn-primary">Get Full Report Free</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ARCHETYPES OVERVIEW -->
+<section class="section-pad">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Knownly Archetypes</div>
+      <h2>Which of these feels closest <span class="gold">to you?</span></h2>
+      <p style="margin-top:14px">Knownly identifies six direction archetypes. Each has a different public signal, content style and opportunity path. Your quiz result will point you to one of these — and your full diagnosis will sharpen it further.</p>
+    </div>
+    <div class="arch-grid">
+      <div class="arch-card reveal">
+        <div class="arch-badge">Archetype 01</div>
+        <h3>Trusted Educator</h3>
+        <div class="arch-row">
+          <div class="arch-row-label">Core signal</div>
+          <p>Clarity and explanation — making complex things understandable for a specific audience.</p>
+        </div>
+        <div class="arch-row">
+          <div class="arch-row-label">Best for</div>
+          <p>Professionals in knowledge-heavy fields: tech, finance, health, law, science, education.</p>
+        </div>
+        <div class="arch-signal">→ Creates: guides, breakdowns, myth-busting, explainers</div>
+      </div>
+      <div class="arch-card reveal" style="transition-delay:.08s">
+        <div class="arch-badge">Archetype 02</div>
+        <h3>Practical Authority Builder</h3>
+        <div class="arch-row">
+          <div class="arch-row-label">Core signal</div>
+          <p>Depth and specificity — being the most credible voice in a well-defined niche or industry.</p>
+        </div>
+        <div class="arch-row">
+          <div class="arch-row-label">Best for</div>
+          <p>Consultants, senior professionals, practitioners and specialists with real work experience.</p>
+        </div>
+        <div class="arch-signal">→ Creates: opinions, frameworks, niche observations, case insights</div>
+      </div>
+      <div class="arch-card reveal" style="transition-delay:.16s">
+        <div class="arch-badge">Archetype 03</div>
+        <h3>Silent Expert</h3>
+        <div class="arch-row">
+          <div class="arch-row-label">Core signal</div>
+          <p>Trust through selectivity — deep expertise expressed quietly and without noise.</p>
+        </div>
+        <div class="arch-row">
+          <div class="arch-row-label">Best for</div>
+          <p>Introverted experts, researchers, advisors and those who prefer quality over frequency.</p>
+        </div>
+        <div class="arch-signal">→ Creates: long-form, curated insights, selective thought leadership</div>
+      </div>
+      <div class="arch-card reveal" style="transition-delay:.24s">
+        <div class="arch-badge">Archetype 04</div>
+        <h3>Strategic Opportunity Spotter</h3>
+        <div class="arch-row">
+          <div class="arch-row-label">Core signal</div>
+          <p>Foresight — seeing patterns and market shifts before others and sharing that lens clearly.</p>
+        </div>
+        <div class="arch-row">
+          <div class="arch-row-label">Best for</div>
+          <p>Analysts, strategists, investors, business thinkers and trend-aware professionals.</p>
+        </div>
+        <div class="arch-signal">→ Creates: trend pieces, predictions, market observations</div>
+      </div>
+      <div class="arch-card reveal" style="transition-delay:.32s">
+        <div class="arch-badge">Archetype 05</div>
+        <h3>Founder-Led Voice</h3>
+        <div class="arch-row">
+          <div class="arch-row-label">Core signal</div>
+          <p>Authentic perspective — a founder or builder sharing what they know from building something real.</p>
+        </div>
+        <div class="arch-row">
+          <div class="arch-row-label">Best for</div>
+          <p>Founders, entrepreneurs, early-stage builders and company leaders.</p>
+        </div>
+        <div class="arch-signal">→ Creates: founder lessons, product stories, build-in-public content</div>
+      </div>
+      <div class="arch-card reveal" style="transition-delay:.4s">
+        <div class="arch-badge">Archetype 06</div>
+        <h3>Creative Story Educator</h3>
+        <div class="arch-row">
+          <div class="arch-row-label">Core signal</div>
+          <p>Narrative — teaching and sharing through stories, metaphors and experience rather than data.</p>
+        </div>
+        <div class="arch-row">
+          <div class="arch-row-label">Best for</div>
+          <p>Writers, coaches, creators, communicators and people who think in examples and stories.</p>
+        </div>
+        <div class="arch-signal">→ Creates: stories, analogies, experience-based essays, narratives</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- GENERIC VS KNOWNLY -->
+<section class="section-pad bg2">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:40px" class="reveal">
+      <div class="section-label center">The Difference</div>
+      <h2>Generic quiz vs <span class="gold">Knownly Direction Report.</span></h2>
+    </div>
+    <div class="compare-wrap reveal">
+      <div class="compare-col">
+        <span class="col-tag tag-bad">Generic Quiz</span>
+        <h3>What you usually get</h3>
+        <ul class="compare-list bad-list">
+          <li>A broad personality label ("You are an innovator")</li>
+          <li>No content strategy attached to your result</li>
+          <li>No platform recommendation</li>
+          <li>No blocker analysis</li>
+          <li>No action steps</li>
+          <li>Not connected to your online presence goals</li>
+          <li>Feels good for a moment, then fades</li>
+        </ul>
+      </div>
+      <div class="compare-col better">
+        <span class="col-tag tag-good">Knownly Direction Report</span>
+        <h3>What Knownly gives you</h3>
+        <ul class="compare-list good-list">
+          <li>A named archetype with a specific public signal</li>
+          <li>Content direction — what to create and how</li>
+          <li>Best-fit platform recommendation</li>
+          <li>Current blocker identified</li>
+          <li>7-day action plan</li>
+          <li>Opportunity path based on your goals</li>
+          <li>Something you can actually start using today</li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="reveal">
+      <a href="/diagnosis.html" class="btn-primary">Take the Full Free Diagnosis</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-inner reveal">
+    <div class="section-label center">Get Started</div>
+    <h2>Your Knownly Archetype is waiting. <span class="gold">Find it free.</span></h2>
+    <p>Take the complete Knownly Diagnosis to get your full direction report — including your archetype, content pillars, best-fit platform, blocker and a 7-day action plan.</p>
+    <a href="/diagnosis.html" class="btn-primary" style="font-size:.98rem;padding:15px 32px">Start Free Diagnosis</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section class="section-pad">
+  <div class="faq-inner">
+    <div class="faq-header reveal">
+      <div class="section-label">FAQ</div>
+      <h2>Common questions.</h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          How is this quiz different from a personality quiz?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">A personality quiz groups you by broad traits. The Knownly quiz looks at your stage, strengths, content style and goals to give you a direction you can use for your online presence — not just a label.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Will the quiz tell me exactly what to post?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">The quiz preview gives you your archetype and direction. The full free Knownly Diagnosis gives you content pillars, specific post ideas, a 7-day action plan and more.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Is the quiz free?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">Yes. Both the quiz on this page and the full Knownly Diagnosis are free. Paid plans are optional for people who want deeper profile review, guided execution or human support.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          What if I feel like more than one archetype fits me?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">That is common. Knownly will identify your primary archetype — the strongest signal — and a secondary supporting direction. Your full report will help you understand how they work together.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Does Knownly guarantee followers or clients from this?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">No. Knownly gives you clarity, direction and a positioning framework. Your results depend on your execution, consistency and how well your content resonates with your audience over time.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Can I retake the quiz?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer">Yes. You can retake the quiz at any time. If your goals or situation changes, your direction may shift and a new result can reflect that.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="/" class="logo">Known<span>ly</span></a>
+      <p>WhatAmIKnownFor.com</p>
+      <p class="tagline">Personal Intelligence for Online Presence</p>
+    </div>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/diagnosis.html">Diagnosis</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/early-access.html">Early Access</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Knownly · WhatAmIKnownFor.com</p>
+    <a href="https://whatamiknownfor.com">whatamiknownfor.com</a>
+  </div>
+</footer>
+
+<script>
+// PROGRESS BAR
+const prog = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const st = document.documentElement.scrollTop;
+  const sh = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  if (sh > 0) prog.style.width = (st / sh * 100) + '%';
+}, {passive: true});
+
+// REVEAL ON SCROLL
+const reveals = document.querySelectorAll('.reveal');
+reveals.forEach(el => el.classList.add('pre'));
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.remove('pre'); ro.unobserve(e.target); }
+  });
+}, {threshold: 0, rootMargin: '0px 0px -36px 0px'});
+reveals.forEach(el => ro.observe(el));
+setTimeout(() => reveals.forEach(el => el.classList.remove('pre')), 900);
+
+// FAQ ACCORDION
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// ========= QUIZ ENGINE =========
+const quizData = [
+  {
+    q: "Where are you right now professionally or creatively?",
+    opts: [
+      { l:"A", t:"Student or early in my career, building skills and exploring" },
+      { l:"B", t:"Working professional looking to grow visibility in my field" },
+      { l:"C", t:"Freelancer or consultant building a client-facing presence" },
+      { l:"D", t:"Founder or entrepreneur building a company or product" }
+    ]
+  },
+  {
+    q: "What comes most naturally to you when explaining something to others?",
+    opts: [
+      { l:"A", t:"Breaking it down step by step so anyone can follow" },
+      { l:"B", t:"Sharing my direct opinion from experience, without over-explaining" },
+      { l:"C", t:"Using a story or real example to make the point land" },
+      { l:"D", t:"Connecting it to a bigger pattern or market insight" }
+    ]
+  },
+  {
+    q: "What kind of content do you feel most comfortable creating?",
+    opts: [
+      { l:"A", t:"Educational posts, guides or how-to content" },
+      { l:"B", t:"Opinion pieces, observations or niche commentary" },
+      { l:"C", t:"Personal stories, lessons and narrative-led content" },
+      { l:"D", t:"Trend analysis, strategic takes or market perspectives" }
+    ]
+  },
+  {
+    q: "What kind of opportunity do you most want your online presence to attract?",
+    opts: [
+      { l:"A", t:"A job, internship or career move in my field" },
+      { l:"B", t:"Clients, consulting work or freelance projects" },
+      { l:"C", t:"Speaking invitations, partnerships or PR visibility" },
+      { l:"D", t:"Network growth, credibility and long-term authority" }
+    ]
+  },
+  {
+    q: "What is the biggest thing holding back your online presence right now?",
+    opts: [
+      { l:"A", t:"I do not know what to post or where to start" },
+      { l:"B", t:"I post but it does not feel focused or strategic" },
+      { l:"C", t:"My profile does not clearly explain my value" },
+      { l:"D", t:"I know what I want but have not made time to build it" }
+    ]
+  }
+];
+
+const archetypes = [
+  {
+    name: "Trusted Educator",
+    desc: "You explain things clearly and help people understand what is complex. Your public signal is clarity — and people will remember you for making their field more accessible.",
+    tags: ["Explainer", "How-to Content", "Knowledge Sharing", "LinkedIn or YouTube"]
+  },
+  {
+    name: "Practical Authority Builder",
+    desc: "You have earned real experience and have strong opinions from your work. Your public signal is depth — and people trust you because you speak from inside the field.",
+    tags: ["Niche Commentary", "Opinion Content", "Industry Insight", "LinkedIn or Newsletter"]
+  },
+  {
+    name: "Creative Story Educator",
+    desc: "You think in stories and examples. Your public signal is relatability — and people remember you because your content makes abstract ideas feel real and human.",
+    tags: ["Storytelling", "Experience-Based Content", "Narrative", "LinkedIn or Instagram"]
+  },
+  {
+    name: "Strategic Opportunity Spotter",
+    desc: "You see patterns before others and connect dots across markets. Your public signal is foresight — and people follow you because your perspective helps them think better.",
+    tags: ["Trend Analysis", "Strategic Takes", "Market Insight", "X or LinkedIn"]
+  }
+];
+
+let currentQ = 0;
+let answers = [];
+let selectedOpt = null;
+
+function renderQuiz() {
+  const data = quizData[currentQ];
+  document.getElementById('quiz-q').textContent = data.q;
+  document.getElementById('quiz-step-label').textContent = `Question ${currentQ + 1} of ${quizData.length}`;
+  document.getElementById('quiz-fill').style.width = `${((currentQ + 1) / quizData.length) * 100}%`;
+
+  const optsEl = document.getElementById('quiz-opts');
+  optsEl.innerHTML = '';
+  data.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-opt' + (answers[currentQ] === i ? ' selected' : '');
+    btn.setAttribute('aria-pressed', answers[currentQ] === i ? 'true' : 'false');
+    btn.innerHTML = `<span class="quiz-opt-letter">${opt.l}</span><span class="quiz-opt-text">${opt.t}</span>`;
+    btn.onclick = () => selectOpt(i);
+    optsEl.appendChild(btn);
+  });
+
+  document.getElementById('quiz-back').disabled = currentQ === 0;
+  document.getElementById('quiz-next').disabled = answers[currentQ] === undefined;
+  document.getElementById('quiz-next').textContent = currentQ === quizData.length - 1 ? 'See My Result →' : 'Next →';
+}
+
+function selectOpt(i) {
+  answers[currentQ] = i;
+  document.querySelectorAll('.quiz-opt').forEach((btn, idx) => {
+    btn.classList.toggle('selected', idx === i);
+    btn.setAttribute('aria-pressed', idx === i ? 'true' : 'false');
+  });
+  document.getElementById('quiz-next').disabled = false;
+}
+
+function quizNext() {
+  if (answers[currentQ] === undefined) return;
+  if (currentQ < quizData.length - 1) {
+    currentQ++;
+    selectedOpt = null;
+    renderQuiz();
+  } else {
+    showResult();
+  }
+}
+
+function quizBack() {
+  if (currentQ > 0) {
+    currentQ--;
+    renderQuiz();
+  }
+}
+
+function showResult() {
+  // Simple scoring — map answer patterns to archetype
+  const counts = [0, 0, 0, 0];
+  answers.forEach((a, qi) => {
+    if (qi === 1) counts[a] = (counts[a] || 0) + 2; // weight Q2 more
+    else counts[a] = (counts[a] || 0) + 1;
+  });
+  const topIdx = counts.indexOf(Math.max(...counts)) % archetypes.length;
+  const arch = archetypes[topIdx];
+
+  document.getElementById('qr-title').textContent = arch.name;
+  document.getElementById('qr-desc').textContent = arch.desc;
+  const tagsEl = document.getElementById('qr-tags');
+  tagsEl.innerHTML = arch.tags.map(t => `<span class="qr-tag">${t}</span>`).join('');
+
+  document.getElementById('quiz-header').style.display = 'none';
+  document.getElementById('quiz-body').style.display = 'none';
+  document.getElementById('quiz-footer').style.display = 'none';
+  document.getElementById('quiz-result').classList.add('show');
+}
+
+// Init
+renderQuiz();
+</script>
+</body>
+</html>

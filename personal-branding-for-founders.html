@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Branding for Founders — Build Founder-Led Trust Online</title>
+<meta name="description" content="Learn how founders can build a trusted online presence through market insight, product lessons, customer problems, profile clarity and founder-led content.">
+<link rel="canonical" href="https://whatamiknownfor.com/personal-branding-for-founders.html">
+
+<meta property="og:title" content="Personal Branding for Founders — Knownly">
+<meta property="og:description" content="Build founder-led trust through clarity, market insight, profile direction and useful content.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://whatamiknownfor.com/personal-branding-for-founders.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Do founders need personal branding?","acceptedAnswer":{"@type":"Answer","text":"Founders benefit from a clear public presence because people often trust people before they trust companies."}},
+    {"@type":"Question","name":"What should founders post on LinkedIn?","acceptedAnswer":{"@type":"Answer","text":"Founders can post market insights, customer problems, product lessons, founder journey reflections, team culture and proof stories."}},
+    {"@type":"Question","name":"Is founder branding only for startup founders?","acceptedAnswer":{"@type":"Answer","text":"No. It can help SaaS founders, SME founders, agency owners, consultants, business owners and leaders."}},
+    {"@type":"Question","name":"Do I need to share personal life?","acceptedAnswer":{"@type":"Answer","text":"No. Founder branding can be built through expertise, market judgment, product lessons and trust-building content without oversharing."}},
+    {"@type":"Question","name":"Does Knownly guarantee leads or PR?","acceptedAnswer":{"@type":"Answer","text":"No. Knownly helps with clarity, positioning and PR-readiness, but does not guarantee leads, PR, clients, followers or revenue."}}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#08110D;
+    --bg2:#0D1713;
+    --card:#14201A;
+    --card-elev:#182620;
+    --text:#F7F2E8;
+    --text2:#B9C3B7;
+    --cta:#8EA896;
+    --cta-hover:#7C9885;
+    --gold:#E0A86B;
+    --border:#314238;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;}
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:700;line-height:1.25;}
+  a{color:inherit;}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  #scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--cta),var(--gold));z-index:1000;transition:width .1s ease-out;}
+
+  header{position:sticky;top:0;z-index:100;background:rgba(8,17,13,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:20px;}
+  .logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:.5px;text-decoration:none;}
+  .logo span{color:var(--gold);}
+  nav.main-nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap;}
+  nav.main-nav a{color:var(--text2);text-decoration:none;font-size:.92rem;font-weight:500;transition:color .2s;}
+  nav.main-nav a:hover{color:var(--text);}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border-radius:999px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;transition:all .25s ease;white-space:nowrap;}
+  .btn-primary{background:var(--cta);color:#0B1410;}
+  .btn-primary:hover{background:var(--cta-hover);transform:translateY(-1px);}
+  .btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border);}
+  .btn-secondary:hover{border-color:var(--cta);color:var(--cta);}
+
+  .hero{padding:80px 0 60px;background:radial-gradient(ellipse at top, rgba(142,168,150,0.08), transparent 60%);}
+  .badge{display:inline-block;padding:8px 18px;border-radius:999px;background:var(--card-elev);border:1px solid var(--border);color:var(--gold);font-size:.85rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:24px;}
+  .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center;}
+  .hero h1{font-size:clamp(2rem,4.5vw,3.1rem);margin-bottom:14px;}
+  .gold-line{color:var(--gold);font-weight:700;font-size:1.1rem;margin-bottom:16px;font-family:'Sora',sans-serif;}
+  .hero .sub{color:var(--text2);font-size:clamp(1rem,2vw,1.1rem);margin-bottom:32px;max-width:600px;}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:16px;}
+
+  .map-card{background:linear-gradient(160deg,var(--card-elev),var(--card));border:1px solid var(--border);border-radius:22px;padding:30px;box-shadow:0 0 60px rgba(142,168,150,0.08);}
+  .map-card h3{font-size:1rem;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:20px;text-align:center;}
+  .map-list{display:flex;flex-direction:column;gap:12px;}
+  .map-item{display:flex;align-items:center;gap:14px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:14px 16px;font-size:.95rem;font-weight:600;}
+  .map-num{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--card-elev);color:var(--gold);font-family:'Sora',sans-serif;font-weight:700;font-size:.85rem;border:1px solid var(--border);flex-shrink:0;}
+
+  section{padding:70px 0;}
+  .section-bg{background:var(--bg2);}
+  .section-tag{color:var(--gold);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;}
+  .section-heading{font-size:clamp(1.6rem,3.5vw,2.4rem);margin-bottom:18px;max-width:760px;}
+  .section-text{color:var(--text2);max-width:760px;font-size:1.02rem;margin-bottom:36px;}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .cards-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .info-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;transition:transform .3s ease,border-color .3s ease;}
+  .info-card:hover{transform:translateY(-4px);border-color:var(--cta);}
+  .info-card .num{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--card-elev);color:var(--gold);font-weight:700;font-family:'Sora',sans-serif;margin-bottom:16px;border:1px solid var(--border);font-size:.9rem;}
+  .info-card h4{font-size:1.1rem;margin-bottom:10px;}
+  .info-card p{color:var(--text2);font-size:.95rem;}
+  .info-card .example{background:var(--bg2);border-left:3px solid var(--gold);border-radius:8px;padding:14px 16px;font-size:.9rem;color:var(--text);font-style:italic;margin-top:14px;}
+
+  /* Framework layers */
+  .layer-list{display:flex;flex-direction:column;gap:14px;}
+  .layer-item{display:grid;grid-template-columns:60px 1fr;gap:20px;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;}
+  .layer-num{display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:var(--card-elev);color:var(--gold);font-family:'Sora',sans-serif;font-weight:800;border:1px solid var(--border);font-size:1.1rem;}
+  .layer-item h4{font-size:1.05rem;margin-bottom:6px;}
+  .layer-item p{color:var(--text2);font-size:.92rem;}
+
+  /* Checklist */
+  .checklist{display:flex;flex-direction:column;gap:0;background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;}
+  .check-item{display:flex;align-items:flex-start;gap:16px;padding:18px 24px;border-bottom:1px solid var(--border);}
+  .check-item:last-child{border-bottom:none;}
+  .check-box{flex-shrink:0;width:22px;height:22px;border-radius:6px;border:1px solid var(--border);background:var(--bg2);margin-top:2px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+  .check-box.checked{background:var(--cta);border-color:var(--cta);}
+  .check-box.checked::after{content:'✓';color:#0B1410;font-weight:800;font-size:.85rem;}
+  .check-text{font-size:.98rem;color:var(--text);}
+  .checklist-result{margin-top:24px;background:var(--card-elev);border:1px solid var(--border);border-radius:14px;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+  .checklist-result .score{font-family:'Sora',sans-serif;font-weight:800;color:var(--gold);font-size:1.3rem;}
+
+  /* Support options */
+  .support-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .support-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;text-align:center;transition:transform .3s ease,border-color .3s;}
+  .support-card:hover{transform:translateY(-4px);border-color:var(--gold);}
+  .support-card .price{font-family:'Sora',sans-serif;font-weight:800;color:var(--gold);font-size:1.1rem;margin-bottom:6px;}
+  .support-card .label{color:var(--text2);font-size:.88rem;}
+
+  .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .related-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;text-decoration:none;color:var(--text);transition:transform .3s ease,border-color .3s;display:block;}
+  .related-card:hover{transform:translateY(-4px);border-color:var(--cta);}
+  .related-card .tag{font-size:.75rem;color:var(--gold);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:8px;display:block;}
+  .related-card h4{font-size:1.02rem;}
+
+  .faq-item{border:1px solid var(--border);border-radius:14px;margin-bottom:14px;background:var(--card);overflow:hidden;}
+  .faq-question{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-family:'Sora',sans-serif;font-size:1rem;user-select:none;}
+  .faq-icon{font-size:1.3rem;color:var(--gold);transition:transform .3s;}
+  .faq-item.open .faq-icon{transform:rotate(45deg);}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;padding:0 24px;color:var(--text2);font-size:.95rem;}
+  .faq-item.open .faq-answer{max-height:300px;padding:0 24px 22px;}
+
+  .final-cta{text-align:center;background:linear-gradient(160deg,var(--card-elev),var(--card));border:1px solid var(--border);border-radius:24px;padding:60px 30px;box-shadow:0 0 60px rgba(142,168,150,0.06);}
+  .final-cta h2{font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:14px;}
+  .final-cta p{color:var(--text2);max-width:600px;margin:0 auto 30px;}
+  .final-ctas{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;}
+
+  footer{background:var(--bg2);border-top:1px solid var(--border);padding:50px 0 30px;}
+  .footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-bottom:30px;}
+  .footer-brand .logo{margin-bottom:8px;}
+  .footer-brand p{color:var(--text2);font-size:.9rem;}
+  .footer-links{display:flex;gap:14px;flex-wrap:wrap;max-width:600px;}
+  .footer-links a{color:var(--text2);text-decoration:none;font-size:.9rem;transition:color .2s;}
+  .footer-links a:hover{color:var(--cta);}
+  .footer-bottom{border-top:1px solid var(--border);padding-top:20px;color:var(--text2);font-size:.82rem;text-align:center;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;}
+    .reveal{opacity:1;transform:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .cards-grid, .cards-2, .support-grid, .related-grid{grid-template-columns:1fr 1fr;}
+    nav.main-nav{display:none;}
+  }
+  @media (max-width:560px){
+    .cards-grid, .cards-2, .support-grid, .related-grid{grid-template-columns:1fr;}
+    section{padding:50px 0;}
+    .hero{padding:50px 0 40px;}
+    .layer-item{grid-template-columns:46px 1fr;}
+    .checklist-result{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<header>
+  <div class="container nav-wrap">
+    <a href="/" class="logo">Known<span>ly</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/diagnosis.html">Diagnosis</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/early-access.html">Early Access</a>
+      <a href="/free-tools.html">Free Tools</a>
+      <a href="/resources.html">Resources</a>
+      <a href="/about.html">About</a>
+      <a href="/login.html">Login</a>
+    </nav>
+    <a href="/diagnosis.html" class="btn btn-primary">Start Free Diagnosis</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">For Founders</div>
+      <h1>Build founder-led trust around your market, product and point of view.</h1>
+      <div class="gold-line">Your founder presence should make your company easier to trust.</div>
+      <p class="sub">Founders do not need to become loud influencers. They need a clear public signal that connects their experience, market understanding, product vision and customer problems.</p>
+      <div class="hero-ctas">
+        <a href="/diagnosis.html" class="btn btn-primary">Start Free Knownly Diagnosis</a>
+        <a href="/founder-personal-branding-service.html" class="btn btn-secondary">Founder Branding Service</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="map-card">
+        <h3>Founder-Led Voice Map</h3>
+        <div class="map-list">
+          <div class="map-item"><span class="map-num">1</span> Market POV</div>
+          <div class="map-item"><span class="map-num">2</span> Product Trust</div>
+          <div class="map-item"><span class="map-num">3</span> Customer Insight</div>
+          <div class="map-item"><span class="map-num">4</span> Founder Lessons</div>
+          <div class="map-item"><span class="map-num">5</span> Proof</div>
+          <div class="map-item"><span class="map-num">6</span> Team / Culture</div>
+          <div class="map-item"><span class="map-num">7</span> Opportunity Path</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1 -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">Why It Matters</div>
+    <h2 class="section-heading">People often trust people before they trust companies.</h2>
+    <p class="section-text">In early-stage and growing businesses, people often judge trust through the founder. Customers, investors, partners, employees and media want to understand who is behind the company and how they think.</p>
+    <div class="cards-grid">
+      <div class="info-card"><h4>Builds market trust</h4><p>A clear founder voice helps people understand how you see the market you operate in.</p></div>
+      <div class="info-card"><h4>Supports hiring</h4><p>Candidates often research founders before applying or accepting offers.</p></div>
+      <div class="info-card"><h4>Makes partnerships easier</h4><p>Potential partners can get a sense of your thinking before the first conversation.</p></div>
+      <div class="info-card"><h4>Humanizes the company</h4><p>A founder voice gives the business a relatable, credible face.</p></div>
+      <div class="info-card"><h4>Supports PR-readiness</h4><p>Journalists and podcasts often look for founders with a clear point of view.</p></div>
+      <div class="info-card"><h4>Creates category authority</h4><p>Consistent insight can position you as a reference point in your space.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">Beyond the Title</div>
+    <h2 class="section-heading">A founder should not be known only for being a founder.</h2>
+    <p class="section-text">"Founder" is a role, not a signal. The more useful question is what you specifically understand and can speak to.</p>
+    <div class="cards-grid">
+      <div class="info-card"><div class="num">1</div><h4>The problem they understand</h4><p>The core problem your company exists to solve, explained in your own words.</p></div>
+      <div class="info-card"><div class="num">2</div><h4>The market they are building in</h4><p>Trends, shifts and dynamics you observe in your industry.</p></div>
+      <div class="info-card"><div class="num">3</div><h4>The customer pain they can explain</h4><p>What your customers struggle with, described clearly and specifically.</p></div>
+      <div class="info-card"><div class="num">4</div><h4>The product belief they hold</h4><p>Your point of view on how the product or category should work.</p></div>
+      <div class="info-card"><div class="num">5</div><h4>The lessons they are learning</h4><p>What building the company is currently teaching you.</p></div>
+      <div class="info-card"><div class="num">6</div><h4>The trust they are earning</h4><p>Proof, results and consistency that build credibility over time.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: CONTENT PILLARS -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">Content Pillars</div>
+    <h2 class="section-heading">What should founders post?</h2>
+    <div class="cards-grid">
+      <div class="info-card">
+        <h4>Market insight</h4>
+        <p>Shows you understand the bigger picture, not just your own product.</p>
+        <div class="example">"Here's a shift I'm seeing in [industry] and what it might mean for businesses like ours."</div>
+      </div>
+      <div class="info-card">
+        <h4>Customer problem breakdowns</h4>
+        <p>Demonstrates deep understanding of the people you serve.</p>
+        <div class="example">"A common problem our customers face with [topic] — and how we think about solving it."</div>
+      </div>
+      <div class="info-card">
+        <h4>Product lessons</h4>
+        <p>Builds trust through honest reflection on building decisions.</p>
+        <div class="example">"A product decision we made, what we expected, and what actually happened."</div>
+      </div>
+      <div class="info-card">
+        <h4>Founder journey</h4>
+        <p>Humanizes the company through real experience, without oversharing.</p>
+        <div class="example">"What the last few months of building [company] have taught me."</div>
+      </div>
+      <div class="info-card">
+        <h4>Team and culture</h4>
+        <p>Shows how the company operates and what it values.</p>
+        <div class="example">"How our team approaches [a specific process] — and why it works for us."</div>
+      </div>
+      <div class="info-card">
+        <h4>Proof and trust stories</h4>
+        <p>Provides evidence without sounding like a sales pitch.</p>
+        <div class="example">"A small result we're proud of, and what it took to get there."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: WHAT TO AVOID -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">What to Avoid</div>
+    <h2 class="section-heading">Patterns that can undermine founder trust.</h2>
+    <div class="cards-grid">
+      <div class="info-card"><h4>Random motivational content</h4><p>Generic motivation rarely reflects your specific market or product understanding.</p></div>
+      <div class="info-card"><h4>Over-selling the product</h4><p>Constant promotion can make a profile feel like an ad rather than a perspective.</p></div>
+      <div class="info-card"><h4>Copying influencer threads</h4><p>Formats that work for influencers may not fit a founder's credibility goals.</p></div>
+      <div class="info-card"><h4>Posting only company updates</h4><p>Updates alone rarely show your thinking or point of view.</p></div>
+      <div class="info-card"><h4>Hiding behind the logo</h4><p>A personal voice often builds more trust than a brand account alone.</p></div>
+      <div class="info-card"><h4>Sharing without a clear point of view</h4><p>Neutral commentary can be less memorable than a clear perspective.</p></div>
+      <div class="info-card"><h4>Making big claims without proof</h4><p>Claims land better when backed by specifics, context or examples.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: KNOWNLY FRAMEWORK -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">The Knownly Framework</div>
+    <h2 class="section-heading">The Knownly founder framework.</h2>
+    <p class="section-text">Each layer builds toward a founder presence that supports trust and opportunity, rather than just visibility.</p>
+    <div class="layer-list">
+      <div class="layer-item"><div class="layer-num">1</div><div><h4>Founder Identity</h4><p>Who you are beyond your title — your background, perspective and the experience that shapes how you think.</p></div></div>
+      <div class="layer-item"><div class="layer-num">2</div><div><h4>Market POV</h4><p>Your point of view on the market, industry shifts and where things are heading.</p></div></div>
+      <div class="layer-item"><div class="layer-num">3</div><div><h4>Trust Proof</h4><p>The evidence — results, experience, lessons — that supports your credibility.</p></div></div>
+      <div class="layer-item"><div class="layer-num">4</div><div><h4>Content Pillars</h4><p>The recurring themes that connect your identity, market view and proof.</p></div></div>
+      <div class="layer-item"><div class="layer-num">5</div><div><h4>Profile Positioning</h4><p>How your headline, bio and profile reflect your founder direction clearly.</p></div></div>
+      <div class="layer-item"><div class="layer-num">6</div><div><h4>Opportunity Path</h4><p>What your visibility should support — hiring, partnerships, PR, trust or category authority.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: CHECKLIST -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">Mini Self-Check</div>
+    <h2 class="section-heading">Founder LinkedIn checklist.</h2>
+    <p class="section-text">Tap each item that is currently true for your LinkedIn profile.</p>
+    <div class="checklist" id="checklist">
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Does your headline explain your founder direction?</div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Does your About section connect you to your market?</div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Can people understand what problem your company solves?</div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Do your posts show market understanding?</div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Do you share customer/problem insights?</div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Do you show proof without sounding salesy?</div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Does your profile help hiring, sales or partnerships?</div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Do you have a clear CTA?</div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Is your content useful even to people who are not buying yet?</div></div>
+      <div class="check-item"><div class="check-box"></div><div class="check-text">Are you building trust, not noise?</div></div>
+    </div>
+    <div class="checklist-result">
+      <div><span class="score" id="check-score">0 / 10</span> <span style="color:var(--text2);font-size:.9rem;"> checked</span></div>
+      <div style="color:var(--text2);font-size:.92rem;max-width:420px;" id="check-message">If you are unsure about most of these, start with the Knownly Diagnosis.</div>
+    </div>
+    <div style="margin-top:28px;">
+      <a href="/diagnosis.html" class="btn btn-primary">Get My Founder Direction</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: KNOWNLY SUPPORT -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">Knownly Support</div>
+    <h2 class="section-heading">Knownly support for founders.</h2>
+    <p class="section-text">From a free starting point to fully done-for-you execution, there is a level of support that fits where you are.</p>
+    <div class="support-grid">
+      <div class="support-card"><div class="price">Free</div><div class="label">Diagnosis</div></div>
+      <div class="support-card"><div class="price">Free</div><div class="label">Profile Report</div></div>
+      <div class="support-card"><div class="price">₹9,999+</div><div class="label">Brand Builder</div></div>
+      <div class="support-card"><div class="price">₹25,000+/mo</div><div class="label">Executive Brand Studio</div></div>
+    </div>
+    <div class="hero-ctas" style="margin-top:32px;">
+      <a href="/founder-personal-branding-service.html" class="btn btn-primary">View Founder Branding Service</a>
+      <a href="/executive-brand-studio.html" class="btn btn-secondary">View Executive Brand Studio</a>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED PAGES -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">Continue Exploring</div>
+    <h2 class="section-heading">Related Knownly tools and services.</h2>
+    <div class="related-grid">
+      <a href="/founder-personal-branding-service.html" class="related-card"><span class="tag">Service</span><h4>Founder Personal Branding Service</h4></a>
+      <a href="/executive-brand-studio.html" class="related-card"><span class="tag">Service</span><h4>Executive Brand Studio</h4></a>
+      <a href="/linkedin-profile-review.html" class="related-card"><span class="tag">Profile</span><h4>LinkedIn Profile Review</h4></a>
+      <a href="/content-pillars-generator.html" class="related-card"><span class="tag">Content</span><h4>Content Pillars Generator</h4></a>
+      <a href="/online-presence-audit.html" class="related-card"><span class="tag">Audit</span><h4>Online Presence Audit</h4></a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">FAQ</div>
+    <h2 class="section-heading">Frequently asked questions.</h2>
+    <div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Do founders need personal branding?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Founders benefit from a clear public presence because people often trust people before they trust companies.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>What should founders post on LinkedIn?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Founders can post market insights, customer problems, product lessons, founder journey reflections, team culture and proof stories.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Is founder branding only for startup founders?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>No. It can help SaaS founders, SME founders, agency owners, consultants, business owners and leaders.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Do I need to share personal life?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>No. Founder branding can be built through expertise, market judgment, product lessons and trust-building content without oversharing.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Does Knownly guarantee leads or PR?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>No. Knownly helps with clarity, positioning and PR-readiness, but does not guarantee leads, PR, clients, followers or revenue.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section>
+  <div class="container reveal">
+    <div class="final-cta">
+      <h2>Your founder voice can build trust before the sales call.</h2>
+      <p>Take the free Knownly Diagnosis or explore founder brand support to build a clearer online presence around your market, product and point of view.</p>
+      <div class="final-ctas">
+        <a href="/diagnosis.html" class="btn btn-primary">Start Free Diagnosis</a>
+        <a href="/founder-personal-branding-service.html" class="btn btn-secondary">Founder Branding Service</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">Known<span style="color:var(--gold)">ly</span></div>
+        <p>WhatAmIKnownFor.com<br>Personal Intelligence for Online Presence</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/diagnosis.html">Diagnosis</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/early-access.html">Early Access</a>
+        <a href="/free-tools.html">Free Tools</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/about.html">About</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/sitemap.html">Sitemap</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Knownly. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Scroll progress
+  var progress = document.getElementById('scroll-progress');
+  function updateProgress(){
+    var h = document.documentElement;
+    var scrollTop = h.scrollTop || document.body.scrollTop;
+    var height = h.scrollHeight - h.clientHeight;
+    var pct = height > 0 ? (scrollTop / height) * 100 : 0;
+    progress.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress, {passive:true});
+  updateProgress();
+
+  // Reveal on scroll
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if(prefersReduced){
+    reveals.forEach(function(el){ el.classList.add('visible'); });
+  } else {
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12});
+    reveals.forEach(function(el){ observer.observe(el); });
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(function(q){
+    function toggle(){
+      var item = q.parentElement;
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(o){
+        o.classList.remove('open');
+        o.querySelector('.faq-question').setAttribute('aria-expanded','false');
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        q.setAttribute('aria-expanded','true');
+      }
+    }
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+
+  // Checklist
+  var boxes = document.querySelectorAll('.check-box');
+  var scoreEl = document.getElementById('check-score');
+  var msgEl = document.getElementById('check-message');
+  function updateScore(){
+    var checked = document.querySelectorAll('.check-box.checked').length;
+    scoreEl.textContent = checked + ' / ' + boxes.length;
+    if(checked <= 4){
+      msgEl.textContent = 'A founder direction report from Knownly can help clarify where to focus first.';
+    } else if(checked <= 7){
+      msgEl.textContent = 'You have a foundation — Knownly can help sharpen your founder positioning further.';
+    } else {
+      msgEl.textContent = 'Strong foundation. Knownly can help refine your content pillars and opportunity path.';
+    }
+  }
+  boxes.forEach(function(box){
+    box.addEventListener('click', function(){
+      box.classList.toggle('checked');
+      updateScore();
+    });
+  });
+  updateScore();
+})();
+</script>
+
+</body>
+</html>

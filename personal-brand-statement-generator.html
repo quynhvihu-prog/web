@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Brand Statement Generator — Create Your Clear Public Signal</title>
+<meta name="description" content="Create a clearer personal brand statement that explains who you are, what you help with and what you should be known for.">
+<link rel="canonical" href="https://whatamiknownfor.com/personal-brand-statement-generator.html">
+
+<meta property="og:title" content="Personal Brand Statement Generator — Create Your Clear Public Signal">
+<meta property="og:description" content="Create a clearer personal brand statement that explains who you are, what you help with and what you should be known for.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://whatamiknownfor.com/personal-brand-statement-generator.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What is a personal brand statement?","acceptedAnswer":{"@type":"Answer","text":"A personal brand statement is a short, clear sentence that explains who you help, what problem or outcome you focus on, and what experience or strength backs that up."}},
+    {"@type":"Question","name":"Where can I use my personal brand statement?","acceptedAnswer":{"@type":"Answer","text":"You can use it in your LinkedIn headline or About section, your website bio, your Instagram or X bio, or your introduction in meetings and interviews."}},
+    {"@type":"Question","name":"Does my personal brand statement need to be permanent?","acceptedAnswer":{"@type":"Answer","text":"No. Your statement can evolve as your skills, experience and goals change. It should reflect where you are now and where you are heading."}},
+    {"@type":"Question","name":"What if I help with more than one thing?","acceptedAnswer":{"@type":"Answer","text":"Try to lead with your strongest or most relevant focus. You can mention secondary areas elsewhere, but your statement works best when it centers on one clear signal."}},
+    {"@type":"Question","name":"Can Knownly write this statement for me?","acceptedAnswer":{"@type":"Answer","text":"Knownly uses your diagnosis answers and, optionally, your public profile context to suggest a direction and statement that fits your strengths, goals and current stage."}}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#08110D;
+    --bg2:#0D1713;
+    --card:#14201A;
+    --card-elev:#182620;
+    --text:#F7F2E8;
+    --text2:#B9C3B7;
+    --cta:#8EA896;
+    --cta-hover:#7C9885;
+    --gold:#E0A86B;
+    --border:#314238;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;}
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;font-weight:700;line-height:1.25;}
+  a{color:inherit;}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  #scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--cta),var(--gold));z-index:1000;transition:width .1s ease-out;}
+
+  header{position:sticky;top:0;z-index:100;background:rgba(8,17,13,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:20px;}
+  .logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:.5px;text-decoration:none;}
+  .logo span{color:var(--gold);}
+  nav.main-nav{display:flex;gap:26px;align-items:center;}
+  nav.main-nav a{color:var(--text2);text-decoration:none;font-size:.95rem;font-weight:500;transition:color .2s;}
+  nav.main-nav a:hover{color:var(--text);}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border-radius:999px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;transition:all .25s ease;white-space:nowrap;}
+  .btn-primary{background:var(--cta);color:#0B1410;}
+  .btn-primary:hover{background:var(--cta-hover);transform:translateY(-1px);}
+  .btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border);}
+  .btn-secondary:hover{border-color:var(--cta);color:var(--cta);}
+
+  .hero{padding:80px 0 60px;background:radial-gradient(ellipse at top, rgba(142,168,150,0.08), transparent 60%);}
+  .badge{display:inline-block;padding:8px 18px;border-radius:999px;background:var(--card-elev);border:1px solid var(--border);color:var(--gold);font-size:.85rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:24px;}
+  .hero h1{font-size:clamp(2rem,4.5vw,3.1rem);max-width:850px;margin-bottom:14px;}
+  .gold-line{color:var(--gold);font-weight:700;font-size:1.1rem;margin-bottom:16px;font-family:'Sora',sans-serif;}
+  .hero .sub{color:var(--text2);font-size:clamp(1rem,2vw,1.1rem);margin-bottom:32px;max-width:680px;}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:16px;}
+
+  section{padding:70px 0;}
+  .section-bg{background:var(--bg2);}
+  .section-tag{color:var(--gold);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;}
+  .section-heading{font-size:clamp(1.6rem,3.5vw,2.4rem);margin-bottom:18px;max-width:760px;}
+  .section-text{color:var(--text2);max-width:760px;font-size:1.02rem;margin-bottom:36px;}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  /* Formula box */
+  .formula-box{
+    background:var(--card-elev);border:1px solid var(--border);border-radius:18px;padding:30px;
+    text-align:center;font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(1.05rem,2.5vw,1.35rem);
+    line-height:1.8;
+  }
+  .formula-box .blank{color:var(--gold);}
+
+  /* Generator */
+  .generator-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:34px;}
+  .generator-row{margin-bottom:20px;}
+  .generator-row label{display:block;font-size:.92rem;color:var(--text2);margin-bottom:8px;font-weight:500;}
+  .generator-row input{
+    width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:10px;
+    padding:13px 16px;color:var(--text);font-family:'Inter',sans-serif;font-size:.95rem;outline:none;transition:border-color .2s;
+  }
+  .generator-row input:focus{border-color:var(--cta);}
+  .generator-result{
+    margin-top:28px;background:var(--card-elev);border:1px solid var(--border);border-radius:14px;
+    padding:24px;font-size:1.05rem;color:var(--text);line-height:1.7;font-family:'Sora',sans-serif;font-weight:600;
+  }
+  .generator-result .label{
+    font-family:'Inter',sans-serif;font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:1px;
+    color:var(--gold);margin-bottom:10px;display:block;
+  }
+  .generator-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px;}
+
+  /* Examples by audience */
+  .audience-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .audience-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;transition:transform .3s ease,border-color .3s;}
+  .audience-card:hover{transform:translateY(-4px);border-color:var(--cta);}
+  .audience-card h4{color:var(--gold);font-size:1rem;margin-bottom:10px;}
+  .audience-card p{color:var(--text2);font-size:.9rem;font-style:italic;}
+
+  /* Bad vs better */
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .compare-card{border-radius:18px;padding:26px;border:1px solid var(--border);}
+  .compare-card.bad{background:var(--card);}
+  .compare-card.better{background:var(--card-elev);border-color:var(--gold);}
+  .compare-card h4{font-size:.85rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+  .compare-card.bad h4{color:var(--text2);}
+  .compare-card.better h4{color:var(--gold);}
+  .compare-card p{color:var(--text);font-size:.98rem;font-style:italic;}
+
+  .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .info-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;transition:transform .3s ease,border-color .3s ease;}
+  .info-card:hover{transform:translateY(-4px);border-color:var(--cta);}
+  .info-card h4{font-size:1.1rem;margin-bottom:10px;}
+  .info-card p{color:var(--text2);font-size:.95rem;}
+
+  .related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .related-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;text-decoration:none;color:var(--text);transition:transform .3s ease,border-color .3s;display:block;}
+  .related-card:hover{transform:translateY(-4px);border-color:var(--cta);}
+  .related-card .tag{font-size:.75rem;color:var(--gold);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:8px;display:block;}
+  .related-card h4{font-size:1.02rem;}
+
+  .faq-item{border:1px solid var(--border);border-radius:14px;margin-bottom:14px;background:var(--card);overflow:hidden;}
+  .faq-question{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-family:'Sora',sans-serif;font-size:1rem;user-select:none;}
+  .faq-icon{font-size:1.3rem;color:var(--gold);transition:transform .3s;}
+  .faq-item.open .faq-icon{transform:rotate(45deg);}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;padding:0 24px;color:var(--text2);font-size:.95rem;}
+  .faq-item.open .faq-answer{max-height:300px;padding:0 24px 22px;}
+
+  .final-cta{text-align:center;background:linear-gradient(160deg,var(--card-elev),var(--card));border:1px solid var(--border);border-radius:24px;padding:60px 30px;box-shadow:0 0 60px rgba(142,168,150,0.06);}
+  .final-cta h2{font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:14px;}
+  .final-cta p{color:var(--text2);max-width:600px;margin:0 auto 30px;}
+
+  #toast{
+    position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);
+    background:var(--card-elev);border:1px solid var(--cta);color:var(--text);
+    padding:14px 26px;border-radius:999px;font-size:.9rem;font-weight:600;
+    box-shadow:0 10px 40px rgba(0,0,0,0.4);transition:transform .35s ease;z-index:999;
+  }
+  #toast.show{transform:translateX(-50%) translateY(0);}
+
+  footer{background:var(--bg2);border-top:1px solid var(--border);padding:50px 0 30px;}
+  .footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-bottom:30px;}
+  .footer-brand .logo{margin-bottom:8px;}
+  .footer-brand p{color:var(--text2);font-size:.9rem;}
+  .footer-links{display:flex;gap:14px;flex-wrap:wrap;}
+  .footer-links a{color:var(--text2);text-decoration:none;font-size:.9rem;transition:color .2s;}
+  .footer-links a:hover{color:var(--cta);}
+  .footer-bottom{border-top:1px solid var(--border);padding-top:20px;color:var(--text2);font-size:.82rem;text-align:center;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;}
+    .reveal{opacity:1;transform:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  @media (max-width:900px){
+    .audience-grid{grid-template-columns:repeat(2,1fr);}
+    .compare-grid{grid-template-columns:1fr;}
+    .cards-grid{grid-template-columns:1fr 1fr;}
+    .related-grid{grid-template-columns:1fr 1fr;}
+    nav.main-nav{display:none;}
+  }
+  @media (max-width:560px){
+    .audience-grid, .cards-grid, .related-grid{grid-template-columns:1fr;}
+    section{padding:50px 0;}
+    .hero{padding:50px 0 40px;}
+    .generator-card{padding:24px;}
+  }
+</style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<header>
+  <div class="container nav-wrap">
+    <a href="/" class="logo">Known<span>ly</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/diagnosis.html">Diagnosis</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/early-access.html">Early Access</a>
+      <a href="/about.html">About</a>
+      <a href="/login.html">Login</a>
+    </nav>
+    <a href="/diagnosis.html" class="btn btn-primary">Start Free Diagnosis</a>
+  </div>
+</header>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="badge">Free Personal Brand Tool</div>
+    <h1>Create a personal brand statement that people can actually remember.</h1>
+    <div class="gold-line">Your public signal should be simple, specific and believable.</div>
+    <p class="sub">A strong personal brand statement helps people understand what you do, what you know, who you help and why they should remember you.</p>
+    <div class="hero-ctas">
+      <a href="/diagnosis.html" class="btn btn-primary">Generate My Direction First</a>
+      <a href="#generator" class="btn btn-secondary">Try the Mini Generator</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1: WHAT IS IT -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">The Basics</div>
+    <h2 class="section-heading">What is a personal brand statement?</h2>
+    <p class="section-text">A personal brand statement is a short, clear sentence that explains who you are, what you help with, and what makes your perspective credible. It is not a slogan or a tagline — it is a working summary of your direction that you can use across your profiles, your bio and even how you introduce yourself in conversations.</p>
+    <p class="section-text" style="margin-bottom:0;">When it is clear, people who read it should be able to answer one question quickly: "What should I remember this person for?"</p>
+  </div>
+</section>
+
+<!-- SECTION 2: FORMULA -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">The Formula</div>
+    <h2 class="section-heading">A simple formula that works for most people.</h2>
+    <p class="section-text">You do not need clever wording to start. A clear structure is more useful than a clever one.</p>
+    <div class="formula-box">
+      I help <span class="blank">[audience]</span> understand / solve / achieve <span class="blank">[problem or outcome]</span> through <span class="blank">[strength, experience or method]</span>.
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: GENERATOR -->
+<section class="section-bg" id="generator">
+  <div class="container reveal">
+    <div class="section-tag">Mini Tool</div>
+    <h2 class="section-heading">Mini personal brand statement generator.</h2>
+    <p class="section-text">Fill in the fields below to put together a starting draft of your statement. Knownly's free diagnosis can refine this further using your strengths, goals and public profile context.</p>
+    <div class="generator-card">
+      <div class="generator-row">
+        <label for="g-who">Who are you? (role or title)</label>
+        <input type="text" id="g-who" placeholder="e.g. Marketing consultant">
+      </div>
+      <div class="generator-row">
+        <label for="g-audience">Who do you want to help?</label>
+        <input type="text" id="g-audience" placeholder="e.g. early-stage SaaS founders">
+      </div>
+      <div class="generator-row">
+        <label for="g-problem">What problem do you understand?</label>
+        <input type="text" id="g-problem" placeholder="e.g. confusing or inconsistent brand messaging">
+      </div>
+      <div class="generator-row">
+        <label for="g-proof">What strength or proof do you bring?</label>
+        <input type="text" id="g-proof" placeholder="e.g. 6 years working with early-stage startups">
+      </div>
+      <div class="generator-row">
+        <label for="g-known">What do you want to be known for?</label>
+        <input type="text" id="g-known" placeholder="e.g. clear, founder-friendly brand strategy">
+      </div>
+      <div class="generator-result" id="generator-result">
+        <span class="label">Your draft statement</span>
+        Fill in the fields above to see your draft personal brand statement here.
+      </div>
+      <div class="generator-actions">
+        <button class="btn btn-secondary" id="copy-statement">Copy Statement</button>
+        <a href="/diagnosis.html" class="btn btn-primary">Take Diagnosis to Generate Better Statement</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: EXAMPLES BY AUDIENCE -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">Examples</div>
+    <h2 class="section-heading">Examples by audience.</h2>
+    <p class="section-text">These examples follow the same formula but adapt the language to different situations.</p>
+    <div class="audience-grid">
+      <div class="audience-card"><h4>Job Seeker</h4><p>"I help product teams ship faster by combining UX research with practical project management — built from 5 years across early-stage startups."</p></div>
+      <div class="audience-card"><h4>Freelancer</h4><p>"I help small business owners get organized finances through simple bookkeeping systems, drawing on years of hands-on client work."</p></div>
+      <div class="audience-card"><h4>Founder</h4><p>"I help operations leaders reduce manual work by building no-code automation systems, based on what I've learned scaling my own startup."</p></div>
+      <div class="audience-card"><h4>Consultant</h4><p>"I help mid-size companies fix unclear hiring processes through practical, tested frameworks from over a decade in HR."</p></div>
+      <div class="audience-card"><h4>Coach</h4><p>"I help new managers build confidence in difficult conversations through coaching grounded in real workplace experience."</p></div>
+      <div class="audience-card"><h4>Creator</h4><p>"I help people simplify personal finance through clear, jargon-free explanations based on my own journey with budgeting."</p></div>
+      <div class="audience-card"><h4>Student</h4><p>"I'm exploring data analytics and help peers understand core concepts through simple breakdowns as I learn alongside them."</p></div>
+      <div class="audience-card"><h4>Executive</h4><p>"I help leadership teams navigate organizational change through frameworks developed across two decades in operations leadership."</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: BAD VS BETTER -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">Before & After</div>
+    <h2 class="section-heading">Bad vs better statements.</h2>
+    <div class="compare-grid">
+      <div class="compare-card bad">
+        <h4>Vague</h4>
+        <p>"Passionate professional who loves growth, people and ideas."</p>
+      </div>
+      <div class="compare-card better">
+        <h4>Clearer</h4>
+        <p>"I help early-career marketers build confidence in their writing through simple, practical feedback based on 8 years in content teams."</p>
+      </div>
+      <div class="compare-card bad">
+        <h4>Vague</h4>
+        <p>"Entrepreneur. Builder. Lifelong learner."</p>
+      </div>
+      <div class="compare-card better">
+        <h4>Clearer</h4>
+        <p>"I help service-based founders simplify their offers so pricing and positioning feel less confusing — based on building three small businesses."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: HOW KNOWNLY IMPROVES -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">How Knownly Helps</div>
+    <h2 class="section-heading">Knownly improves this with your direction and profile context.</h2>
+    <p class="section-text">A formula is a useful starting point, but the right words depend on your strengths, your goals, your current stage and how you already appear online. Knownly uses your diagnosis answers — and, optionally, your public profile links — to recommend a clearer, more specific statement.</p>
+    <div class="cards-grid">
+      <div class="info-card"><h4>Based on your strengths</h4><p>Your statement reflects what you are naturally good at, not a generic template.</p></div>
+      <div class="info-card"><h4>Based on your goals</h4><p>Whether you're focused on career, clients, audience or authority, your statement aligns with that direction.</p></div>
+      <div class="info-card"><h4>Based on your public context</h4><p>If you choose to share profile links, Knownly can compare how you currently appear with your intended direction.</p></div>
+    </div>
+    <div style="margin-top:36px;">
+      <a href="/diagnosis.html" class="btn btn-primary">Start Free Knownly Diagnosis</a>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED PAGES -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="section-tag">Continue Exploring</div>
+    <h2 class="section-heading">Related Knownly tools and guides.</h2>
+    <div class="related-grid">
+      <a href="/what-should-i-be-known-for.html" class="related-card"><span class="tag">Direction</span><h4>What Should I Be Known For?</h4></a>
+      <a href="/personal-brand-quiz.html" class="related-card"><span class="tag">Quiz</span><h4>Personal Brand Quiz</h4></a>
+      <a href="/linkedin-headline-generator.html" class="related-card"><span class="tag">Profile</span><h4>LinkedIn Headline Generator</h4></a>
+      <a href="/online-presence-audit.html" class="related-card"><span class="tag">Audit</span><h4>Online Presence Audit</h4></a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container reveal">
+    <div class="section-tag">FAQ</div>
+    <h2 class="section-heading">Frequently asked questions.</h2>
+    <div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>What is a personal brand statement?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>A personal brand statement is a short, clear sentence that explains who you help, what problem or outcome you focus on, and what experience or strength backs that up.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Where can I use my personal brand statement?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>You can use it in your LinkedIn headline or About section, your website bio, your Instagram or X bio, or your introduction in meetings and interviews.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Does my personal brand statement need to be permanent?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>No. Your statement can evolve as your skills, experience and goals change. It should reflect where you are now and where you are heading.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>What if I help with more than one thing?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Try to lead with your strongest or most relevant focus. You can mention secondary areas elsewhere, but your statement works best when it centers on one clear signal.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0" aria-expanded="false"><span>Can Knownly write this statement for me?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Knownly uses your diagnosis answers and, optionally, your public profile context to suggest a direction and statement that fits your strengths, goals and current stage.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section-bg">
+  <div class="container reveal">
+    <div class="final-cta">
+      <h2>A clearer statement starts with a clearer direction.</h2>
+      <p>Take the free Knownly Diagnosis to find your archetype, direction statement and the signal your online presence should repeat.</p>
+      <a href="/diagnosis.html" class="btn btn-primary">Start Free Knownly Diagnosis</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">Known<span style="color:var(--gold)">ly</span></div>
+        <p>WhatAmIKnownFor.com<br>Personal Intelligence for Online Presence</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/diagnosis.html">Diagnosis</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/early-access.html">Early Access</a>
+        <a href="/about.html">About</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Knownly. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Scroll progress
+  var progress = document.getElementById('scroll-progress');
+  function updateProgress(){
+    var h = document.documentElement;
+    var scrollTop = h.scrollTop || document.body.scrollTop;
+    var height = h.scrollHeight - h.clientHeight;
+    var pct = height > 0 ? (scrollTop / height) * 100 : 0;
+    progress.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress, {passive:true});
+  updateProgress();
+
+  // Reveal on scroll
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if(prefersReduced){
+    reveals.forEach(function(el){ el.classList.add('visible'); });
+  } else {
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12});
+    reveals.forEach(function(el){ observer.observe(el); });
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(function(q){
+    function toggle(){
+      var item = q.parentElement;
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(o){
+        o.classList.remove('open');
+        o.querySelector('.faq-question').setAttribute('aria-expanded','false');
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        q.setAttribute('aria-expanded','true');
+      }
+    }
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+
+  // Generator
+  function esc(str){
+    return String(str).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  var who = document.getElementById('g-who');
+  var audience = document.getElementById('g-audience');
+  var problem = document.getElementById('g-problem');
+  var proof = document.getElementById('g-proof');
+  var known = document.getElementById('g-known');
+  var resultEl = document.getElementById('generator-result');
+
+  function buildStatement(){
+    var w = who.value.trim();
+    var a = audience.value.trim();
+    var p = problem.value.trim();
+    var pr = proof.value.trim();
+    var k = known.value.trim();
+
+    if(!w && !a && !p && !pr && !k){
+      resultEl.innerHTML = '<span class="label">Your draft statement</span>Fill in the fields above to see your draft personal brand statement here.';
+      return '';
+    }
+
+    var sentence = 'I help ' + (a || '[audience]') + ' ' + (p ? ('with ' + p) : 'understand, solve or achieve their goals') +
+      (pr ? (', drawing on ' + pr) : '') + '.';
+
+    var extra = '';
+    if(w) extra += ' As a ' + w + ',';
+    if(k) extra += (extra ? ' I want to be known for ' : 'I want to be known for ') + k + '.';
+
+    var full = sentence + (extra ? (' ' + extra.trim()) : '');
+
+    resultEl.innerHTML = '<span class="label">Your draft statement</span>' + esc(full);
+    return full;
+  }
+
+  [who, audience, problem, proof, known].forEach(function(input){
+    input.addEventListener('input', buildStatement);
+  });
+
+  // Copy
+  document.getElementById('copy-statement').addEventListener('click', function(){
+    var text = buildStatement();
+    if(!text){
+      showToast('Fill in the fields first to generate a statement.');
+      return;
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){
+        showToast('Statement copied to clipboard.');
+      }).catch(function(){ fallbackCopy(text); });
+    } else {
+      fallbackCopy(text);
+    }
+  });
+
+  function fallbackCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    try{ document.execCommand('copy'); showToast('Statement copied to clipboard.'); }
+    catch(e){ showToast('Could not copy. Please copy manually.'); }
+    document.body.removeChild(ta);
+  }
+
+  function showToast(msg){
+    var toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(window._toastTimeout);
+    window._toastTimeout = setTimeout(function(){
+      toast.classList.remove('show');
+    }, 2600);
+  }
+})();
+</script>
+
+</body>
+</html>

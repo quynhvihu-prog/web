@@ -675,7 +675,7 @@
       <div class="step" data-step="7">
         <h2 class="step-q">How do you naturally express yourself?</h2>
         <p class="step-helper">Your content direction should fit your natural style, not force you into a fake online personality.</p>
-        <div class="options-grid" id="s5-options">
+        <div class="options-grid" id="s7-options">
           <button type="button" class="option-btn" data-value="I explain things in a simple and practical way"><span class="opt-dot"></span><span class="opt-text">I explain things in a simple and practical way</span></button>
           <button type="button" class="option-btn" data-value="I think deeply and like thoughtful writing"><span class="opt-dot"></span><span class="opt-text">I think deeply and like thoughtful writing</span></button>
           <button type="button" class="option-btn" data-value="I like sharing stories and experiences"><span class="opt-dot"></span><span class="opt-text">I like sharing stories and experiences</span></button>
@@ -685,7 +685,7 @@
           <button type="button" class="option-btn" data-value="I am comfortable speaking on video"><span class="opt-dot"></span><span class="opt-text">I am comfortable speaking on video</span></button>
           <button type="button" class="option-btn" data-value="I am better behind the scenes but want to become visible"><span class="opt-dot"></span><span class="opt-text">I am better behind the scenes but want to become visible</span></button>
         </div>
-        <div class="error-msg" id="s5-err">Please select an option to continue.</div>
+        <div class="error-msg" id="s7-err">Please select an option to continue.</div>
       </div>
 
       <!-- STEP 8 (was 6) – content comfort -->
@@ -723,7 +723,7 @@
       <div class="step" data-step="10">
         <h2 class="step-q">What is blocking your online presence the most?</h2>
         <p class="step-helper">Most people are not blocked by lack of talent. They are blocked by unclear positioning, confidence or execution.</p>
-        <div class="options-grid" id="s7-options">
+        <div class="options-grid" id="s10-blocker-options">
           <button type="button" class="option-btn" data-value="I do not know what to post"><span class="opt-dot"></span><span class="opt-text">I do not know what to post</span></button>
           <button type="button" class="option-btn" data-value="I do not know what I should be known for"><span class="opt-dot"></span><span class="opt-text">I do not know what I should be known for</span></button>
           <button type="button" class="option-btn" data-value="My profile does not clearly show my value"><span class="opt-dot"></span><span class="opt-text">My profile does not clearly show my value</span></button>
@@ -735,7 +735,7 @@
           <button type="button" class="option-btn" data-value="I am not sure who my audience is"><span class="opt-dot"></span><span class="opt-text">I am not sure who my audience is</span></button>
           <button type="button" class="option-btn" data-value="I have no clear offer or monetization path"><span class="opt-dot"></span><span class="opt-text">I have no clear offer or monetization path</span></button>
         </div>
-        <div class="error-msg" id="s7-err">Please select an option to continue.</div>
+        <div class="error-msg" id="s10-blocker-err">Please select an option to continue.</div>
 
         <div class="sub-section">
           <p class="sub-section-label">How would you describe your current online presence?</p>
@@ -1023,7 +1023,7 @@
   initSingle('s7-options');  // natural style (step 7)
   initMulti('s6-options', 3, 's6-count', 's6-max');  // content comfort (step 8)
   // Step 9 is a textarea — no init needed
-  // Step 10 reuses s7/s8/s9 option containers
+  initSingle('s10-blocker-options');  // blocker (step 10)
   initSingle('s8-options');
   initSingle('s9-options');
   initMulti('s9p-options', 3, 's9p-count', 's9p-max');
@@ -1065,7 +1065,7 @@
     }
     if (n === 7) {
       const v = getSingleValue('s7-options');
-      if (!v) { showError('s5-err'); return false; }
+      if (!v) { showError('s7-err'); return false; }
       answers.naturalStyle = v;
     }
     if (n === 8) {
@@ -1078,8 +1078,8 @@
       answers.avoidStyle = document.getElementById('s9-avoid').value.trim();
     }
     if (n === 10) {
-      const blocker = getSingleValue('s7-options');
-      if (!blocker) { showError('s7-err'); return false; }
+      const blocker = getSingleValue('s10-blocker-options');
+      if (!blocker) { showError('s10-blocker-err'); return false; }
       answers.currentBlocker = blocker;
       const presence = getSingleValue('s8-options');
       if (!presence) { showError('s8-err'); return false; }

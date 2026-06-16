@@ -1187,16 +1187,43 @@
     }
   });
 
-  btnSubmit.addEventListener('click', () => {
+  btnSubmit.addEventListener('click', async () => {
     if (!validateStep11()) return;
+
     answers.submittedAt = new Date().toISOString();
     computeHints();
+
     try {
       localStorage.setItem('knownlyDiagnosisData', JSON.stringify(answers));
     } catch (e) {
       console.warn('localStorage unavailable', e);
     }
-    window.location.href = '/result.html';
+
+    const originalButtonText = btnSubmit.textContent;
+    btnSubmit.disabled = true;
+    btnSubmit.textContent = 'Generating your report...';
+
+    try {
+      if (window.KnownlyAPI && typeof window.KnownlyAPI.submitDiagnosis === 'function') {
+        const result = await window.KnownlyAPI.submitDiagnosis(answers);
+
+        if (result && result.diagnosisId) {
+          answers.diagnosisId = result.diagnosisId;
+          localStorage.setItem('knownlyDiagnosisData', JSON.stringify(answers));
+        }
+      } else {
+        console.warn('KnownlyAPI not found. Data saved only in localStorage.');
+      }
+
+      window.location.href = '/result.html';
+    } catch (err) {
+      console.error('Diagnosis submission failed:', err);
+      btnSubmit.disabled = false;
+      btnSubmit.textContent = originalButtonText;
+      showError('consent-err');
+      const errEl = document.getElementById('consent-err');
+      if (errEl) errEl.textContent = err.message || 'Could not save your diagnosis. Please try again.';
+    }
   });
 
   // Keyboard: Enter on option buttons
@@ -1210,5 +1237,6 @@
   showStep(1);
 })();
 </script>
+<script src="/knownly-api.js"></script>
 </body>
 </html>
